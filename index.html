@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
@@ -8,7 +8,7 @@
 <title>Prepway Bangladesh</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
-<meta name="description" content="From Bangladesh, To Bangladesh."/>
+<meta name="description" content="Prepway Bangladesh is an educational content platform for Bangladeshi students. From Bangladesh, To Bangladesh."/>
 <meta name="keywords" content="Prepway Bangladesh, Bangladeshi student guidance, SSC preparation, HSC preparation, university admission Bangladesh, medical admission Bangladesh, Show Your Voice podcast, Prepway Podcast, student podcast Bangladesh, Prepway Group"/>
 <meta name="author" content="Prepway Group"/>
 <meta name="robots" content="index, follow"/>
@@ -17,7 +17,7 @@
 <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Prepway Bangladesh — From Bangladesh, To Bangladesh"/>
-<meta property="og:description" content="An educational platform guiding Bangladeshi students and beyond. Real stories. Real guidance."/>
+<meta property="og:description" content="Prepway Bangladesh is an educational content platform for Bangladeshi students. From Bangladesh, To Bangladesh."/>
 <meta property="og:image" content="logo.png"/>
 <meta property="og:url" content="https://prepwaybd.vercel.app/"/>
 <meta property="og:site_name" content="Prepway Bangladesh"/>
@@ -26,7 +26,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Prepway Bangladesh — From Bangladesh, To Bangladesh"/>
-<meta name="twitter:description" content="A podcast platform guiding Bangladeshi students through SSC, HSC, and university admissions."/>
+<meta name="twitter:description" content="Prepway Bangladesh is an educational content platform for Bangladeshi students. From Bangladesh, To Bangladesh."/>
 <meta name="twitter:image" content="logo.png"/>
 
 <!-- Theme color for mobile browsers -->
@@ -76,7 +76,7 @@
   --border-2:    rgba(255,255,255,0.15);
   --shine:       rgba(255,255,255,0.10);
   --shine-2:     rgba(255,255,255,0.05);
-  --nav-bg:      rgba(23,23,28,0.45);
+  --nav-bg:      transparent;
   --gc-bg:       rgba(255,255,255,0.055);
   --gc-hl:       rgba(255,255,255,0.55);
   --input-bg:    rgba(255,255,255,0.07);
@@ -98,35 +98,41 @@
              inset -1px 0 0 rgba(0,0,0,0.08);
 }
 [data-theme="light"]{
-  --bg:          #EDEAE4;
-  --bg-s:        #E3DFD8;
-  --bg-card:     rgba(255,255,255,0.55);
-  --text:        #12100E;
-  --text-2:      #3E3A35;
-  --text-3:      #8A8580;
-  --border:      rgba(0,0,0,0.07);
-  --border-2:    rgba(0,0,0,0.13);
-  --shine:       rgba(255,255,255,0.95);
-  --shine-2:     rgba(255,255,255,0.50);
-  --nav-bg:      rgba(237,234,228,0.55);
-  --gc-bg:       rgba(255,255,255,0.62);
-  --gc-hl:       rgba(255,255,255,0.98);
-  --input-bg:    rgba(255,255,255,0.70);
+  /* Warm parchment — graph + history + podcast + commitment mixed */
+  --bg:       #EAE7E0;  /* warm paper, not cold blue */
+  --bg-s:     #E2DED6;
+  --bg-card:  rgba(255,255,255,0.72);
+  --text:     #1A1614;
+  --text-2:   #4A3F38;
+  --text-3:   #8A8078;
+  --border:   rgba(60,40,20,0.10);
+  --border-2: rgba(60,40,20,0.18);
+  --shine:    rgba(255,255,255,0.98);
+  --shine-2:  rgba(255,255,255,0.65);
+  --nav-bg:   transparent;
+  --gc-bg:    rgba(255,255,255,0.70);
+  --gc-hl:    rgba(255,255,255,0.99);
+  --input-bg: rgba(255,255,255,0.80);
 
-  --liq-top:     rgba(255,255,255,0.90);
-  --liq-side:    rgba(255,255,255,0.30);
-  --liq-bot:     rgba(0,0,0,0.06);
-  --liq-rim:     rgba(255,255,255,0.80);
+  /* Boosted specular — glass pops on light bg */
+  --liq-top:  rgba(255,255,255,0.98);
+  --liq-side: rgba(255,255,255,0.55);
+  --liq-bot:  rgba(30,60,100,0.08);
+  --liq-rim:  rgba(255,255,255,0.95);
 
-  --R-sm:  0 2px 12px rgba(0,0,0,0.07);
-  --R-md:  0 8px 32px  rgba(0,0,0,0.10);
-  --R-lg:  0 20px 60px rgba(0,0,0,0.12);
-  --R-br:  0 8px 28px  rgba(214,54,81,0.16);
-  --R-glass: 0 6px 24px rgba(0,0,0,0.10),
-             inset 0 1px 0 rgba(255,255,255,0.90),
-             inset 0 -1px 0 rgba(0,0,0,0.04),
-             inset 1px 0 0 rgba(255,255,255,0.50),
-             inset -1px 0 0 rgba(0,0,0,0.03);
+  --R-sm:  0 2px 12px rgba(40,25,10,0.09);
+  --R-md:  0 8px 32px  rgba(40,25,10,0.12);
+  --R-lg:  0 20px 60px rgba(40,25,10,0.15);
+  --R-br:  0 8px 28px  rgba(214,54,81,0.20);
+  /* Deep Vadik-style multi-inset — glass pops visibly on light bg */
+  --R-glass:
+    0 6px 28px rgba(40,25,10,0.12),
+    0 1px 4px rgba(40,25,10,0.05),
+    inset 0 1.5px 0 rgba(255,255,255,0.98),
+    inset 0 -1px 0 rgba(40,25,10,0.06),
+    inset 1.5px 0 0 rgba(255,255,255,0.70),
+    inset -1.5px 0 0 rgba(30,60,100,0.04),
+    inset 0 2px 8px rgba(255,255,255,0.45);
 }
 
 /* ══════════════════════════════════════════
@@ -145,71 +151,155 @@ img{display:block;max-width:100%}
 strong{font-weight:700;}
 
 /* ══════════════════════════════════════════
-   ANIMATED GRAPH BACKGROUND — liquid atmospheric
+   SCIENTIFIC MATH GRAPH BACKGROUND
+   Inspired by graph-paper notebooks, physics textbooks
+   and coordinate planes — fine grid + axes + curve traces
 ══════════════════════════════════════════ */
+
+/* Layer 1 — base fine grid (1px every 20px, like millimetre paper) */
 .graph-bg{
   position:fixed;inset:0;z-index:0;pointer-events:none;
+
+  /* Dark mode: classic dark graph paper */
   background-image:
-    linear-gradient(var(--border) 1px,transparent 1px),
-    linear-gradient(90deg,var(--border) 1px,transparent 1px),
-    linear-gradient(rgba(214,54,81,0.06) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(214,54,81,0.06) 1px,transparent 1px);
-  background-size:40px 40px,40px 40px,200px 200px,200px 200px;
-  animation:gridDrift 60s linear infinite;
+    /* minor grid — 20px spacing */
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px),
+    /* major grid — 100px = 5 squares */
+    linear-gradient(rgba(214,54,81,0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(214,54,81,0.09) 1px, transparent 1px),
+    /* 500px super-major — "axis" feel */
+    linear-gradient(rgba(214,54,81,0.15) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(214,54,81,0.15) 2px, transparent 2px);
+  background-size:
+    20px 20px, 20px 20px,
+    100px 100px, 100px 100px,
+    500px 500px, 500px 500px;
+  animation: gridDrift 80s linear infinite;
+}
+[data-theme="light"] .graph-bg{
+  /* Warm parchment graph — sepia ink on paper */
+  background-image:
+    linear-gradient(rgba(100,70,40,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100,70,40,0.07) 1px, transparent 1px),
+    linear-gradient(rgba(100,70,40,0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100,70,40,0.13) 1px, transparent 1px),
+    linear-gradient(rgba(214,54,81,0.18) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(214,54,81,0.18) 2px, transparent 2px);
+  background-size:
+    20px 20px, 20px 20px,
+    100px 100px, 100px 100px,
+    500px 500px, 500px 500px;
 }
 @keyframes gridDrift{
-  from{background-position:0 0,0 0,0 0,0 0}
-  to{background-position:40px 40px,40px 40px,200px 200px,200px 200px}
+  from{background-position:0 0,0 0,0 0,0 0,0 0,0 0}
+  to{background-position:20px 20px,20px 20px,100px 100px,100px 100px,500px 500px,500px 500px}
 }
-/* Vignette edges */
+/* Vignette — fades grid at edges */
 .graph-bg::after{
   content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 80% 80% at 50% 50%,transparent 15%,var(--bg) 100%);
+  background:radial-gradient(ellipse 90% 85% at 50% 50%,transparent 20%,var(--bg) 100%);
 }
-/* Diagonal growth-line sweep */
+
+/* Layer 2 — SVG sinusoidal curve traces, drawn by JS canvas */
+#mathCanvas{
+  position:fixed;inset:0;width:100%;height:100%;
+  z-index:0;pointer-events:none;opacity:.35;
+  transition:opacity .4s;
+}
+[data-theme="light"] #mathCanvas{opacity:.55;}
+
+/* Layer 3 — diagonal "function graph" lines (y = mx style) */
 .graph-lines{
   position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
 }
-.graph-lines::before{
+.graph-lines::before,.graph-lines::after{
   content:'';position:absolute;
-  bottom:-20%;left:-10%;width:130%;height:130%;
+  bottom:-30%;left:-10%;width:140%;height:140%;
+}
+.graph-lines::before{
   background:
-    linear-gradient(158deg,transparent 47%,rgba(214,54,81,0.04) 48.5%,transparent 50%),
-    linear-gradient(145deg,transparent 52%,rgba(214,54,81,0.03) 53.5%,transparent 55%);
-  animation:diagFloat 12s ease-in-out infinite alternate;
+    linear-gradient(148deg,transparent 42%,rgba(214,54,81,0.045) 43.2%,transparent 44.4%),
+    linear-gradient(132deg,transparent 55%,rgba(100,140,214,0.03) 56.2%,transparent 57.4%);
+  animation:diagFloat 14s ease-in-out infinite alternate;
+}
+.graph-lines::after{
+  background:
+    linear-gradient(162deg,transparent 60%,rgba(214,54,81,0.025) 61%,transparent 62%),
+    linear-gradient(118deg,transparent 35%,rgba(100,140,214,0.025) 36%,transparent 37%);
+  animation:diagFloat2 18s ease-in-out infinite alternate;
 }
 @keyframes diagFloat{
-  0%{transform:translateX(-2%) rotate(.2deg)}
-  100%{transform:translateX(2%) rotate(-.2deg)}
+  0%{transform:translateX(-3%) skewY(.3deg)}
+  100%{transform:translateX(3%) skewY(-.3deg)}
 }
-/* Liquid colour orbs — large, breathing, multi-layer */
-.glo{position:fixed;z-index:0;pointer-events:none;border-radius:50%;}
+@keyframes diagFloat2{
+  0%{transform:translateX(2%) rotate(.2deg)}
+  100%{transform:translateX(-2%) rotate(-.2deg)}
+}
+
+/* Layer 4 — colour orbs (breathing ambient light, physics of light scattering) */
+.glo{position:fixed;z-index:0;pointer-events:none;border-radius:50%;will-change:transform;}
 .glo-1{
-  width:900px;height:900px;
-  background:radial-gradient(circle,rgba(214,54,81,0.12) 0%,rgba(214,54,81,0.04) 40%,transparent 70%);
-  top:-380px;right:-300px;
-  filter:blur(100px);
-  animation:gloat1 16s ease-in-out infinite alternate;
+  width:800px;height:800px;
+  background:radial-gradient(circle,rgba(214,54,81,0.14) 0%,rgba(214,54,81,0.04) 45%,transparent 70%);
+  top:-320px;right:-260px;
+  filter:blur(90px);
+  animation:gloat1 18s ease-in-out infinite alternate;
 }
 .glo-2{
-  width:500px;height:500px;
-  background:radial-gradient(circle,rgba(180,100,140,0.08) 0%,transparent 70%);
-  bottom:-200px;left:-120px;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(60,110,200,0.10) 0%,rgba(60,110,200,0.03) 50%,transparent 70%);
+  bottom:-220px;left:-140px;
   filter:blur(80px);
-  animation:gloat2 20s ease-in-out infinite alternate;
+  animation:gloat2 24s ease-in-out infinite alternate;
 }
-/* Extra centre glow — gives the frosted surface a subtle inner luminance */
 .glo-3{
   position:fixed;z-index:0;pointer-events:none;border-radius:50%;
-  width:600px;height:600px;
-  background:radial-gradient(circle,rgba(255,255,255,0.025) 0%,transparent 70%);
-  top:50%;left:50%;transform:translate(-50%,-50%);
-  filter:blur(60px);
-  animation:gloat3 10s ease-in-out infinite alternate;
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(255,200,50,0.04) 0%,transparent 70%);
+  top:40%;left:30%;
+  filter:blur(70px);
+  animation:gloat3 12s ease-in-out infinite alternate;
 }
-@keyframes gloat1{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-40px,50px) scale(1.05)}}
-@keyframes gloat2{0%{transform:translate(0,0)}100%{transform:translate(35px,-30px)}}
-@keyframes gloat3{0%{opacity:.6;transform:translate(-50%,-50%) scale(1)}100%{opacity:1;transform:translate(-50%,-50%) scale(1.08)}}
+/* Light mode orbs — more visible, blue-tinted academic feel */
+[data-theme="light"] .glo-1{
+  /* Warm red — podcast/passion */
+  background:radial-gradient(circle,rgba(214,54,81,0.14) 0%,rgba(200,100,50,0.06) 45%,transparent 70%);
+}
+/* Dreamy violet orb for light mode — commitment section feel */
+.glo-4{
+  position:fixed;z-index:0;pointer-events:none;border-radius:50%;
+  width:400px;height:400px;
+  top:60%;right:-100px;
+  filter:blur(80px);
+  animation:gloat2 15s ease-in-out infinite alternate;
+  display:none;
+}
+[data-theme="light"] .glo-4{
+  display:block;
+  background:radial-gradient(circle,rgba(120,60,180,0.08) 0%,transparent 70%);
+}
+[data-theme="light"] .glo-2{
+  /* Warm amber — history/sepia */
+  background:radial-gradient(circle,rgba(160,100,40,0.12) 0%,rgba(180,120,50,0.05) 50%,transparent 70%);
+}
+
+@keyframes gloat1{
+  0%  {transform:translate(0,0) scale(1);}
+  33% {transform:translate(-25px,35px) scale(1.03);}
+  66% {transform:translate(-45px,15px) scale(0.98);}
+  100%{transform:translate(-20px,55px) scale(1.05);}
+}
+@keyframes gloat2{
+  0%  {transform:translate(0,0);}
+  50% {transform:translate(40px,-25px);}
+  100%{transform:translate(25px,-45px);}
+}
+@keyframes gloat3{
+  0%  {opacity:.5;transform:translate(0,0) scale(1);}
+  100%{opacity:.9;transform:translate(15px,-20px) scale(1.06);}
+}
 
 /* ══════════════════════════════════════════
    LIQUID GLASS SYSTEM — Deep multi-layer frosted
@@ -408,39 +498,23 @@ strong{font-weight:700;}
 nav{
   position:fixed;top:0;left:0;right:0;z-index:600;
   height:62px;
-  background:var(--nav-bg);
-  backdrop-filter:blur(40px) saturate(200%) brightness(1.02);
-  -webkit-backdrop-filter:blur(40px) saturate(200%) brightness(1.02);
-  border-bottom:1px solid var(--border);
-  /* Liquid glass nav: bright top rim + soft outer shadow */
-  box-shadow:
-    0 1px 0 var(--liq-rim),
-    0 4px 20px rgba(0,0,0,0.25),
-    inset 0 1px 0 rgba(255,255,255,0.12);
-  transition:background .4s,height .25s;
+  /* Fully transparent — chips float over content */
+  background:transparent;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+  border:none;
+  box-shadow:none;
+  transition:height .25s;
+  pointer-events:none; /* let clicks pass through nav bg */
 }
+/* Re-enable pointer events only on the actual chips */
+.nav-inner > *{ pointer-events:auto; }
 .nav-inner{
   max-width:1160px;margin:0 auto;padding:0 2.5rem;
   height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;
 }
-.nav-logo{flex-shrink:0;display:flex;align-items:center;gap:.55rem;}
+.nav-logo{flex-shrink:0;display:flex;align-items:center;}
 .nav-logo img{height:44px;width:auto;display:block;}
-.beta-badge{
-  display:inline-flex;align-items:center;
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:700;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--brand);
-  background:rgba(214,54,81,0.10);
-  border:1px solid rgba(214,54,81,0.30);
-  border-radius:5px;padding:.18rem .46rem;line-height:1;
-  position:relative;top:-1px;flex-shrink:0;
-  animation:betaPulse 2.8s ease-in-out infinite;user-select:none;
-}
-@keyframes betaPulse{
-  0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(214,54,81,0);}
-  50%{opacity:.75;box-shadow:0 0 0 3px rgba(214,54,81,0.12);}
-}
-[data-theme="light"] .beta-badge{background:rgba(214,54,81,0.08);border-color:rgba(214,54,81,0.25);}
 
 /* Nav links — Cascadia Code for techy nav feel */
 .nav-links{display:flex;align-items:center;gap:.12rem;list-style:none;}
@@ -471,10 +545,20 @@ nav{
   backdrop-filter:blur(10px);transition:color .2s;
 }
 .mob-btn:hover{color:var(--text);}
+/* Old drawer hidden entirely */
+/* mob-cta shows inside drawer only */
+.mob-cta{ display:none; }
+.mob-nav .mob-cta{ display:block;text-align:center;margin-top:.75rem;background:var(--brand);color:#fff;font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-weight:700;font-size:.88rem;padding:.72rem;border-radius:12px;box-shadow:var(--R-br); }
+.mob-theme{ display:none; }
+.mob-nav .mob-theme{ display:flex;align-items:center;justify-content:space-between;padding:.62rem 1rem;margin-top:.25rem;font-family:"Cascadia Code",monospace;font-size:.82rem;color:var(--text-2);border-radius:10px;background:rgba(255,255,255,0.025); }
+[data-theme="light"] .mob-nav .mob-theme{background:rgba(0,0,0,0.025);}
+/* ── Mobile drawer ── */
 .mob-nav{
-  display:none;position:fixed;top:62px;left:0;right:0;z-index:590;
+  display:none;
+  position:fixed;top:62px;left:0;right:0;z-index:590;
   background:var(--nav-bg);
-  backdrop-filter:blur(32px) saturate(200%);-webkit-backdrop-filter:blur(32px) saturate(200%);
+  backdrop-filter:blur(32px) saturate(200%);
+  -webkit-backdrop-filter:blur(32px) saturate(200%);
   border-bottom:1px solid var(--border);
   padding:1rem 1.5rem 1.5rem;
   transform:translateY(-8px);opacity:0;
@@ -490,20 +574,34 @@ nav{
   transition:color .2s,background .2s;
 }
 .mob-nav ul a:hover{color:var(--text);background:rgba(255,255,255,0.06);}
-.mob-cta{
-  display:block;text-align:center;margin-top:.75rem;
-  background:var(--brand);color:#fff;
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:700;font-size:.88rem;
-  padding:.72rem;border-radius:12px;box-shadow:var(--R-br);
+[data-theme="light"] .mob-nav ul a:hover{background:rgba(0,0,0,0.04);}
+.mob-theme-lbl{ display:none; }
+
+/* ══════════════════════════════════════════
+   VADIK PILL NAV — exact reference implementation
+   Fixed bottom, full Vadik reflex box-shadow,
+   Sliding indicator with stretch physics
+══════════════════════════════════════════ */
+
+
+  to  {opacity:1;transform:translateX(-50%) translateY(0) scale(1);}
 }
-.mob-theme{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:.62rem 1rem;margin-top:.25rem;
-  font-family:"Cascadia Code",monospace;font-size:.82rem;color:var(--text-2);
-  border-radius:10px;background:rgba(255,255,255,0.025);
+[data-theme="light"] 
+
+/* Sliding indicator — Vadik recipe */
+
+[data-theme="light"] 
+
+
+  45% {scale:1.18 1}
+  100%{scale:1    1}
 }
-[data-theme="light"] .mob-theme{background:rgba(0,0,0,0.025);}
+/* Each tab — text only */
+
+
+
+
+
 
 /* ══════════════════════════════════════════
    HERO
@@ -1028,6 +1126,7 @@ footer{
 .fab-messenger:hover .fab-label{opacity:1;transform:translateX(0);}
 
 @media(max-width:768px){
+  /* Messenger sits just above pill on mobile */
   .fab-messenger{bottom:1.2rem;right:1rem;}
   .fab-messenger:hover{width:52px;}
   .fab-label{display:none;}
@@ -1212,6 +1311,7 @@ footer{
 /* ──────────── Responsive ──────────── */
 /* Tablet */
 @media(max-width:1024px) and (min-width:769px){
+  
   .hero-h1{ font-size:clamp(2.8rem,6vw,4.5rem); }
   .slogan-bn{ font-size:clamp(1.3rem,2.4vw,1.7rem); }
 }
@@ -1226,6 +1326,115 @@ footer{
   .hero-h1{ font-size:clamp(2rem,10.5vw,3rem); }
   .slogan-bn{ font-size:clamp(1rem,4.5vw,1.3rem); }
 }
+
+
+/* ══════════════════════════════════════════
+   NOTICE BOARD SYSTEM
+   Replaces hero pill — scrolls through updates
+══════════════════════════════════════════ */
+.notice-board{
+  display:inline-flex;
+  border-radius:14px;
+  margin-bottom:1.6rem;
+  cursor:pointer;       /* clickable to expand */
+  max-width:520px;
+  /* Smooth expansion */
+  transition:max-width .4s cubic-bezier(.4,0,.2,1);
+  user-select:none;
+}
+.nb-inner{
+  display:flex;align-items:flex-start;gap:.55rem;
+  padding:.44rem .9rem .44rem .7rem;
+  min-width:0;
+  flex-wrap:nowrap;
+}
+/* When expanded, text wraps */
+.notice-board.nb-expanded .nb-inner{flex-wrap:wrap;}
+.notice-board.nb-expanded .nb-text{
+  white-space:normal;
+  overflow:visible;
+  text-overflow:unset;
+}
+.notice-board.nb-expanded .nb-chevron{
+  transform:rotate(180deg);
+}
+.nb-icon{
+  color:var(--brand);flex-shrink:0;
+  display:flex;align-items:center;margin-top:2px;
+  animation:nbPulse 2.2s ease-in-out infinite;
+}
+@keyframes nbPulse{0%,100%{opacity:1}50%{opacity:.45}}
+.nb-tag{
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-weight:700;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--brand);
+  background:rgba(214,54,81,0.12);
+  border:1px solid rgba(214,54,81,0.25);
+  border-radius:5px;padding:.12rem .38rem;
+  flex-shrink:0;
+  margin-top:1px;
+}
+.nb-text{
+  font-family:"Plus Jakarta Sans",sans-serif;
+  font-size:.80rem;font-weight:500;
+  color:var(--text-2);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  flex:1;min-width:0;
+  transition:opacity .3s ease;
+}
+.nb-chevron{
+  flex-shrink:0;color:var(--text-3);
+  display:flex;align-items:center;margin-top:2px;
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1);
+}
+
+/* ══════════════════════════════════════════
+   NAV CHIP SYSTEM
+   Logo box, Beta box, Menu box — each separate
+══════════════════════════════════════════ */
+.nav-left-group{
+  display:flex;align-items:center;gap:.5rem;
+  flex-shrink:0;
+}
+.nav-chip{
+  border-radius:12px;
+  height:42px;
+  display:flex;align-items:center;
+  transition:transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .25s;
+  text-decoration:none;
+}
+.nav-chip:hover{transform:translateY(-1px);}
+.nav-chip-inner{
+  display:flex;align-items:center;justify-content:center;
+  padding:.5rem .7rem;
+}
+.nav-logo-chip .nav-chip-inner{padding:.35rem .65rem;}
+.nav-beta-chip{cursor:default;}
+.beta-badge-nav{
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-weight:700;font-size:.60rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--brand);
+  display:block;
+  animation:betaPulse 2.8s ease-in-out infinite;
+}
+@keyframes betaPulse{
+  0%,100%{opacity:1;}
+  50%{opacity:.6;}
+}
+/* Hamburger chip — wraps mob-btn in a glass box */
+.nav-menu-chip{
+  border-radius:12px;
+  height:42px;width:42px;
+  display:none;/* shown at mobile via media query */
+  align-items:center;justify-content:center;
+  cursor:pointer;
+  transition:transform .2s cubic-bezier(.34,1.56,.64,1);
+  background:none;border:none;
+  color:var(--text);
+  padding:0;
+}
+.nav-menu-chip:hover{transform:scale(1.06);}
+.nav-menu-chip.glass .nav-chip-inner{padding:.5rem;}
 
 /* ══════════════════════════════════════════
    SCROLL INDICATOR
@@ -1257,7 +1466,9 @@ footer{
   .hero-right{display:none;}
   .eps-grid{grid-template-columns:repeat(2,1fr);}
   .spec-inner,.about-grid,.book-inner{grid-template-columns:1fr;gap:2.5rem;}
-  nav .nav-links a{font-size:.74rem;padding:.38rem .68rem;}
+  /* Standard mobile nav — links wrap or scroll */
+  .nav-links{display:flex;flex-wrap:wrap;gap:.05rem;}
+  .nav-right{display:flex;}
 }
 
 /* ══════════════════════════════════════════
@@ -1265,16 +1476,21 @@ footer{
 ══════════════════════════════════════════ */
 @media(max-width:768px){
   .container,.hero,.ft-inner{padding-left:1.25rem;padding-right:1.25rem;}
-  .section{padding:3.5rem 0;}
+  .section{padding:3rem 0;}
   nav .nav-inner{padding:0 1.25rem;}
-  nav .nav-links,.nav-right .theme-wrap{display:none;}
+  /* Desktop nav hidden on mobile — hamburger takes over */
+  .nav-links{display:none;}
+  .nav-right .theme-wrap{display:none;}
+  /* Show hamburger */
   .mob-btn{display:flex;}
+  /* Nav chips: only logo + beta */
+  .nav-left-group{gap:.4rem;}
   .hero{grid-template-columns:1fr;padding-top:5.5rem;min-height:auto;}
   .hero-right{display:none;}
   .hero-h1{font-size:clamp(2.6rem,9.5vw,3.6rem);}
   .slogan-bn{font-size:clamp(1.15rem,5vw,1.55rem);}
-  .hero-btns{gap:.65rem;}
-  .btn-p,.btn-o{font-size:.8rem;padding:.76rem 1.35rem;}
+  .hero-btns{gap:.65rem;flex-direction:column;}
+  .btn-p,.btn-o{font-size:.85rem;padding:.82rem 1.4rem;width:100%;justify-content:center;}
   .eps-grid{grid-template-columns:1fr;gap:1rem;}
   .spec-inner,.about-grid,.book-inner{grid-template-columns:1fr;gap:2rem;}
   .frow{grid-template-columns:1fr;}
@@ -1282,18 +1498,172 @@ footer{
   .scroll-hint{display:none;}
   .sh2{font-size:clamp(1.8rem,7vw,2.4rem);}
   .bengali-title{font-size:clamp(1.8rem,7vw,2.4rem);}
+  /* Messenger: bottom right, comfortable */
+  .fab-messenger{bottom:1.4rem;right:1rem;}
 }
+
 @media(max-width:420px){
   .hero-h1{font-size:clamp(2rem,10.5vw,3rem);}
   .slogan-bn{font-size:clamp(1rem,4.5vw,1.3rem);}
   .sh2,.bengali-title{font-size:1.7rem;}
   .btn-p,.btn-o{font-size:.76rem;padding:.7rem 1.15rem;}
   .hl{font-size:.8rem;}
+  /* Very small screen: tighter pill tabs */
+  
+  
 }
 @supports(padding:max(0px)){
   .nav-inner{padding-left:max(2.5rem,env(safe-area-inset-left));padding-right:max(2.5rem,env(safe-area-inset-right));}
   footer{padding-bottom:env(safe-area-inset-bottom);}
 }
+
+/* Performance optimisation — GPU-composited layers */
+.glass,.glass-form,.glo,.glo-3{will-change:transform;}
+.graph-bg,.graph-lines{will-change:background-position;}
+#mathCanvas{will-change:contents;}
+
+/* Notice board text slide transitions */
+.nb-text{transition:opacity .25s ease, transform .25s ease;}
+.nb-text.nb-exit{opacity:0;transform:translateY(-5px);}
+.nb-text.nb-enter{opacity:0;transform:translateY(5px);}
+.nb-text.nb-enter-rev{opacity:0;transform:translateY(-5px);}
+
+/* Nav chip hover micro-animation */
+.nav-chip{transition:transform .22s cubic-bezier(.34,1.56,.64,1), box-shadow .22s;}
+.nav-chip:hover{transform:translateY(-2px) scale(1.03);}
+.nav-chip:active{transform:scale(.97);}
+
+/* Smoother glass tilt */
+.glass,.glass-form{
+  transition:transform .05s linear, box-shadow .3s;
+  transform-style:preserve-3d;
+}
+
+
+/* ══════════════════════════════════════════
+   SECTION AMBIENT BACKGROUNDS
+   Each section gets its own atmospheric feel.
+   Pseudo-elements so liquid glass is unaffected.
+══════════════════════════════════════════ */
+
+/* PODCASTS — warm amber studio light, soundwave feel */
+#podcasts{
+  position:relative;
+  isolation:isolate;
+}
+#podcasts::before{
+  content:'';
+  position:absolute;inset:0;
+  pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 50%,
+      rgba(214,120,54,0.07) 0%,
+      transparent 65%),
+    radial-gradient(ellipse 50% 80% at 90% 20%,
+      rgba(214,54,81,0.05) 0%,
+      transparent 60%);
+  animation: ambPodcast 8s ease-in-out infinite alternate;
+}
+[data-theme="light"] #podcasts::before{
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 50%,
+      rgba(180,80,30,0.09) 0%,
+      transparent 65%),
+    radial-gradient(ellipse 50% 80% at 90% 20%,
+      rgba(214,54,81,0.07) 0%,
+      transparent 60%);
+}
+@keyframes ambPodcast{
+  from{opacity:.7} to{opacity:1}
+}
+
+/* SPECIAL (অমর একুশে) — deep saffron, patriotic warmth */
+#special{
+  position:relative;
+  isolation:isolate;
+}
+#special::before{
+  content:'';
+  position:absolute;inset:0;
+  pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 60% 70% at 50% 50%,
+      rgba(200,80,40,0.08) 0%,
+      rgba(214,54,81,0.04) 50%,
+      transparent 75%);
+  animation: ambSpecial 10s ease-in-out infinite alternate;
+}
+@keyframes ambSpecial{
+  from{opacity:.6;transform:scale(1)} to{opacity:1;transform:scale(1.04)}
+}
+
+/* ABOUT — warm sepia, documentary / archival */
+#about{
+  position:relative;
+  isolation:isolate;
+}
+#about::before{
+  content:'';
+  position:absolute;inset:0;
+  pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 55% 45% at 80% 30%,
+      rgba(160,120,60,0.07) 0%,
+      transparent 65%),
+    radial-gradient(ellipse 40% 60% at 10% 70%,
+      rgba(120,80,40,0.05) 0%,
+      transparent 60%);
+  animation: ambAbout 12s ease-in-out infinite alternate;
+}
+[data-theme="light"] #about::before{
+  background:
+    radial-gradient(ellipse 55% 45% at 80% 30%,
+      rgba(130,90,40,0.10) 0%,
+      transparent 65%),
+    radial-gradient(ellipse 40% 60% at 10% 70%,
+      rgba(100,60,20,0.07) 0%,
+      transparent 60%);
+}
+@keyframes ambAbout{
+  from{opacity:.5} to{opacity:.9}
+}
+
+/* BOOKING (Be a Guest) — inspirational, dreamy indigo */
+#booking{
+  position:relative;
+  isolation:isolate;
+}
+#booking::before{
+  content:'';
+  position:absolute;inset:0;
+  pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 40%,
+      rgba(100,60,200,0.09) 0%,
+      rgba(214,54,81,0.05) 55%,
+      transparent 80%),
+    radial-gradient(ellipse 40% 50% at 85% 85%,
+      rgba(60,100,220,0.07) 0%,
+      transparent 60%);
+  animation: ambBooking 9s ease-in-out infinite alternate;
+}
+[data-theme="light"] #booking::before{
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 40%,
+      rgba(80,40,180,0.10) 0%,
+      rgba(214,54,81,0.06) 55%,
+      transparent 80%);
+}
+@keyframes ambBooking{
+  from{opacity:.5;transform:scale(1)} to{opacity:1;transform:scale(1.03)}
+}
+
+
+/* Apply tab — special brand styling when active */
+
+
+
+
 </style>
 </head>
 <body>
@@ -1303,15 +1673,30 @@ footer{
 <div class="glo glo-1"></div>
 <div class="glo glo-2"></div>
 <div class="glo-3"></div>
+<div class="glo-4"></div>
+
+<!-- Math canvas for animated curves -->
+<canvas id="mathCanvas" aria-hidden="true"></canvas>
 
 <!-- ══════════ NAV ══════════ -->
 <nav id="mainNav">
   <div class="nav-inner">
-    <!-- Replace logo.png with your actual logo file in the same folder -->
-    <a href="#" class="nav-logo" title="Prepway Bangladesh" aria-label="Prepway Bangladesh Home">
-      <img src="logo.png" alt="Prepway Bangladesh" style="height:44px;width:auto;">
-      <span class="beta-badge">Beta</span>
-    </a>
+
+    <!-- LEFT: three independent glass chips -->
+    <div class="nav-left-group">
+      <a href="#" class="nav-chip nav-logo-chip glass" title="Prepway Bangladesh" aria-label="Home">
+        <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+        <div class="g-c nav-chip-inner">
+          <img src="logo.png" alt="Prepway Bangladesh" style="height:32px;width:auto;display:block;">
+        </div>
+      </a>
+      <div class="nav-chip nav-beta-chip glass" aria-label="Beta">
+        <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+        <div class="g-c nav-chip-inner">
+          <span class="beta-badge-nav">Beta</span>
+        </div>
+      </div>
+    </div>
 
     <ul class="nav-links">
       <li><a href="#podcasts">Podcasts</a></li>
@@ -1323,7 +1708,7 @@ footer{
 
     <div class="nav-right">
       <div class="theme-wrap">
-        <span class="theme-lbl" id="tLbl">Dark</span>
+        <span class="theme-lbl" id="tLbl">Light</span>
         <label class="theme-toggle-pill" aria-label="Toggle dark/light mode" title="Toggle theme">
           <input type="checkbox" class="toggle-input" id="tDesk" onchange="setTheme(this.checked)">
           <!-- Background track icons -->
@@ -1347,12 +1732,16 @@ footer{
           </div>
         </label>
       </div>
-      <button class="mob-btn" id="mbtn" onclick="toggleMenu()" aria-label="Toggle menu">
-        <svg id="icon-menu" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;">
-          <rect x="1" y="3.5" width="16" height="1.8" rx="0.9" fill="currentColor"/>
-          <rect x="1" y="8.1" width="16" height="1.8" rx="0.9" fill="currentColor"/>
-          <rect x="1" y="12.7" width="16" height="1.8" rx="0.9" fill="currentColor"/>
-        </svg>
+      <!-- Hamburger — own glass chip -->
+      <button class="nav-chip nav-menu-chip glass mob-btn" id="mbtn" onclick="toggleMenu()" aria-label="Toggle menu">
+        <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+        <div class="g-c nav-chip-inner" id="mbtn-icon">
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none" style="display:block;">
+            <rect y="0" width="18" height="2" rx="1" fill="currentColor"/>
+            <rect y="6" width="18" height="2" rx="1" fill="currentColor"/>
+            <rect y="12" width="18" height="2" rx="1" fill="currentColor"/>
+          </svg>
+        </div>
       </button>
     </div>
   </div>
@@ -1362,9 +1751,9 @@ footer{
 <div class="mob-nav" id="mnav">
   <ul>
     <li><a href="#podcasts" onclick="closeMenu()">Podcasts</a></li>
-    <li><a href="#special" onclick="closeMenu()">Special</a></li>
-    <li><a href="#about" onclick="closeMenu()">About Us</a></li>
-    <li><a href="#booking" onclick="closeMenu()">Be a Guest</a></li>
+    <li><a href="#special"  onclick="closeMenu()">Special</a></li>
+    <li><a href="#about"    onclick="closeMenu()">About Us</a></li>
+    <li><a href="#booking"  onclick="closeMenu()">Be a Guest</a></li>
   </ul>
   <a href="#booking" class="mob-cta" onclick="closeMenu()">Apply Now →</a>
   <div class="mob-theme">
@@ -1372,33 +1761,43 @@ footer{
     <label class="theme-toggle-pill" aria-label="Toggle dark/light mode">
       <input type="checkbox" class="toggle-input" id="tMob" onchange="setTheme(this.checked)">
       <div class="toggle-track-icons">
-        <span class="tik tik-moon">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" opacity="0.7"/></svg>
-        </span>
-        <span class="tik tik-sun">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" fill="currentColor" opacity="0.7"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7"/></svg>
-        </span>
+        <span class="tik tik-moon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" opacity="0.7"/></svg></span>
+        <span class="tik tik-sun"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" fill="currentColor" opacity="0.7"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7"/></svg></span>
       </div>
       <div class="toggle-thumb-pill">
-        <svg class="thumb-moon" width="14" height="14" viewBox="0 0 24 24" fill="none">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#3B4A6B"/>
-        </svg>
-        <svg class="thumb-sun" width="14" height="14" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="4" fill="#F4900C"/>
-          <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="#F4900C" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
+        <svg class="thumb-moon" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#3B4A6B"/></svg>
+        <svg class="thumb-sun" width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" fill="#F4900C"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="#F4900C" stroke-width="2.5" stroke-linecap="round"/></svg>
       </div>
     </label>
   </div>
-</div>
-
-<!-- ══════════ HERO ══════════ -->
+</div><!-- ══════════ HERO ══════════ -->
 <section style="position:relative;z-index:1;">
 <div class="hero">
   <div class="hero-left">
-    <div class="hero-pill">
-      <div class="pill-dot"></div>
-      <span class="pill-txt">Prepway Bangladesh &nbsp;·&nbsp; Est. Aug 2025 &nbsp;·&nbsp; <span style="color:var(--brand);">Beta</span></span>
+    <!-- ══════════════════════════════════════════
+         NOTICE BOARD
+         To update the notice text → open this file in
+         VS Code and search for:  const NOTICE =
+         (near the bottom of the file in the <script> block)
+    ══════════════════════════════════════════ -->
+    <div class="notice-board glass" id="noticeBoard" role="status" aria-live="polite" title="Click to expand">
+      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c nb-inner">
+        <span class="nb-icon" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2.2"/>
+            <line x1="12" y1="8" x2="12" y2="13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="12" cy="16.5" r="1.3" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="nb-tag">Update</span>
+        <span class="nb-text" id="nbText">Loading…</span>
+        <span class="nb-chevron" aria-hidden="true">
+          <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </div>
     </div>
 
     <div class="slogan-wrap" id="slogan-wrap">
@@ -1560,7 +1959,7 @@ footer{
       <div class="spec-tag">Special Episode</div>
       <h2 class="bengali-title">অমর একুশে<br><em>Language, Identity &amp; Pride</em></h2>
       <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;font-size:.96rem;color:var(--text-2);line-height:1.80;margin-bottom:.85rem;">
-        21st February, 1952 is an unforgettable and glorious day for the Bengali nation and all Bangla-speaking people. On this day, the brave students and general people of then East Bengal took to the streets to protect their mother tongue, Bangla, standing firmly against injustice and conspiracy.
+        21st February 1952 is an unforgettable and glorious day for the Bengali nation and all Bangla-speaking people. On this day, the brave students and general people of then East Bengal took to the streets to protect their mother tongue, Bangla, standing firmly against injustice and conspiracy.
       </p>
       <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;font-size:.96rem;color:var(--text-2);line-height:1.80;margin-bottom:.85rem;">
         Their sacrifice not only safeguards the Bangla language but also teaches the world that language is the foundation of a nation's identity, culture, and existence. Today, 21st February is not only significant for Bengalis, but also for people of all languages around the world.
@@ -1773,13 +2172,11 @@ footer{
       <div class="ft-brand">
         <div class="ft-logo-row">
           <span class="ft-lp">prepway</span><span class="ft-ls">&nbsp;&nbsp;Bangladesh</span>
-          <span class="beta-badge" style="font-size:.52rem;margin-left:.4rem;">Beta</span>
         </div>
         <p>Guiding Bangladeshi students from high school to university — through podcasts, honest stories, and real guidance. A subsidiary of Prepway Group, est. 2025.</p>
         <div class="soc-row">
           <a href="https://www.facebook.com/prepwaybangladesh" target="_blank" rel="noopener" class="soc-btn"><img src="icons/icon-11.svg" alt="" class="soc-icon"> Facebook</a>
           <a href="https://www.instagram.com/prepwaybangladesh" target="_blank" rel="noopener" class="soc-btn"><img src="icons/icon-12.svg" alt="" class="soc-icon"> Instagram</a>
-          <a href="https://www.youtube.com/prepwaybangladesh" target="_blank" rel="noopener" class="soc-btn"><img src="icons/icon-yt-red.svg" alt="" class="soc-icon"> YouTube</a>
           <a href="http://t.me/prepwaybangladesh" target="_blank" rel="noopener" class="soc-btn"><img src="icons/icon-13.svg" alt="" class="soc-icon"> Telegram</a>
         </div>
       </div>
@@ -1809,9 +2206,10 @@ function setTheme(isLight){
   localStorage.setItem('pw-t',isLight?'light':'dark');
 }
 const sv=localStorage.getItem('pw-t');
-if(sv==='light')setTheme(true);
+if(sv==='dark')setTheme(false);
+else setTheme(true); /* default light */
 
-const ICON_MENU = `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;"><rect x="1" y="3.5" width="16" height="1.8" rx="0.9" fill="currentColor"/><rect x="1" y="8.1" width="16" height="1.8" rx="0.9" fill="currentColor"/><rect x="1" y="12.7" width="16" height="1.8" rx="0.9" fill="currentColor"/></svg>`;
+const ICON_MENU = `<svg width="18" height="14" viewBox="0 0 18 14" fill="none" style="display:block;"><rect y="0" width="18" height="2" rx="1" fill="currentColor"/><rect y="6" width="18" height="2" rx="1" fill="currentColor"/><rect y="12" width="18" height="2" rx="1" fill="currentColor"/></svg>`;
 const ICON_CLOSE = `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;"><line x1="2.5" y1="2.5" x2="15.5" y2="15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="15.5" y1="2.5" x2="2.5" y2="15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`;
 const mnav=document.getElementById('mnav');
 const mbtn=document.getElementById('mbtn');
@@ -1828,6 +2226,104 @@ function closeMenu(){
   setTimeout(()=>mnav.style.display='none',280);
   mbtn.innerHTML=ICON_MENU;
 }
+
+
+/* ══════════════════════════════════════════
+   NOTICE BOARD
+   ─────────────────────────────────────────
+   HOW TO UPDATE: Find this NOTICE object below.
+   Change the text inside the quotes.
+   The tag can be: "Update" | "New" | "Live" | "Soon"
+   ─────────────────────────────────────────
+   LOCATION IN CODE: Search for  const NOTICE =
+══════════════════════════════════════════ */
+const NOTICE = {
+  tag:  "Update",
+  text: "Initial Beta Launch of the Website. Follow for future updates."
+};
+
+// Initialise notice board text
+(function(){
+  const txt = document.getElementById('nbText');
+  const tag = document.querySelector('.nb-tag');
+  if(txt) txt.textContent = NOTICE.text;
+  if(tag) tag.textContent = NOTICE.tag;
+})();
+
+// Click to expand / collapse the notice board
+const nbBoard = document.getElementById('noticeBoard');
+if(nbBoard){
+  nbBoard.addEventListener('click', function(){
+    this.classList.toggle('nb-expanded');
+  });
+}
+
+/* ══════════════════════════════════════════
+   MATH CANVAS — animated sinusoidal & parabolic curves
+   Gives the background a living mathematical texture
+══════════════════════════════════════════ */
+(function(){
+  const canvas = document.getElementById('mathCanvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W,H,t=0,raf;
+
+  // Curve definitions — each is a function: f(x, t) → y
+  const CURVES = [
+    // Sine wave (large)
+    { fn:(x,t)=> H*0.35 + Math.sin(x*0.008+t)*90, col:'rgba(214,54,81,', dash:[],  lw:1.2 },
+    // Cosine (offset)
+    { fn:(x,t)=> H*0.55 + Math.cos(x*0.006+t*0.7)*60, col:'rgba(60,110,200,', dash:[6,4], lw:0.9 },
+    // Parabola-like (quadratic trend)
+    { fn:(x,t)=> H*0.7 - Math.pow((x-W*0.5)/220, 2)*100 + Math.sin(t*0.5)*20, col:'rgba(214,54,81,', dash:[3,6], lw:0.8 },
+    // High-freq sine (oscillation)
+    { fn:(x,t)=> H*0.25 + Math.sin(x*0.022+t*1.3)*35, col:'rgba(100,180,100,', dash:[],  lw:0.7 },
+    // Decaying sine (physics vibe)
+    { fn:(x,t)=> H*0.8 + Math.sin(x*0.015+t*0.9)*Math.exp(-x*0.001)*55, col:'rgba(200,130,50,', dash:[4,4], lw:0.75 },
+  ];
+
+  function resize(){
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  function getOpacity(){
+    return document.documentElement.getAttribute('data-theme')==='light' ? 0.45 : 0.28;
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const op = getOpacity();
+    CURVES.forEach(c=>{
+      ctx.beginPath();
+      ctx.setLineDash(c.dash);
+      ctx.lineWidth = c.lw;
+      ctx.strokeStyle = c.col + op + ')';
+      for(let x=0;x<=W;x+=2){
+        const y = c.fn(x, t);
+        x===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+      }
+      ctx.stroke();
+    });
+    // Scattered dots — like plotted data points
+    ctx.setLineDash([]);
+    for(let i=0;i<8;i++){
+      const px = (i/7)*W*0.85 + W*0.075;
+      const curve = CURVES[i%3];
+      const py = curve.fn(px, t);
+      ctx.beginPath();
+      ctx.arc(px, py, 2.5, 0, Math.PI*2);
+      ctx.fillStyle = curve.col + (op*1.8) + ')';
+      ctx.fill();
+    }
+    t += 0.003;
+    raf = requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
 
 document.addEventListener('DOMContentLoaded',()=>{
 
@@ -1923,40 +2419,88 @@ document.addEventListener('DOMContentLoaded',()=>{
   setTimeout(runTyping, 800);
 
 
+  /* ══════════════════════════════════════════
+     PHYSICS LIQUID GLASS
+     • Cursor hot-spot tracks in real-time
+     • Magnetic tilt (CSS perspective transform)
+     • Spring physics — element gently follows cursor
+     • On leave: springs back with overshoot
+  ══════════════════════════════════════════ */
+  const isLt = ()=> document.documentElement.getAttribute('data-theme')==='light';
+
   document.querySelectorAll('.glass,.glass-form').forEach(el=>{
-    el.addEventListener('mousemove',function(e){
-      const r=this.getBoundingClientRect();
-      const x=e.clientX-r.left, y=e.clientY-r.top;
-      const xPct=(x/r.width)*100, yPct=(y/r.height)*100;
-      const s=this.querySelector('.g-s');
-      if(s){
-        /* Primary hot-spot + secondary rim glow */
-        s.style.background=`
-          radial-gradient(ellipse 60% 50% at ${xPct}% ${yPct}%,
-            rgba(255,255,255,0.22) 0%,
-            rgba(255,255,255,0.07) 40%,
-            transparent 70%
-          ),
-          linear-gradient(
-            160deg,
-            rgba(255,255,255,0.10) 0%,
-            rgba(255,255,255,0.02) 50%,
-            transparent 100%
-          )
-        `;
+    let vx=0,vy=0, cx=0,cy=0, tx=0,ty=0, raf=null;
+    const K=0.12, D=0.78; /* spring constant + damping */
+
+    function springTick(){
+      const ddx = tx - cx;
+      const ddy = ty - cy;
+      vx = (vx + ddx*K) * D;
+      vy = (vy + ddy*K) * D;
+      cx += vx;
+      cy += vy;
+      const rx = cy * 0.018;  /* tilt Y based on cx offset */
+      const ry = cx * -0.018; /* tilt X */
+      el.style.transform = `perspective(600px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(${Math.abs(cx*cy*0.00005)}px)`;
+      if(Math.abs(vx)>0.01 || Math.abs(vy)>0.01 || Math.abs(cx)>0.5 || Math.abs(cy)>0.5){
+        raf = requestAnimationFrame(springTick);
+      } else {
+        cx=cy=vx=vy=0;
+        el.style.transform='perspective(600px) rotateX(0) rotateY(0) translateZ(0)';
+        raf=null;
       }
-      /* Subtle scale on distortion filter */
+    }
+
+    el.addEventListener('mousemove',function(e){
+      const r = el.getBoundingClientRect();
+      const xP = (e.clientX-r.left)/r.width;
+      const yP = (e.clientY-r.top)/r.height;
+      const xPct= (xP*100).toFixed(1);
+      const yPct= (yP*100).toFixed(1);
+
+      /* Specular hot-spot */
+      const s = el.querySelector('.g-s');
+      if(s){
+        const hi = isLt() ? 0.80 : 0.26;
+        const md = isLt() ? 0.25 : 0.08;
+        const tl = isLt() ? 0.30 : 0.10;
+        s.style.background=`
+          radial-gradient(ellipse 50% 42% at ${xPct}% ${yPct}%,
+            rgba(255,255,255,${hi}) 0%,
+            rgba(255,255,255,${md}) 38%,
+            transparent 68%),
+          linear-gradient(155deg,
+            rgba(255,255,255,${tl}) 0%,
+            rgba(255,255,255,${md*0.4}) 38%,
+            transparent 62%)`;
+      }
+
+      /* Spring target — offset from centre */
+      tx = (xP - 0.5) * 14;
+      ty = (yP - 0.5) * 10;
+      if(!raf) raf = requestAnimationFrame(springTick);
+
+      /* Distortion filter modulation */
       const dm=document.querySelector('#glass-distortion feDisplacementMap');
       if(dm){
-        const sc=60+(xPct/100)*25+(yPct/100)*15;
-        dm.setAttribute('scale',Math.min(sc,95).toFixed(1));
+        const sc=55 + xP*22 + yP*13;
+        dm.setAttribute('scale', Math.min(sc,90).toFixed(1));
       }
     });
+
     el.addEventListener('mouseleave',function(){
-      const s=this.querySelector('.g-s');
-      if(s)s.style.background='';
+      const s=el.querySelector('.g-s');
+      if(s) s.style.background='';
+      tx=0; ty=0;
+      if(!raf) raf=requestAnimationFrame(springTick);
       const dm=document.querySelector('#glass-distortion feDisplacementMap');
-      if(dm)dm.setAttribute('scale','77');
+      if(dm) dm.setAttribute('scale','77');
+    });
+
+    /* Disable tilt on touch devices */
+    el.addEventListener('touchstart',()=>{
+      el.style.transform='';
+      if(raf){cancelAnimationFrame(raf);raf=null;}
     });
   });
 
@@ -1978,6 +2522,11 @@ document.addEventListener('DOMContentLoaded',()=>{
   });
 
 });
+
+
+
+/* Theme toggle from pill nav */
+
 
 </script>
 <!-- ══════════ FLOATING MESSENGER ══════════ -->
