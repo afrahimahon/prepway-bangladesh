@@ -8,7 +8,7 @@
 <title>Prepway Bangladesh</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
-<meta name="description" content="Prepway Bangladesh is an educational content platform for Bangladeshi students. From Bangladesh, To Bangladesh."/>
+<meta name="description" content="Prepway Bangladesh is an ducational platform which is From Bangladesh, To Bangladesh."/>
 <meta name="keywords" content="Prepway Bangladesh, Bangladeshi student guidance, SSC preparation, HSC preparation, university admission Bangladesh, medical admission Bangladesh, Show Your Voice podcast, Prepway Podcast, student podcast Bangladesh, Prepway Group"/>
 <meta name="author" content="Prepway Group"/>
 <meta name="robots" content="index, follow"/>
@@ -17,7 +17,7 @@
 <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Prepway Bangladesh — From Bangladesh, To Bangladesh"/>
-<meta property="og:description" content="Prepway Bangladesh is an educational content platform for Bangladeshi students. From Bangladesh, To Bangladesh."/>
+<meta property="og:description" content="Prepway Bangladesh is an ducational platform which is From Bangladesh, To Bangladesh."/>
 <meta property="og:image" content="logo.png"/>
 <meta property="og:url" content="https://prepwaybd.vercel.app/"/>
 <meta property="og:site_name" content="Prepway Bangladesh"/>
@@ -26,7 +26,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Prepway Bangladesh — From Bangladesh, To Bangladesh"/>
-<meta name="twitter:description" content="Prepway Bangladesh is an educational content platform for Bangladeshi students. From Bangladesh, To Bangladesh."/>
+<meta name="twitter:description" content="Prepway Bangladesh is an ducational platform which is From Bangladesh, To Bangladesh."/>
 <meta name="twitter:image" content="logo.png"/>
 
 <!-- Theme color for mobile browsers -->
@@ -577,26 +577,7 @@ nav{
 [data-theme="light"] .mob-nav ul a:hover{background:rgba(0,0,0,0.04);}
 .mob-theme-lbl{ display:none; }
 
-/* ══════════════════════════════════════════
-   VADIK PILL NAV — exact reference implementation
-   Fixed bottom, full Vadik reflex box-shadow,
-   Sliding indicator with stretch physics
-══════════════════════════════════════════ */
 
-
-  to  {opacity:1;transform:translateX(-50%) translateY(0) scale(1);}
-}
-[data-theme="light"] 
-
-/* Sliding indicator — Vadik recipe */
-
-[data-theme="light"] 
-
-
-  45% {scale:1.18 1}
-  100%{scale:1    1}
-}
-/* Each tab — text only */
 
 
 
@@ -607,27 +588,15 @@ nav{
    HERO
 ══════════════════════════════════════════ */
 .hero{
-  min-height:100vh;
-  padding-top:80px;
-
-  display:grid;
-  grid-template-columns:1.1fr 0.9fr;
-
-  align-items:center;
-  justify-content:center;
-
-  gap:4rem;
-
-  max-width:1200px;
-  margin:0 auto;
-
-  padding-left:3rem;
-  padding-right:3rem;
-
-  position:relative;
-  z-index:1;
+  min-height:100vh;padding-top:62px;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:3rem;
+  max-width:1160px;margin:0 auto;
+  padding-left:2.5rem;padding-right:2.5rem;
+  position:relative;z-index:1;
+  overflow:visible;
 }
-.hero-left{animation:fadeUp .7s ease both;}
+.hero-left{animation:fadeUp .7s ease both;min-width:0;overflow:visible;}
 .hero-right{display:flex;justify-content:center;align-items:center;animation:fadeUp .8s .12s ease both;}
 
 /* Eyebrow pill — Cascadia Code */
@@ -883,7 +852,139 @@ nav{
 /* ══════════════════════════════════════════
    ABOUT
 ══════════════════════════════════════════ */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:start;}
+/* ══════════════════════════════════════════
+   STORY CARDS — expandable accordion cards
+══════════════════════════════════════════ */
+.story-cards{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  margin-bottom:0;
+}
+.story-card{
+  border-radius:18px;
+  cursor:pointer;
+  transition:transform .22s cubic-bezier(.34,1.56,.64,1), box-shadow .22s;
+  -webkit-tap-highlight-color:transparent;
+  user-select:none;
+  /* Override glass defaults for true transparency */
+  background:transparent !important;
+}
+/* g-o (tint layer): near-transparent so backdrop shows through */
+.story-card .g-o{
+  background:color-mix(in srgb, var(--gc-bg) 40%, transparent) !important;
+}
+/* g-f (blur layer): strong blur for real frosted look */
+.story-card .g-f{
+  backdrop-filter:blur(20px) saturate(180%) brightness(1.04) !important;
+  -webkit-backdrop-filter:blur(20px) saturate(180%) brightness(1.04) !important;
+}
+.story-card:hover{transform:translateY(-2px);box-shadow:var(--R-glass);}
+/* Ensure text stays legible through glass */
+.story-card .sc-title{color:var(--text);text-shadow:none;}
+.story-card .sc-preview,.story-card .story-p{color:var(--text-2);}
+[data-theme="light"] .story-card .g-o{
+  background:rgba(255,255,255,0.45) !important;
+}
+.sc-inner{padding:1.4rem 1.5rem;}
+.sc-header{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  margin-bottom:.75rem;
+}
+.sc-num{
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-weight:700;font-size:.62rem;
+  color:var(--brand);
+  background:rgba(214,54,81,0.10);
+  border:1px solid rgba(214,54,81,0.22);
+  border-radius:6px;
+  padding:.18rem .48rem;
+  letter-spacing:.1em;
+  flex-shrink:0;
+}
+.sc-title{
+  font-family:"Outfit",sans-serif;
+  font-weight:800;font-size:1.05rem;
+  color:var(--text);letter-spacing:-.01em;
+  flex:1;
+}
+.sc-date{
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.60rem;font-weight:500;
+  color:var(--text-3);
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.sc-chevron{
+  flex-shrink:0;
+  color:var(--text-3);
+  display:flex;align-items:center;
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1),
+             color .2s;
+}
+.story-card.open .sc-chevron{
+  transform:rotate(180deg);
+  color:var(--brand);
+}
+/* Preview — always visible */
+.sc-preview{
+  font-family:"Plus Jakarta Sans",sans-serif;
+  font-size:.90rem;font-weight:500;
+  color:var(--text-2);
+  line-height:1.65;
+  margin:0;
+}
+/* Body — hidden by default, expands on open */
+.sc-body{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .45s cubic-bezier(.4,0,.2,1),
+             opacity .35s ease,
+             margin-top .35s ease;
+  opacity:0;
+  margin-top:0;
+}
+.story-card.open .sc-body{
+  max-height:600px;
+  opacity:1;
+  margin-top:1rem;
+}
+/* Read more hint */
+.sc-hint{
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.60rem;font-weight:600;
+  color:var(--brand);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-top:.6rem;
+  display:block;
+  opacity:.8;
+  transition:opacity .2s;
+}
+.story-card.open .sc-hint{display:none;}
+
+/* Feature cards grid — 3 across desktop, 2 tablet, 1 mobile */
+.acards-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1rem;
+}
+@media(max-width:1024px){
+  .acards-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:768px){
+  .acards-grid{grid-template-columns:repeat(2,1fr);gap:.75rem;}
+  .sc-title{font-size:.95rem;}
+  .sc-date{display:none;}
+  .sc-inner{padding:1.1rem 1.2rem;}
+}
+@media(max-width:480px){
+  .acards-grid{grid-template-columns:1fr;}
+}
+
+
 /* Numbered section labels for About history */
 .story-section-label{
   display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;
@@ -931,8 +1032,19 @@ nav{
   border-radius:0 10px 10px 0;
 }
 .acards{display:flex;flex-direction:column;gap:.95rem;}
-.acard{transition:transform .2s;}
-.acard:hover{transform:translateX(5px);}
+.acard{
+  transition:transform .2s, box-shadow .2s;
+  background:transparent !important;
+}
+.acard .g-o{
+  background:color-mix(in srgb, var(--gc-bg) 35%, transparent) !important;
+}
+.acard .g-f{
+  backdrop-filter:blur(16px) saturate(160%) !important;
+  -webkit-backdrop-filter:blur(16px) saturate(160%) !important;
+}
+.acard:hover{transform:translateY(-2px);box-shadow:var(--R-glass);}
+[data-theme="light"] .acard .g-o{background:rgba(255,255,255,0.40) !important;}
 .acard-head{display:flex;align-items:center;gap:.72rem;margin-bottom:.5rem;}
 .aico{
   width:36px;height:36px;border-radius:10px;flex-shrink:0;
@@ -1335,6 +1447,24 @@ footer{
   .slogan-wrap{ margin-bottom:1.5rem; }
 }
 /* Small mobile */
+
+/* Mobile: notice board adapts width naturally */
+@media(max-width:768px){
+  .notice-board{
+    width:100%;
+    max-width:100%;
+    border-radius:12px;
+  }
+  .nb-text{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    max-width:none;
+    font-size:.78rem;
+  }
+  .nb-chevron{display:flex;}
+}
+
 @media(max-width:420px){
   .hero-h1{ font-size:clamp(2rem,10.5vw,3rem); }
   .slogan-bn{ font-size:clamp(1rem,4.5vw,1.3rem); }
@@ -1346,20 +1476,21 @@ footer{
    Replaces hero pill — scrolls through updates
 ══════════════════════════════════════════ */
 .notice-board{
-  display:inline-flex;
+  display:flex;           /* flex so it respects width properly */
   border-radius:14px;
   margin-bottom:1.6rem;
-  cursor:pointer;       /* clickable to expand */
+  cursor:pointer;
+  /* Desktop: stretch full width of hero-left */
+  width:100%;
   max-width:520px;
-  /* Smooth expansion */
-  transition:max-width .4s cubic-bezier(.4,0,.2,1);
   user-select:none;
 }
 .nb-inner{
-  display:flex;align-items:flex-start;gap:.55rem;
-  padding:.44rem .9rem .44rem .7rem;
+  display:flex;align-items:center;gap:.5rem;
+  padding:.42rem .85rem .42rem .65rem;
   min-width:0;
   flex-wrap:nowrap;
+  width:100%;
 }
 /* When expanded, text wraps */
 .notice-board.nb-expanded .nb-inner{flex-wrap:wrap;}
@@ -1394,6 +1525,7 @@ footer{
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
   flex:1;min-width:0;
   transition:opacity .3s ease;
+  max-width:none; /* full width on desktop */
 }
 .nb-chevron{
   flex-shrink:0;color:var(--text-3);
@@ -1677,6 +1809,195 @@ footer{
 
 
 
+
+/* Upcoming card — same transparent glass as story cards */
+.upcoming-card .g-o{
+  background:color-mix(in srgb, var(--gc-bg) 40%, transparent) !important;
+}
+.upcoming-card .g-f{
+  backdrop-filter:blur(20px) saturate(180%) brightness(1.04) !important;
+  -webkit-backdrop-filter:blur(20px) saturate(180%) brightness(1.04) !important;
+}
+[data-theme="light"] .upcoming-card .g-o{background:rgba(255,255,255,0.45) !important;}
+
+
+/* ══════════════════════════════════════════
+   LITE MODE BUTTON
+══════════════════════════════════════════ */
+.lite-btn{
+  display:flex;align-items:center;gap:.35rem;
+  background:transparent;
+  border:1px solid var(--border-2);
+  border-radius:100px;
+  padding:.3rem .75rem;
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.65rem;font-weight:600;
+  color:var(--text-3);
+  cursor:pointer;
+  transition:color .2s, border-color .2s, background .2s;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+@media(max-width:768px){
+  /* On mobile the lite btn in nav-right is hidden — shown inside drawer instead */
+  .nav-right .lite-btn{ display:none; }
+}
+.lite-btn:hover{color:var(--text);border-color:var(--brand);background:rgba(214,54,81,0.06);}
+/* Active state — when lite is ON */
+[data-view="lite"] .lite-btn{
+  color:var(--brand);
+  border-color:var(--brand);
+  background:rgba(214,54,81,0.10);
+}
+/* Lite btn shows on all screen sizes */
+
+/* ══════════════════════════════════════════
+   LITE / OPTIMIZED VIEW  [data-view="lite"]
+   Kills: all animations, backdrop-filter,
+   glass blur, orbs, canvas, ambient blobs.
+   Keeps: layout, content, colour, readability.
+══════════════════════════════════════════ */
+
+/* ── Global: stop every CSS animation & transition ── */
+[data-view="lite"] *,
+[data-view="lite"] *::before,
+[data-view="lite"] *::after {
+  animation:none !important;
+  animation-duration:0s !important;
+  animation-delay:0s !important;
+  transition:none !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+}
+
+/* ── Remove all glass blur layers ── */
+[data-view="lite"] .g-f{
+  display:none !important;
+}
+[data-view="lite"] .g-s{
+  display:none !important;
+}
+[data-view="lite"] .g-o{
+  background:var(--bg-card) !important;
+  opacity:1 !important;
+}
+
+/* ── Give glass elements clean solid backgrounds ── */
+[data-view="lite"] .glass,
+[data-view="lite"] .glass-form{
+  background:var(--bg-card) !important;
+  border:1px solid var(--border-2) !important;
+  box-shadow:0 1px 6px rgba(0,0,0,0.08) !important;
+}
+[data-theme="light"][data-view="lite"] .glass,
+[data-theme="light"][data-view="lite"] .glass-form{
+  background:rgba(255,255,255,0.88) !important;
+  box-shadow:0 1px 6px rgba(40,25,10,0.08) !important;
+}
+
+/* ── Kill background decorations ── */
+[data-view="lite"] .graph-bg,
+[data-view="lite"] #mathCanvas,
+[data-view="lite"] .glo,
+[data-view="lite"] .glo-3,
+[data-view="lite"] .glo-4{
+  display:none !important;
+}
+[data-view="lite"] #podcasts::before,
+[data-view="lite"] #special::before,
+[data-view="lite"] #about::before,
+[data-view="lite"] #booking::before{
+  display:none !important;
+}
+
+/* ── Nav: solid background ── */
+[data-view="lite"] nav{
+  background:var(--bg) !important;
+  border-bottom:1px solid var(--border) !important;
+}
+
+/* ── Footer: solid background ── */
+[data-view="lite"] footer{
+  background:var(--bg-s) !important;
+}
+
+/* ── Typing animation in lite mode: show full text instantly ── */
+[data-view="lite"] .ts{
+  visibility:visible !important;
+}
+[data-view="lite"] .to{
+  display:none !important;
+}
+[data-view="lite"] .tc{
+  display:none !important;
+}
+/* Bengali slogan shows immediately in lite */
+[data-view="lite"] #hero-bn{
+  opacity:1 !important;
+  transform:none !important;
+  max-height:none !important;
+  overflow:visible !important;
+}
+[data-view="lite"] .slogan-bn{
+  opacity:1 !important;
+}
+/* Scroll reveal: show all immediately */
+[data-view="lite"] .rev{
+  opacity:1 !important;
+  transform:none !important;
+}
+/* Logo card animations off */
+[data-view="lite"] .logo-card-grid,
+[data-view="lite"] .ring{
+  display:none !important;
+}
+
+/* ── Lite mode indicator banner ── */
+[data-view="lite"] .lite-banner{
+  display:flex !important;
+}
+.lite-banner{
+  display:none;
+  position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);
+  z-index:800;
+  background:rgba(214,54,81,0.90);
+  color:#fff;
+  font-family:"Cascadia Code",monospace;font-size:.62rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;
+  padding:.3rem .85rem;border-radius:100px;
+  pointer-events:none;
+  white-space:nowrap;
+  box-shadow:0 4px 16px rgba(214,54,81,0.30);
+}
+
+
+/* Mobile drawer lite toggle row */
+.mob-lite{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.62rem 1rem;margin-top:.25rem;
+  font-family:"Cascadia Code",monospace;font-size:.82rem;color:var(--text-2);
+  border-radius:10px;background:rgba(255,255,255,0.025);
+}
+[data-theme="light"] .mob-lite{background:rgba(0,0,0,0.025);}
+.mob-lite-lbl{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;}
+.mob-lite-btn{
+  display:flex;align-items:center;gap:.4rem;
+  background:transparent;
+  border:1px solid var(--border-2);
+  border-radius:100px;
+  padding:.28rem .7rem;
+  font-family:"Cascadia Code",monospace;font-size:.65rem;font-weight:600;
+  color:var(--text-3);
+  cursor:pointer;
+  transition:color .2s, border-color .2s, background .2s;
+  white-space:nowrap;
+}
+.mob-lite-btn:hover{color:var(--brand);border-color:var(--brand);}
+[data-view="lite"] .mob-lite-btn{
+  color:var(--brand);border-color:var(--brand);
+  background:rgba(214,54,81,0.10);
+}
+
 </style>
 </head>
 <body>
@@ -1720,6 +2041,14 @@ footer{
     </ul>
 
     <div class="nav-right">
+      <!-- Lite mode toggle -->
+      <button class="lite-btn" id="liteBtn" onclick="toggleLite()" title="Switch to Optimized View">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" id="liteBtnIcon">
+          <circle cx="12" cy="12" r="3" fill="currentColor"/>
+          <path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span id="liteBtnTxt">Lite</span>
+      </button>
       <div class="theme-wrap">
         <span class="theme-lbl" id="tLbl">Light</span>
         <label class="theme-toggle-pill" aria-label="Toggle dark/light mode" title="Toggle theme">
@@ -1769,6 +2098,17 @@ footer{
     <li><a href="#booking"  onclick="closeMenu()">Be a Guest</a></li>
   </ul>
   <a href="#booking" class="mob-cta" onclick="closeMenu()">Apply Now →</a>
+  <!-- Lite mode toggle row in mobile drawer -->
+  <div class="mob-lite">
+    <span class="mob-lite-lbl">View</span>
+    <button class="mob-lite-btn" id="mobLiteBtn" onclick="toggleLite()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" id="mobLiteBtnIcon">
+        <circle cx="12" cy="12" r="3" fill="currentColor"/>
+        <path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <span id="mobLiteTxt">Switch to Lite</span>
+    </button>
+  </div>
   <div class="mob-theme">
     <span class="mob-theme-lbl">Theme</span>
     <label class="theme-toggle-pill" aria-label="Toggle dark/light mode">
@@ -1991,130 +2331,141 @@ footer{
 <!-- ══════════ ABOUT US ══════════ -->
 <section class="section" id="about">
 <div class="container">
-  <div class="rev" style="margin-bottom:3rem;">
+  <div class="rev" style="margin-bottom:2.5rem;">
     <div class="eyebrow">Our Story</div>
     <h2 class="sh2">About <em>Us</em></h2>
   </div>
 
-  <div class="about-grid">
+  <!-- Story cards — expandable -->
+  <div class="story-cards rev">
 
-    <!-- Left: History split into three clear sections -->
-    <div class="rev">
-
-      <!-- ── PREPWAY BANGLADESH ── -->
-      <div class="story-section-label">
-        <span class="story-section-tag">01</span>
-        <span class="story-section-name">Prepway Bangladesh</span>
-      </div>
-
-      <p class="story-p">
-        <strong>Prepway Bangladesh</strong> was established on <strong>August 9, 2025</strong> — born from a simple but urgent question: why are millions of Bangladeshi students navigating SSC, HSC, and university admissions completely alone, without honest, accessible guidance?
-      </p>
-      <p class="story-p">
-        The answer came from an unexpected place. After the first episode of the Prepway Podcast — where Afrahim Siddiqui Ahon hosted a discussion on studying abroad without IELTS or SAT — the response from students was overwhelming. The messages that flooded in were not only about studying overseas. Students were asking about local struggles too: admission test preparation, subject guidance, life after HSC. The need was right there, undeniable.
-      </p>
-      <p class="story-p">
-        Ahon raised the idea with the other directors of Prepway Abroad. Together, they decided to build something specifically for Bangladesh — a platform that would guide students through every stage of their academic journey within the country. Prepway Bangladesh was the result. It began through podcasts, because the team believed the most powerful form of guidance was hearing it directly from students who had already been through it. <strong>Show Your Voice</strong> became that series — unscripted, real, and built entirely for Bangladesh.
-      </p>
-
-      <div class="story-divider"></div>
-
-      <!-- ── PREPWAY ABROAD ── -->
-      <div class="story-section-label">
-        <span class="story-section-tag">02</span>
-        <span class="story-section-name">Prepway Abroad</span>
-      </div>
-
-      <p class="story-p">
-        Before Prepway Bangladesh, before Prepway Group — there was <strong>Prepway Abroad</strong>. Founded on <strong>June 26, 2025</strong>, it was an independent initiative created by four people who shared one belief: that Bangladeshi students dreaming of international education deserved better access to honest guidance and real information.
-      </p>
-      <p class="story-p">
-        Prepway Abroad was built as a podcast and content platform — covering real stories of Bangladeshi students studying in the USA, UK, Canada, Australia, and beyond. It tackled scholarships, visa processes, university applications, IELTS preparation, and the realities of student life abroad. The founding team was:
-      </p>
-      <div class="founders-list">
-        K. M. Rubaid Ferdous Swapnil<br>
-        Zinat Hossain Any<br>
-        Afrahim Siddiqui Ahon<br>
-        Md. Emran Hasan Emon
-      </div>
-      <p class="story-p">
-        At the time of its founding, Prepway Abroad stood alone — there was no group, no umbrella organisation. It was simply four people with a mission. That mission resonated, and the podcast grew. The response from students is ultimately what sparked the idea for Prepway Bangladesh.
-      </p>
-
-      <div class="story-divider"></div>
-
-      <!-- ── PREPWAY GROUP ── -->
-      <div class="story-section-label">
-        <span class="story-section-tag">03</span>
-        <span class="story-section-name">Prepway Group</span>
-      </div>
-
-      <p class="story-p">
-        Once Prepway Bangladesh was established in August 2025, it became clear that two growing initiatives needed a shared identity, shared values, and shared direction. <strong>Prepway Group</strong> was formed as the parent organisation — an umbrella that formally brought Prepway Bangladesh and Prepway Abroad together under one roof.
-      </p>
-      <p class="story-p">
-        Prepway Group was never the starting point. It was the natural result of growth — two platforms, one vision. Today, the group is committed to one purpose: empowering every Bangladeshi student, whether they are preparing for their HSC exam at home or applying to universities on the other side of the world.
-      </p>
-
-      <div class="vis-box">
-        <h4>// Upcoming from Prepway Bangladesh</h4>
-        <p>Building the next generation of academic content — from admission prep to university guidance.</p>
-        <div class="chips">
-          <div class="chip">Medical Admission Course</div>
-          <div class="chip s">University Subject Courses</div>
-          <div class="chip s">HSC Preparation Series</div>
-          <div class="chip">More</div>
+    <!-- Card 01: Prepway Bangladesh -->
+    <div class="story-card glass" onclick="toggleStoryCard(this)">
+      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c sc-inner">
+        <div class="sc-header">
+          <span class="sc-num">01</span>
+          <span class="sc-title">Prepway Bangladesh</span>
+          <span class="sc-date">Est. Aug 9, 2025</span>
+          <span class="sc-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <p class="sc-preview">Born from one urgent question — why are millions of Bangladeshi students navigating SSC, HSC, and university admissions completely alone?</p>
+        <div class="sc-body">
+          <p class="story-p">The answer came after the first episode of the Prepway Podcast, where Afrahim Siddiqui Ahon hosted a discussion on studying abroad without IELTS or SAT. The response was overwhelming — students flooded in with local struggles too: admission prep, subject guidance, life after HSC.</p>
+          <p class="story-p">Ahon raised the idea with the other directors. Together, they built Prepway Bangladesh — a platform dedicated to every stage of a student's academic journey within the country. It began with podcasts, because the most powerful guidance comes from students who have already been through it. <strong>Show Your Voice</strong> became that series — unscripted, real, and built entirely for Bangladesh.</p>
         </div>
       </div>
     </div>
 
-    <!-- Right: cards -->
-    <div class="acards rev">
-
-      <div class="glass acard">
-        <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-        <div class="g-c" style="padding:1.25rem;">
-          <div class="acard-head"><div class="aico"><img src="icons/icon-04.svg" alt="" class="aico-img icon-mono"></div><h4>// Show Your Voice</h4></div>
-          <p>Season 1 features three long-form episodes — from medical admission journeys to the gaming industry of Bangladesh. Real students, real stories, no scripts.</p>
+    <!-- Card 02: Prepway Abroad -->
+    <div class="story-card glass" onclick="toggleStoryCard(this)">
+      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c sc-inner">
+        <div class="sc-header">
+          <span class="sc-num">02</span>
+          <span class="sc-title">Prepway Abroad</span>
+          <span class="sc-date">Est. Jun 26, 2025</span>
+          <span class="sc-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <p class="sc-preview">Before Prepway Bangladesh, before Prepway Group — four people started something independently to help Bangladeshi students reach the world.</p>
+        <div class="sc-body">
+          <p class="story-p">Prepway Abroad was built as a podcast and content platform covering real student stories from the USA, UK, Canada, Australia, and beyond — scholarships, visas, university applications, IELTS, and life abroad. The founding team:</p>
+          <div class="founders-list">
+            K. M. Rubaid Ferdous Swapnil<br>
+            Zinat Hossain Any<br>
+            Afrahim Siddiqui Ahon<br>
+            Md. Emran Hasan Emon
+          </div>
+          <p class="story-p">At founding, Prepway Abroad stood alone — no group, no umbrella. Just four people with a mission. That mission resonated, grew, and ultimately sparked the idea for Prepway Bangladesh.</p>
         </div>
       </div>
+    </div>
 
-      <div class="glass acard">
-        <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-        <div class="g-c" style="padding:1.25rem;">
-          <div class="acard-head"><div class="aico"><img src="icons/icon-05.svg" alt="" class="aico-img icon-mono"></div><h4>// Academic Guidance</h4></div>
-          <p>From SSC basics to HSC advanced content — study strategies, subject lessons, and exam hacks in Bangla, built for Bangladeshi students.</p>
+    <!-- Card 03: Prepway Group -->
+    <div class="story-card glass" onclick="toggleStoryCard(this)">
+      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c sc-inner">
+        <div class="sc-header">
+          <span class="sc-num">03</span>
+          <span class="sc-title">Prepway Group</span>
+          <span class="sc-date">Est. Aug 2025</span>
+          <span class="sc-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <p class="sc-preview">Two growing initiatives. One shared vision. Prepway Group was the natural result of growth — not the starting point.</p>
+        <div class="sc-body">
+          <p class="story-p">Once Prepway Bangladesh launched in August 2025, it became clear both initiatives needed a shared identity and direction. <strong>Prepway Group</strong> was formed as the parent organisation — bringing Prepway Bangladesh and Prepway Abroad under one roof.</p>
+          <p class="story-p">Today the group is committed to one purpose: empowering every Bangladeshi student, whether preparing for their HSC at home or applying to universities on the other side of the world.</p>
         </div>
       </div>
+    </div>
 
-      <div class="glass acard">
-        <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-        <div class="g-c" style="padding:1.25rem;">
-          <div class="acard-head"><div class="aico"><img src="icons/icon-06.svg" alt="" class="aico-img icon-mono"></div><h4>// Admission Preparation</h4></div>
-          <p>Guidance for medical, engineering, and public university admissions — including real talk from students who made it.</p>
-        </div>
+  </div><!-- /story-cards -->
+
+  <!-- Upcoming standalone glass card -->
+  <div class="glass upcoming-card rev" style="margin-top:1.2rem;border-radius:18px;">
+    <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+    <div class="g-c" style="padding:1.4rem 1.5rem;">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem;">
+        <span style="font-family:'Cascadia Code',monospace;font-size:.62rem;font-weight:700;color:var(--brand);background:rgba(214,54,81,0.10);border:1px solid rgba(214,54,81,0.22);border-radius:6px;padding:.18rem .48rem;letter-spacing:.1em;">Coming Soon</span>
+        <h4 style="font-family:'Cascadia Code',monospace;font-size:.82rem;font-weight:700;color:var(--brand);margin:0;">// Upcoming from Prepway Bangladesh</h4>
       </div>
-
-      <div class="glass acard">
-        <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-        <div class="g-c" style="padding:1.25rem;">
-          <div class="acard-head"><div class="aico"><img src="icons/icon-07.svg" alt="" class="aico-img icon-mono"></div><h4>// Sister — Prepway Abroad</h4></div>
-          <p>For students dreaming of studying overseas, Prepway Abroad covers scholarships, visa processes, university applications, and real journeys to the USA, UK, Canada and beyond.</p>
-        </div>
+      <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;color:var(--text-2);margin-bottom:.85rem;line-height:1.6;">Building the next generation of academic content — from admission prep to university guidance.</p>
+      <div class="chips">
+        <div class="chip">Medical Admission Course</div>
+        <div class="chip s">University Subject Courses</div>
+        <div class="chip s">HSC Preparation Series</div>
+        <div class="chip">More</div>
       </div>
-
-      <div class="glass acard" style="border:1px solid rgba(220,59,82,.28);">
-        <div class="g-f"></div>
-        <div class="g-o" style="background:rgba(220,59,82,.06)!important;"></div>
-        <div class="g-s"></div>
-        <div class="g-c" style="padding:1.25rem;">
-          <div class="acard-head"><div class="aico"><img src="icons/icon-flag-bd.svg" alt="" class="aico-img" style="width:28px;height:auto;border-radius:2px;"></div><h4>// Created for Bangladesh</h4></div>
-          <p>Every story we tell, every student we guide, every piece of content we make — it is all rooted in pride for this country and a deep commitment to its students. From Bangladesh, to Bangladesh.</p>
-        </div>
-      </div>
-
     </div>
   </div>
+
+  <!-- Feature cards grid -->
+  <div class="acards-grid rev" style="margin-top:2.5rem;">
+
+    <div class="glass acard">
+      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c" style="padding:1.1rem;">
+        <div class="acard-head"><div class="aico"><img src="icons/icon-04.svg" alt="" class="aico-img icon-mono"></div><h4>// Show Your Voice</h4></div>
+        <p>Season 1 — three long-form episodes. Real students, real stories, no scripts.</p>
+      </div>
+    </div>
+
+    <div class="glass acard">
+      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c" style="padding:1.1rem;">
+        <div class="acard-head"><div class="aico"><img src="icons/icon-05.svg" alt="" class="aico-img icon-mono"></div><h4>// Academic Guidance</h4></div>
+        <p>SSC to HSC — study strategies, subject lessons, exam hacks in Bangla.</p>
+      </div>
+    </div>
+
+    <div class="glass acard">
+      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c" style="padding:1.1rem;">
+        <div class="acard-head"><div class="aico"><img src="icons/icon-06.svg" alt="" class="aico-img icon-mono"></div><h4>// Admission Prep</h4></div>
+        <p>Medical, engineering, public university — real talk from students who made it.</p>
+      </div>
+    </div>
+
+    <div class="glass acard">
+      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c" style="padding:1.1rem;">
+        <div class="acard-head"><div class="aico"><img src="icons/icon-07.svg" alt="" class="aico-img icon-mono"></div><h4>// Prepway Abroad</h4></div>
+        <p>Scholarships, visas, applications — real journeys to USA, UK, Canada &amp; beyond.</p>
+      </div>
+    </div>
+
+    <div class="glass acard acard-bd" style="border:1px solid rgba(220,59,82,.28);">
+      <div class="g-f"></div>
+      <div class="g-o" style="background:rgba(220,59,82,.06)!important;"></div>
+      <div class="g-s"></div>
+      <div class="g-c" style="padding:1.1rem;">
+        <div class="acard-head"><div class="aico"><img src="icons/icon-flag-bd.svg" alt="" class="aico-img" style="width:26px;height:auto;border-radius:2px;"></div><h4>// For Bangladesh</h4></div>
+        <p>Every story, every student, every piece of content — rooted in pride for this country.</p>
+      </div>
+    </div>
+
+  </div><!-- /acards-grid -->
+
 </div>
 </section>
 
@@ -2252,7 +2603,7 @@ function closeMenu(){
 ══════════════════════════════════════════ */
 const NOTICE = {
   tag:  "Update",
-  text: "Initial Beta Launch of the Website. Follow for future updates."
+  text: "Initial Beta Launch of Prepway Bangladesh Website. Follow for more updates."
 };
 
 // Initialise notice board text
@@ -2517,7 +2868,88 @@ document.addEventListener('DOMContentLoaded',()=>{
     });
   });
 
-  /* ══ Scroll reveal ══ */
+
+
+/* ══════════════════════════════════════════
+   LITE / OPTIMIZED VIEW
+   Persists across page refreshes via localStorage
+══════════════════════════════════════════ */
+function toggleLite(){
+  const isLite = document.documentElement.getAttribute('data-view') === 'lite';
+  setLiteMode(!isLite);
+}
+function setLiteMode(on){
+  const root = document.documentElement;
+  const btn      = document.getElementById('liteBtn');
+  const txt      = document.getElementById('liteBtnTxt');
+  const icon     = document.getElementById('liteBtnIcon');
+  const mobTxt   = document.getElementById('mobLiteTxt');
+  const mobIcon  = document.getElementById('mobLiteBtnIcon');
+
+  const ICON_LITE = '<circle cx="12" cy="12" r="3" fill="currentColor"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>';
+  const ICON_RICH = '<path d="M12 2l1.5 4.5h4.5l-3.6 2.7 1.4 4.3L12 11l-3.8 2.5 1.4-4.3L6 6.5h4.5z" fill="currentColor"/>';
+
+  if(on){
+    root.setAttribute('data-view','lite');
+    if(txt)     txt.textContent   = 'Rich';
+    if(icon)    icon.innerHTML    = ICON_RICH;
+    if(mobTxt)  mobTxt.textContent  = 'Switch to Rich';
+    if(mobIcon) mobIcon.innerHTML   = ICON_RICH;
+    localStorage.setItem('pw-view','lite');
+    /* Stop math canvas */
+    if(window._mathCanvasRaf) cancelAnimationFrame(window._mathCanvasRaf);
+    /* If typing is mid-animation, show full text immediately */
+    const to1 = document.getElementById('to1');
+    const to2 = document.getElementById('to2');
+    if(to1) to1.style.display = 'none';
+    if(to2) to2.style.display = 'none';
+    /* Show Bengali immediately */
+    const bn = document.getElementById('hero-bn');
+    if(bn){ bn.style.opacity='1'; bn.classList.add('show'); }
+  } else {
+    root.removeAttribute('data-view');
+    if(txt)     txt.textContent   = 'Lite';
+    if(icon)    icon.innerHTML    = ICON_LITE;
+    if(mobTxt)  mobTxt.textContent  = 'Switch to Lite';
+    if(mobIcon) mobIcon.innerHTML   = ICON_LITE;
+    localStorage.setItem('pw-view','rich');
+    /* Restore typed output spans */
+    const to1 = document.getElementById('to1');
+    const to2 = document.getElementById('to2');
+    if(to1) to1.style.display = '';
+    if(to2) to2.style.display = '';
+    if(typeof initMathCanvas === 'function') initMathCanvas();
+  }
+}
+/* Restore lite mode from localStorage */
+(function(){
+  if(localStorage.getItem('pw-view') === 'lite'){
+    setLiteMode(true);
+  }
+  /* Sync mob button on load regardless */
+  const mobTxt = document.getElementById('mobLiteTxt');
+  if(mobTxt && localStorage.getItem('pw-view') !== 'lite'){
+    mobTxt.textContent = 'Switch to Lite';
+  }
+})();
+
+
+/* ══════════════════════════════════════════
+   STORY CARD ACCORDION
+══════════════════════════════════════════ */
+window.toggleStoryCard = function(card){
+  const isOpen = card.classList.contains('open');
+  document.querySelectorAll('.story-card.open').forEach(c => c.classList.remove('open'));
+  if(!isOpen){
+    card.classList.add('open');
+    setTimeout(()=>{
+      const top = window.scrollY + card.getBoundingClientRect().top - 80;
+      window.scrollTo({top, behavior:'smooth'});
+    }, 80);
+  }
+};
+
+
   const obs=new IntersectionObserver(entries=>{
     entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});
   },{threshold:.09});
@@ -2552,7 +2984,11 @@ document.addEventListener('DOMContentLoaded',()=>{
     <span class="fab-label">Message Us</span>
   </div>
 </a>
-<!-- Vercel Analytics -->
+
+
+<!-- Lite mode indicator -->
+<div class="lite-banner" id="liteBanner">⚡ Optimized View</div>
+ <!-- Vercel Analytics -->
 <script defer src="/_vercel/insights/script.js"></script>
 
 <!-- Vercel Speed Insights -->
