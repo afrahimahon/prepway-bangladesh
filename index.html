@@ -5,10 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
 
 <!-- SEO Meta Tags -->
-<title>Prepway Bangladesh</title>
-<!-- Favicon — uses your actual logo.png file -->
-<link rel="icon" type="image/png" href="logo.png">
-<link rel="apple-touch-icon" href="logo.png">
+<title>Prepway Bangladesh — Educational Podcast &amp; Guidance Platform for Bangladeshi Students</title>
 <meta name="description" content="Prepway Bangladesh is a podcast and educational content platform guiding Bangladeshi students through SSC, HSC, and university admissions. Watch Show Your Voice — real student stories, real guidance. From Bangladesh, To Bangladesh."/>
 <meta name="keywords" content="Prepway Bangladesh, Bangladeshi student guidance, SSC preparation, HSC preparation, university admission Bangladesh, medical admission Bangladesh, Show Your Voice podcast, Prepway Podcast, student podcast Bangladesh, Prepway Group"/>
 <meta name="author" content="Prepway Group"/>
@@ -424,8 +421,35 @@ nav{
   max-width:1160px;margin:0 auto;padding:0 2.5rem;
   height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;
 }
-.nav-logo{flex-shrink:0;display:flex;align-items:center;}
+.nav-logo{flex-shrink:0;display:flex;align-items:center;gap:.55rem;}
 .nav-logo img{height:44px;width:auto;display:block;}
+
+/* ── BETA badge ── */
+.beta-badge{
+  display:inline-flex;align-items:center;
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-weight:700;font-size:.58rem;letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--brand);
+  background:rgba(214,54,81,0.10);
+  border:1px solid rgba(214,54,81,0.30);
+  border-radius:5px;
+  padding:.18rem .46rem;
+  line-height:1;
+  position:relative;
+  top:-1px;
+  animation:betaPulse 2.8s ease-in-out infinite;
+  user-select:none;
+  flex-shrink:0;
+}
+@keyframes betaPulse{
+  0%,100%{ opacity:1; box-shadow:0 0 0 0 rgba(214,54,81,0); }
+  50%    { opacity:.75; box-shadow:0 0 0 3px rgba(214,54,81,0.12); }
+}
+[data-theme="light"] .beta-badge{
+  background:rgba(214,54,81,0.08);
+  border-color:rgba(214,54,81,0.25);
+}
 
 /* Nav links — Cascadia Code for techy nav feel */
 .nav-links{display:flex;align-items:center;gap:.12rem;list-style:none;}
@@ -931,7 +955,7 @@ footer{
 [data-theme="light"] footer{background:rgba(0,0,0,.018);}
 .ft-inner{max-width:1160px;margin:0 auto;padding:3rem 2.5rem 2rem;}
 .ft-top{display:block;margin-bottom:2.5rem;}
-.ft-logo-row{display:flex;align-items:center;gap:0;margin-bottom:.85rem;}
+.ft-logo-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.85rem;}
 /* Footer brand text — Cascadia Code, prepway=red, Bangladesh=text */
 .ft-lp{font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-weight:700;font-size:1rem;color:var(--brand);letter-spacing:-.02em;}
 .ft-ls{font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-weight:600;font-size:1rem;color:var(--text);letter-spacing:-.01em;}
@@ -1295,6 +1319,7 @@ footer{
     <!-- Replace logo.png with your actual logo file in the same folder -->
     <a href="#" class="nav-logo" title="Prepway Bangladesh" aria-label="Prepway Bangladesh Home">
       <img src="logo.png" alt="Prepway Bangladesh" style="height:44px;width:auto;">
+      <span class="beta-badge">Beta</span>
     </a>
 
     <ul class="nav-links">
@@ -1382,7 +1407,7 @@ footer{
   <div class="hero-left">
     <div class="hero-pill">
       <div class="pill-dot"></div>
-      <span class="pill-txt">Prepway Bangladesh &nbsp;·&nbsp; Est. Aug 2025</span>
+      <span class="pill-txt">Prepway Bangladesh &nbsp;·&nbsp; Est. Aug 2025 &nbsp;·&nbsp; <span style="color:var(--brand);">Beta</span></span>
     </div>
 
     <div class="slogan-wrap" id="slogan-wrap">
@@ -1757,6 +1782,7 @@ footer{
       <div class="ft-brand">
         <div class="ft-logo-row">
           <span class="ft-lp">prepway</span><span class="ft-ls">&nbsp;&nbsp;Bangladesh</span>
+          <span class="beta-badge" style="font-size:.52rem;">Beta</span>
         </div>
         <p>Guiding Bangladeshi students from high school to university — through podcasts, honest stories, and real guidance. A subsidiary of Prepway Group, est. 2025.</p>
         <div class="soc-row">
