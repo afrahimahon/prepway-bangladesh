@@ -1,0 +1,29 @@
+ICON PLACEHOLDERS — READ ICONS_REFERENCE.html to get the SVG code for each icon
+
+icon-01.png  → YouTube icon        → Find SVG in ICONS_REFERENCE.html
+icon-02.png  → Microphone          → Find SVG in ICONS_REFERENCE.html
+icon-03.png  → Play triangle       → Find SVG in ICONS_REFERENCE.html
+icon-04.png  → Podcast mic         → Find SVG in ICONS_REFERENCE.html
+icon-05.png  → Open book           → Find SVG in ICONS_REFERENCE.html
+icon-06.png  → University building → Find SVG in ICONS_REFERENCE.html
+icon-07.png  → Plane               → Find SVG in ICONS_REFERENCE.html
+icon-08.png  → Bangladesh flag     → Find SVG in ICONS_REFERENCE.html
+icon-09.png  → Graduation cap      → Find SVG in ICONS_REFERENCE.html
+icon-10.png  → Star                → Find SVG in ICONS_REFERENCE.html
+icon-11.png  → Facebook logo       → Find SVG in ICONS_REFERENCE.html
+icon-12.png  → Instagram logo      → Find SVG in ICONS_REFERENCE.html
+icon-13.png  → Telegram logo       → Find SVG in ICONS_REFERENCE.html
+icon-14.png  → Messenger logo      → Find SVG in ICONS_REFERENCE.html
+
+HOW TO CONVERT SVG → PNG:
+  1. Open https://svgtopng.com (free)
+  2. Paste the SVG code from ICONS_REFERENCE.html
+  3. Set size to 64x64 pixels
+  4. Download and rename to the correct icon-XX.png filename
+  5. Drop the file in this folder (same folder as index.html)
+
+OR — use icons from a free icon set:
+  https://phosphoricons.com  (clean, modern, free)
+  https://lucide.dev         (minimal, developer-friendly)
+  https://heroicons.com      (simple outlined)
+  Download as SVG → convert to PNG → rename to icon-XX.png

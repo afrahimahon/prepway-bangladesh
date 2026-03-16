@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Prepway Bangladesh — Icon Guide</title>
+<style>
+  body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#111;padding:2rem;margin:0;}
+  h1{font-size:1.5rem;margin-bottom:.5rem;color:#D63651;}
+  .subtitle{color:#666;font-size:.9rem;margin-bottom:2rem;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;}
+  .card{background:#fff;border:1px solid #ddd;border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;}
+  .card-head{display:flex;align-items:center;gap:.75rem;}
+  .icon-preview{width:44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .ui-bg{background:#f0f0f0;}
+  .brand-bg{background:#1a1a1a;}
+  .icon-preview img{width:28px;height:28px;object-fit:contain;}
+  .icon-num{font-weight:700;font-size:1rem;color:#111;}
+  .icon-name{font-size:.82rem;color:#666;margin-top:.15rem;}
+  .icon-file{font-family:monospace;font-size:.78rem;background:#f5f5f5;border:1px solid #ddd;border-radius:6px;padding:.3rem .6rem;color:#D63651;}
+  .icon-usage{font-size:.78rem;color:#888;}
+  .badge{display:inline-block;font-size:.7rem;font-weight:700;padding:.2rem .55rem;border-radius:100px;letter-spacing:.04em;}
+  .badge-ui{background:#E8F4FD;color:#0072B8;}
+  .badge-brand{background:#FFF0F0;color:#D63651;}
+  .badge-white{background:#1a1a1a;color:#fff;}
+  .replace-tip{font-size:.78rem;color:#555;background:#FFFBF0;border:1px solid #F0D070;border-radius:8px;padding:.6rem .8rem;margin-top:.25rem;}
+  .section-title{font-size:1rem;font-weight:700;margin:2rem 0 .75rem;color:#333;padding-bottom:.4rem;border-bottom:2px solid #eee;}
+  .info-box{background:#EFF8FF;border:1px solid #BEE3F8;border-radius:10px;padding:1rem 1.25rem;margin-bottom:2rem;}
+  .info-box h2{font-size:1rem;margin-bottom:.5rem;color:#2B6CB0;}
+  .info-box p{font-size:.85rem;color:#444;line-height:1.6;margin:.25rem 0;}
+  .info-box code{background:#deedf8;border-radius:4px;padding:.1rem .35rem;font-size:.82rem;}
+</style>
+</head>
+<body>
+
+<h1>Prepway Bangladesh — Icon Reference</h1>
+<p class="subtitle">All 14 icons are already included as SVG files in the <code>icons/</code> folder. Replace any file to use your own icon.</p>
+
+<div class="info-box">
+  <h2>How This Works</h2>
+  <p><strong>UI icons</strong> (icon-02 to icon-10) are black SVGs. CSS automatically flips them <strong>white in dark mode</strong> and keeps them <strong>dark in light mode</strong>. You only need one file per icon — it works for both themes.</p>
+  <p><strong>Brand icons</strong> (icon-01, icon-11 to icon-14) are full-color and stay the same in both themes.</p>
+  <p>To replace an icon: find the file in the <code>icons/</code> folder and replace it with your own file. Keep the same filename (e.g. <code>icon-02.svg</code>).</p>
+  <p>You can use <strong>.svg files directly</strong> (already done) or convert to PNG at <a href="https://svgtopng.com" target="_blank">svgtopng.com</a> and rename to the same filename. SVG is recommended.</p>
+</div>
+
+<div class="section-title">Brand Icons — Full Color (same in dark + light mode)</div>
+<div class="grid">
+
+  <div class="card">
+    <div class="card-head">
+      <div class="icon-preview brand-bg"><img src="icons/icon-01.svg" alt=""></div>
+      <div>
+        <div class="icon-num">icon-01 <span class="badge badge-brand">BRAND</span></div>
+        <div class="icon-name">YouTube</div>
+      </div>
+    </div>
+    <code class="icon-file">icons/icon-01.svg</code>
+    <div class="icon-usage">Used: Subscribe button, booking highlights, footer</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="icon-preview brand-bg"><img src="icons/icon-11.svg" alt=""></div>
+      <div>
+        <div class="icon-num">icon-11 <span class="badge badge-brand">BRAND</span></div>
+        <div class="icon-name">Facebook</div>
+      </div>
+    </div>
+    <code class="icon-file">icons/icon-11.svg</code>
+    <div class="icon-usage">Used: Footer social button</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="icon-preview brand-bg"><img src="icons/icon-12.svg" alt=""></div>
+      <div>
+        <div class="icon-num">icon-12 <span class="badge badge-brand">BRAND</span></div>
+        <div class="icon-name">Instagram</div>
+      </div>
+    </div>
+    <code class="icon-file">icons/icon-12.svg</code>
+    <div class="icon-usage">Used: Footer social button</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="icon-preview brand-bg"><img src="icons/icon-13.svg" alt=""></div>
+      <div>
+        <div class="icon-num">icon-13 <span class="badge badge-brand">BRAND</span></div>
+        <div class="icon-name">Telegram</div>
+      </div>
+    </div>
+    <code class="icon-file">icons/icon-13.svg</code>
+    <div class="icon-usage">Used: Footer social button</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="icon-preview brand-bg"><img src="icons/icon-14.svg" alt=""></div>
+      <div>
+        <div class="icon-num">icon-14 <span class="badge badge-brand">BRAND</span></div>
+        <div class="icon-name">Messenger</div>
+      </div>
+    </div>
+    <code class="icon-file">icons/icon-14.svg</code>
+    <div class="icon-usage">Used: Floating Messenger button (bottom-right)</div>
+  </div>
+
+</div>
+
+<div class="section-title">UI Icons — Black SVG (auto-inverts white in dark mode)</div>
+<div class="grid">
+
+  <div class="card">
+    <div class="card-head">
+      <div class="icon-preview ui-bg"><img src="icons/icon-02.svg" alt=""></div>
+      <div>
+        <div class="icon-num">icon-02 <span class="badge badge-ui">UI</span></div>
+        <div class="icon-name">Microphone</div>
+      </div>
+    </div>
+    <code class="icon-file">icons/icon-02.svg</code>
+    <div class="icon-usage">Used: "Be a Guest" button, booking highlights</div>
+    <div class="replace-tip">Replace with any black icon — CSS makes it white in dark mode automatically</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="icon-preview" style="background:#333;"><img src="icons/icon-03.svg" alt=""></div>
+      <div>
+        <div class="icon-num">icon-03 <span class="badge badge-white">ALWAYS WHITE</span></div>
+        <div class="icon-name">Play Triangle</div>
+      </div>
+    </div>
+    <code class="icon-file">icons/icon-03.svg</code>
+    <div class="icon-usage">Used: Episode card play button, special video</div>
+    <div class="replace-tip">Always white — shown on a dark overlay background</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="icon-preview ui-bg"><img src="icons/icon-04.svg" alt=""></div>
+      <div>
+        <div class="icon-num">icon-04 <span class="badge badge-ui">UI</span></div>
+        <div class="icon-name">Podcast Mic</div>
+      </div>
+    </div>
+    <code class="icon-file">icons/icon-04.svg</code>
+    <div class="icon-usage">Used: About card — Show Your Voice</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="icon-preview ui-bg"><img src="icons/icon-05.svg" alt=""></div>
+      <div>
+        <div class="icon-num">icon-05 <span class="badge badge-ui">UI</span></div>
+        <div class="icon-name">Open Book</div>
+      </div>
+    </div>
+    <code class="icon-file">icons/icon-05.svg</code>
+    <div class="icon-usage">Used: About card — Academic Guidance</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="icon-preview ui-bg"><img src="icons/icon-06.svg" alt=""></div>
+      <div>
+        <div class="icon-num">icon-06 <span class="badge badge-ui">UI</span></div>
+        <div class="icon-name">University</div>
+      </div>
+    </div>
+    <code class="icon-file">icons/icon-06.svg</code>
+    <div class="icon-usage">Used: About card — Admission Preparation</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="icon-preview ui-bg"><img src="icons/icon-07.svg" alt=""></div>
+      <div>
+        <div class="icon-num">icon-07 <span class="badge badge-ui">UI</span></div>
+        <div class="icon-name">Airplane</div>
+      </div>
+    </div>
+    <code class="icon-file">icons/icon-07.svg</code>
+    <div class="icon-usage">Used: About card — Prepway Abroad</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="icon-preview ui-bg"><img src="icons/icon-08.svg" alt=""></div>
+      <div>
+        <div class="icon-num">icon-08 <span class="badge badge-ui">UI</span></div>
+        <div class="icon-name">Bangladesh Flag</div>
+      </div>
+    </div>
+    <code class="icon-file">icons/icon-08.svg</code>
+    <div class="icon-usage">Used: About card — Created for Bangladesh</div>
+    <div class="replace-tip">This icon is colored (flag). CSS filter is not applied to it — it stays as-is in both modes</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="icon-preview ui-bg"><img src="icons/icon-09.svg" alt=""></div>
+      <div>
+        <div class="icon-num">icon-09 <span class="badge badge-ui">UI</span></div>
+        <div class="icon-name">Graduation Cap</div>
+      </div>
+    </div>
+    <code class="icon-file">icons/icon-09.svg</code>
+    <div class="icon-usage">Used: Booking highlights — students</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="icon-preview ui-bg"><img src="icons/icon-10.svg" alt=""></div>
+      <div>
+        <div class="icon-num">icon-10 <span class="badge badge-ui">UI</span></div>
+        <div class="icon-name">Star</div>
+      </div>
+    </div>
+    <code class="icon-file">icons/icon-10.svg</code>
+    <div class="icon-usage">Used: Booking highlights — inspire students</div>
+  </div>
+
+</div>
+
+<div class="info-box" style="margin-top:2rem;background:#F0FFF4;border-color:#9AE6B4;">
+  <h2 style="color:#276749;">Want to use different icons?</h2>
+  <p>Download free icons from <a href="https://phosphoricons.com" target="_blank"><strong>phosphoricons.com</strong></a> or <a href="https://lucide.dev" target="_blank"><strong>lucide.dev</strong></a></p>
+  <p>1. Download as <strong>SVG</strong> &nbsp;→&nbsp; 2. Rename to the correct <code>icon-XX.svg</code> filename &nbsp;→&nbsp; 3. Drop into the <code>icons/</code> folder &nbsp;→&nbsp; Done.</p>
+  <p>For UI icons (02-10): download the <strong>black/dark version</strong>. CSS handles the rest.</p>
+  <p>For brand icons (01, 11-14): use the <strong>full-color version</strong>.</p>
+</div>
+
+</body>
+</html>
