@@ -2286,6 +2286,28 @@ footer{
   width: 20px;
   height: 20px;
 }
+/* Powered by line - exact styling you asked for */
+.powered-by {
+  font-family: "Cascadia Code", monospace;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--brand);           /* red */
+  display: block;
+  margin-top: 0.6rem;
+  letter-spacing: 0.02em;
+}
+
+.prepway {
+  color: #33993a;                /* your green */
+  font-weight: 700;
+  font-family: "Cascadia Code", monospace;
+}
+
+.podcast {
+  color: #33993a;                /* your green */
+  font-family: "Gill Sans Extrabold", sans-serif;
+  font-weight: 200;
+}
 </style>
 </head>
 <body>
@@ -2496,10 +2518,20 @@ footer{
 <section class="section" id="podcasts">
 <div class="container">
   <div class="rev">
-    <div class="eyebrow">Show Your Voice &nbsp;·&nbsp; Season 01</div>
-    <h2 class="sh2">Show Your Voice.<br><em class="podcast-em">Prepway Podcast.</em></h2>
-    <p class="sp">Unfiltered long-form conversations with Bangladeshi students and achievers — honest stories about admissions, career paths, and the journeys that shaped them.</p>
-  </div>
+  <!-- Just SEASON 01 as requested -->
+  <div class="eyebrow">SEASON 01</div>
+  
+  <!-- Show Your Voice + powered by line -->
+  <h2 class="sh2">
+    Show Your Voice.<br>
+    <span class="powered-by">
+      powered by 
+      <span class="prepway">prepway</span> 
+      <span class="podcast">Podcast</span>
+    </span>
+  </h2>
+  <p class="sp">Unfiltered long-form conversations with Bangladeshi students and achievers — honest stories about admissions, career paths, and the journeys that shaped them.</p>
+</div>
 
   <div class="eps-grid">
 
