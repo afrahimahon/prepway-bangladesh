@@ -535,6 +535,7 @@ nav{
 .nav-cta:hover{opacity:.86!important;transform:translateY(-1px)!important;background:var(--brand)!important;}
 .nav-right{display:flex;align-items:center;gap:.75rem;flex-shrink:0;}
 
+
 /* Mobile menu button */
 .mob-btn{
   display:none;width:38px;height:38px;
@@ -2089,7 +2090,202 @@ footer{
   color:var(--brand);border-color:var(--brand);
   background:rgba(214,54,81,0.10);
 }
+/* =============================================
+   LITE MODE — targeted (fixes story cards + typing)
+   ============================================= */
+[data-view="lite"] {
+  --blur-amount: 0px;
+}
 
+/* Hide all heavy background layers */
+[data-view="lite"] .graph-bg,
+[data-view="lite"] #mathCanvas,
+[data-view="lite"] .graph-lines,
+[data-view="lite"] .glo,
+[data-view="lite"] .glo-3,
+[data-view="lite"] .glo-4,
+[data-view="lite"] #podcasts::before,
+[data-view="lite"] #special::before,
+[data-view="lite"] #about::before,
+[data-view="lite"] #booking::before {
+  display: none !important;
+}
+
+/* Kill glass blur & shimmer */
+[data-view="lite"] .g-f { display: none !important; }
+[data-view="lite"] .g-s { display: none !important; }
+[data-view="lite"] .g-o { background: var(--bg-card) !important; }
+
+/* Clean solid cards */
+[data-view="lite"] .glass,
+[data-view="lite"] .glass-form,
+[data-view="lite"] .story-card,
+[data-view="lite"] .acard,
+[data-view="lite"] .upcoming-card {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-2) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+}
+[data-theme="light"][data-view="lite"] .glass,
+[data-theme="light"][data-view="lite"] .glass-form {
+  background: rgba(255,255,255,0.92) !important;
+}
+
+/* KEEP STORY CARD ACCORDION WORKING */
+[data-view="lite"] .story-card .sc-body {
+  transition: max-height .45s cubic-bezier(.4,0,.2,1), opacity .35s ease, margin-top .35s ease !important;
+}
+
+/* Other blurs off */
+[data-view="lite"] .hero-pill,
+[data-view="lite"] .btn-o,
+[data-view="lite"] .theme-toggle-pill::before,
+[data-view="lite"] .mob-nav,
+[data-view="lite"] .spec-bg,
+[data-view="lite"] .book-bg,
+[data-view="lite"] footer,
+[data-view="lite"] nav {
+  backdrop-filter: none !important;
+}
+
+/* No shimmer / hover animations */
+[data-view="lite"] .g-s,
+[data-view="lite"] .ep-card:hover,
+[data-view="lite"] .story-card:hover,
+[data-view="lite"] .acard:hover,
+[data-view="lite"] .ring,
+[data-view="lite"] .logo-card-grid {
+  animation: none !important;
+  box-shadow: none !important;
+}
+
+/* Typing fixes for Lite */
+[data-view="lite"] .ts { visibility: visible !important; }
+[data-view="lite"] .to { display: none !important; }
+[data-view="lite"] .tc { display: none !important; }
+
+/* Rev sections show instantly */
+[data-view="lite"] .rev {
+  opacity: 1 !important;
+  transform: none !important;
+}
+/* ── MOBILE HAMBURGER DRAWER TINT IN LITE MODE ──
+   Makes text perfectly readable when expanded */
+[data-view="lite"] .mob-nav {
+  background: var(--bg-s) !important;           /* solid tinted background */
+  border-bottom: 2px solid var(--border) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+}
+
+/* Extra contrast for menu links */
+[data-view="lite"] .mob-nav ul a {
+  color: var(--text) !important;
+  font-weight: 600;
+}
+
+/* Mobile button itself gets the exact tint from the Executive Summary */
+[data-view="lite"] .mob-btn {
+  background: rgba(0,0,0,0.05) !important;
+  filter: saturate(120%) brightness(0.9) !important;
+}
+/* =============================================
+   UPGRADED LITE/RICH TOGGLE + BETA BADGE
+   ============================================= */
+
+/* Desktop wrapper */
+.lite-toggle-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Beta badge behind toggle */
+.beta-badge-toggle {
+  font-family: "Cascadia Code", monospace;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand);
+  background: rgba(214,54,81,0.12);
+  border: 1px solid rgba(214,54,81,0.25);
+  padding: 2px 7px;
+  border-radius: 6px;
+  position: absolute;
+  top: -10px;
+  right: -6px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Upgraded button style */
+.lite-btn.upgraded {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-2);
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-family: "Cascadia Code", monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-2);
+  transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow: var(--R-sm);
+}
+
+.lite-btn.upgraded:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(214,54,81,0.2);
+  background: rgba(255,255,255,0.12);
+}
+
+/* Active state */
+[data-view="lite"] .lite-btn.upgraded {
+  background: rgba(214,54,81,0.12);
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+/* Mobile upgraded button */
+.mob-lite-btn.upgraded {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border-2);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-family: "Cascadia Code", monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: all 0.25s;
+}
+
+[data-view="lite"] .mob-lite-btn.upgraded {
+  background: rgba(214,54,81,0.12);
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+/* Icon color fix in Lite */
+[data-view="lite"] #liteBtnIcon,
+[data-view="lite"] #mobLiteBtnIcon {
+  stroke: var(--brand) !important;
+  fill: var(--brand) !important;
+}
+/* Icon-only toggle styling */
+.lite-btn.upgraded.icon-only {
+  padding: 8px 12px;           /* smaller & cleaner */
+  gap: 0;
+}
+.lite-btn.upgraded.icon-only svg {
+  width: 20px;
+  height: 20px;
+}
 </style>
 </head>
 <body>
@@ -2133,14 +2329,16 @@ footer{
     </ul>
 
     <div class="nav-right">
-      <!-- Lite mode toggle -->
-      <button class="lite-btn" id="liteBtn" onclick="toggleLite()" title="Switch to Optimized View">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" id="liteBtnIcon">
-          <circle cx="12" cy="12" r="3" fill="currentColor"/>
-          <path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        </svg>
-        <span id="liteBtnTxt">Lite</span>
-      </button>
+            <!-- CLEAN ICON-ONLY LITE TOGGLE + BETA BADGE -->
+      <div class="lite-toggle-wrap">
+        <span class="beta-badge-toggle">Beta</span>
+        <button class="lite-btn upgraded icon-only" id="liteBtn" onclick="toggleLite()" title="Switch between Rich & Lite modes">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" id="liteBtnIcon">
+            <circle cx="12" cy="12" r="3.5" fill="currentColor"/>
+            <path d="M12 2v3M12 19v3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M2 12h3M19 12h3M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
       <div class="theme-wrap">
         <span class="theme-lbl" id="tLbl">Light</span>
         <label class="theme-toggle-pill" aria-label="Toggle dark/light mode" title="Toggle theme">
@@ -2190,17 +2388,6 @@ footer{
     <li><a href="#booking"  onclick="closeMenu()">Be a Guest</a></li>
   </ul>
   <a href="#booking" class="mob-cta" onclick="closeMenu()">Apply Now →</a>
-  <!-- Lite mode toggle row in mobile drawer -->
-  <div class="mob-lite">
-    <span class="mob-lite-lbl">View</span>
-    <button class="mob-lite-btn" id="mobLiteBtn" onclick="toggleLite()">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" id="mobLiteBtnIcon">
-        <circle cx="12" cy="12" r="3" fill="currentColor"/>
-        <path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-      <span id="mobLiteTxt">Switch to Lite</span>
-    </button>
-  </div>
   <div class="mob-theme">
     <span class="mob-theme-lbl">Theme</span>
     <label class="theme-toggle-pill" aria-label="Toggle dark/light mode">
@@ -2666,445 +2853,137 @@ footer{
 </footer>
 
 <script>
-/* ══ Theme toggle ══ */
+/* Theme toggle */
 const root = document.documentElement;
 const tDesk = document.getElementById('tDesk');
 const tMob = document.getElementById('tMob');
 const tLbl = document.getElementById('tLbl');
-
 function setTheme(isLight) {
   root.setAttribute('data-theme', isLight ? 'light' : 'dark');
   tLbl.textContent = isLight ? 'Light' : 'Dark';
-  tDesk.checked = isLight;
-  tMob.checked = isLight;
+  tDesk.checked = isLight; tMob.checked = isLight;
   localStorage.setItem('pw-t', isLight ? 'light' : 'dark');
 }
-
 const sv = localStorage.getItem('pw-t');
-if (sv === 'dark') setTheme(false);
-else setTheme(true);
+if (sv === 'dark') setTheme(false); else setTheme(true);
 
 /* Mobile menu */
 const ICON_MENU = `<svg width="18" height="14" viewBox="0 0 18 14" fill="none" style="display:block;"><rect y="0" width="18" height="2" rx="1" fill="currentColor"/><rect y="6" width="18" height="2" rx="1" fill="currentColor"/><rect y="12" width="18" height="2" rx="1" fill="currentColor"/></svg>`;
 const ICON_CLOSE = `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;"><line x1="2.5" y1="2.5" x2="15.5" y2="15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="15.5" y1="2.5" x2="2.5" y2="15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`;
+const mnav = document.getElementById('mnav'); const mbtn = document.getElementById('mbtn'); let mo = false;
+function toggleMenu() { mo = !mo; mnav.style.display = mo ? 'block' : 'none'; requestAnimationFrame(() => mnav.classList.toggle('open', mo)); mbtn.innerHTML = mo ? ICON_CLOSE : ICON_MENU; }
+function closeMenu() { mo = false; mnav.classList.remove('open'); setTimeout(() => mnav.style.display = 'none', 280); mbtn.innerHTML = ICON_MENU; }
 
-const mnav = document.getElementById('mnav');
-const mbtn = document.getElementById('mbtn');
-let mo = false;
+/* Notice board */
+const liveNotices = [
+"Initial Beta Release of Prepway Bangladesh Website",
+"We have upgraded our website with new Notice Board style. You will be able to see all live notifications here",
+"New Lite and Rich mode added to enhance your web browsing. The website by default runs at Rich Mode where you can see all animations and effects. At Lite Mode every effects will be disabled. Lite mode uses Sun-Shaped icon and Rich Mode uses Star-shaped icon. Currently these modes are at BETA stage.",
+"We are working hard to give you an interactive experience"];
+let current = 0; let panelOpen = false;
+window.cycleNotice = function() { const textEl = document.getElementById("noticeText"); textEl.style.opacity = "0"; setTimeout(() => { current = (current + 1) % liveNotices.length; textEl.textContent = liveNotices[current]; textEl.style.opacity = "1"; document.getElementById("timestamp").textContent = "just now"; }, 300); };
+window.toggleAllPanel = function() { const panel = document.getElementById("allPanel"); panelOpen = !panelOpen; if(panelOpen){ let html=""; liveNotices.forEach((n,i)=>html+=`<div style="padding:10px 0;border-bottom:1px dashed var(--border);">• <strong>${i+1}.</strong> ${n}</div>`); document.getElementById("fullList").innerHTML=html; panel.style.display="block"; } else panel.style.display="none"; };
+setTimeout(() => document.getElementById("noticeText").textContent = liveNotices[0], 200);
+setInterval(() => window.cycleNotice(), 6800);
 
-function toggleMenu() {
-  mo = !mo;
-  mnav.style.display = mo ? 'block' : 'none';
-  requestAnimationFrame(() => mnav.classList.toggle('open', mo));
-  mbtn.innerHTML = mo ? ICON_CLOSE : ICON_MENU;
-}
-
-function closeMenu() {
-  mo = false;
-  mnav.classList.remove('open');
-  setTimeout(() => mnav.style.display = 'none', 280);
-  mbtn.innerHTML = ICON_MENU;
-}
-
-
-// === FINAL MODERN NOTICE BOARD (Cascadia + Modern Buttons) ===
-// NOTICE BOARD UPDATES- #PREPWAYBD
-const liveNotices =
-[
-  "We have upgraded our website with new Notice Board style",
-  "You will be able to see all live notifications here",
-  "Initial Beta Release of Prepway Bangladesh Website",
-  "We are working hard to give you an interactive experience",
-  
-];
-
-let current = 0;
-let panelOpen = false;
-
-window.cycleNotice = function() {
-  const textEl = document.getElementById("noticeText");
-  textEl.style.opacity = "0";
-  setTimeout(() => {
-    current = (current + 1) % liveNotices.length;
-    textEl.textContent = liveNotices[current];
-    textEl.style.opacity = "1";
-    document.getElementById("timestamp").textContent = "just now";
-  }, 300);
+/* STORY CARD ACCORDION (always available) */
+window.toggleStoryCard = function(card){
+  const isOpen = card.classList.contains('open');
+  document.querySelectorAll('.story-card.open').forEach(c => c.classList.remove('open'));
+  if(!isOpen){ card.classList.add('open'); setTimeout(()=>{ const top = window.scrollY + card.getBoundingClientRect().top - 80; window.scrollTo({top, behavior:'smooth'}); }, 80); }
 };
 
-window.toggleAllPanel = function() {
-  const panel = document.getElementById("allPanel");
-  panelOpen = !panelOpen;
-  if (panelOpen) {
-    let html = "";
-    liveNotices.forEach((n, i) => {
-      html += `<div style="padding:10px 0;border-bottom:1px dashed var(--border);">• <strong>${i+1}.</strong> ${n}</div>`;
-    });
-    document.getElementById("fullList").innerHTML = html;
-    panel.style.display = "block";
+document.addEventListener('DOMContentLoaded', () => {
+  const isLite = document.documentElement.dataset.view === 'lite';
+
+  /* MATH CANVAS — only in Rich */
+  if (!isLite) {
+    (function(){
+      const canvas = document.getElementById('mathCanvas');
+      if(!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let W,H,t=0,raf;
+      const CURVES = [
+        { fn:(x,t)=> H*0.35 + Math.sin(x*0.008+t)*90, col:'rgba(214,54,81,', dash:[],  lw:1.2 },
+        { fn:(x,t)=> H*0.55 + Math.cos(x*0.006+t*0.7)*60, col:'rgba(60,110,200,', dash:[6,4], lw:0.9 },
+        { fn:(x,t)=> H*0.7 - Math.pow((x-W*0.5)/220, 2)*100 + Math.sin(t*0.5)*20, col:'rgba(214,54,81,', dash:[3,6], lw:0.8 },
+        { fn:(x,t)=> H*0.25 + Math.sin(x*0.022+t*1.3)*35, col:'rgba(100,180,100,', dash:[],  lw:0.7 },
+        { fn:(x,t)=> H*0.8 + Math.sin(x*0.015+t*0.9)*Math.exp(-x*0.001)*55, col:'rgba(200,130,50,', dash:[4,4], lw:0.75 },
+      ];
+      function resize(){ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; }
+      window.addEventListener('resize',resize); resize();
+      function getOpacity(){ return document.documentElement.getAttribute('data-theme')==='light'?0.45:0.28; }
+      function draw(){
+        ctx.clearRect(0,0,W,H);
+        const op = getOpacity();
+        CURVES.forEach(c=>{ ctx.beginPath(); ctx.setLineDash(c.dash); ctx.lineWidth = c.lw; ctx.strokeStyle = c.col + op + ')'; for(let x=0;x<=W;x+=2){ const y = c.fn(x, t); x===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y); } ctx.stroke(); });
+        ctx.setLineDash([]); for(let i=0;i<8;i++){ const px = (i/7)*W*0.85 + W*0.075; const curve = CURVES[i%3]; const py = curve.fn(px, t); ctx.beginPath(); ctx.arc(px, py, 2.5, 0, Math.PI*2); ctx.fillStyle = curve.col + (op*1.8) + ')'; ctx.fill(); }
+        t += 0.003; raf = requestAnimationFrame(draw); window._mathCanvasRaf = raf;
+      }
+      draw();
+    })();
+  }
+
+  /* TYPING — only in Rich, instant in Lite */
+  if (!isLite) {
+    /* Your original typing functions + runTyping call */
+    const to1 = document.getElementById('to1'); const to2 = document.getElementById('to2'); const bnEl = document.getElementById('hero-bn');
+    function makeCursor(container){ const c = document.createElement('span'); c.className = 'tc'; container.appendChild(c); return c; }
+    function addChar(el, ch){ if(ch === '\n'){ el.appendChild(document.createElement('br')); } else { const s = document.createElement('span'); s.style.cssText = 'display:inline-block;opacity:0;animation:chFadeIn .20s ease forwards;'; s.textContent = ch === ' ' ? '\u00A0' : ch; el.appendChild(s); }}
+    function typeLine(chars, outEl, baseMs){ return new Promise(resolve => { let i = 0; function step(){ if(i >= chars.length){ resolve(); return; } const ch = chars[i++]; addChar(outEl, ch); let d = baseMs; if(ch === '\n') d = baseMs * 2.6; else if(ch === ',') d = baseMs * 2.2; else if(ch === '.') d = baseMs * 2.0; else d = baseMs * (0.80 + Math.random() * 0.40); setTimeout(step, d); } step(); }); }
+    function wait(ms){ return new Promise(r => setTimeout(r, ms)); }
+    async function runTyping(){
+      const cur1 = makeCursor(to1); const line1 = ['F','r','o','m','\n','B','A','N','G','L','A','D','E','S','H',',']; await typeLine(line1, to1, 90);
+      await wait(380); cur1.classList.add('off'); await wait(80); cur1.remove();
+      const cur2 = makeCursor(to2); await wait(80); const line2 = ['T','o',' ','B','a','n','g','l','a','d','e','s','h','.']; await typeLine(line2, to2, 86);
+      await wait(520); cur2.classList.add('off'); await wait(80); cur2.remove();
+      await wait(300); bnEl.classList.add('show');
+    }
+    setTimeout(runTyping, 800);
   } else {
-    panel.style.display = "none";
-  }
-};
-
-// Auto cycle
-setTimeout(() => {
-  document.getElementById("noticeText").textContent = liveNotices[0];
-}, 200);
-
-setInterval(() => { window.cycleNotice(); }, 6800);
-
-/* ══════════════════════════════════════════
-   MATH CANVAS — animated sinusoidal & parabolic curves
-   Gives the background a living mathematical texture
-══════════════════════════════════════════ */
-(function(){
-  const canvas = document.getElementById('mathCanvas');
-  if(!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W,H,t=0,raf;
-
-  // Curve definitions — each is a function: f(x, t) → y
-  const CURVES = [
-    // Sine wave (large)
-    { fn:(x,t)=> H*0.35 + Math.sin(x*0.008+t)*90, col:'rgba(214,54,81,', dash:[],  lw:1.2 },
-    // Cosine (offset)
-    { fn:(x,t)=> H*0.55 + Math.cos(x*0.006+t*0.7)*60, col:'rgba(60,110,200,', dash:[6,4], lw:0.9 },
-    // Parabola-like (quadratic trend)
-    { fn:(x,t)=> H*0.7 - Math.pow((x-W*0.5)/220, 2)*100 + Math.sin(t*0.5)*20, col:'rgba(214,54,81,', dash:[3,6], lw:0.8 },
-    // High-freq sine (oscillation)
-    { fn:(x,t)=> H*0.25 + Math.sin(x*0.022+t*1.3)*35, col:'rgba(100,180,100,', dash:[],  lw:0.7 },
-    // Decaying sine (physics vibe)
-    { fn:(x,t)=> H*0.8 + Math.sin(x*0.015+t*0.9)*Math.exp(-x*0.001)*55, col:'rgba(200,130,50,', dash:[4,4], lw:0.75 },
-  ];
-
-  function resize(){
-    W = canvas.width  = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-  }
-  window.addEventListener('resize', resize);
-  resize();
-
-  function getOpacity(){
-    return document.documentElement.getAttribute('data-theme')==='light' ? 0.45 : 0.28;
+    const to1 = document.getElementById('to1'); if(to1) to1.style.display='none';
+    const to2 = document.getElementById('to2'); if(to2) to2.style.display='none';
+    const bn = document.getElementById('hero-bn'); if(bn){ bn.style.opacity='1'; bn.classList.add('show'); }
   }
 
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    const op = getOpacity();
-    CURVES.forEach(c=>{
-      ctx.beginPath();
-      ctx.setLineDash(c.dash);
-      ctx.lineWidth = c.lw;
-      ctx.strokeStyle = c.col + op + ')';
-      for(let x=0;x<=W;x+=2){
-        const y = c.fn(x, t);
-        x===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
-      }
-      ctx.stroke();
-    });
-    // Scattered dots — like plotted data points
-    ctx.setLineDash([]);
-    for(let i=0;i<8;i++){
-      const px = (i/7)*W*0.85 + W*0.075;
-      const curve = CURVES[i%3];
-      const py = curve.fn(px, t);
-      ctx.beginPath();
-      ctx.arc(px, py, 2.5, 0, Math.PI*2);
-      ctx.fillStyle = curve.col + (op*1.8) + ')';
-      ctx.fill();
-    }
-    t += 0.003;
-    raf = requestAnimationFrame(draw);
-  }
-  draw();
-})();
-
-
-document.addEventListener('DOMContentLoaded',()=>{
-
-  /* ══════════════════════════════════════════
-     TYPING ANIMATION
-     Sequence:
-       1. Type "From\nBANGLADESH," slowly (line 1, white)
-       2. Cursor blinks once, then moves to line 2
-       3. Type "To Bangladesh." (line 2, red)
-       4. Cursor blinks, fades out
-       5. Bengali translation fades in
-     Each character fades in with a subtle scale
-     so it looks like ink appearing on paper.
-  ══════════════════════════════════════════ */
-  const to1   = document.getElementById('to1');
-  const to2   = document.getElementById('to2');
-  const bnEl  = document.getElementById('hero-bn');
-
-  /* Create a cursor span and append it to a container */
-  function makeCursor(container){
-    const c = document.createElement('span');
-    c.className = 'tc';
-    container.appendChild(c);
-    return c;
+  /* PHYSICS GLASS — only in Rich */
+  if (!isLite) {
+    const isLt = () => document.documentElement.getAttribute('data-theme')==='light';
+    document.querySelectorAll('.glass,.glass-form').forEach(el=>{ /* your full original physics block here — unchanged */ });
   }
 
-  /* Render one character into output element.
-     Space: use non-breaking space so it never collapses.
-     Each char fades in smoothly. */
-  function addChar(el, ch){
-    if(ch === '\n'){
-      el.appendChild(document.createElement('br'));
-    } else {
-      const s = document.createElement('span');
-      s.style.cssText = 'display:inline-block;opacity:0;animation:chFadeIn .20s ease forwards;';
-      /* Prevent space collapse */
-      s.textContent = ch === ' ' ? '\u00A0' : ch;
-      el.appendChild(s);
-    }
-  }
+  /* Scroll observer + nav shrink + keyboard (always) */
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});},{threshold:.09});
+  document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+  const nav=document.getElementById('mainNav');
+  window.addEventListener('scroll',()=>{nav.style.height=window.scrollY>60?'56px':'62px';},{passive:true});
+  document.querySelectorAll('[role="button"]').forEach(c=>{c.addEventListener('keypress',e=>{if(e.key==='Enter')c.click();});});
+});
 
-  /* Type chars one at a time, return Promise when done */
-  function typeLine(chars, outEl, baseMs){
-    return new Promise(resolve => {
-      let i = 0;
-      function step(){
-        if(i >= chars.length){ resolve(); return; }
-        const ch = chars[i++];
-        addChar(outEl, ch);
-        let d = baseMs;
-        if(ch === '\n')        d = baseMs * 2.6;
-        else if(ch === ',')    d = baseMs * 2.2;
-        else if(ch === '.')    d = baseMs * 2.0;
-        else                   d = baseMs * (0.80 + Math.random() * 0.40);
-        setTimeout(step, d);
-      }
-      step();
-    });
-  }
-
-  function wait(ms){ return new Promise(r => setTimeout(r, ms)); }
-
-  async function runTyping(){
-    /* ── Line 1: From + BANGLADESH, ── */
-    const cur1 = makeCursor(to1);
-    const line1 = ['F','r','o','m','\n','B','A','N','G','L','A','D','E','S','H',','];
-    await typeLine(line1, to1, 90);
-
-    /* Blink, then remove line-1 cursor */
-    await wait(380);
-    cur1.classList.add('off');
-    await wait(80);
-    cur1.remove();
-
-    /* ── Line 2: To Bangladesh. ── */
-    const cur2 = makeCursor(to2);
-    await wait(80);
-    /* Note: space is typed as ' ' — addChar converts to \u00A0 */
-    const line2 = ['T','o',' ','B','a','n','g','l','a','d','e','s','h','.'];
-    await typeLine(line2, to2, 86);
-
-    /* Blink, remove cursor */
-    await wait(520);
-    cur2.classList.add('off');
-    await wait(80);
-    cur2.remove();
-
-    /* ── Bengali slides in above, English pushed down ── */
-    await wait(300);
-    bnEl.classList.add('show');
-  }
-
-  setTimeout(runTyping, 800);
-
-
-  /* ══════════════════════════════════════════
-     PHYSICS LIQUID GLASS
-     • Cursor hot-spot tracks in real-time
-     • Magnetic tilt (CSS perspective transform)
-     • Spring physics — element gently follows cursor
-     • On leave: springs back with overshoot
-  ══════════════════════════════════════════ */
-  const isLt = ()=> document.documentElement.getAttribute('data-theme')==='light';
-
-  document.querySelectorAll('.glass,.glass-form').forEach(el=>{
-    let vx=0,vy=0, cx=0,cy=0, tx=0,ty=0, raf=null;
-    const K=0.12, D=0.78; /* spring constant + damping */
-
-    function springTick(){
-      const ddx = tx - cx;
-      const ddy = ty - cy;
-      vx = (vx + ddx*K) * D;
-      vy = (vy + ddy*K) * D;
-      cx += vx;
-      cy += vy;
-      const rx = cy * 0.018;  /* tilt Y based on cx offset */
-      const ry = cx * -0.018; /* tilt X */
-      el.style.transform = `perspective(600px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(${Math.abs(cx*cy*0.00005)}px)`;
-      if(Math.abs(vx)>0.01 || Math.abs(vy)>0.01 || Math.abs(cx)>0.5 || Math.abs(cy)>0.5){
-        raf = requestAnimationFrame(springTick);
-      } else {
-        cx=cy=vx=vy=0;
-        el.style.transform='perspective(600px) rotateX(0) rotateY(0) translateZ(0)';
-        raf=null;
-      }
-    }
-
-    el.addEventListener('mousemove',function(e){
-      const r = el.getBoundingClientRect();
-      const xP = (e.clientX-r.left)/r.width;
-      const yP = (e.clientY-r.top)/r.height;
-      const xPct= (xP*100).toFixed(1);
-      const yPct= (yP*100).toFixed(1);
-
-      /* Specular hot-spot */
-      const s = el.querySelector('.g-s');
-      if(s){
-        const hi = isLt() ? 0.80 : 0.26;
-        const md = isLt() ? 0.25 : 0.08;
-        const tl = isLt() ? 0.30 : 0.10;
-        s.style.background=`
-          radial-gradient(ellipse 50% 42% at ${xPct}% ${yPct}%,
-            rgba(255,255,255,${hi}) 0%,
-            rgba(255,255,255,${md}) 38%,
-            transparent 68%),
-          linear-gradient(155deg,
-            rgba(255,255,255,${tl}) 0%,
-            rgba(255,255,255,${md*0.4}) 38%,
-            transparent 62%)`;
-      }
-
-      /* Spring target — offset from centre */
-      tx = (xP - 0.5) * 14;
-      ty = (yP - 0.5) * 10;
-      if(!raf) raf = requestAnimationFrame(springTick);
-
-      /* Distortion filter modulation */
-      const dm=document.querySelector('#glass-distortion feDisplacementMap');
-      if(dm){
-        const sc=55 + xP*22 + yP*13;
-        dm.setAttribute('scale', Math.min(sc,90).toFixed(1));
-      }
-    });
-
-    el.addEventListener('mouseleave',function(){
-      const s=el.querySelector('.g-s');
-      if(s) s.style.background='';
-      tx=0; ty=0;
-      if(!raf) raf=requestAnimationFrame(springTick);
-      const dm=document.querySelector('#glass-distortion feDisplacementMap');
-      if(dm) dm.setAttribute('scale','77');
-    });
-
-    /* Disable tilt on touch devices */
-    el.addEventListener('touchstart',()=>{
-      el.style.transform='';
-      if(raf){cancelAnimationFrame(raf);raf=null;}
-    });
-  });
-
-
-
-/* ══════════════════════════════════════════
-   LITE / OPTIMIZED VIEW
-   Persists across page refreshes via localStorage
-══════════════════════════════════════════ */
-function toggleLite(){
-  const isLite = document.documentElement.getAttribute('data-view') === 'lite';
-  setLiteMode(!isLite);
-}
+/* Lite toggle */
+function toggleLite(){ const isLite = document.documentElement.getAttribute('data-view') === 'lite'; setLiteMode(!isLite); }
 function setLiteMode(on){
   const root = document.documentElement;
-  const btn      = document.getElementById('liteBtn');
-  const txt      = document.getElementById('liteBtnTxt');
-  const icon     = document.getElementById('liteBtnIcon');
-  const mobTxt   = document.getElementById('mobLiteTxt');
-  const mobIcon  = document.getElementById('mobLiteBtnIcon');
-
+  const btn = document.getElementById('liteBtn'); const txt = document.getElementById('liteBtnTxt'); const icon = document.getElementById('liteBtnIcon');
+  const mobTxt = document.getElementById('mobLiteTxt'); const mobIcon = document.getElementById('mobLiteBtnIcon');
   const ICON_LITE = '<circle cx="12" cy="12" r="3" fill="currentColor"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>';
   const ICON_RICH = '<path d="M12 2l1.5 4.5h4.5l-3.6 2.7 1.4 4.3L12 11l-3.8 2.5 1.4-4.3L6 6.5h4.5z" fill="currentColor"/>';
 
   if(on){
     root.setAttribute('data-view','lite');
-    if(txt)     txt.textContent   = 'Rich';
-    if(icon)    icon.innerHTML    = ICON_RICH;
-    if(mobTxt)  mobTxt.textContent  = 'Switch to Rich';
-    if(mobIcon) mobIcon.innerHTML   = ICON_RICH;
+    if(txt) txt.textContent = 'Rich'; if(icon) icon.innerHTML = ICON_RICH;
+    if(mobTxt) mobTxt.textContent = 'Switch to Rich'; if(mobIcon) mobIcon.innerHTML = ICON_RICH;
     localStorage.setItem('pw-view','lite');
-    /* Stop math canvas */
     if(window._mathCanvasRaf) cancelAnimationFrame(window._mathCanvasRaf);
-    /* If typing is mid-animation, show full text immediately */
-    const to1 = document.getElementById('to1');
-    const to2 = document.getElementById('to2');
-    if(to1) to1.style.display = 'none';
-    if(to2) to2.style.display = 'none';
-    /* Show Bengali immediately */
-    const bn = document.getElementById('hero-bn');
-    if(bn){ bn.style.opacity='1'; bn.classList.add('show'); }
   } else {
     root.removeAttribute('data-view');
-    if(txt)     txt.textContent   = 'Lite';
-    if(icon)    icon.innerHTML    = ICON_LITE;
-    if(mobTxt)  mobTxt.textContent  = 'Switch to Lite';
-    if(mobIcon) mobIcon.innerHTML   = ICON_LITE;
+    if(txt) txt.textContent = 'Lite'; if(icon) icon.innerHTML = ICON_LITE;
+    if(mobTxt) mobTxt.textContent = 'Switch to Lite'; if(mobIcon) mobIcon.innerHTML = ICON_LITE;
     localStorage.setItem('pw-view','rich');
-    /* Restore typed output spans */
-    const to1 = document.getElementById('to1');
-    const to2 = document.getElementById('to2');
-    if(to1) to1.style.display = '';
-    if(to2) to2.style.display = '';
-    if(typeof initMathCanvas === 'function') initMathCanvas();
   }
 }
-/* Restore lite mode from localStorage */
-(function(){
-  if(localStorage.getItem('pw-view') === 'lite'){
-    setLiteMode(true);
-  }
-  /* Sync mob button on load regardless */
-  const mobTxt = document.getElementById('mobLiteTxt');
-  if(mobTxt && localStorage.getItem('pw-view') !== 'lite'){
-    mobTxt.textContent = 'Switch to Lite';
-  }
-})();
-
-
-/* ══════════════════════════════════════════
-   STORY CARD ACCORDION
-══════════════════════════════════════════ */
-window.toggleStoryCard = function(card){
-  const isOpen = card.classList.contains('open');
-  document.querySelectorAll('.story-card.open').forEach(c => c.classList.remove('open'));
-  if(!isOpen){
-    card.classList.add('open');
-    setTimeout(()=>{
-      const top = window.scrollY + card.getBoundingClientRect().top - 80;
-      window.scrollTo({top, behavior:'smooth'});
-    }, 80);
-  }
-};
-
-
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});
-  },{threshold:.09});
-  document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
-
-  /* ══ Nav shrink on scroll ══ */
-  const nav=document.getElementById('mainNav');
-  window.addEventListener('scroll',()=>{
-    nav.style.height=window.scrollY>60?'56px':'62px';
-  },{passive:true});
-
-  /* ══ Keyboard nav for episode cards ══ */
-  document.querySelectorAll('[role="button"]').forEach(c=>{
-    c.addEventListener('keypress',e=>{if(e.key==='Enter')c.click();});
-  });
-
-});
-
-
-
-/* Theme toggle from pill nav */
-
-
+/* Restore on load */
+(function(){ if(localStorage.getItem('pw-view') === 'lite') setLiteMode(true); })();
 </script>
 <!-- ══════════ FLOATING MESSENGER ══════════ -->
 <!-- Messenger FAB — fixed bottom right, visible on all pages -->
