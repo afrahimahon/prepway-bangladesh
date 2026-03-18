@@ -621,7 +621,6 @@ nav{
 }
 
 /* Hero headline — Outfit for impact (sizing only here; colours set per line below) */
-.hero-h1-REMOVED{}
 
 /* Hero description — Plus Jakarta Sans for readability */
 .hero-desc{
@@ -1485,6 +1484,36 @@ footer{
   max-width:520px;
   user-select:none;
 }
+/* ── ADVANCED NOTICE ANIMATIONS ── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.3); }
+}
+#liveDot { animation: pulse 1.8s infinite; }
+
+@keyframes noticeFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.notice-board { animation: noticeFloat 6s ease-in-out infinite; }
+
+#allPanel {
+  animation: slideDown 0.5s ease forwards;
+  transform-origin: top;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Toast animation */
+#liveToast.show {
+  display: block;
+  opacity: 1;
+  animation: toastPop 0.4s ease, toastFade 4s 1s forwards;
+}
+@keyframes toastPop { from { transform: translate(-50%, 30px); } to { transform: translateX(-50%); } }
+@keyframes toastFade { to { opacity: 0; } }
 .nb-inner{
   display:flex;align-items:center;gap:.5rem;
   padding:.42rem .85rem .42rem .65rem;
@@ -1669,6 +1698,69 @@ footer{
 
 /* Notice board text slide transitions */
 .nb-text{transition:opacity .25s ease, transform .25s ease;}
+
+/* ── MODERN NOTICE BOARD UPGRADES ── */
+#noticeText {
+  font-family: "Cascadia Code", monospace !important;
+  letter-spacing: 0.02em;
+}
+
+#reloadBtn:hover {
+  transform: rotate(180deg) scale(1.1);
+  background: rgba(214,54,81,0.2);
+  border-color: var(--brand);
+}
+
+#allBtn:hover {
+  background: rgba(214,54,81,0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(214,54,81,0.3);
+}
+/* ── MODERN NOTICE BOARD (Cascadia + Dark/Light Fix) ── */
+#noticeText {
+  font-family: "Cascadia Code", monospace !important;
+  letter-spacing: 0.02em;
+}
+#reloadBtn:hover {
+  transform: rotate(180deg) scale(1.1);
+  background: rgba(214,54,81,0.2);
+  border-color: var(--brand);
+}
+#allBtn:hover {
+  background: rgba(214,54,81,0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(214,54,81,0.3);
+}
+/* Perfect legibility in both themes */
+[data-theme="dark"] #noticeText { color: #EEE8DF !important; }
+[data-theme="light"] #noticeText { color: #1A1614 !important; }
+/* Dark mode text legibility boost */
+[data-theme="dark"] #noticeText {
+  color: #EEE8DF !important;
+}
+[data-theme="light"] #noticeText {
+  color: #1A1614 !important;
+}
+
+/* ── UPGRADED NOTICE BOARD ANIMATIONS ── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.notice-board {
+  animation: noticeFloat 6s ease-in-out infinite;
+}
+@keyframes noticeFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+#noticeText {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+#noticeText.fade {
+  opacity: 0;
+  transform: translateY(8px);
+}
 .nb-text.nb-exit{opacity:0;transform:translateY(-5px);}
 .nb-text.nb-enter{opacity:0;transform:translateY(5px);}
 .nb-text.nb-enter-rev{opacity:0;transform:translateY(-5px);}
@@ -2127,32 +2219,49 @@ footer{
 <section style="position:relative;z-index:1;">
 <div class="hero">
   <div class="hero-left">
-    <!-- ══════════════════════════════════════════
-         NOTICE BOARD
-         To update the notice text → open this file in
-         VS Code and search for:  const NOTICE =
-         (near the bottom of the file in the <script> block)
-    ══════════════════════════════════════════ -->
-    <div class="notice-board glass" id="noticeBoard" role="status" aria-live="polite" title="Click to expand">
-      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-      <div class="g-c nb-inner">
-        <span class="nb-icon" aria-hidden="true">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2.2"/>
-            <line x1="12" y1="8" x2="12" y2="13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="12" cy="16.5" r="1.3" fill="currentColor"/>
-          </svg>
-        </span>
-        <span class="nb-tag">Update</span>
-        <span class="nb-text" id="nbText">Loading…</span>
-        <span class="nb-chevron" aria-hidden="true">
-          <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
-            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-      </div>
-    </div>
+ <!-- 🔥 FINAL MODERN NOTICE BOARD (Cascadia + Perfect Dark/Light) -->
+<div class="notice-board glass" id="noticeBoard" style="margin-bottom:1.8rem;position:relative;overflow:hidden;">
+  <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+  <div class="g-c nb-inner" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 18px;">
 
+    <!-- Pulsing LIVE -->
+    <span style="display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;color:#D63651;font-weight:700;">
+      <span id="liveDot" style="width:8px;height:8px;background:#D63651;border-radius:50%;box-shadow:0 0 12px #D63651;animation:pulse 1.8s infinite;"></span>
+      LIVE
+    </span>
+
+    <span id="noticeText" style="flex:1;font-family:'Cascadia Code',monospace;font-weight:500;font-size:0.93rem;color:var(--text-2);line-height:1.45;min-height:42px;">
+      EP 04 with BUET topper drops tomorrow 8 PM 🔥 Register now!
+    </span>
+
+    <!-- Modern Reload -->
+    <button onclick="cycleNotice()" id="reloadBtn"
+      style="background:rgba(255,255,255,0.08);border:1px solid var(--border-2);padding:9px 13px;border-radius:50%;font-size:1.25rem;transition:all .3s;">
+      ↻
+    </button>
+
+    <!-- Modern All Updates -->
+    <button onclick="toggleAllPanel()" id="allBtn"
+      style="font-family:'Cascadia Code',monospace;font-size:0.8rem;font-weight:600;padding:9px 18px;background:rgba(214,54,81,0.12);border:1px solid var(--brand);border-radius:999px;color:var(--brand);transition:all .3s;">
+      All Updates ↓
+    </button>
+  </div>
+
+  <!-- Timestamp -->
+  <div id="timestamp" style="position:absolute;bottom:6px;right:18px;font-size:0.65rem;color:var(--text-3);font-family:Cascadia Code;">just now</div>
+</div>
+
+<!-- All Updates Panel -->
+<div id="allPanel" class="glass" style="display:none;margin:12px 0;padding:18px;border-radius:16px;position:relative;">
+  <button onclick="toggleAllPanel()" style="position:absolute;top:12px;right:14px;background:none;border:none;font-size:1.4rem;color:var(--text-3);">✕</button>
+  <h4 style="color:var(--brand);margin-bottom:14px;font-family:'Cascadia Code',monospace;">📌 All Live Updates</h4>
+  <div id="fullList" style="line-height:1.85;"></div>
+</div>
+
+<!-- Real-time Toast -->
+<div id="liveToast" style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--brand);color:#fff;padding:10px 20px;border-radius:12px;box-shadow:0 10px 30px rgba(214,54,81,0.4);display:none;opacity:0;transition:all 0.4s;z-index:999;font-size:0.85rem;">
+  <span id="toastMessage"></span>
+</div>
     <div class="slogan-wrap" id="slogan-wrap">
 
       <!-- Bengali — slides in above, pushes English down -->
@@ -2558,69 +2667,92 @@ footer{
 
 <script>
 /* ══ Theme toggle ══ */
-const root=document.documentElement;
-const tDesk=document.getElementById('tDesk');
-const tMob=document.getElementById('tMob');
-const tLbl=document.getElementById('tLbl');
-function setTheme(isLight){
-  root.setAttribute('data-theme',isLight?'light':'dark');
-  tLbl.textContent=isLight?'Light':'Dark';
-  tDesk.checked=isLight;
-  tMob.checked=isLight;
-  localStorage.setItem('pw-t',isLight?'light':'dark');
-}
-const sv=localStorage.getItem('pw-t');
-if(sv==='dark')setTheme(false);
-else setTheme(true); /* default light */
+const root = document.documentElement;
+const tDesk = document.getElementById('tDesk');
+const tMob = document.getElementById('tMob');
+const tLbl = document.getElementById('tLbl');
 
+function setTheme(isLight) {
+  root.setAttribute('data-theme', isLight ? 'light' : 'dark');
+  tLbl.textContent = isLight ? 'Light' : 'Dark';
+  tDesk.checked = isLight;
+  tMob.checked = isLight;
+  localStorage.setItem('pw-t', isLight ? 'light' : 'dark');
+}
+
+const sv = localStorage.getItem('pw-t');
+if (sv === 'dark') setTheme(false);
+else setTheme(true);
+
+/* Mobile menu */
 const ICON_MENU = `<svg width="18" height="14" viewBox="0 0 18 14" fill="none" style="display:block;"><rect y="0" width="18" height="2" rx="1" fill="currentColor"/><rect y="6" width="18" height="2" rx="1" fill="currentColor"/><rect y="12" width="18" height="2" rx="1" fill="currentColor"/></svg>`;
 const ICON_CLOSE = `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;"><line x1="2.5" y1="2.5" x2="15.5" y2="15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="15.5" y1="2.5" x2="2.5" y2="15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`;
-const mnav=document.getElementById('mnav');
-const mbtn=document.getElementById('mbtn');
-let mo=false;
-function toggleMenu(){
-  mo=!mo;
-  mnav.style.display=mo?'block':'none';
-  requestAnimationFrame(()=>mnav.classList.toggle('open',mo));
-  mbtn.innerHTML=mo?ICON_CLOSE:ICON_MENU;
+
+const mnav = document.getElementById('mnav');
+const mbtn = document.getElementById('mbtn');
+let mo = false;
+
+function toggleMenu() {
+  mo = !mo;
+  mnav.style.display = mo ? 'block' : 'none';
+  requestAnimationFrame(() => mnav.classList.toggle('open', mo));
+  mbtn.innerHTML = mo ? ICON_CLOSE : ICON_MENU;
 }
-function closeMenu(){
-  mo=false;
+
+function closeMenu() {
+  mo = false;
   mnav.classList.remove('open');
-  setTimeout(()=>mnav.style.display='none',280);
-  mbtn.innerHTML=ICON_MENU;
+  setTimeout(() => mnav.style.display = 'none', 280);
+  mbtn.innerHTML = ICON_MENU;
 }
 
 
-/* ══════════════════════════════════════════
-   NOTICE BOARD
-   ─────────────────────────────────────────
-   HOW TO UPDATE: Find this NOTICE object below.
-   Change the text inside the quotes.
-   The tag can be: "Update" | "New" | "Live" | "Soon"
-   ─────────────────────────────────────────
-   LOCATION IN CODE: Search for  const NOTICE =
-══════════════════════════════════════════ */
-const NOTICE = {
-  tag:  "NOTICE",
-  text: "This website is proudly created with Claude.ai. Thanks for visiting us. The elements of this website are inspired by Apple's Liquid Glass Effect. For using more elements, you may notice lag depending on your device. We will work in future to fix the issues and ensure a great experience for everyone. If you have any suggestions for us then send us a message at Messenger toggle."
+// === FINAL MODERN NOTICE BOARD (Cascadia + Modern Buttons) ===
+// NOTICE BOARD UPDATES- #PREPWAYBD
+const liveNotices =
+[
+  "We have upgraded our website with new Notice Board style",
+  "You will be able to see all live notifications here",
+  "Initial Beta Release of Prepway Bangladesh Website",
+  "We are working hard to give you an interactive experience",
+  
+];
+
+let current = 0;
+let panelOpen = false;
+
+window.cycleNotice = function() {
+  const textEl = document.getElementById("noticeText");
+  textEl.style.opacity = "0";
+  setTimeout(() => {
+    current = (current + 1) % liveNotices.length;
+    textEl.textContent = liveNotices[current];
+    textEl.style.opacity = "1";
+    document.getElementById("timestamp").textContent = "just now";
+  }, 300);
 };
 
-// Initialise notice board text
-(function(){
-  const txt = document.getElementById('nbText');
-  const tag = document.querySelector('.nb-tag');
-  if(txt) txt.textContent = NOTICE.text;
-  if(tag) tag.textContent = NOTICE.tag;
-})();
+window.toggleAllPanel = function() {
+  const panel = document.getElementById("allPanel");
+  panelOpen = !panelOpen;
+  if (panelOpen) {
+    let html = "";
+    liveNotices.forEach((n, i) => {
+      html += `<div style="padding:10px 0;border-bottom:1px dashed var(--border);">• <strong>${i+1}.</strong> ${n}</div>`;
+    });
+    document.getElementById("fullList").innerHTML = html;
+    panel.style.display = "block";
+  } else {
+    panel.style.display = "none";
+  }
+};
 
-// Click to expand/collapse the notice board
-const nbBoard = document.getElementById('noticeBoard');
-if(nbBoard){
-  nbBoard.addEventListener('click', function(){
-    this.classList.toggle('nb-expanded');
-  });
-}
+// Auto cycle
+setTimeout(() => {
+  document.getElementById("noticeText").textContent = liveNotices[0];
+}, 200);
+
+setInterval(() => { window.cycleNotice(); }, 6800);
 
 /* ══════════════════════════════════════════
    MATH CANVAS — animated sinusoidal & parabolic curves
