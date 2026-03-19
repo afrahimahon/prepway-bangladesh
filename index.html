@@ -2322,68 +2322,50 @@ footer{
 <!-- Math canvas for animated curves -->
 <canvas id="mathCanvas" aria-hidden="true"></canvas>
   
-<!-- ┌───────────────────────────────────────────────┐
-       EID POSTER – PASTE THE CODE BELOW HERE
-     └───────────────────────────────────────────────┘ -->
+<!-- Temporary Eid banner – optimized for 2000×500 image -->
+<div class="eid-top-banner">
+  <div class="eid-poster"></div>
+</div>
 
-  <!-- Eid poster banner – responsive version (Option 1) -->
-  <div class="eid-top-banner">
-    <div class="eid-poster"></div>
-  </div>
+<style>
+  .eid-top-banner {
+    width: 100%;
+    height: clamp(180px, 25vw, 340px);     /* shorter & more balanced: ~180–220 px mobile, ~300–340 px desktop */
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+  }
 
-  <style>
-    .eid-top-banner {
-      width: 100%;
-      aspect-ratio: 2 / 1;                    /* your original wide shape on desktop */
-      height: auto;
-      max-height: 85vh;                       /* never taller than ~85% of viewport height */
-      min-height: 320px;                      /* don't become ridiculously small */
-      position: relative;
-      z-index: 550;
-      overflow: hidden;
-      background: #000;                       /* fallback color if image fails */
-    }
+  .eid-poster {
+    width: 100%;
+    height: 100%;
+    background: url('/EID.png') center / cover no-repeat;   /* ← update filename if needed */
+    background-position: center 40%;        /* slight top bias – adjust 30%–50% depending on where key elements are */
+  }
 
-    .eid-poster {
-      width: 100%;
-      height: 100%;
-      background-image: url('/websiteArtboard.png');   /* ← CHANGE TO YOUR EXACT FILENAME */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: absolute;
-      inset: 0;
-    }
+  /* No forced nav background here → original transparent nav should work */
+  body {
+    padding-top: 0 !important;
+  }
 
-    /* Mobile phones – make it taller so important parts aren't cropped too much */
-    @media (max-width: 640px) {
-      .eid-top-banner {
-        aspect-ratio: 4 / 5;                  /* becomes portrait-ish → less side cropping */
-        max-height: 75vh;
-      }
-    }
+  /* Shift content down by banner height */
+  .eid-top-banner + * {
+    margin-top: clamp(180px, 25vw, 340px);
+  }
 
-    /* Push the nav + hero down correctly without fixed pixels */
-    .eid-top-banner + * {
-      margin-top: clamp(0px, calc((100vw / 2) - 85vh), 0px);
-    }
-
-    /* Make navigation readable on top of the poster */
-    nav {
-      background: rgba(23, 23, 28, 0.78) !important;
-      backdrop-filter: blur(12px) !important;
-      -webkit-backdrop-filter: blur(12px) !important;
-    }
-
-    [data-theme="light"] nav {
-      background: rgba(234, 231, 224, 0.85) !important;
-    }
-
-    /* Remove any old conflicting padding */
-    body {
-      padding-top: 0 !important;
-    }
-  </style>
+  /* Optional subtle darkening if nav text readability is still an issue (uncomment if needed) */
+  /*
+  .eid-top-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.28) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  */
+</style>
+  
 <!-- ══════════ NAV ══════════ -->
 <nav id="mainNav">
   <div class="nav-inner">
