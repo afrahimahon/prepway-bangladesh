@@ -3,591 +3,430 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
-
-<!-- SEO Meta Tags -->
 <title>Prepway Bangladesh</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
-<meta name="description" content="Prepway Bangladesh is an ducational platform which is From Bangladesh, To Bangladesh."/>
-<meta name="keywords" content="Prepway Bangladesh, Bangladeshi student guidance, SSC preparation, HSC preparation, university admission Bangladesh, medical admission Bangladesh, Show Your Voice podcast, Prepway Podcast, student podcast Bangladesh, Prepway Group"/>
+<meta name="description" content="Prepway Bangladesh is an educational platform guiding Bangladeshi students through SSC, HSC, and university admissions — From Bangladesh, To Bangladesh."/>
+<meta name="keywords" content="Prepway Bangladesh, Bangladeshi student guidance, SSC preparation, HSC preparation, university admission Bangladesh, medical admission Bangladesh, Show Your Voice podcast, Prepway Group"/>
 <meta name="author" content="Prepway Group"/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://prepwaybd.vercel.app/"/>
-
-<!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Prepway Bangladesh — From Bangladesh, To Bangladesh"/>
-<meta property="og:description" content="Prepway Bangladesh is an ducational platform which is From Bangladesh, To Bangladesh."/>
+<meta property="og:description" content="An educational platform guiding Bangladeshi students through SSC, HSC, and university admissions. Real stories. Real guidance."/>
 <meta property="og:image" content="logo.png"/>
 <meta property="og:url" content="https://prepwaybd.vercel.app/"/>
 <meta property="og:site_name" content="Prepway Bangladesh"/>
-<meta property="og:locale" content="en_US"/>
-
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Prepway Bangladesh — From Bangladesh, To Bangladesh"/>
-<meta name="twitter:description" content="Prepway Bangladesh is an ducational platform which is From Bangladesh, To Bangladesh."/>
+<meta name="twitter:description" content="A podcast platform guiding Bangladeshi students. Watch Show Your Voice — Season 01."/>
 <meta name="twitter:image" content="logo.png"/>
-
-<!-- Theme color for mobile browsers -->
 <meta name="theme-color" content="#17171C" media="(prefers-color-scheme: dark)"/>
-<meta name="theme-color" content="#EDEAE4" media="(prefers-color-scheme: light)"/>
-
-<!--
-  FONT ROLES
-  ─────────────────────────────────────
-  Outfit         → Hero headlines (display, impact)
-  DM Serif Display → Section headings (editorial serif)
-  Plus Jakarta Sans → Body copy, descriptions, paragraphs
-  Cascadia Code  → Labels, tags, nav, eyebrows, stats, code, mono feel
-  Hind Siliguri  → Bengali script (অমর একুশে)
-  ─────────────────────────────────────
--->
+<meta name="theme-color" content="#EAE7E0" media="(prefers-color-scheme: light)"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=DM+Serif+Display:ital@0;1&family=Hind+Siliguri:wght@400;500;600;700&family=Outfit:wght@300..900&family=Plus+Jakarta+Sans:wght@300..800&display=swap" rel="stylesheet">
-
-<!-- SVG Liquid Glass Distortion Filter -->
-<svg style="display:none" aria-hidden="true">
-  <filter id="glass-distortion">
-    <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise"/>
-    <feDisplacementMap in="SourceGraphic" in2="noise" scale="77"/>
-  </filter>
-</svg>
-
 <style>
-/* ══════════════════════════════════════════
-   DESIGN TOKENS — Softened brand + liquid glass palette
-══════════════════════════════════════════ */
-:root{
-  --brand:       #D63651;
-  --brand-glow:  rgba(214,54,81,0.30);
-  --brand-soft:  rgba(214,54,81,0.10);
-  --brand-mid:   rgba(214,54,81,0.20);
+/* ════════════════════════════════════════════
+   DESIGN TOKENS
+════════════════════════════════════════════ */
+:root {
+  --brand:     #D63651;
+  --brand-g:   rgba(214,54,81,.28);
+  --brand-s:   rgba(214,54,81,.10);
+  --brand-m:   rgba(214,54,81,.20);
 
-  /* DARK — warm grey, frosted glass feel */
-  --bg:          #17171C;
-  --bg-s:        #1F1F26;
-  --bg-card:     rgba(255,255,255,0.042);
-  --text:        #EEE8DF;
-  --text-2:      #B8B2A8;
-  --text-3:      #6E6B66;
-  --border:      rgba(255,255,255,0.08);
-  --border-2:    rgba(255,255,255,0.15);
-  --shine:       rgba(255,255,255,0.10);
-  --shine-2:     rgba(255,255,255,0.05);
-  --nav-bg:      transparent;
-  --gc-bg:       rgba(255,255,255,0.055);
-  --gc-hl:       rgba(255,255,255,0.55);
-  --input-bg:    rgba(255,255,255,0.07);
+  /* Dark theme */
+  --bg:        #17171C;
+  --bg-s:      #1F1F26;
+  --bg-card:   rgba(255,255,255,.05);
+  --text:      #EEE8DF;
+  --text-2:    #B8B2A8;
+  --text-3:    #6E6B66;
+  --border:    rgba(255,255,255,.08);
+  --border-2:  rgba(255,255,255,.14);
+  --gc-bg:     rgba(255,255,255,.065);
+  --nav-solid: rgba(23,23,28,.92);
 
-  /* Liquid glass specular layers */
-  --liq-top:     rgba(255,255,255,0.18);
-  --liq-side:    rgba(255,255,255,0.06);
-  --liq-bot:     rgba(0,0,0,0.18);
-  --liq-rim:     rgba(255,255,255,0.22);
+  /* Glass */
+  --g-blur:  blur(22px) saturate(180%);
+  --g-tint:  rgba(255,255,255,.065);
+  --g-shad:  0 8px 32px rgba(0,0,0,.32),
+             inset 0 1.5px 0 rgba(255,255,255,.18),
+             inset 0 -1px 0 rgba(0,0,0,.14),
+             inset 1px 0 0 rgba(255,255,255,.07),
+             inset -1px 0 0 rgba(0,0,0,.07);
+  --sh-sm:   0 2px 8px rgba(0,0,0,.28);
+  --sh-md:   0 6px 24px rgba(0,0,0,.38);
+  --sh-br:   0 6px 20px rgba(214,54,81,.28);
 
-  --R-sm:  0 2px 12px rgba(0,0,0,0.35);
-  --R-md:  0 8px 32px  rgba(0,0,0,0.45);
-  --R-lg:  0 20px 60px rgba(0,0,0,0.55);
-  --R-br:  0 8px 28px  rgba(214,54,81,0.24);
-  --R-glass: 0 8px 32px rgba(0,0,0,0.3),
-             inset 0 1px 0 rgba(255,255,255,0.18),
-             inset 0 -1px 0 rgba(0,0,0,0.12),
-             inset 1px 0 0 rgba(255,255,255,0.08),
-             inset -1px 0 0 rgba(0,0,0,0.08);
+  /* Material surface (lite mode) */
+  --md-s1:   #242429;
+  --md-s2:   #2C2C34;
+  --md-d1:   0 1px 3px rgba(0,0,0,.35),0 1px 2px rgba(0,0,0,.24);
+  --md-d2:   0 3px 6px rgba(0,0,0,.30),0 3px 6px rgba(0,0,0,.22);
+  --md-d4:   0 10px 20px rgba(0,0,0,.25),0 6px 6px rgba(0,0,0,.22);
 }
-[data-theme="light"]{
-  /* Warm parchment — graph + history + podcast + commitment mixed */
-  --bg:       #EAE7E0;  /* warm paper, not cold blue */
+[data-theme="light"] {
+  --bg:       #EAE7E0;
   --bg-s:     #E2DED6;
-  --bg-card:  rgba(255,255,255,0.72);
+  --bg-card:  rgba(255,255,255,.72);
   --text:     #1A1614;
   --text-2:   #4A3F38;
   --text-3:   #8A8078;
-  --border:   rgba(60,40,20,0.10);
-  --border-2: rgba(60,40,20,0.18);
-  --shine:    rgba(255,255,255,0.98);
-  --shine-2:  rgba(255,255,255,0.65);
-  --nav-bg:   transparent;
-  --gc-bg:    rgba(255,255,255,0.70);
-  --gc-hl:    rgba(255,255,255,0.99);
-  --input-bg: rgba(255,255,255,0.80);
+  --border:   rgba(60,40,20,.10);
+  --border-2: rgba(60,40,20,.18);
+  --gc-bg:    rgba(255,255,255,.68);
+  --nav-solid:rgba(234,231,224,.95);
 
-  /* Boosted specular — glass pops on light bg */
-  --liq-top:  rgba(255,255,255,0.98);
-  --liq-side: rgba(255,255,255,0.55);
-  --liq-bot:  rgba(30,60,100,0.08);
-  --liq-rim:  rgba(255,255,255,0.95);
+  --g-tint: rgba(255,255,255,.55);
+  --g-shad: 0 6px 24px rgba(40,25,10,.12),
+            inset 0 1.5px 0 rgba(255,255,255,.96),
+            inset 0 -1px 0 rgba(40,25,10,.07),
+            inset 1px 0 0 rgba(255,255,255,.60),
+            inset -1px 0 0 rgba(40,25,10,.04);
+  --sh-sm:  0 2px 8px rgba(40,25,10,.09);
+  --sh-md:  0 6px 24px rgba(40,25,10,.12);
+  --sh-br:  0 6px 20px rgba(214,54,81,.18);
 
-  --R-sm:  0 2px 12px rgba(40,25,10,0.09);
-  --R-md:  0 8px 32px  rgba(40,25,10,0.12);
-  --R-lg:  0 20px 60px rgba(40,25,10,0.15);
-  --R-br:  0 8px 28px  rgba(214,54,81,0.20);
-  /* Deep Vadik-style multi-inset — glass pops visibly on light bg */
-  --R-glass:
-    0 6px 28px rgba(40,25,10,0.12),
-    0 1px 4px rgba(40,25,10,0.05),
-    inset 0 1.5px 0 rgba(255,255,255,0.98),
-    inset 0 -1px 0 rgba(40,25,10,0.06),
-    inset 1.5px 0 0 rgba(255,255,255,0.70),
-    inset -1.5px 0 0 rgba(30,60,100,0.04),
-    inset 0 2px 8px rgba(255,255,255,0.45);
+  --md-s1: rgba(255,255,255,.88);
+  --md-s2: rgba(255,255,255,.72);
+  --md-d1: 0 1px 3px rgba(40,25,10,.14),0 1px 2px rgba(40,25,10,.10);
+  --md-d2: 0 3px 6px rgba(40,25,10,.12),0 3px 6px rgba(40,25,10,.08);
+  --md-d4: 0 10px 20px rgba(40,25,10,.10),0 6px 6px rgba(40,25,10,.08);
 }
 
-/* ══════════════════════════════════════════
-   BASE
-══════════════════════════════════════════ */
+/* ════════════════════════════════════════════
+   RESET
+════════════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  font-family:"Plus Jakarta Sans",sans-serif;
-  font-weight:400;line-height:1.65;
-  background:var(--bg);color:var(--text);
-  overflow-x:hidden;transition:background .4s,color .4s;
-}
+html{scroll-behavior:smooth}
+body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;transition:background .35s,color .35s}
 a{text-decoration:none;color:inherit}
-img{display:block;max-width:100%}
-strong{font-weight:700;}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
+img{max-width:100%;height:auto;display:block}
 
-/* ══════════════════════════════════════════
-   SCIENTIFIC MATH GRAPH BACKGROUND
-   Inspired by graph-paper notebooks, physics textbooks
-   and coordinate planes — fine grid + axes + curve traces
-══════════════════════════════════════════ */
+/* ════════════════════════════════════════════
+   GLASS SYSTEM
+════════════════════════════════════════════ */
+.glass{position:relative;isolation:isolate}
+.g-f{position:absolute;inset:0;z-index:1;border-radius:inherit;backdrop-filter:var(--g-blur);-webkit-backdrop-filter:var(--g-blur)}
+.g-o{position:absolute;inset:0;z-index:2;border-radius:inherit;background:var(--g-tint)}
+.g-s{position:absolute;inset:0;z-index:3;border-radius:inherit;box-shadow:var(--g-shad);pointer-events:none}
+.g-c{position:relative;z-index:4}
+[data-theme="dark"] .icon-mono{filter:invert(1) brightness(2)}
 
-/* Layer 1 — base fine grid (1px every 20px, like millimetre paper) */
+/* ════════════════════════════════════════════
+   LAYOUT
+════════════════════════════════════════════ */
+.container{max-width:1160px;margin:0 auto;padding:0 2.5rem}
+.section{padding:5.5rem 0;position:relative;z-index:1}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border-2),transparent);position:relative;z-index:1}
+
+/* ════════════════════════════════════════════
+   RICH BACKGROUND
+════════════════════════════════════════════ */
 .graph-bg{
   position:fixed;inset:0;z-index:0;pointer-events:none;
-
-  /* Dark mode: classic dark graph paper */
   background-image:
-    /* minor grid — 20px spacing */
-    linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px),
-    /* major grid — 100px = 5 squares */
-    linear-gradient(rgba(214,54,81,0.09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(214,54,81,0.09) 1px, transparent 1px),
-    /* 500px super-major — "axis" feel */
-    linear-gradient(rgba(214,54,81,0.15) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(214,54,81,0.15) 2px, transparent 2px);
-  background-size:
-    20px 20px, 20px 20px,
-    100px 100px, 100px 100px,
-    500px 500px, 500px 500px;
-  animation: gridDrift 80s linear infinite;
+    linear-gradient(rgba(100,70,40,.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(100,70,40,.07) 1px,transparent 1px),
+    linear-gradient(rgba(100,70,40,.13) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(100,70,40,.13) 1px,transparent 1px),
+    linear-gradient(rgba(214,54,81,.15) 2px,transparent 2px),
+    linear-gradient(90deg,rgba(214,54,81,.15) 2px,transparent 2px);
+  background-size:20px 20px,20px 20px,100px 100px,100px 100px,500px 500px,500px 500px;
 }
-[data-theme="light"] .graph-bg{
-  /* Warm parchment graph — sepia ink on paper */
+[data-theme="dark"] .graph-bg{
   background-image:
-    linear-gradient(rgba(100,70,40,0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(100,70,40,0.07) 1px, transparent 1px),
-    linear-gradient(rgba(100,70,40,0.13) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(100,70,40,0.13) 1px, transparent 1px),
-    linear-gradient(rgba(214,54,81,0.18) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(214,54,81,0.18) 2px, transparent 2px);
-  background-size:
-    20px 20px, 20px 20px,
-    100px 100px, 100px 100px,
-    500px 500px, 500px 500px;
+    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px),
+    linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px),
+    linear-gradient(rgba(214,54,81,.13) 2px,transparent 2px),
+    linear-gradient(90deg,rgba(214,54,81,.13) 2px,transparent 2px);
+  background-size:20px 20px,20px 20px,100px 100px,100px 100px,500px 500px,500px 500px;
 }
-@keyframes gridDrift{
-  from{background-position:0 0,0 0,0 0,0 0,0 0,0 0}
-  to{background-position:20px 20px,20px 20px,100px 100px,100px 100px,500px 500px,500px 500px}
-}
-/* Vignette — fades grid at edges */
-.graph-bg::after{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 90% 85% at 50% 50%,transparent 20%,var(--bg) 100%);
-}
+#mathCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;width:100%;height:100%;opacity:.45}
+[data-theme="light"] #mathCanvas{opacity:.55}
+.glo{position:fixed;z-index:0;pointer-events:none;border-radius:50%;filter:blur(90px)}
+.glo-1{width:520px;height:520px;top:-80px;right:-80px;background:radial-gradient(circle,rgba(214,54,81,.15) 0%,transparent 70%);animation:glo1 18s ease-in-out infinite alternate}
+.glo-2{width:420px;height:420px;bottom:20%;left:-60px;background:radial-gradient(circle,rgba(160,100,40,.11) 0%,transparent 70%);animation:glo2 15s ease-in-out infinite alternate}
+@keyframes glo1{from{transform:translate(0,0) scale(1)}to{transform:translate(-40px,30px) scale(1.08)}}
+@keyframes glo2{from{transform:translate(0,0) scale(1)}to{transform:translate(30px,-40px) scale(1.06)}}
+#podcasts::before,#special::before,#about::before,#booking::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0}
+#podcasts::before{background:radial-gradient(ellipse 75% 55% at 15% 50%,rgba(214,120,54,.07) 0%,transparent 65%)}
+#special::before{background:radial-gradient(ellipse 55% 65% at 50% 50%,rgba(200,80,40,.08) 0%,transparent 75%)}
+#about::before{background:radial-gradient(ellipse 50% 45% at 82% 30%,rgba(160,120,60,.07) 0%,transparent 65%)}
+#booking::before{background:radial-gradient(ellipse 65% 55% at 50% 40%,rgba(100,60,200,.08) 0%,rgba(214,54,81,.05) 55%,transparent 80%)}
 
-/* Layer 2 — SVG sinusoidal curve traces, drawn by JS canvas */
-#mathCanvas{
-  position:fixed;inset:0;width:100%;height:100%;
-  z-index:0;pointer-events:none;opacity:.35;
-  transition:opacity .4s;
-}
-[data-theme="light"] #mathCanvas{opacity:.55;}
+/* ════════════════════════════════════════════
+   TYPOGRAPHY
+════════════════════════════════════════════ */
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:"Cascadia Code",monospace;font-size:.63rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);margin-bottom:.9rem}
+.eyebrow::before{content:'';width:16px;height:2px;background:var(--brand);border-radius:2px}
+.sh2{font-family:"DM Serif Display",serif;font-size:clamp(2rem,4vw,2.8rem);color:var(--text);line-height:1.2;margin-bottom:1.1rem}
+.sh2 em{color:var(--brand);font-style:italic}
+.sp{font-family:"Plus Jakarta Sans",sans-serif;font-size:.97rem;font-weight:400;color:var(--text-2);line-height:1.75;max-width:540px}
 
-/* Layer 3 — diagonal "function graph" lines (y = mx style) */
-.graph-lines{
-  position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
-}
-.graph-lines::before,.graph-lines::after{
-  content:'';position:absolute;
-  bottom:-30%;left:-10%;width:140%;height:140%;
-}
-.graph-lines::before{
-  background:
-    linear-gradient(148deg,transparent 42%,rgba(214,54,81,0.045) 43.2%,transparent 44.4%),
-    linear-gradient(132deg,transparent 55%,rgba(100,140,214,0.03) 56.2%,transparent 57.4%);
-  animation:diagFloat 14s ease-in-out infinite alternate;
-}
-.graph-lines::after{
-  background:
-    linear-gradient(162deg,transparent 60%,rgba(214,54,81,0.025) 61%,transparent 62%),
-    linear-gradient(118deg,transparent 35%,rgba(100,140,214,0.025) 36%,transparent 37%);
-  animation:diagFloat2 18s ease-in-out infinite alternate;
-}
-@keyframes diagFloat{
-  0%{transform:translateX(-3%) skewY(.3deg)}
-  100%{transform:translateX(3%) skewY(-.3deg)}
-}
-@keyframes diagFloat2{
-  0%{transform:translateX(2%) rotate(.2deg)}
-  100%{transform:translateX(-2%) rotate(-.2deg)}
-}
-
-/* Layer 4 — colour orbs (breathing ambient light, physics of light scattering) */
-.glo{position:fixed;z-index:0;pointer-events:none;border-radius:50%;will-change:transform;}
-.glo-1{
-  width:800px;height:800px;
-  background:radial-gradient(circle,rgba(214,54,81,0.14) 0%,rgba(214,54,81,0.04) 45%,transparent 70%);
-  top:-320px;right:-260px;
-  filter:blur(90px);
-  animation:gloat1 18s ease-in-out infinite alternate;
-}
-.glo-2{
-  width:600px;height:600px;
-  background:radial-gradient(circle,rgba(60,110,200,0.10) 0%,rgba(60,110,200,0.03) 50%,transparent 70%);
-  bottom:-220px;left:-140px;
-  filter:blur(80px);
-  animation:gloat2 24s ease-in-out infinite alternate;
-}
-.glo-3{
-  position:fixed;z-index:0;pointer-events:none;border-radius:50%;
-  width:500px;height:500px;
-  background:radial-gradient(circle,rgba(255,200,50,0.04) 0%,transparent 70%);
-  top:40%;left:30%;
-  filter:blur(70px);
-  animation:gloat3 12s ease-in-out infinite alternate;
-}
-/* Light mode orbs — more visible, blue-tinted academic feel */
-[data-theme="light"] .glo-1{
-  /* Warm red — podcast/passion */
-  background:radial-gradient(circle,rgba(214,54,81,0.14) 0%,rgba(200,100,50,0.06) 45%,transparent 70%);
-}
-/* Dreamy violet orb for light mode — commitment section feel */
-.glo-4{
-  position:fixed;z-index:0;pointer-events:none;border-radius:50%;
-  width:400px;height:400px;
-  top:60%;right:-100px;
-  filter:blur(80px);
-  animation:gloat2 15s ease-in-out infinite alternate;
-  display:none;
-}
-[data-theme="light"] .glo-4{
-  display:block;
-  background:radial-gradient(circle,rgba(120,60,180,0.08) 0%,transparent 70%);
-}
-[data-theme="light"] .glo-2{
-  /* Warm amber — history/sepia */
-  background:radial-gradient(circle,rgba(160,100,40,0.12) 0%,rgba(180,120,50,0.05) 50%,transparent 70%);
-}
-
-@keyframes gloat1{
-  0%  {transform:translate(0,0) scale(1);}
-  33% {transform:translate(-25px,35px) scale(1.03);}
-  66% {transform:translate(-45px,15px) scale(0.98);}
-  100%{transform:translate(-20px,55px) scale(1.05);}
-}
-@keyframes gloat2{
-  0%  {transform:translate(0,0);}
-  50% {transform:translate(40px,-25px);}
-  100%{transform:translate(25px,-45px);}
-}
-@keyframes gloat3{
-  0%  {opacity:.5;transform:translate(0,0) scale(1);}
-  100%{opacity:.9;transform:translate(15px,-20px) scale(1.06);}
-}
-
-/* ══════════════════════════════════════════
-   LIQUID GLASS SYSTEM — Deep multi-layer frosted
-   Apple-style: blur + saturation + distortion +
-   specular top rim + inner shadow + side catches
-══════════════════════════════════════════ */
-.glass,.glass-form{
-  position:relative;overflow:hidden;
-  /* Rim border — the "edge of glass" effect */
-  border:1px solid var(--border-2);
-  /* Multi-layer shadow: outer depth + inner light rim */
-  box-shadow:var(--R-glass);
-}
-.glass    {border-radius:22px;}
-.glass-form{border-radius:24px;}
-
-/* Layer 1 — blur + distortion filter (the actual frosted glass) */
-.g-f{
-  position:absolute;inset:0;border-radius:inherit;z-index:1;
-  backdrop-filter:blur(28px) saturate(180%) brightness(1.04);
-  -webkit-backdrop-filter:blur(28px) saturate(180%) brightness(1.04);
-  filter:url(#glass-distortion) saturate(110%);
-}
-/* Layer 2 — tinted glass fill (colour of the glass material) */
-.g-o{
-  position:absolute;inset:0;border-radius:inherit;z-index:2;
-  background:var(--gc-bg);
-}
-/* Layer 3 — specular highlights: bright top rim, faint side catches */
-.g-s{
-  position:absolute;inset:0;border-radius:inherit;z-index:3;
-  /* Top highlight (strongest), right/left side catches, bottom shadow */
-  box-shadow:
-    inset 0  2px  0   var(--liq-rim),   /* bright top rim */
-    inset 0  1px  8px var(--liq-top),   /* top inner glow */
-    inset 1px 0   0   var(--liq-side),  /* left edge catch */
-    inset -1px 0  0   var(--liq-side),  /* right edge catch */
-    inset 0 -2px  0   var(--liq-bot);   /* bottom inner shadow */
-  /* Animated refraction shimmer strip */
-  background:linear-gradient(
-    160deg,
-    rgba(255,255,255,0.08) 0%,
-    rgba(255,255,255,0.02) 40%,
-    transparent 60%
-  );
-  animation:liqShimmer 8s ease-in-out infinite;
-}
-@keyframes liqShimmer{
-  0%,100%{background-position:0% 0%}
-  50%{background-position:100% 100%}
-}
-/* Content layer above all glass layers */
-.g-c{position:relative;z-index:4;}
-
-/* ── Mouse-tracking specular (JS-powered, much brighter) ── */
-.glass-shimmer .g-s,.glass-form .g-s{transition:background .08s;}
-
-/* ══════════════════════════════════════════
-   BEAUTIFUL THEME TOGGLE — pill with sun/moon
-══════════════════════════════════════════ */
-.theme-toggle-pill{
-  position:relative;
-  width:72px;height:34px;
-  border-radius:17px;
-  cursor:pointer;
-  display:flex;align-items:center;
-  flex-shrink:0;
-  overflow:hidden;
-  /* Layered liquid glass border */
-  border:1px solid var(--border-2);
-  box-shadow:
-    inset 0 1.5px 0 var(--liq-rim),
-    inset 0 -1.5px 0 var(--liq-bot),
-    inset 1px 0 0 var(--liq-side),
-    inset -1px 0 0 var(--liq-side),
-    0 4px 16px rgba(0,0,0,0.25);
-  background:transparent;
-  transition:border-color .35s;
-}
-/* Blur frost layer */
-.theme-toggle-pill::before{
-  content:'';
-  position:absolute;inset:0;border-radius:inherit;
-  backdrop-filter:blur(20px) saturate(180%);
-  -webkit-backdrop-filter:blur(20px) saturate(180%);
-  z-index:0;
-}
-/* Tinted fill */
-.theme-toggle-pill::after{
-  content:'';
-  position:absolute;inset:0;border-radius:inherit;
-  background:rgba(255,255,255,0.06);
-  z-index:1;
-  transition:background .35s;
-}
-[data-theme="light"] .theme-toggle-pill::after{
-  background:rgba(0,0,0,0.06);
-}
-.toggle-input{position:absolute;opacity:0;width:0;height:0;pointer-events:none;}
-
-/* The sliding thumb */
-.toggle-thumb-pill{
-  position:absolute;
-  z-index:4;
-  left:3px;
-  width:28px;height:28px;
-  border-radius:50%;
-  transition:transform .38s cubic-bezier(.34,1.56,.64,1),
-             background .35s;
-  /* Thumb: deep glass orb */
-  background:linear-gradient(145deg,#ffffff,#e8e4de);
-  box-shadow:
-    0 2px 8px rgba(0,0,0,0.28),
-    0 1px 2px rgba(0,0,0,0.20),
-    inset 0 1px 0 rgba(255,255,255,0.95),
-    inset 0 -1px 0 rgba(0,0,0,0.08);
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;
-}
-/* Moon icon (dark mode = default) */
-.thumb-moon,.thumb-sun{
-  position:absolute;
-  width:14px;height:14px;
-  transition:opacity .25s,transform .3s;
-  display:block;
-}
-.thumb-moon{ opacity:1; transform:scale(1) rotate(0deg); }
-.thumb-sun { opacity:0; transform:scale(0.6) rotate(45deg); }
-
-/* When checked (light mode): slide right, show sun */
-.toggle-input:checked ~ .toggle-thumb-pill{
-  transform:translateX(38px);
-  background:linear-gradient(145deg,#FFF3C4,#FFD96E);
-  box-shadow:
-    0 2px 10px rgba(255,185,0,0.40),
-    0 1px 2px rgba(0,0,0,0.12),
-    inset 0 1px 0 rgba(255,255,255,0.90),
-    inset 0 -1px 0 rgba(180,120,0,0.12);
-}
-.toggle-input:checked ~ .toggle-thumb-pill .thumb-moon{
-  opacity:0; transform:scale(0.6) rotate(-45deg);
-}
-.toggle-input:checked ~ .toggle-thumb-pill .thumb-sun{
-  opacity:1; transform:scale(1) rotate(0deg);
-}
-
-/* Track icons — moon left, sun right (faint background guides) */
-.toggle-track-icons{
-  position:absolute;z-index:2;
-  width:100%;height:100%;
-  display:flex;align-items:center;
-  justify-content:space-between;
-  padding:0 8px;
-  pointer-events:none;
-}
-.tik{
-  width:12px;height:12px;
-  opacity:0.35;
-  transition:opacity .3s;
-  display:flex;align-items:center;justify-content:center;
-}
-/* Active track icon is brighter */
-.toggle-input:not(:checked) ~ .toggle-track-icons .tik-moon{ opacity:0.0; }
-.toggle-input:not(:checked) ~ .toggle-track-icons .tik-sun { opacity:0.45; }
-.toggle-input:checked ~ .toggle-track-icons .tik-moon{ opacity:0.45; }
-.toggle-input:checked ~ .toggle-track-icons .tik-sun { opacity:0.0; }
-
-/* Theme wrap in nav */
-.theme-wrap{
-  display:flex;align-items:center;gap:.6rem;
-}
-.theme-lbl{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:600;font-size:.65rem;color:var(--text-3);
-  user-select:none;letter-spacing:.04em;
-  min-width:28px;text-align:right;
-  transition:color .35s;
-}
-
-/* Mobile drawer theme row */
-.mob-theme-lbl{
-  font-family:"Plus Jakarta Sans",sans-serif;
-  font-weight:600;font-size:.88rem;color:var(--text-2);
-}
-
-/* ══════════════════════════════════════════
-   LAYOUT
-══════════════════════════════════════════ */
-.container{max-width:1160px;margin:0 auto;padding:0 2.5rem;}
-.section{padding:5.5rem 0;position:relative;z-index:1;}
-.divider{height:1px;position:relative;z-index:1;background:linear-gradient(90deg,transparent,var(--border-2),transparent);}
-
-/* ══════════════════════════════════════════
-   NAV
-══════════════════════════════════════════ */
-nav{
+/* ════════════════════════════════════════════
+   NAVIGATION
+   – transparent at top, frosted on scroll
+   – NO social icons here
+════════════════════════════════════════════ */
+nav#mainNav{
   position:fixed;top:0;left:0;right:0;z-index:600;
   height:62px;
-  /* Fully transparent — chips float over content */
   background:transparent;
-  backdrop-filter:none;
-  -webkit-backdrop-filter:none;
-  border:none;
-  box-shadow:none;
-  transition:height .25s;
-  pointer-events:none; /* let clicks pass through nav bg */
+  border-bottom:1px solid transparent;
+  transition:background .35s,border-color .35s,box-shadow .35s;
 }
-/* Re-enable pointer events only on the actual chips */
-.nav-inner > *{ pointer-events:auto; }
+nav#mainNav.scrolled{
+  background:var(--nav-solid);
+  backdrop-filter:blur(24px) saturate(160%);
+  -webkit-backdrop-filter:blur(24px) saturate(160%);
+  border-bottom:1px solid var(--border);
+  box-shadow:0 2px 16px rgba(0,0,0,.10);
+}
 .nav-inner{
   max-width:1160px;margin:0 auto;padding:0 2.5rem;
-  height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  height:100%;display:flex;align-items:center;justify-content:space-between;gap:.75rem;
 }
-.nav-logo{flex-shrink:0;display:flex;align-items:center;}
-.nav-logo img{height:44px;width:auto;display:block;}
-
-/* Nav links — Cascadia Code for techy nav feel */
-.nav-links{display:flex;align-items:center;gap:.12rem;list-style:none;}
+/* Left: logo + beta */
+.nav-left{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.nav-logo{
+  display:flex;align-items:center;
+  border-radius:12px;padding:.3rem .6rem;
+  border:1px solid var(--border-2);
+  background:var(--gc-bg);
+  transition:border-color .2s,background .2s;
+}
+.nav-logo:hover{border-color:var(--brand);background:rgba(214,54,81,.06)}
+.nav-logo img{height:30px;width:auto}
+.beta-badge{
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.55rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--brand);background:var(--brand-s);
+  border:1px solid rgba(214,54,81,.28);border-radius:5px;padding:.18rem .42rem;
+}
+/* Centre: nav links */
+.nav-links{display:flex;align-items:center;gap:.08rem;list-style:none}
 .nav-links a{
   font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:500;font-size:.78rem;
-  color:var(--text-2);padding:.4rem .82rem;border-radius:9px;
-  letter-spacing:.01em;transition:color .2s,background .2s;white-space:nowrap;
+  font-size:.74rem;font-weight:500;color:var(--text-2);
+  padding:.4rem .78rem;border-radius:9px;letter-spacing:.01em;
+  transition:color .2s,background .2s;white-space:nowrap;
 }
-.nav-links a:hover{color:var(--text);background:rgba(255,255,255,0.07);}
-[data-theme="light"] .nav-links a:hover{background:rgba(0,0,0,0.05);}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,.07)}
+[data-theme="light"] .nav-links a:hover{background:rgba(0,0,0,.04)}
 .nav-cta{
   background:var(--brand)!important;color:#fff!important;
-  padding:.44rem 1.15rem!important;border-radius:100px!important;
-  font-weight:700!important;box-shadow:var(--R-br)!important;
+  padding:.4rem 1.1rem!important;border-radius:100px!important;
+  font-weight:700!important;box-shadow:var(--sh-br)!important;
   transition:opacity .2s,transform .2s!important;
 }
-.nav-cta:hover{opacity:.86!important;transform:translateY(-1px)!important;background:var(--brand)!important;}
-.nav-right{display:flex;align-items:center;gap:.75rem;flex-shrink:0;}
+.nav-cta:hover{opacity:.86!important;transform:translateY(-1px)!important}
+/* Right: controls */
+.nav-right{display:flex;align-items:center;gap:.55rem;flex-shrink:0}
 
-
-/* Mobile menu button */
-.mob-btn{
-  display:none;width:38px;height:38px;
-  background:var(--gc-bg);border:1px solid var(--border-2);
-  border-radius:10px;cursor:pointer;
-  align-items:center;justify-content:center;
-  font-family:"Cascadia Code",monospace;font-size:.95rem;color:var(--text-2);
-  backdrop-filter:blur(10px);transition:color .2s;
+/* ── Mode switch: Liquid Glass / Material UI ── */
+.view-switch{
+  display:flex;align-items:center;
+  border-radius:100px;border:1px solid var(--border-2);
+  overflow:hidden;height:30px;
+  background:var(--gc-bg);flex-shrink:0;
+  transition:border-color .25s,box-shadow .25s;
 }
-.mob-btn:hover{color:var(--text);}
-/* Old drawer hidden entirely */
-/* mob-cta shows inside drawer only */
-.mob-cta{ display:none; }
-.mob-nav .mob-cta{ display:block;text-align:center;margin-top:.75rem;background:var(--brand);color:#fff;font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-weight:700;font-size:.88rem;padding:.72rem;border-radius:12px;box-shadow:var(--R-br); }
-.mob-theme{ display:none; }
-.mob-nav .mob-theme{ display:flex;align-items:center;justify-content:space-between;padding:.62rem 1rem;margin-top:.25rem;font-family:"Cascadia Code",monospace;font-size:.82rem;color:var(--text-2);border-radius:10px;background:rgba(255,255,255,0.025); }
-[data-theme="light"] .mob-nav .mob-theme{background:rgba(0,0,0,0.025);}
-/* ── Mobile drawer ── */
+.view-switch:hover{border-color:var(--brand);box-shadow:0 0 10px rgba(214,54,81,.15)}
+.vsw-btn{
+  padding:0 .65rem;height:100%;display:flex;align-items:center;gap:.28rem;
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.60rem;font-weight:700;letter-spacing:.05em;
+  color:var(--text-3);background:transparent;
+  transition:color .2s,background .2s;white-space:nowrap;
+  border:none;cursor:pointer;
+}
+.vsw-btn:hover{color:var(--text)}
+.vsw-btn.on{
+  background:var(--brand);color:#fff;
+  border-radius:100px;box-shadow:0 2px 8px rgba(214,54,81,.35);
+}
+.vsw-dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0;animation:vdot 2s ease-in-out infinite}
+.vsw-btn.on .vsw-dot{background:rgba(255,255,255,.8)}
+@keyframes vdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.6)}}
+/* Responsive labels */
+.vsw-long{display:inline}
+.vsw-short{display:none}
+@media(max-width:1100px){.vsw-long{display:none}.vsw-short{display:inline}}
+
+/* ── Theme toggle: text labels ── */
+.theme-toggle{
+  display:flex;align-items:center;gap:0;
+  border-radius:100px;border:1px solid var(--border-2);
+  overflow:hidden;height:30px;
+  background:var(--gc-bg);flex-shrink:0;
+  transition:border-color .25s;
+}
+.theme-toggle:hover{border-color:var(--border)}
+.tgl-btn{
+  padding:0 .7rem;height:100%;display:flex;align-items:center;
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.60rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--text-3);background:transparent;border:none;cursor:pointer;
+  transition:color .2s,background .2s;white-space:nowrap;
+}
+.tgl-btn:hover{color:var(--text)}
+.tgl-btn.on{
+  background:var(--brand);color:#fff;
+  border-radius:100px;box-shadow:0 2px 6px rgba(214,54,81,.3);
+}
+
+/* ── Hamburger ── */
+.mob-btn{
+  display:none;width:36px;height:36px;border-radius:9px;
+  background:var(--gc-bg);border:1px solid var(--border-2);
+  color:var(--text-2);align-items:center;justify-content:center;
+  transition:color .2s;
+}
+.mob-btn:hover{color:var(--text)}
+
+/* ════════════════════════════════════════════
+   MOBILE DRAWER
+════════════════════════════════════════════ */
 .mob-nav{
   display:none;
   position:fixed;top:62px;left:0;right:0;z-index:590;
-  background:var(--nav-bg);
-  backdrop-filter:blur(32px) saturate(200%);
-  -webkit-backdrop-filter:blur(32px) saturate(200%);
+  background:var(--nav-solid);
+  backdrop-filter:blur(24px) saturate(160%);
+  -webkit-backdrop-filter:blur(24px) saturate(160%);
   border-bottom:1px solid var(--border);
-  padding:1rem 1.5rem 1.5rem;
+  padding:1rem 1.5rem 1.4rem;
   transform:translateY(-8px);opacity:0;
   transition:transform .28s ease,opacity .28s ease;
+  box-shadow:0 8px 24px rgba(0,0,0,.12);
 }
-.mob-nav.open{transform:translateY(0);opacity:1;}
-.mob-nav ul{list-style:none;display:flex;flex-direction:column;gap:.25rem;}
+.mob-nav.open{transform:translateY(0);opacity:1}
+.mob-nav ul{list-style:none;display:flex;flex-direction:column;gap:.2rem;margin-bottom:.65rem}
 .mob-nav ul a{
-  display:block;
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:500;font-size:.88rem;
-  color:var(--text-2);padding:.62rem 1rem;border-radius:10px;
+  display:block;font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.86rem;font-weight:500;color:var(--text-2);
+  padding:.6rem 1rem;border-radius:10px;
   transition:color .2s,background .2s;
 }
-.mob-nav ul a:hover{color:var(--text);background:rgba(255,255,255,0.06);}
-[data-theme="light"] .mob-nav ul a:hover{background:rgba(0,0,0,0.04);}
-.mob-theme-lbl{ display:none; }
+.mob-nav ul a:hover{color:var(--text);background:rgba(255,255,255,.06)}
+[data-theme="light"] .mob-nav ul a:hover{background:rgba(0,0,0,.04)}
+.mob-cta{
+  display:block;text-align:center;
+  background:var(--brand);color:#fff;
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.85rem;font-weight:700;
+  padding:.68rem;border-radius:12px;box-shadow:var(--sh-br);
+  margin-bottom:.65rem;
+  transition:opacity .2s;
+}
+.mob-cta:hover{opacity:.88}
+/* Drawer controls row */
+.mob-controls{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.55rem 1rem;border-radius:10px;
+  background:rgba(255,255,255,.03);gap:1rem;
+}
+[data-theme="light"] .mob-controls{background:rgba(0,0,0,.03)}
+.mob-ctrl-label{
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--text-3);flex-shrink:0;
+}
+.mob-ctrl-pair{display:flex;align-items:center;gap:.55rem}
 
+/* ════════════════════════════════════════════
+   NOTICE BOARD — Breaking News Ticker
+   Full width of container, above hero grid
+════════════════════════════════════════════ */
+.nb-wrap{
+  max-width:1160px;margin:0 auto;
+  padding:0 2.5rem;
+  position:relative;z-index:2;
+}
+.notice-board{
+  display:flex;width:100%;
+  border-radius:11px;margin-bottom:1.4rem;
+  overflow:hidden;position:relative;
+  border-left:4px solid var(--brand);
+  transition:box-shadow .3s;
+}
+.notice-board:hover{box-shadow:0 4px 20px rgba(214,54,81,.16)}
+.nb-inner{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 14px;width:100%;flex-wrap:nowrap;min-width:0;
+}
+.nb-live{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:#fff;background:var(--brand);
+  padding:3px 9px;border-radius:4px;flex-shrink:0;white-space:nowrap;
+}
+.nb-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:rgba(255,255,255,.85);
+  animation:nbpulse 1.8s ease-in-out infinite;
+}
+@keyframes nbpulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
+.nb-sep{width:1px;height:18px;background:var(--border-2);flex-shrink:0}
+.nb-ticker{flex:1;min-width:0;overflow:hidden;position:relative;height:20px}
+.nb-ticker-text{
+  position:absolute;top:0;left:0;white-space:nowrap;
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.78rem;font-weight:500;color:var(--text-2);line-height:20px;
+  animation:nbtick 20s linear infinite;
+  transition:opacity .28s;
+}
+.nb-ticker:hover .nb-ticker-text{animation-play-state:paused}
+@keyframes nbtick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.nb-btn{
+  background:rgba(255,255,255,.07);border:1px solid var(--border-2);
+  width:28px;height:28px;border-radius:50%;font-size:1rem;
+  color:var(--text-3);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s,color .2s,transform .3s;
+}
+.nb-btn:hover{background:var(--brand-s);color:var(--brand);transform:rotate(180deg)}
+.nb-all{
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.66rem;font-weight:700;letter-spacing:.04em;
+  padding:5px 12px;border-radius:100px;
+  background:var(--brand-s);border:1px solid rgba(214,54,81,.3);
+  color:var(--brand);flex-shrink:0;white-space:nowrap;
+  transition:background .2s,transform .2s;
+  position:relative;overflow:hidden;
+}
+.nb-all:hover{background:var(--brand-m);transform:scale(1.04)}
+/* All-updates panel */
+.nb-panel{
+  display:none;max-width:1160px;margin:0 auto;padding:0 2.5rem;
+  position:relative;z-index:2;margin-bottom:1rem;
+}
+.nb-panel-inner{
+  border-radius:14px;padding:1rem 1.2rem;position:relative;
+  animation:panelIn .3s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes panelIn{from{opacity:0;transform:translateY(-6px) scale(.98)}to{opacity:1;transform:none}}
+.nb-panel-close{
+  position:absolute;top:10px;right:12px;
+  background:none;border:none;font-size:1.1rem;color:var(--text-3);cursor:pointer;
+  transition:color .2s,transform .2s;
+}
+.nb-panel-close:hover{color:var(--brand);transform:rotate(90deg)}
+.nb-panel h4{
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  color:var(--brand);margin-bottom:.8rem;font-size:.78rem;font-weight:700;
+}
+#fullList{line-height:1.9;font-family:"Plus Jakarta Sans",sans-serif;font-size:.84rem;color:var(--text-2)}
 
-
-
-
-
-
-
-/* ══════════════════════════════════════════
+/* ════════════════════════════════════════════
    HERO
-══════════════════════════════════════════ */
+════════════════════════════════════════════ */
 .hero{
   min-height:100vh;padding-top:62px;
   display:grid;grid-template-columns:1fr 1fr;
@@ -595,1798 +434,361 @@ nav{
   max-width:1160px;margin:0 auto;
   padding-left:2.5rem;padding-right:2.5rem;
   position:relative;z-index:1;
-  overflow:visible;
 }
-.hero-left{animation:fadeUp .7s ease both;min-width:0;overflow:visible;}
-.hero-right{display:flex;justify-content:center;align-items:center;animation:fadeUp .8s .12s ease both;}
+.hero-left{animation:fadeUp .7s ease both;min-width:0}
+.hero-right{display:flex;justify-content:center;align-items:center;animation:fadeUp .8s .12s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 
-/* Eyebrow pill — Cascadia Code */
-.hero-pill{
-  display:inline-flex;align-items:center;gap:.55rem;
-  background:rgba(255,255,255,0.06);
-  backdrop-filter:blur(14px);border:1px solid var(--border-2);
-  border-radius:100px;padding:.34rem 1rem;margin-bottom:1.4rem;
-  box-shadow:inset 0 1px 0 var(--shine),var(--R-sm);
-}
-[data-theme="light"] .hero-pill{background:rgba(255,255,255,0.55);}
-.pill-dot{
-  width:6px;height:6px;border-radius:50%;
-  background:var(--brand);box-shadow:0 0 8px var(--brand-glow);
-  animation:pdot 1.6s infinite;
-}
-@keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.6)}}
-.pill-txt{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:600;font-size:.68rem;color:var(--text-3);
-  letter-spacing:.1em;text-transform:uppercase;
-}
-
-/* Hero headline — Outfit for impact (sizing only here; colours set per line below) */
-
-/* Hero description — Plus Jakarta Sans for readability */
-.hero-desc{
-  font-family:"Plus Jakarta Sans",sans-serif;font-weight:400;
-  font-size:1rem;color:var(--text-2);line-height:1.78;
-  max-width:430px;margin-bottom:2.2rem;
-}
-.hero-btns{display:flex;gap:.85rem;flex-wrap:wrap;}
-
-/* Hero right: logo card with animated graph grid */
-.logo-card{
-  width:310px;height:310px;border-radius:28px;
-  display:flex;align-items:center;justify-content:center;
-  position:relative;overflow:hidden;
-}
-.logo-card-grid{
-  position:absolute;inset:0;z-index:5;pointer-events:none;
-  background-image:
-    linear-gradient(rgba(220,59,82,0.10) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(220,59,82,0.10) 1px,transparent 1px);
-  background-size:26px 26px;
-  animation:innerGrid 8s linear infinite;
-}
-@keyframes innerGrid{
-  from{background-position:0 0}
-  to{background-position:26px 26px}
-}
-.logo-card-axis{position:absolute;inset:0;z-index:6;pointer-events:none;}
-.logo-card-axis::before{
-  content:'';position:absolute;top:50%;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(220,59,82,0.30),transparent);
-}
-.logo-card-axis::after{
-  content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;
-  background:linear-gradient(180deg,transparent,rgba(220,59,82,0.30),transparent);
-}
-.logo-inner{position:relative;z-index:7;display:flex;align-items:center;justify-content:center;}
-@keyframes ringP{0%,100%{transform:scale(1);opacity:.20}50%{transform:scale(1.06);opacity:.38}}
-.ring{position:absolute;border-radius:50%;border:1.5px solid rgba(220,59,82,0.22);}
-.ring-1{width:210px;height:210px;animation:ringP 3.2s ease-in-out infinite;}
-.ring-2{width:260px;height:260px;animation:ringP 3.2s 1.6s ease-in-out infinite;}
-
-/* ══════════════════════════════════════════
-   BUTTONS
-══════════════════════════════════════════ */
-.btn-p{
-  display:inline-flex;align-items:center;gap:.55rem;
-  background:var(--brand);color:#fff;
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:700;font-size:.85rem;
-  padding:.84rem 1.8rem;border-radius:100px;
-  box-shadow:var(--R-br);transition:transform .2s,box-shadow .2s;white-space:nowrap;
-}
-.btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 42px rgba(220,59,82,.38);}
-.btn-o{
-  display:inline-flex;align-items:center;gap:.55rem;
-  background:rgba(255,255,255,0.06);backdrop-filter:blur(14px);
-  border:1px solid var(--border-2);color:var(--text);
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:600;font-size:.85rem;
-  padding:.84rem 1.5rem;border-radius:100px;
-  box-shadow:inset 0 1px 0 var(--shine),var(--R-sm);
-  transition:background .2s;white-space:nowrap;
-}
-[data-theme="light"] .btn-o{background:rgba(255,255,255,0.55);}
-.btn-o:hover{background:rgba(255,255,255,0.11);}
-[data-theme="light"] .btn-o:hover{background:rgba(255,255,255,0.80);}
-
-/* ══════════════════════════════════════════
-   SECTION HEADERS
-══════════════════════════════════════════ */
-/* Eyebrow — always Cascadia Code */
-.eyebrow{
-  display:flex;align-items:center;gap:.7rem;
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:700;font-size:.67rem;color:var(--brand);
-  letter-spacing:.18em;text-transform:uppercase;margin-bottom:.85rem;
-}
-.eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--brand);border-radius:2px;}
-/* Section title — DM Serif Display (editorial, refined) */
-.sh2{
-  font-family:"DM Serif Display",serif;font-weight:400;
-  font-size:clamp(2rem,3.5vw,3.2rem);
-  line-height:1.08;letter-spacing:-.01em;margin-bottom:.85rem;
-  color:var(--text);
-}
-.sh2 em{color:var(--brand);font-style:italic;font-family:"DM Serif Display",serif;}
-/* "Prepway Podcast" — Cascadia Code, soft sage green */
-.podcast-em{
-  font-family:"Cascadia Code",monospace !important;
-  font-optical-sizing:auto;font-weight:700;
-  font-style:normal !important;
-  color:#5BB98C !important;
-  -webkit-text-fill-color:#5BB98C !important;
-  background:none !important;
-  letter-spacing:-.02em;
-}
-/* Section paragraph — Plus Jakarta Sans */
-.sp{
-  font-family:"Plus Jakarta Sans",sans-serif;font-weight:400;
-  font-size:1rem;color:var(--text-2);line-height:1.75;
-  max-width:490px;margin-bottom:2.5rem;
-}
-
-/* ══════════════════════════════════════════
-   EPISODES
-══════════════════════════════════════════ */
-.eps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
-.ep-card{cursor:pointer;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s;}
-.ep-card::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:2.5px;
-  background:linear-gradient(90deg,var(--brand),rgba(214,54,81,.35));
-  transform:scaleX(0);transform-origin:left;transition:transform .35s;z-index:5;
-}
-.ep-card:hover{
-  transform:translateY(-8px) scale(1.015);
-  box-shadow:
-    0 20px 56px rgba(214,54,81,.14),
-    0 8px 24px rgba(0,0,0,.28),
-    inset 0 1.5px 0 rgba(255,255,255,.22) !important;
-}
-.ep-card:hover::after{transform:scaleX(1);}
-.ep-thumb{width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:var(--bg-s);}
-.ep-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s;}
-.ep-card:hover .ep-thumb img{transform:scale(1.05);}
-.ep-ov{
-  position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 60%);
-  display:flex;align-items:center;justify-content:center;
-  opacity:0;transition:opacity .25s;
-}
-.ep-card:hover .ep-ov{opacity:1;}
-.ep-play{
-  width:52px;height:52px;border-radius:50%;
-  background:var(--brand);color:#fff;font-size:1.1rem;
-  display:flex;align-items:center;justify-content:center;
-  transform:scale(.75);transition:transform .25s;box-shadow:var(--R-br);
-}
-.ep-card:hover .ep-play{transform:scale(1);}
-.ep-body{padding:1.2rem;}
-.ep-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:.55rem;}
-/* Episode metadata — Cascadia Code */
-.ep-n{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:700;font-size:.62rem;color:var(--brand);letter-spacing:.12em;text-transform:uppercase;
-}
-.ep-d{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-size:.62rem;color:var(--text-3);
-  background:rgba(255,255,255,.06);padding:.17rem .5rem;border-radius:100px;border:1px solid var(--border);
-}
-[data-theme="light"] .ep-d{background:rgba(0,0,0,.05);}
-/* Episode title — DM Serif Display */
-.ep-t{
-  font-family:"DM Serif Display",serif;font-weight:400;
-  font-size:.95rem;line-height:1.42;margin-bottom:.4rem;color:var(--text);
-}
-/* Episode guest — Plus Jakarta Sans */
-.ep-g{
-  font-family:"Plus Jakarta Sans",sans-serif;font-weight:500;
-  font-size:.82rem;color:var(--text-2);margin-bottom:.55rem;
-}
-.ep-v{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-size:.64rem;color:var(--text-3);
-}
-
-/* ══════════════════════════════════════════
-   SPECIAL VIDEO — অমর একুশে
-   Shows thumbnail, click opens YouTube
-══════════════════════════════════════════ */
-.spec-bg{
-  background:rgba(255,255,255,.018);backdrop-filter:blur(20px);
-  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-}
-[data-theme="light"] .spec-bg{background:rgba(0,0,0,.018);}
-.spec-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:center;}
-
-/* Clickable thumbnail for the special episode */
-.spec-thumb-link{
-  display:block;border-radius:18px;overflow:hidden;
-  border:1px solid var(--border-2);
-  box-shadow:inset 0 1px 0 var(--shine),var(--R-lg);
-  text-decoration:none;
-  position:relative;
-}
-.spec-thumb-link img{
-  width:100%;aspect-ratio:16/9;object-fit:cover;display:block;
-  transition:transform .4s;
-}
-.spec-thumb-link:hover img{transform:scale(1.03);}
-.spec-play-over{
-  position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(0,0,0,.60) 0%,transparent 55%);
-  display:flex;align-items:flex-end;justify-content:center;padding-bottom:1.2rem;
-  transition:opacity .25s;
-}
-.spec-play-badge{
-  display:flex;align-items:center;gap:.5rem;
-  background:rgba(220,59,82,.92);color:#fff;
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:700;font-size:.78rem;letter-spacing:.04em;
-  padding:.55rem 1.2rem;border-radius:100px;
-  box-shadow:0 4px 20px rgba(220,59,82,.4);
-}
-
-.spec-tag{
-  display:inline-flex;align-items:center;gap:.5rem;
-  background:rgba(220,59,82,.10);
-  border:1px solid rgba(220,59,82,.25);color:var(--brand);
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:700;font-size:.67rem;letter-spacing:.12em;text-transform:uppercase;
-  padding:.3rem .88rem;border-radius:100px;margin-bottom:1.2rem;
-}
-
-/* Bengali title for অমর একুশে */
-.bengali-title{
-  font-family:"Hind Siliguri",sans-serif;font-weight:700;
-  font-size:clamp(2rem,3.5vw,3.2rem);
-  line-height:1.2;margin-bottom:.85rem;color:var(--text);
-}
-.bengali-title em{
-  font-family:"DM Serif Display",serif;font-style:italic;
-  font-size:0.65em;color:var(--brand);
-  display:block;margin-top:0.2em;line-height:1.3;
-}
-
-/* ══════════════════════════════════════════
-   ABOUT
-══════════════════════════════════════════ */
-/* ══════════════════════════════════════════
-   STORY CARDS — expandable accordion cards
-══════════════════════════════════════════ */
-.story-cards{
-  display:flex;
-  flex-direction:column;
-  gap:1rem;
-  margin-bottom:0;
-}
-.story-card{
-  border-radius:18px;
-  cursor:pointer;
-  transition:transform .22s cubic-bezier(.34,1.56,.64,1), box-shadow .22s;
-  -webkit-tap-highlight-color:transparent;
-  user-select:none;
-  /* Override glass defaults for true transparency */
-  background:transparent !important;
-}
-/* g-o (tint layer): near-transparent so backdrop shows through */
-.story-card .g-o{
-  background:color-mix(in srgb, var(--gc-bg) 40%, transparent) !important;
-}
-/* g-f (blur layer): strong blur for real frosted look */
-.story-card .g-f{
-  backdrop-filter:blur(20px) saturate(180%) brightness(1.04) !important;
-  -webkit-backdrop-filter:blur(20px) saturate(180%) brightness(1.04) !important;
-}
-.story-card:hover{transform:translateY(-2px);box-shadow:var(--R-glass);}
-/* Ensure text stays legible through glass */
-.story-card .sc-title{color:var(--text);text-shadow:none;}
-.story-card .sc-preview,.story-card .story-p{color:var(--text-2);}
-[data-theme="light"] .story-card .g-o{
-  background:rgba(255,255,255,0.45) !important;
-}
-.sc-inner{padding:1.4rem 1.5rem;}
-.sc-header{
-  display:flex;
-  align-items:center;
-  gap:.75rem;
-  margin-bottom:.75rem;
-}
-.sc-num{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:700;font-size:.62rem;
-  color:var(--brand);
-  background:rgba(214,54,81,0.10);
-  border:1px solid rgba(214,54,81,0.22);
-  border-radius:6px;
-  padding:.18rem .48rem;
-  letter-spacing:.1em;
-  flex-shrink:0;
-}
-.sc-title{
-  font-family:"Outfit",sans-serif;
-  font-weight:800;font-size:1.05rem;
-  color:var(--text);letter-spacing:-.01em;
-  flex:1;
-}
-.sc-date{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-size:.60rem;font-weight:500;
-  color:var(--text-3);
-  white-space:nowrap;
-  flex-shrink:0;
-}
-.sc-chevron{
-  flex-shrink:0;
-  color:var(--text-3);
-  display:flex;align-items:center;
-  transition:transform .35s cubic-bezier(.34,1.56,.64,1),
-             color .2s;
-}
-.story-card.open .sc-chevron{
-  transform:rotate(180deg);
-  color:var(--brand);
-}
-/* Preview — always visible */
-.sc-preview{
-  font-family:"Plus Jakarta Sans",sans-serif;
-  font-size:.90rem;font-weight:500;
-  color:var(--text-2);
-  line-height:1.65;
-  margin:0;
-}
-/* Body — hidden by default, expands on open */
-.sc-body{
-  max-height:0;
-  overflow:hidden;
-  transition:max-height .45s cubic-bezier(.4,0,.2,1),
-             opacity .35s ease,
-             margin-top .35s ease;
-  opacity:0;
-  margin-top:0;
-}
-.story-card.open .sc-body{
-  max-height:600px;
-  opacity:1;
-  margin-top:1rem;
-}
-/* Read more hint */
-.sc-hint{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-size:.60rem;font-weight:600;
-  color:var(--brand);
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  margin-top:.6rem;
-  display:block;
-  opacity:.8;
-  transition:opacity .2s;
-}
-.story-card.open .sc-hint{display:none;}
-
-/* Feature cards grid — 3 across desktop, 2 tablet, 1 mobile */
-.acards-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1rem;
-}
-@media(max-width:1024px){
-  .acards-grid{grid-template-columns:repeat(2,1fr);}
-}
-@media(max-width:768px){
-  .acards-grid{grid-template-columns:repeat(2,1fr);gap:.75rem;}
-  .sc-title{font-size:.95rem;}
-  .sc-date{display:none;}
-  .sc-inner{padding:1.1rem 1.2rem;}
-}
-@media(max-width:480px){
-  .acards-grid{grid-template-columns:1fr;}
-}
-
-
-/* Numbered section labels for About history */
-.story-section-label{
-  display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;
-}
-.story-section-tag{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:700;font-size:.72rem;
-  color:#fff;background:var(--brand);
-  width:26px;height:26px;border-radius:6px;
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;letter-spacing:.02em;
-}
-.story-section-name{
-  font-family:"Outfit",sans-serif;font-weight:800;
-  font-size:1.1rem;color:var(--text);letter-spacing:-.02em;
-}
-/* Thin horizontal rule between history sections */
-.story-divider{
-  height:1px;
-  background:linear-gradient(90deg,var(--brand-mid),transparent);
-  margin:1.8rem 0;
-}
-/* Story headings — Cascadia Code for techy feel */
-.story-h{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:700;font-size:.88rem;color:var(--brand);
-  letter-spacing:-.01em;margin-bottom:.5rem;margin-top:1.7rem;
-}
-.story-h:first-of-type{margin-top:0;}
-/* Story body — Plus Jakarta Sans */
-.story-p{
-  font-family:"Plus Jakarta Sans",sans-serif;font-weight:400;
-  font-size:.95rem;color:var(--text-2);line-height:1.80;margin-bottom:.4rem;
-}
-/* Founders list — clearly visible, distinct styling */
-.founders-list{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-size:.88rem;font-weight:600;
-  color:var(--text);
-  line-height:2.1;
-  margin-top:.8rem;margin-bottom:.8rem;
-  padding:1rem 1.2rem;
-  background:rgba(220,59,82,0.06);
-  border-left:3px solid var(--brand);
-  border-radius:0 10px 10px 0;
-}
-.acards{display:flex;flex-direction:column;gap:.95rem;}
-.acard{
-  transition:transform .2s, box-shadow .2s;
-  background:transparent !important;
-}
-.acard .g-o{
-  background:color-mix(in srgb, var(--gc-bg) 35%, transparent) !important;
-}
-.acard .g-f{
-  backdrop-filter:blur(16px) saturate(160%) !important;
-  -webkit-backdrop-filter:blur(16px) saturate(160%) !important;
-}
-.acard:hover{transform:translateY(-2px);box-shadow:var(--R-glass);}
-[data-theme="light"] .acard .g-o{background:rgba(255,255,255,0.40) !important;}
-.acard-head{display:flex;align-items:center;gap:.72rem;margin-bottom:.5rem;}
-.aico{
-  width:36px;height:36px;border-radius:10px;flex-shrink:0;
-  background:rgba(220,59,82,.10);border:1px solid rgba(220,59,82,.20);
-  display:flex;align-items:center;justify-content:center;font-size:.95rem;
-}
-/* Card title — Cascadia Code */
-.acard h4{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:700;font-size:.88rem;color:var(--text);
-}
-/* Card body — Plus Jakarta Sans */
-.acard p{
-  font-family:"Plus Jakarta Sans",sans-serif;font-weight:400;
-  font-size:.88rem;color:var(--text-2);line-height:1.65;
-}
-.vis-box{
-  margin-top:1.5rem;border-radius:16px;padding:1.35rem;
-  background:rgba(220,59,82,.06);border:1px solid rgba(220,59,82,.18);
-  backdrop-filter:blur(20px);
-}
-.vis-box h4{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:700;font-size:.88rem;color:var(--brand);margin-bottom:.5rem;
-}
-.vis-box p{
-  font-family:"Plus Jakarta Sans",sans-serif;font-weight:400;
-  font-size:.88rem;color:var(--text-2);line-height:1.7;
-}
-.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.9rem;}
-.chip{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-size:.67rem;font-weight:600;
-  padding:.28rem .78rem;border-radius:100px;
-  border:1px solid var(--border-2);color:var(--text-2);
-  background:rgba(255,255,255,.04);backdrop-filter:blur(10px);
-}
-[data-theme="light"] .chip{background:rgba(0,0,0,.04);}
-.chip.s{background:rgba(220,59,82,.08);border-color:rgba(220,59,82,.25);color:var(--brand);}
-
-/* ══════════════════════════════════════════
-   BOOKING
-══════════════════════════════════════════ */
-.book-bg{
-  background:rgba(255,255,255,.018);backdrop-filter:blur(20px);
-  border-top:1px solid var(--border);
-}
-[data-theme="light"] .book-bg{background:rgba(0,0,0,.018);}
-.book-inner{display:grid;grid-template-columns:1fr 1.28fr;gap:5rem;align-items:start;}
-.hls{display:flex;flex-direction:column;gap:.78rem;margin-top:1.8rem;}
-.hl{
-  display:flex;align-items:center;gap:.82rem;
-  padding:.8rem 1.05rem;border-radius:12px;
-  background:rgba(255,255,255,.03);backdrop-filter:blur(18px);
-  border:1px solid var(--border);box-shadow:inset 0 1px 0 var(--shine);
-  font-family:"Plus Jakarta Sans",sans-serif;font-weight:600;font-size:.86rem;color:var(--text-2);
-  transition:border-color .2s,color .2s;
-}
-[data-theme="light"] .hl{background:rgba(0,0,0,.025);}
-.hl:hover{border-color:var(--border-2);color:var(--text);}
-.hl-i{font-size:.95rem;flex-shrink:0;}
-
-/* Form — Outfit heading, Plus Jakarta body, Cascadia labels */
-.fh{
-  font-family:"Outfit",sans-serif;font-weight:800;
-  font-size:1.3rem;margin-bottom:.3rem;color:var(--text);
-}
-.fs{
-  font-family:"Plus Jakarta Sans",sans-serif;font-weight:400;
-  font-size:.82rem;color:var(--text-2);margin-bottom:1.4rem;
-}
-.fields{display:flex;flex-direction:column;gap:.9rem;}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;}
-.fg{display:flex;flex-direction:column;gap:.3rem;}
-.fg label{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);
-}
-.fg input,.fg select,.fg textarea{
-  background:var(--input-bg);backdrop-filter:blur(16px);
-  border:1px solid var(--border);border-radius:10px;
-  padding:.68rem .92rem;color:var(--text);
-  font-family:"Plus Jakarta Sans",sans-serif;font-size:.88rem;
-  outline:none;width:100%;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
-  transition:border-color .2s,background .2s;
-}
-.fg input::placeholder,.fg textarea::placeholder{color:var(--text-3);}
-.fg input:focus,.fg select:focus,.fg textarea:focus{
-  border-color:rgba(220,59,82,.50);background:rgba(220,59,82,.04);
-}
-.fg select option{background:#1e1e24;color:#f0ebe3;}
-[data-theme="light"] .fg select option{background:#f2efe9;color:#110f0d;}
-.fg textarea{resize:vertical;min-height:85px;}
-.sub-btn{
-  width:100%;margin-top:1.1rem;
-  background:var(--brand);color:#fff;
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:700;font-size:.9rem;
-  padding:.9rem;border:none;border-radius:12px;cursor:pointer;
-  box-shadow:var(--R-br);transition:opacity .2s,transform .2s;
-}
-.sub-btn:hover{opacity:.86;transform:translateY(-1px);}
-.fnote{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-size:.64rem;color:var(--text-3);text-align:center;margin-top:.65rem;
-}
-.suc{display:none;text-align:center;padding:2rem .5rem;}
-.suc.show{display:block;}
-.suc-ico{font-size:2.2rem;color:var(--brand);margin-bottom:.65rem;}
-.suc h3{font-family:"Outfit",sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:.4rem;color:var(--text);}
-.suc p{font-family:"Plus Jakarta Sans",sans-serif;font-size:.88rem;color:var(--text-2);}
-
-/* ══════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════ */
-footer{
-  position:relative;z-index:1;
-  border-top:1px solid var(--border);
-  background:rgba(255,255,255,.018);backdrop-filter:blur(20px);
-}
-[data-theme="light"] footer{background:rgba(0,0,0,.018);}
-.ft-inner{max-width:1160px;margin:0 auto;padding:3rem 2.5rem 2rem;}
-.ft-top{display:block;margin-bottom:2.5rem;}
-.ft-logo-row{display:flex;align-items:center;gap:0;margin-bottom:.85rem;}
-/* Footer brand text — Cascadia Code, prepway=red, Bangladesh=text */
-.ft-lp{font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-weight:700;font-size:1rem;color:var(--brand);letter-spacing:-.02em;}
-.ft-ls{font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-weight:600;font-size:1rem;color:var(--text);letter-spacing:-.01em;}
-.ft-brand p{
-  font-family:"Plus Jakarta Sans",sans-serif;font-weight:400;
-  font-size:.84rem;color:var(--text-2);line-height:1.72;max-width:285px;
-}
-.soc-row{display:flex;gap:.52rem;margin-top:1.1rem;flex-wrap:wrap;}
-.soc-btn{
-  display:flex;align-items:center;gap:.42rem;
-  background:rgba(255,255,255,.05);backdrop-filter:blur(16px);
-  border:1px solid var(--border-2);border-radius:10px;
-  padding:.46rem .8rem;
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-size:.75rem;font-weight:600;color:var(--text-2);
-  box-shadow:inset 0 1px 0 var(--shine),var(--R-sm);
-  transition:color .2s,border-color .2s,background .2s;
-}
-[data-theme="light"] .soc-btn{background:rgba(255,255,255,.55);}
-.soc-btn:hover{color:var(--text);border-color:var(--brand);background:rgba(220,59,82,.08);}
-/* Footer column headings — Cascadia Code */
-.ft-col h4{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:700;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--text-3);margin-bottom:.95rem;
-}
-.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
-.ft-col ul a{
-  font-family:"Plus Jakarta Sans",sans-serif;font-size:.84rem;font-weight:400;
-  color:var(--text-2);transition:color .2s;
-}
-.ft-col ul a:hover{color:var(--brand);}
-.ft-bot{
-  border-top:1px solid var(--border);padding-top:1.3rem;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;
-}
-.ft-bot p{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-size:.72rem;color:var(--text-3);
-}
-.ft-bot a{color:var(--brand);}
-.ft-bot a:hover{opacity:.75;}
-
-/* ══════════════════════════════════════════
-   FLOATING MESSENGER BUTTON
-   Fixed bottom-right, glass pill, expands on hover
-══════════════════════════════════════════ */
-.fab-messenger{
-  position:fixed;right:1.5rem;bottom:1.6rem;z-index:550;
-  display:flex;align-items:center;
-  border-radius:100px;
-  text-decoration:none;
-  cursor:pointer;
-  overflow:hidden;
-  border:1px solid var(--border-2);
-  box-shadow:var(--R-glass);
-  transition:transform .25s cubic-bezier(.2,.8,.2,1),
-             box-shadow .25s,width .3s ease;
-  width:52px;height:52px;
-}
-.fab-messenger:hover{
-  width:160px;
-  transform:translateY(-2px) scale(1.02);
-  box-shadow:0 12px 36px rgba(0,0,0,.35),
-             inset 0 1.5px 0 var(--liq-rim);
-}
-.fab-inner{
-  display:flex;align-items:center;gap:.6rem;
-  padding:0 .85rem;height:100%;white-space:nowrap;
-}
-.fab-icon{width:26px;height:26px;object-fit:contain;flex-shrink:0;display:block;}
-.fab-label{
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:700;font-size:.75rem;color:var(--text);
-  opacity:0;transform:translateX(-6px);
-  transition:opacity .2s .05s,transform .2s .05s;
-  white-space:nowrap;
-}
-.fab-messenger:hover .fab-label{opacity:1;transform:translateX(0);}
-
-@media(max-width:768px){
-  /* Messenger sits just above pill on mobile */
-  .fab-messenger{bottom:1.2rem;right:1rem;}
-  .fab-messenger:hover{width:52px;}
-  .fab-label{display:none;}
-}
-
-/* Social button icon sizing */
-.soc-icon{width:16px;height:16px;object-fit:contain;display:inline-block;vertical-align:middle;}
-.gform-wrap{max-width:760px;margin:0 auto;}
-.gform-glass{border-radius:22px;overflow:hidden;}
-.gform-inner{padding:1rem;}
-/* iframe height matches Google Forms actual height */
-.gform-inner iframe{
-  border-radius:12px;
-  min-height:1315px;
-}
-@media(max-width:768px){
-  .gform-inner{padding:.5rem;}
-  .gform-inner iframe{min-height:1400px;}
-}
-
-/* ══════════════════════════════════════════
-   ADAPTIVE ICONS
-   UI icons (black SVGs) auto-invert in dark mode.
-   Brand/social icons stay full-color always.
-══════════════════════════════════════════ */
-
-/* UI icons — black strokes, adapt to theme */
-.btn-icon, .hl-icon {
-  filter: brightness(0) saturate(100%);
-  transition: filter .35s, opacity .2s;
-}
-.aico-img {
-  /* Default: full colour — only plain icons override per-element */
-  filter: none;
-  transition: filter .35s;
-}
-[data-theme="dark"] .btn-icon,
-[data-theme="dark"] .hl-icon {
-  filter: brightness(0) invert(1);
-}
-/* Plain (single-colour) about-card icons — invert on dark */
-[data-theme="dark"] .aico-img.icon-mono {
-  filter: brightness(0) invert(1);
-}
-
-/* Play icon — always white (shown on dark overlay) */
-.play-icon {
-  filter: brightness(0) invert(1);
-}
-
-/* Brand icons — full color, never filtered */
-.soc-icon, .fab-icon {
-  filter: none !important;
-}
-
-/* ══════════════════════════════════════════
-   ICON IMAGE SIZING
-══════════════════════════════════════════ */
-.btn-icon{width:18px;height:18px;object-fit:contain;vertical-align:middle;flex-shrink:0;}
-.play-icon{width:18px;height:18px;object-fit:contain;display:block;}
-.aico-img{width:20px;height:20px;object-fit:contain;display:block;}
-.hl-icon{width:18px;height:18px;object-fit:contain;vertical-align:middle;}
-.soc-icon{width:16px;height:16px;object-fit:contain;vertical-align:middle;flex-shrink:0;}
-
-/* ══════════════════════════════════════════
-   TYPING ANIMATION — hero headline
-   Strategy:
-   • h1 is laid out with invisible spacers for
-     BOTH lines so nothing ever shifts.
-   • .typing-wrap sits absolute over each spacer.
-   • "To Bangladesh." also types — does NOT fade.
-   • Bengali follows with a pure fade-in.
-══════════════════════════════════════════ */
-
-/* The h1 block */
-/* ══════════════════════════════════════════
-   SLOGAN SYSTEM
-══════════════════════════════════════════ */
-.slogan-wrap{
-  margin-bottom:2rem;
-}
-
-/* Bengali — slides down into view from top */
+/* Bengali slogan */
 .slogan-bn{
   font-family:"Hind Siliguri",sans-serif;
-  font-weight:700;
-  font-size:clamp(1.4rem,2.6vw,2rem);   /* larger than before */
-  line-height:1.3;
-  letter-spacing:.01em;
-  opacity:0;
-  overflow:hidden;
-  max-height:0;
+  font-size:clamp(1.2rem,2.2vw,1.55rem);font-weight:700;
+  color:var(--brand);line-height:1.5;
+  opacity:0;max-height:0;overflow:hidden;
+  transition:opacity .55s ease,max-height .55s ease,margin .55s ease;
   margin-bottom:0;
-  transform:translateY(-8px);
-  transition:
-    opacity      .6s cubic-bezier(.4,0,.2,1),
-    max-height   .6s cubic-bezier(.4,0,.2,1),
-    transform    .6s cubic-bezier(.4,0,.2,1),
-    margin-bottom .6s cubic-bezier(.4,0,.2,1);
 }
-.slogan-bn.show{
-  opacity:1;
-  max-height:8rem;
-  transform:translateY(0);
-  margin-bottom:.7rem;
-}
-.bn-line-1{ display:block; color:var(--text); }
-.bn-line-2{ display:block; color:var(--brand); }
+.slogan-bn.show{opacity:1;max-height:80px;margin-bottom:.8rem}
 
-/* English heading */
+/* Hero heading */
 .hero-h1{
-  font-family:"Outfit",sans-serif;
-  font-weight:900;
-  font-size:clamp(3rem,5.5vw,6rem);
-  letter-spacing:-0.03em;
-  line-height:1.0;
-  margin:0;
-  padding:0;
-  /* Each .tl block stacks with zero gap */
-  display:block;
+  font-family:"Outfit",sans-serif;font-weight:900;
+  font-size:clamp(3rem,8vw,5.5rem);
+  line-height:1.0;letter-spacing:-.03em;margin-bottom:1.4rem;
 }
-
-/* Each line — position:relative so type-out overlays correctly,
-   height = spacer text height only, cursor is absolute */
-.tl{
-  display:block;
-  position:relative;
-  line-height:1.0;
-  margin:0;
-  padding:0;
-}
-.tl1{ color:var(--text);   }
-.tl2{ color:var(--brand);  }
-
-/* Invisible spacer — holds exact height, nothing else */
-.ts{
-  visibility:hidden;
-  display:block;       /* block = exact height of text lines */
-  pointer-events:none;
-  user-select:none;
-  line-height:inherit;
-  margin:0;
-  padding:0;
-}
-
-/* Typed text sits exactly over the spacer */
-.to{
-  position:absolute;
-  top:0; left:0;
-  display:block;
-  line-height:inherit;
-  white-space:nowrap;   /* prevent wrapping weirdness */
-}
-
-/* Cursor — absolute so it NEVER adds height to container */
+.tl{display:block;position:relative;line-height:1.0}
+.tl1{color:var(--text)}
+.tl2{color:var(--brand)}
+.ts{visibility:hidden;display:block;pointer-events:none;user-select:none;line-height:inherit}
+.to{position:absolute;top:0;left:0;display:block;line-height:inherit;white-space:nowrap}
 .tc{
-  position:absolute;
-  display:inline-block;
-  width:4px;
-  height:.78em;
-  background:currentColor;
-  border-radius:2px;
-  vertical-align:-.05em;
-  opacity:1;
-  animation:tcBlink .72s step-end infinite;
+  position:absolute;display:inline-block;
+  width:4px;height:.78em;border-radius:2px;
+  background:currentColor;vertical-align:-.05em;opacity:1;
+  animation:tcblink .72s step-end infinite;pointer-events:none;
+}
+.tc.off{animation:none;opacity:0}
+@keyframes tcblink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes chIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* Buttons */
+.hero-btns{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.4rem}
+.btn-p,.btn-o{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.82rem;font-weight:700;
+  padding:.8rem 1.5rem;border-radius:100px;
+  transition:opacity .2s,transform .2s,box-shadow .2s;
+  white-space:nowrap;position:relative;overflow:hidden;
+}
+.btn-icon{width:18px;height:18px;object-fit:contain;flex-shrink:0}
+[data-theme="dark"] .btn-icon,[data-theme="dark"] .hl-icon,[data-theme="dark"] .soc-icon,[data-theme="dark"] .fab-icon{filter:invert(1) brightness(2)}
+.btn-p{background:var(--brand);color:#fff;box-shadow:var(--sh-br)}
+.btn-p:hover{opacity:.88;transform:translateY(-2px);box-shadow:0 8px 28px rgba(214,54,81,.38)}
+.btn-o{background:var(--gc-bg);color:var(--text);border:1px solid var(--border-2);box-shadow:var(--sh-sm)}
+.btn-o:hover{background:var(--bg-card);transform:translateY(-2px)}
+/* Ripple on click */
+.btn-p::after,.btn-o::after,.mob-cta::after{
+  content:'';position:absolute;width:60px;height:60px;border-radius:50%;
+  background:rgba(255,255,255,.25);
+  top:50%;left:50%;transform:translate(-50%,-50%) scale(0);
   pointer-events:none;
 }
-.tc.off{ animation:none; opacity:0; }
-@keyframes tcBlink{ 0%,100%{opacity:1} 50%{opacity:0} }
+.btn-p:active::after,.btn-o:active::after,.mob-cta:active::after{animation:ripple .5s ease-out forwards}
+@keyframes ripple{0%{transform:translate(-50%,-50%) scale(0);opacity:.4}100%{transform:translate(-50%,-50%) scale(4);opacity:0}}
 
-/* Per-character fade-in */
-@keyframes chFadeIn{
-  from{ opacity:0; transform:translateY(5px); }
-  to  { opacity:1; transform:translateY(0);   }
+/* Logo card */
+.logo-card{border-radius:24px;width:320px;height:320px;display:flex;align-items:center;justify-content:center}
+.logo-card .g-c{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+.logo-card img{width:65%;height:auto;object-fit:contain}
+.logo-card-grid{
+  position:absolute;inset:0;z-index:0;border-radius:inherit;overflow:hidden;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:28px 28px;
 }
-
-/* Disable old conflicting rules */
-.hero-bn-overlay,.hero-en.fade-out,
-.type-line,.type-spacer,.type-out,.type-cursor,
-.typing-cursor,.typing-wrap,.h1-a,.h1-b{ all:unset; display:none; }
-
-/* ──────────── Responsive ──────────── */
-/* Tablet */
-@media(max-width:1024px) and (min-width:769px){
-  
-  .hero-h1{ font-size:clamp(2.8rem,6vw,4.5rem); }
-  .slogan-bn{ font-size:clamp(1.3rem,2.4vw,1.7rem); }
-}
-/* Mobile */
-@media(max-width:768px){
-  .hero-h1{ font-size:clamp(2.4rem,9vw,3.6rem); }
-  .slogan-bn{ font-size:clamp(1.15rem,5vw,1.55rem); }
-  .slogan-wrap{ margin-bottom:1.5rem; }
-}
-/* Small mobile */
-
-/* Mobile: notice board adapts width naturally */
-@media(max-width:768px){
-  .notice-board{
-    width:100%;
-    max-width:100%;
-    border-radius:12px;
-  }
-  .nb-text{
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    max-width:none;
-    font-size:.78rem;
-  }
-  .nb-chevron{display:flex;}
+[data-theme="light"] .logo-card-grid{
+  background-image:linear-gradient(rgba(0,0,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.05) 1px,transparent 1px);
 }
 
-@media(max-width:420px){
-  .hero-h1{ font-size:clamp(2rem,10.5vw,3rem); }
-  .slogan-bn{ font-size:clamp(1rem,4.5vw,1.3rem); }
-}
+/* ════════════════════════════════════════════
+   PODCASTS
+════════════════════════════════════════════ */
+.eps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+.ep-card{border-radius:16px;overflow:hidden;cursor:pointer;transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s}
+.ep-card:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
+.ep-card:active{transform:scale(.97)}
+.ep-thumb{position:relative;aspect-ratio:16/9;overflow:hidden}
+.ep-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.ep-card:hover .ep-thumb img{transform:scale(1.04)}
+.ep-ov{position:absolute;inset:0;background:rgba(0,0,0,.32);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s}
+.ep-card:hover .ep-ov{opacity:1}
+.ep-play{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.play-icon{width:22px;height:22px;object-fit:contain}
+.ep-body{padding:1rem}
+.ep-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:.32rem}
+.ep-n{font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-size:.60rem;font-weight:700;color:var(--brand);letter-spacing:.1em;text-transform:uppercase}
+.ep-d{font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-size:.58rem;color:var(--text-3);font-weight:500}
+.ep-t{font-family:"Plus Jakarta Sans",sans-serif;font-size:.86rem;font-weight:700;color:var(--text);line-height:1.45;margin-bottom:.3rem}
+.ep-g{font-family:"Plus Jakarta Sans",sans-serif;font-size:.74rem;color:var(--text-3);font-weight:500}
+.powered-by{display:block;font-family:"Plus Jakarta Sans",sans-serif;font-size:.92rem;font-weight:500;color:var(--text-3);margin-top:.2rem}
+.powered-by .pw{font-weight:700;color:var(--brand)}
 
-
-/* ══════════════════════════════════════════
-   NOTICE BOARD SYSTEM
-   Replaces hero pill — scrolls through updates
-══════════════════════════════════════════ */
-.notice-board{
-  display:flex;           /* flex so it respects width properly */
-  border-radius:14px;
-  margin-bottom:1.6rem;
-  cursor:pointer;
-  /* Desktop: stretch full width of hero-left */
-  width:100%;
-  max-width:520px;
-  user-select:none;
-}
-/* ── ADVANCED NOTICE ANIMATIONS ── */
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(1.3); }
-}
-#liveDot { animation: pulse 1.8s infinite; }
-
-@keyframes noticeFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-.notice-board { animation: noticeFloat 6s ease-in-out infinite; }
-
-#allPanel {
-  animation: slideDown 0.5s ease forwards;
-  transform-origin: top;
-}
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-20px) scale(0.95); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-/* Toast animation */
-#liveToast.show {
-  display: block;
-  opacity: 1;
-  animation: toastPop 0.4s ease, toastFade 4s 1s forwards;
-}
-@keyframes toastPop { from { transform: translate(-50%, 30px); } to { transform: translateX(-50%); } }
-@keyframes toastFade { to { opacity: 0; } }
-.nb-inner{
-  display:flex;align-items:center;gap:.5rem;
-  padding:.42rem .85rem .42rem .65rem;
-  min-width:0;
-  flex-wrap:nowrap;
-  width:100%;
-}
-/* When expanded, text wraps */
-.notice-board.nb-expanded .nb-inner{flex-wrap:wrap;}
-.notice-board.nb-expanded .nb-text{
-  white-space:normal;
-  overflow:visible;
-  text-overflow:unset;
-}
-.notice-board.nb-expanded .nb-chevron{
-  transform:rotate(180deg);
-}
-.nb-icon{
-  color:var(--brand);flex-shrink:0;
-  display:flex;align-items:center;margin-top:2px;
-  animation:nbPulse 2.2s ease-in-out infinite;
-}
-@keyframes nbPulse{0%,100%{opacity:1}50%{opacity:.45}}
-.nb-tag{
+/* ════════════════════════════════════════════
+   SPECIAL
+════════════════════════════════════════════ */
+.spec-inner{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+.spec-thumb-link{display:block;border-radius:16px;overflow:hidden;position:relative;box-shadow:var(--sh-md);transition:transform .25s;cursor:pointer}
+.spec-thumb-link:hover{transform:scale(1.02)}
+.spec-thumb-link img{width:100%;height:auto}
+.spec-play-over{position:absolute;inset:0;background:rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;transition:background .25s}
+.spec-thumb-link:hover .spec-play-over{background:rgba(0,0,0,.38)}
+.spec-play-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(0,0,0,.72);color:#fff;
   font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:700;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--brand);
-  background:rgba(214,54,81,0.12);
-  border:1px solid rgba(214,54,81,0.25);
-  border-radius:5px;padding:.12rem .38rem;
-  flex-shrink:0;
-  margin-top:1px;
+  font-size:.70rem;font-weight:600;
+  padding:.42rem .88rem;border-radius:100px;border:1px solid rgba(255,255,255,.20);
 }
-.nb-text{
-  font-family:"Plus Jakarta Sans",sans-serif;
-  font-size:.80rem;font-weight:500;
-  color:var(--text-2);
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-  flex:1;min-width:0;
-  transition:opacity .3s ease;
-  max-width:none; /* full width on desktop */
-}
-.nb-chevron{
-  flex-shrink:0;color:var(--text-3);
-  display:flex;align-items:center;margin-top:2px;
-  transition:transform .35s cubic-bezier(.34,1.56,.64,1);
-}
+.spec-tag{font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin-bottom:.7rem}
+.bengali-title{font-family:"Hind Siliguri",sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;color:var(--text);line-height:1.25;margin-bottom:1rem}
+.bengali-title em{color:var(--brand);font-style:italic;font-family:"DM Serif Display",serif;font-size:.75em}
 
-/* ══════════════════════════════════════════
-   NAV CHIP SYSTEM
-   Logo box, Beta box, Menu box — each separate
-══════════════════════════════════════════ */
-.nav-left-group{
-  display:flex;align-items:center;gap:.5rem;
-  flex-shrink:0;
+/* ════════════════════════════════════════════
+   ABOUT — Story Cards
+════════════════════════════════════════════ */
+.story-cards{display:flex;flex-direction:column;gap:1rem}
+.story-card{
+  border-radius:18px;cursor:pointer;
+  transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s;
+  -webkit-tap-highlight-color:transparent;user-select:none;
 }
-.nav-chip{
-  border-radius:12px;
-  height:42px;
-  display:flex;align-items:center;
-  transition:transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .25s;
-  text-decoration:none;
-}
-.nav-chip:hover{transform:translateY(-1px);}
-.nav-chip-inner{
-  display:flex;align-items:center;justify-content:center;
-  padding:.5rem .7rem;
-}
-.nav-logo-chip .nav-chip-inner{padding:.35rem .65rem;}
-.nav-beta-chip{cursor:default;}
-.beta-badge-nav{
+.story-card:hover{transform:translateY(-2px)}
+.story-card:active{transform:scale(.993)}
+.sc-inner{padding:1.35rem 1.5rem}
+.sc-header{display:flex;align-items:center;gap:.7rem;margin-bottom:.7rem}
+.sc-num{
   font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-weight:700;font-size:.60rem;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--brand);
-  display:block;
-  animation:betaPulse 2.8s ease-in-out infinite;
+  font-size:.58rem;font-weight:700;color:var(--brand);
+  background:var(--brand-s);border:1px solid rgba(214,54,81,.22);
+  border-radius:6px;padding:.15rem .4rem;letter-spacing:.1em;flex-shrink:0;
 }
-@keyframes betaPulse{
-  0%,100%{opacity:1;}
-  50%{opacity:.6;}
-}
-/* Hamburger chip — wraps mob-btn in a glass box */
-.nav-menu-chip{
-  border-radius:12px;
-  height:42px;width:42px;
-  display:none;/* shown at mobile via media query */
-  align-items:center;justify-content:center;
-  cursor:pointer;
-  transition:transform .2s cubic-bezier(.34,1.56,.64,1);
-  background:none;border:none;
-  color:var(--text);
-  padding:0;
-}
-.nav-menu-chip:hover{transform:scale(1.06);}
-.nav-menu-chip.glass .nav-chip-inner{padding:.5rem;}
-
-/* ══════════════════════════════════════════
-   SCROLL INDICATOR
-══════════════════════════════════════════ */
-.scroll-hint{
-  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:.45rem;
+.sc-title{font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-weight:700;font-size:.94rem;color:var(--text);flex:1}
+.sc-date{font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-size:.57rem;color:var(--text-3);white-space:nowrap;flex-shrink:0}
+.sc-chevron{flex-shrink:0;color:var(--text-3);display:flex;align-items:center;transition:transform .35s cubic-bezier(.34,1.56,.64,1),color .2s}
+.story-card.open .sc-chevron{transform:rotate(180deg);color:var(--brand)}
+.sc-preview{font-family:"Plus Jakarta Sans",sans-serif;font-size:.88rem;font-weight:500;color:var(--text-2);line-height:1.65;margin:0}
+.sc-body{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.4,0,.2,1),opacity .35s ease,margin-top .35s ease;opacity:0;margin-top:0}
+.story-card.open .sc-body{max-height:600px;opacity:1;margin-top:1rem;animation:cardExpand .38s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes cardExpand{0%{transform:scaleY(.97) translateY(4px);opacity:.7}60%{transform:scaleY(1.012) translateY(-1px);opacity:1}100%{transform:none;opacity:1}}
+.story-p{font-family:"Plus Jakarta Sans",sans-serif;font-size:.90rem;font-weight:400;color:var(--text-2);line-height:1.80;margin-bottom:.6rem}
+.story-p:last-child{margin-bottom:0}
+.founders-list{
   font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-size:.62rem;color:var(--text-3);letter-spacing:.1em;text-transform:uppercase;
-  animation:fadeUp 1.2s 1s ease both;z-index:2;
+  font-size:.82rem;font-weight:600;color:var(--text);line-height:2.1;
+  margin:.7rem 0;padding:.85rem 1.1rem;
+  background:var(--brand-s);border-left:3px solid var(--brand);border-radius:0 10px 10px 0;
 }
-.s-arrow{width:20px;height:20px;border-bottom:2px solid var(--brand);border-right:2px solid var(--brand);transform:rotate(45deg);animation:bounce .5s ease-in-out infinite alternate;}
-@keyframes bounce{0%{transform:rotate(45deg) translate(0,0)}100%{transform:rotate(45deg) translate(2px,2px)}}
+.upcoming-card{border-radius:18px;margin-top:1.2rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem}
+.chip{
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.66rem;font-weight:600;color:var(--brand);
+  background:var(--brand-s);border:1px solid rgba(214,54,81,.22);
+  border-radius:100px;padding:.26rem .72rem;letter-spacing:.04em;
+}
+.chip.s{color:var(--text-2);background:var(--gc-bg);border-color:var(--border-2)}
+.acards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}
+.acard{border-radius:14px;transition:transform .2s,box-shadow .2s}
+.acard:hover{transform:translateY(-3px) scale(1.01);box-shadow:var(--sh-sm)}
+.acard-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem}
+.aico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--brand-s);flex-shrink:0}
+.aico-img{width:18px;height:18px;object-fit:contain}
+.acard h4{font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-size:.73rem;font-weight:700;color:var(--brand)}
+.acard p{font-family:"Plus Jakarta Sans",sans-serif;font-size:.81rem;color:var(--text-2);line-height:1.6}
 
-/* ══════════════════════════════════════════
-   ANIMATIONS
-══════════════════════════════════════════ */
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.rev{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease;}
-.rev.on{opacity:1;transform:translateY(0);}
+/* ════════════════════════════════════════════
+   BOOKING
+════════════════════════════════════════════ */
+.hl{display:inline-flex;align-items:center;gap:.5rem;font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-size:.70rem;font-weight:600;color:var(--text-2);background:var(--gc-bg);border:1px solid var(--border-2);border-radius:100px;padding:.33rem .88rem}
+.hl-i{display:flex;align-items:center}
+.hl-icon{width:14px;height:14px;object-fit:contain}
+.gform-wrap{display:flex;justify-content:center}
+.gform-glass{border-radius:20px;width:100%;max-width:680px}
+.gform-inner{padding:.5rem}
+
+/* ════════════════════════════════════════════
+   FOOTER — social icons live HERE ONLY
+════════════════════════════════════════════ */
+footer{
+  position:relative;z-index:1;
+  background:var(--bg-s);
+  border-top:1px solid var(--border);
+  padding:3rem 0 1.5rem;
+}
+.ft-inner{max-width:1160px;margin:0 auto;padding:0 2.5rem}
+.ft-top{margin-bottom:2rem}
+.ft-brand{max-width:480px}
+.ft-logo-row{display:flex;align-items:baseline;gap:.15rem;margin-bottom:.7rem}
+.ft-lp{font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-weight:700;font-size:1.28rem;color:var(--text);letter-spacing:-.02em}
+.ft-ls{font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-weight:500;font-size:.98rem;color:var(--text-2)}
+.ft-brand p{font-family:"Plus Jakarta Sans",sans-serif;font-size:.86rem;color:var(--text-3);line-height:1.7;margin-bottom:1.1rem}
+/* ── Social row: Facebook, Instagram, Telegram ── */
+.soc-row{display:flex;flex-wrap:wrap;gap:.5rem}
+.soc-btn{
+  display:inline-flex;align-items:center;gap:.48rem;
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.70rem;font-weight:600;color:var(--text-2);
+  background:var(--gc-bg);border:1px solid var(--border-2);
+  border-radius:100px;padding:.36rem .88rem;
+  transition:color .2s,border-color .2s,background .2s;
+}
+.soc-btn:hover{color:var(--brand);border-color:var(--brand);background:var(--brand-s)}
+.soc-icon{width:14px;height:14px;object-fit:contain}
+.ft-bot{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;
+  padding-top:1.4rem;border-top:1px solid var(--border);
+  font-family:"Plus Jakarta Sans",sans-serif;font-size:.78rem;color:var(--text-3);
+}
+.ft-bot a{color:var(--brand)}
+.ft-bot a:hover{text-decoration:underline}
+
+/* ════════════════════════════════════════════
+   MESSENGER FAB
+════════════════════════════════════════════ */
+.fab{
+  position:fixed;right:1.5rem;bottom:1.6rem;z-index:550;
+  display:inline-flex;align-items:center;gap:.45rem;
+  border-radius:100px;overflow:hidden;box-shadow:var(--sh-md);
+  transition:transform .25s,box-shadow .25s;
+}
+.fab:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.32)}
+.fab .g-c{display:flex;align-items:center;gap:.45rem;padding:.68rem 1rem}
+.fab-icon{width:22px;height:22px;object-fit:contain;flex-shrink:0}
+.fab-label{
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.70rem;font-weight:600;color:var(--text);
+  max-width:0;overflow:hidden;opacity:0;white-space:nowrap;
+  transition:max-width .3s,opacity .3s;
+}
+.fab:hover .fab-label{max-width:120px;opacity:1}
+
+/* ════════════════════════════════════════════
+   SCROLL REVEAL
+════════════════════════════════════════════ */
+.rev{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.rev.on{opacity:1;transform:none}
 .d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}
 
-/* ══════════════════════════════════════════
-   RESPONSIVE — TABLET (769–1024px)
-══════════════════════════════════════════ */
-@media(max-width:1024px) and (min-width:769px){
-  .container,.hero,.ft-inner{padding-left:2rem;padding-right:2rem;}
-  .hero{grid-template-columns:1fr;padding-top:5rem;min-height:auto;}
-  .hero-right{display:none;}
-  .eps-grid{grid-template-columns:repeat(2,1fr);}
-  .spec-inner,.about-grid,.book-inner{grid-template-columns:1fr;gap:2.5rem;}
-  /* Standard mobile nav — links wrap or scroll */
-  .nav-links{display:flex;flex-wrap:wrap;gap:.05rem;}
-  .nav-right{display:flex;}
+/* ════════════════════════════════════════════
+   LITE MODE — MATERIAL UI
+════════════════════════════════════════════ */
+[data-view="lite"] *,[data-view="lite"] *::before,[data-view="lite"] *::after{
+  animation:none!important;animation-duration:0s!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  transition:color .18s,background .18s,box-shadow .18s,transform .15s!important;
 }
+[data-view="lite"] .g-f{display:none!important}
+[data-view="lite"] .g-s{display:none!important}
+[data-view="lite"] .g-o{background:transparent!important}
+[data-view="lite"] .glass{background:var(--md-s1)!important;box-shadow:var(--md-d2)!important;border:none!important}
+[data-theme="light"][data-view="lite"] .glass{background:#fff!important;box-shadow:var(--md-d2)!important}
+[data-view="lite"] .graph-bg,[data-view="lite"] #mathCanvas,[data-view="lite"] .glo{display:none!important}
+[data-view="lite"] #podcasts::before,[data-view="lite"] #special::before,[data-view="lite"] #about::before,[data-view="lite"] #booking::before{display:none!important}
+[data-view="lite"] nav#mainNav{background:var(--md-s1)!important;backdrop-filter:none!important;border-bottom:1px solid var(--border)!important;box-shadow:var(--md-d1)!important}
+[data-theme="light"][data-view="lite"] nav#mainNav{background:#fff!important}
+[data-view="lite"] .mob-nav{background:var(--md-s1)!important;backdrop-filter:none!important}
+[data-theme="light"][data-view="lite"] .mob-nav{background:#fff!important}
+[data-view="lite"] .btn-p{border-radius:6px!important}
+[data-view="lite"] .btn-o{border-radius:6px!important;background:var(--md-s1)!important;box-shadow:var(--md-d1)!important}
+[data-view="lite"] .ep-card,[data-view="lite"] .story-card,[data-view="lite"] .acard,[data-view="lite"] .upcoming-card,[data-view="lite"] .gform-glass,[data-view="lite"] .notice-board,[data-view="lite"] .nb-panel-inner{background:var(--md-s1)!important;box-shadow:var(--md-d2)!important;border:none!important;border-radius:10px!important}
+[data-theme="light"][data-view="lite"] .ep-card,[data-theme="light"][data-view="lite"] .story-card,[data-theme="light"][data-view="lite"] .acard,[data-theme="light"][data-view="lite"] .upcoming-card,[data-theme="light"][data-view="lite"] .gform-glass,[data-theme="light"][data-view="lite"] .notice-board,[data-theme="light"][data-view="lite"] .nb-panel-inner{background:#fff!important}
+[data-view="lite"] .fab{background:var(--brand)!important;box-shadow:var(--md-d4)!important;border-radius:16px!important}
+[data-view="lite"] .fab-label{color:#fff!important}
+[data-view="lite"] footer{background:var(--md-s2)!important}
+[data-theme="light"][data-view="lite"] footer{background:#f5f5f5!important}
+[data-view="lite"] .ts{visibility:visible!important}
+[data-view="lite"] .to{display:none!important}
+[data-view="lite"] .tc{display:none!important}
+[data-view="lite"] .slogan-bn{opacity:1!important;max-height:80px!important;margin-bottom:.8rem!important}
+[data-view="lite"] .rev{opacity:1!important;transform:none!important}
+[data-view="lite"] .logo-card-grid{display:none!important}
+[data-view="lite"] .view-switch,[data-view="lite"] .theme-toggle{border-radius:6px!important}
 
-/* ══════════════════════════════════════════
-   RESPONSIVE — MOBILE (≤768px)
-══════════════════════════════════════════ */
-@media(max-width:768px){
-  .container,.hero,.ft-inner{padding-left:1.25rem;padding-right:1.25rem;}
-  .section{padding:3rem 0;}
-  nav .nav-inner{padding:0 1.25rem;}
-  /* Desktop nav hidden on mobile — hamburger takes over */
-  .nav-links{display:none;}
-  .nav-right .theme-wrap{display:none;}
-  /* Show hamburger */
-  .mob-btn{display:flex;}
-  /* Nav chips: only logo + beta */
-  .nav-left-group{gap:.4rem;}
-  .hero{grid-template-columns:1fr;padding-top:5.5rem;min-height:auto;}
-  .hero-right{display:none;}
-  .hero-h1{font-size:clamp(2.6rem,9.5vw,3.6rem);}
-  .slogan-bn{font-size:clamp(1.15rem,5vw,1.55rem);}
-  .hero-btns{gap:.65rem;flex-direction:column;}
-  .btn-p,.btn-o{font-size:.85rem;padding:.82rem 1.4rem;width:100%;justify-content:center;}
-  .eps-grid{grid-template-columns:1fr;gap:1rem;}
-  .spec-inner,.about-grid,.book-inner{grid-template-columns:1fr;gap:2rem;}
-  .frow{grid-template-columns:1fr;}
-  .ft-bot{flex-direction:column;align-items:flex-start;gap:.55rem;}
-  .scroll-hint{display:none;}
-  .sh2{font-size:clamp(1.8rem,7vw,2.4rem);}
-  .bengali-title{font-size:clamp(1.8rem,7vw,2.4rem);}
-  /* Messenger: bottom right, comfortable */
-  .fab-messenger{bottom:1.4rem;right:1rem;}
-}
-
-@media(max-width:420px){
-  .hero-h1{font-size:clamp(2rem,10.5vw,3rem);}
-  .slogan-bn{font-size:clamp(1rem,4.5vw,1.3rem);}
-  .sh2,.bengali-title{font-size:1.7rem;}
-  .btn-p,.btn-o{font-size:.76rem;padding:.7rem 1.15rem;}
-  .hl{font-size:.8rem;}
-  /* Very small screen: tighter pill tabs */
-  
-  
-}
-@supports(padding:max(0px)){
-  .nav-inner{padding-left:max(2.5rem,env(safe-area-inset-left));padding-right:max(2.5rem,env(safe-area-inset-right));}
-  footer{padding-bottom:env(safe-area-inset-bottom);}
-}
-
-/* Performance optimisation — GPU-composited layers */
-.glass,.glass-form,.glo,.glo-3{will-change:transform;}
-.graph-bg,.graph-lines{will-change:background-position;}
-#mathCanvas{will-change:contents;}
-
-/* Notice board text slide transitions */
-.nb-text{transition:opacity .25s ease, transform .25s ease;}
-
-/* ── MODERN NOTICE BOARD UPGRADES ── */
-#noticeText {
-  font-family: "Cascadia Code", monospace !important;
-  letter-spacing: 0.02em;
-}
-
-#reloadBtn:hover {
-  transform: rotate(180deg) scale(1.1);
-  background: rgba(214,54,81,0.2);
-  border-color: var(--brand);
-}
-
-#allBtn:hover {
-  background: rgba(214,54,81,0.25);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(214,54,81,0.3);
-}
-/* ── MODERN NOTICE BOARD (Cascadia + Dark/Light Fix) ── */
-#noticeText {
-  font-family: "Cascadia Code", monospace !important;
-  letter-spacing: 0.02em;
-}
-#reloadBtn:hover {
-  transform: rotate(180deg) scale(1.1);
-  background: rgba(214,54,81,0.2);
-  border-color: var(--brand);
-}
-#allBtn:hover {
-  background: rgba(214,54,81,0.25);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(214,54,81,0.3);
-}
-/* Perfect legibility in both themes */
-[data-theme="dark"] #noticeText { color: #EEE8DF !important; }
-[data-theme="light"] #noticeText { color: #1A1614 !important; }
-/* Dark mode text legibility boost */
-[data-theme="dark"] #noticeText {
-  color: #EEE8DF !important;
-}
-[data-theme="light"] #noticeText {
-  color: #1A1614 !important;
-}
-
-/* ── UPGRADED NOTICE BOARD ANIMATIONS ── */
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-.notice-board {
-  animation: noticeFloat 6s ease-in-out infinite;
-}
-@keyframes noticeFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-}
-#noticeText {
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-#noticeText.fade {
-  opacity: 0;
-  transform: translateY(8px);
-}
-.nb-text.nb-exit{opacity:0;transform:translateY(-5px);}
-.nb-text.nb-enter{opacity:0;transform:translateY(5px);}
-.nb-text.nb-enter-rev{opacity:0;transform:translateY(-5px);}
-
-/* Nav chip hover micro-animation */
-.nav-chip{transition:transform .22s cubic-bezier(.34,1.56,.64,1), box-shadow .22s;}
-.nav-chip:hover{transform:translateY(-2px) scale(1.03);}
-.nav-chip:active{transform:scale(.97);}
-
-/* Smoother glass tilt */
-.glass,.glass-form{
-  transition:transform .05s linear, box-shadow .3s;
-  transform-style:preserve-3d;
-}
-
-
-/* ══════════════════════════════════════════
-   SECTION AMBIENT BACKGROUNDS
-   Each section gets its own atmospheric feel.
-   Pseudo-elements so liquid glass is unaffected.
-══════════════════════════════════════════ */
-
-/* PODCASTS — warm amber studio light, soundwave feel */
-#podcasts{
-  position:relative;
-  isolation:isolate;
-}
-#podcasts::before{
-  content:'';
-  position:absolute;inset:0;
-  pointer-events:none;z-index:0;
-  background:
-    radial-gradient(ellipse 80% 60% at 15% 50%,
-      rgba(214,120,54,0.07) 0%,
-      transparent 65%),
-    radial-gradient(ellipse 50% 80% at 90% 20%,
-      rgba(214,54,81,0.05) 0%,
-      transparent 60%);
-  animation: ambPodcast 8s ease-in-out infinite alternate;
-}
-[data-theme="light"] #podcasts::before{
-  background:
-    radial-gradient(ellipse 80% 60% at 15% 50%,
-      rgba(180,80,30,0.09) 0%,
-      transparent 65%),
-    radial-gradient(ellipse 50% 80% at 90% 20%,
-      rgba(214,54,81,0.07) 0%,
-      transparent 60%);
-}
-@keyframes ambPodcast{
-  from{opacity:.7} to{opacity:1}
-}
-
-/* SPECIAL (অমর একুশে) — deep saffron, patriotic warmth */
-#special{
-  position:relative;
-  isolation:isolate;
-}
-#special::before{
-  content:'';
-  position:absolute;inset:0;
-  pointer-events:none;z-index:0;
-  background:
-    radial-gradient(ellipse 60% 70% at 50% 50%,
-      rgba(200,80,40,0.08) 0%,
-      rgba(214,54,81,0.04) 50%,
-      transparent 75%);
-  animation: ambSpecial 10s ease-in-out infinite alternate;
-}
-@keyframes ambSpecial{
-  from{opacity:.6;transform:scale(1)} to{opacity:1;transform:scale(1.04)}
-}
-
-/* ABOUT — warm sepia, documentary / archival */
-#about{
-  position:relative;
-  isolation:isolate;
-}
-#about::before{
-  content:'';
-  position:absolute;inset:0;
-  pointer-events:none;z-index:0;
-  background:
-    radial-gradient(ellipse 55% 45% at 80% 30%,
-      rgba(160,120,60,0.07) 0%,
-      transparent 65%),
-    radial-gradient(ellipse 40% 60% at 10% 70%,
-      rgba(120,80,40,0.05) 0%,
-      transparent 60%);
-  animation: ambAbout 12s ease-in-out infinite alternate;
-}
-[data-theme="light"] #about::before{
-  background:
-    radial-gradient(ellipse 55% 45% at 80% 30%,
-      rgba(130,90,40,0.10) 0%,
-      transparent 65%),
-    radial-gradient(ellipse 40% 60% at 10% 70%,
-      rgba(100,60,20,0.07) 0%,
-      transparent 60%);
-}
-@keyframes ambAbout{
-  from{opacity:.5} to{opacity:.9}
-}
-
-/* BOOKING (Be a Guest) — inspirational, dreamy indigo */
-#booking{
-  position:relative;
-  isolation:isolate;
-}
-#booking::before{
-  content:'';
-  position:absolute;inset:0;
-  pointer-events:none;z-index:0;
-  background:
-    radial-gradient(ellipse 70% 60% at 50% 40%,
-      rgba(100,60,200,0.09) 0%,
-      rgba(214,54,81,0.05) 55%,
-      transparent 80%),
-    radial-gradient(ellipse 40% 50% at 85% 85%,
-      rgba(60,100,220,0.07) 0%,
-      transparent 60%);
-  animation: ambBooking 9s ease-in-out infinite alternate;
-}
-[data-theme="light"] #booking::before{
-  background:
-    radial-gradient(ellipse 70% 60% at 50% 40%,
-      rgba(80,40,180,0.10) 0%,
-      rgba(214,54,81,0.06) 55%,
-      transparent 80%);
-}
-@keyframes ambBooking{
-  from{opacity:.5;transform:scale(1)} to{opacity:1;transform:scale(1.03)}
-}
-
-
-/* Apply tab — special brand styling when active */
-
-
-
-
-
-/* Upcoming card — same transparent glass as story cards */
-.upcoming-card .g-o{
-  background:color-mix(in srgb, var(--gc-bg) 40%, transparent) !important;
-}
-.upcoming-card .g-f{
-  backdrop-filter:blur(20px) saturate(180%) brightness(1.04) !important;
-  -webkit-backdrop-filter:blur(20px) saturate(180%) brightness(1.04) !important;
-}
-[data-theme="light"] .upcoming-card .g-o{background:rgba(255,255,255,0.45) !important;}
-
-
-/* ══════════════════════════════════════════
-   LITE MODE BUTTON
-══════════════════════════════════════════ */
-.lite-btn{
-  display:flex;align-items:center;gap:.35rem;
-  background:transparent;
-  border:1px solid var(--border-2);
-  border-radius:100px;
-  padding:.3rem .75rem;
-  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
-  font-size:.65rem;font-weight:600;
-  color:var(--text-3);
-  cursor:pointer;
-  transition:color .2s, border-color .2s, background .2s;
-  white-space:nowrap;
-  flex-shrink:0;
-}
-@media(max-width:768px){
-  /* On mobile the lite btn in nav-right is hidden — shown inside drawer instead */
-  .nav-right .lite-btn{ display:none; }
-}
-.lite-btn:hover{color:var(--text);border-color:var(--brand);background:rgba(214,54,81,0.06);}
-/* Active state — when lite is ON */
-[data-view="lite"] .lite-btn{
-  color:var(--brand);
-  border-color:var(--brand);
-  background:rgba(214,54,81,0.10);
-}
-/* Lite btn shows on all screen sizes */
-
-/* ══════════════════════════════════════════
-   LITE / OPTIMIZED VIEW  [data-view="lite"]
-   Kills: all animations, backdrop-filter,
-   glass blur, orbs, canvas, ambient blobs.
-   Keeps: layout, content, colour, readability.
-══════════════════════════════════════════ */
-
-/* ── Global: stop every CSS animation & transition ── */
-[data-view="lite"] *,
-[data-view="lite"] *::before,
-[data-view="lite"] *::after {
-  animation:none !important;
-  animation-duration:0s !important;
-  animation-delay:0s !important;
-  transition:none !important;
-  backdrop-filter:none !important;
-  -webkit-backdrop-filter:none !important;
-}
-
-/* ── Remove all glass blur layers ── */
-[data-view="lite"] .g-f{
-  display:none !important;
-}
-[data-view="lite"] .g-s{
-  display:none !important;
-}
-[data-view="lite"] .g-o{
-  background:var(--bg-card) !important;
-  opacity:1 !important;
-}
-
-/* ── Give glass elements clean solid backgrounds ── */
-[data-view="lite"] .glass,
-[data-view="lite"] .glass-form{
-  background:var(--bg-card) !important;
-  border:1px solid var(--border-2) !important;
-  box-shadow:0 1px 6px rgba(0,0,0,0.08) !important;
-}
-[data-theme="light"][data-view="lite"] .glass,
-[data-theme="light"][data-view="lite"] .glass-form{
-  background:rgba(255,255,255,0.88) !important;
-  box-shadow:0 1px 6px rgba(40,25,10,0.08) !important;
-}
-
-/* ── Kill background decorations ── */
-[data-view="lite"] .graph-bg,
-[data-view="lite"] #mathCanvas,
-[data-view="lite"] .glo,
-[data-view="lite"] .glo-3,
-[data-view="lite"] .glo-4{
-  display:none !important;
-}
-[data-view="lite"] #podcasts::before,
-[data-view="lite"] #special::before,
-[data-view="lite"] #about::before,
-[data-view="lite"] #booking::before{
-  display:none !important;
-}
-
-/* ── Nav: solid background ── */
-[data-view="lite"] nav{
-  background:var(--bg) !important;
-  border-bottom:1px solid var(--border) !important;
-}
-
-/* ── Footer: solid background ── */
-[data-view="lite"] footer{
-  background:var(--bg-s) !important;
-}
-
-/* ── Typing animation in lite mode: show full text instantly ── */
-[data-view="lite"] .ts{
-  visibility:visible !important;
-}
-[data-view="lite"] .to{
-  display:none !important;
-}
-[data-view="lite"] .tc{
-  display:none !important;
-}
-/* Bengali slogan shows immediately in lite */
-[data-view="lite"] #hero-bn{
-  opacity:1 !important;
-  transform:none !important;
-  max-height:none !important;
-  overflow:visible !important;
-}
-[data-view="lite"] .slogan-bn{
-  opacity:1 !important;
-}
-/* Scroll reveal: show all immediately */
-[data-view="lite"] .rev{
-  opacity:1 !important;
-  transform:none !important;
-}
-/* Logo card animations off */
-[data-view="lite"] .logo-card-grid,
-[data-view="lite"] .ring{
-  display:none !important;
-}
-
-/* ── Lite mode indicator banner ── */
-[data-view="lite"] .lite-banner{
-  display:flex !important;
-}
+/* Lite mode banner */
 .lite-banner{
-  display:none;
-  position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);
-  z-index:800;
-  background:rgba(214,54,81,0.90);
-  color:#fff;
-  font-family:"Cascadia Code",monospace;font-size:.62rem;font-weight:600;
-  letter-spacing:.08em;text-transform:uppercase;
-  padding:.3rem .85rem;border-radius:100px;
-  pointer-events:none;
-  white-space:nowrap;
-  box-shadow:0 4px 16px rgba(214,54,81,0.30);
+  display:none;position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);z-index:800;
+  background:rgba(214,54,81,.88);color:#fff;
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:.26rem .78rem;border-radius:100px;pointer-events:none;white-space:nowrap;
 }
+[data-view="lite"] .lite-banner{display:flex!important}
 
-
-/* Mobile drawer lite toggle row */
-.mob-lite{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:.62rem 1rem;margin-top:.25rem;
-  font-family:"Cascadia Code",monospace;font-size:.82rem;color:var(--text-2);
-  border-radius:10px;background:rgba(255,255,255,0.025);
+/* ════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════ */
+@media(max-width:1024px) and (min-width:769px){
+  .container,.hero,.ft-inner{padding-left:2rem;padding-right:2rem}
+  .nb-wrap,.nb-panel{padding-left:2rem;padding-right:2rem}
+  .hero{grid-template-columns:1fr;padding-top:1.5rem;min-height:auto}
+  .hero-right{display:none}
+  .eps-grid{grid-template-columns:repeat(2,1fr)}
+  .spec-inner{grid-template-columns:1fr;gap:2.5rem}
+  .acards-grid{grid-template-columns:repeat(2,1fr)}
+  .nav-links{display:none}
+  .nav-right .view-switch{display:none}
 }
-[data-theme="light"] .mob-lite{background:rgba(0,0,0,0.025);}
-.mob-lite-lbl{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;}
-.mob-lite-btn{
-  display:flex;align-items:center;gap:.4rem;
-  background:transparent;
-  border:1px solid var(--border-2);
-  border-radius:100px;
-  padding:.28rem .7rem;
-  font-family:"Cascadia Code",monospace;font-size:.65rem;font-weight:600;
-  color:var(--text-3);
-  cursor:pointer;
-  transition:color .2s, border-color .2s, background .2s;
-  white-space:nowrap;
+@media(max-width:768px){
+  .container,.hero,.ft-inner{padding-left:1.25rem;padding-right:1.25rem}
+  .nb-wrap,.nb-panel{padding-left:1.25rem;padding-right:1.25rem}
+  .section{padding:3rem 0}
+  .nav-links{display:none}
+  .nav-right .view-switch{display:none}
+  .nav-right .theme-toggle{display:none}
+  .mob-btn{display:flex}
+  .hero{grid-template-columns:1fr;padding-top:1.5rem;min-height:auto}
+  .hero-right{display:none}
+  .hero-h1{font-size:clamp(2.6rem,9.5vw,3.6rem)}
+  .hero-btns{flex-direction:column;gap:.6rem}
+  .btn-p,.btn-o{width:100%;justify-content:center;font-size:.80rem;padding:.76rem 1.3rem}
+  .eps-grid{grid-template-columns:1fr;gap:.9rem}
+  .spec-inner{grid-template-columns:1fr;gap:2rem}
+  .acards-grid{grid-template-columns:repeat(2,1fr);gap:.75rem}
+  .sc-date{display:none}
+  .sc-inner{padding:1.1rem 1.2rem}
+  .ft-bot{flex-direction:column;align-items:flex-start;gap:.5rem}
+  .sh2{font-size:clamp(1.7rem,6.5vw,2.3rem)}
+  .bengali-title{font-size:clamp(1.6rem,6.5vw,2.2rem)}
+  .fab{bottom:1.4rem;right:1rem}
+  .nb-sep{display:none}
 }
-.mob-lite-btn:hover{color:var(--brand);border-color:var(--brand);}
-[data-view="lite"] .mob-lite-btn{
-  color:var(--brand);border-color:var(--brand);
-  background:rgba(214,54,81,0.10);
-}
-/* =============================================
-   LITE MODE — targeted (fixes story cards + typing)
-   ============================================= */
-[data-view="lite"] {
-  --blur-amount: 0px;
-}
-
-/* Hide all heavy background layers */
-[data-view="lite"] .graph-bg,
-[data-view="lite"] #mathCanvas,
-[data-view="lite"] .graph-lines,
-[data-view="lite"] .glo,
-[data-view="lite"] .glo-3,
-[data-view="lite"] .glo-4,
-[data-view="lite"] #podcasts::before,
-[data-view="lite"] #special::before,
-[data-view="lite"] #about::before,
-[data-view="lite"] #booking::before {
-  display: none !important;
-}
-
-/* Kill glass blur & shimmer */
-[data-view="lite"] .g-f { display: none !important; }
-[data-view="lite"] .g-s { display: none !important; }
-[data-view="lite"] .g-o { background: var(--bg-card) !important; }
-
-/* Clean solid cards */
-[data-view="lite"] .glass,
-[data-view="lite"] .glass-form,
-[data-view="lite"] .story-card,
-[data-view="lite"] .acard,
-[data-view="lite"] .upcoming-card {
-  background: var(--bg-card) !important;
-  border: 1px solid var(--border-2) !important;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
-}
-[data-theme="light"][data-view="lite"] .glass,
-[data-theme="light"][data-view="lite"] .glass-form {
-  background: rgba(255,255,255,0.92) !important;
-}
-
-/* KEEP STORY CARD ACCORDION WORKING */
-[data-view="lite"] .story-card .sc-body {
-  transition: max-height .45s cubic-bezier(.4,0,.2,1), opacity .35s ease, margin-top .35s ease !important;
-}
-
-/* Other blurs off */
-[data-view="lite"] .hero-pill,
-[data-view="lite"] .btn-o,
-[data-view="lite"] .theme-toggle-pill::before,
-[data-view="lite"] .mob-nav,
-[data-view="lite"] .spec-bg,
-[data-view="lite"] .book-bg,
-[data-view="lite"] footer,
-[data-view="lite"] nav {
-  backdrop-filter: none !important;
-}
-
-/* No shimmer / hover animations */
-[data-view="lite"] .g-s,
-[data-view="lite"] .ep-card:hover,
-[data-view="lite"] .story-card:hover,
-[data-view="lite"] .acard:hover,
-[data-view="lite"] .ring,
-[data-view="lite"] .logo-card-grid {
-  animation: none !important;
-  box-shadow: none !important;
-}
-
-/* Typing fixes for Lite */
-[data-view="lite"] .ts { visibility: visible !important; }
-[data-view="lite"] .to { display: none !important; }
-[data-view="lite"] .tc { display: none !important; }
-
-/* Rev sections show instantly */
-[data-view="lite"] .rev {
-  opacity: 1 !important;
-  transform: none !important;
-}
-/* ── MOBILE HAMBURGER DRAWER TINT IN LITE MODE ──
-   Makes text perfectly readable when expanded */
-[data-view="lite"] .mob-nav {
-  background: var(--bg-s) !important;           /* solid tinted background */
-  border-bottom: 2px solid var(--border) !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
-}
-
-/* Extra contrast for menu links */
-[data-view="lite"] .mob-nav ul a {
-  color: var(--text) !important;
-  font-weight: 600;
-}
-
-/* Mobile button itself gets the exact tint from the Executive Summary */
-[data-view="lite"] .mob-btn {
-  background: rgba(0,0,0,0.05) !important;
-  filter: saturate(120%) brightness(0.9) !important;
-}
-/* =============================================
-   UPGRADED LITE/RICH TOGGLE + BETA BADGE
-   ============================================= */
-
-/* Desktop wrapper */
-.lite-toggle-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* Beta badge behind toggle */
-.beta-badge-toggle {
-  font-family: "Cascadia Code", monospace;
-  font-size: 0.55rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--brand);
-  background: rgba(214,54,81,0.12);
-  border: 1px solid rgba(214,54,81,0.25);
-  padding: 2px 7px;
-  border-radius: 6px;
-  position: absolute;
-  top: -10px;
-  right: -6px;
-  z-index: 10;
-  pointer-events: none;
-}
-
-/* Upgraded button style */
-.lite-btn.upgraded {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255,255,255,0.07);
-  backdrop-filter: blur(14px);
-  border: 1px solid var(--border-2);
-  border-radius: 999px;
-  padding: 7px 14px;
-  font-family: "Cascadia Code", monospace;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text-2);
-  transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
-  box-shadow: var(--R-sm);
-}
-
-.lite-btn.upgraded:hover {
-  transform: translateY(-1px) scale(1.03);
-  box-shadow: 0 8px 24px rgba(214,54,81,0.2);
-  background: rgba(255,255,255,0.12);
-}
-
-/* Active state */
-[data-view="lite"] .lite-btn.upgraded {
-  background: rgba(214,54,81,0.12);
-  border-color: var(--brand);
-  color: var(--brand);
-}
-
-/* Mobile upgraded button */
-.mob-lite-btn.upgraded {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid var(--border-2);
-  border-radius: 999px;
-  padding: 8px 14px;
-  font-family: "Cascadia Code", monospace;
-  font-size: 0.82rem;
-  font-weight: 600;
-  transition: all 0.25s;
-}
-
-[data-view="lite"] .mob-lite-btn.upgraded {
-  background: rgba(214,54,81,0.12);
-  border-color: var(--brand);
-  color: var(--brand);
-}
-
-/* Icon color fix in Lite */
-[data-view="lite"] #liteBtnIcon,
-[data-view="lite"] #mobLiteBtnIcon {
-  stroke: var(--brand) !important;
-  fill: var(--brand) !important;
-}
-/* Icon-only toggle styling */
-.lite-btn.upgraded.icon-only {
-  padding: 8px 12px;           /* smaller & cleaner */
-  gap: 0;
-}
-.lite-btn.upgraded.icon-only svg {
-  width: 20px;
-  height: 20px;
-}
-/* Powered by line - exact styling you asked for */
-.powered-by {
-  font-family: "Cascadia Code", monospace;
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: var(--brand);           /* red */
-  display: block;
-  margin-top: 0.6rem;
-  letter-spacing: 0.02em;
-}
-
-.prepway {
-  color: #33993a;                /* your green */
-  font-weight: 700;
-  font-family: "Cascadia Code", monospace;
-}
-
-.podcast {
-  color: #33993a;                /* your green */
-  font-family: "Gill Sans Extrabold", sans-serif;
-  font-weight: 200;
+@media(max-width:480px){.acards-grid{grid-template-columns:1fr}}
+@supports(padding:max(0px)){
+  .nav-inner{padding-left:max(2.5rem,env(safe-area-inset-left));padding-right:max(2.5rem,env(safe-area-inset-right))}
+  footer{padding-bottom:calc(1.5rem + env(safe-area-inset-bottom))}
 }
 </style>
 </head>
 <body>
-  
-<div class="graph-bg"></div>
-<div class="graph-lines"></div>
-<div class="glo glo-1"></div>
-<div class="glo glo-2"></div>
-<div class="glo-3"></div>
-<div class="glo-4"></div>
 
-<!-- Math canvas for animated curves -->
+<!-- Rich backgrounds -->
+<div class="graph-bg" aria-hidden="true"></div>
 <canvas id="mathCanvas" aria-hidden="true"></canvas>
-  
-<!-- Temporary Eid banner – optimized for 2000×500 image -->
-<div class="eid-top-banner">
-  <div class="eid-poster"></div>
-</div>
+<div class="glo glo-1" aria-hidden="true"></div>
+<div class="glo glo-2" aria-hidden="true"></div>
 
-<style>
-  .eid-top-banner {
-    width: 100%;
-    height: clamp(180px, 25vw, 340px);     /* shorter & more balanced: ~180–220 px mobile, ~300–340 px desktop */
-    position: relative;
-    overflow: hidden;
-    z-index: 10;
-  }
-
-  .eid-poster {
-    width: 100%;
-    height: 100%;
-    background: url('/EID.png') center / cover no-repeat;   /* ← update filename if needed */
-    background-position: center 40%;        /* slight top bias – adjust 30%–50% depending on where key elements are */
-  }
-
-  /* No forced nav background here → original transparent nav should work */
-  body {
-    padding-top: 0 !important;
-  }
-
-  /* Shift content down by banner height */
-  .eid-top-banner + * {
-    margin-top: clamp(180px, 25vw, 340px);
-  }
-
-  /* Optional subtle darkening if nav text readability is still an issue (uncomment if needed) */
-  /*
-  .eid-top-banner::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.28) 100%);
-    pointer-events: none;
-    z-index: 1;
-  }
-  */
-</style>
-  
-<!-- ══════════ NAV ══════════ -->
-<nav id="mainNav">
+<!-- ══════ NAV ══════ -->
+<nav id="mainNav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
 
-    <!-- LEFT: three independent glass chips -->
-    <div class="nav-left-group">
-      <a href="#" class="nav-chip nav-logo-chip glass" title="Prepway Bangladesh" aria-label="Home">
-        <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-        <div class="g-c nav-chip-inner">
-          <img src="logo.png" alt="Prepway Bangladesh" style="height:32px;width:auto;display:block;">
-        </div>
+    <div class="nav-left">
+      <a href="#" class="nav-logo" aria-label="Prepway Bangladesh — Home">
+        <img src="logo.png" alt="Prepway Bangladesh" loading="eager">
       </a>
-      <div class="nav-chip nav-beta-chip glass" aria-label="Beta">
-        <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-        <div class="g-c nav-chip-inner">
-          <span class="beta-badge-nav">Beta</span>
-        </div>
-      </div>
+      <span class="beta-badge">BETA</span>
     </div>
 
-    <ul class="nav-links">
+    <ul class="nav-links" role="list">
       <li><a href="#podcasts">Podcasts</a></li>
       <li><a href="#special">Special</a></li>
       <li><a href="#about">About Us</a></li>
@@ -2395,58 +797,40 @@ footer{
     </ul>
 
     <div class="nav-right">
-            <!-- CLEAN ICON-ONLY LITE TOGGLE + BETA BADGE -->
-      <div class="lite-toggle-wrap">
-        <span class="beta-badge-toggle">Beta</span>
-        <button class="lite-btn upgraded icon-only" id="liteBtn" onclick="toggleLite()" title="Switch between Rich & Lite modes">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" id="liteBtnIcon">
-            <circle cx="12" cy="12" r="3.5" fill="currentColor"/>
-            <path d="M12 2v3M12 19v3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M2 12h3M19 12h3M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
+      <!-- Liquid Glass / Material UI switch -->
+      <div class="view-switch" role="group" aria-label="Display mode">
+        <button class="vsw-btn on" id="vsw-lg" onclick="setView(false)" aria-pressed="true">
+          <span class="vsw-dot"></span>
+          <span class="vsw-long">Liquid Glass</span>
+          <span class="vsw-short">Liquid</span>
+        </button>
+        <button class="vsw-btn" id="vsw-md" onclick="setView(true)" aria-pressed="false">
+          <span class="vsw-long">Material UI</span>
+          <span class="vsw-short">Material</span>
         </button>
       </div>
-      <div class="theme-wrap">
-        <span class="theme-lbl" id="tLbl">Light</span>
-        <label class="theme-toggle-pill" aria-label="Toggle dark/light mode" title="Toggle theme">
-          <input type="checkbox" class="toggle-input" id="tDesk" onchange="setTheme(this.checked)">
-          <!-- Background track icons -->
-          <div class="toggle-track-icons">
-            <span class="tik tik-moon">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" opacity="0.7"/></svg>
-            </span>
-            <span class="tik tik-sun">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" fill="currentColor" opacity="0.7"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7"/></svg>
-            </span>
-          </div>
-          <!-- Sliding thumb with icon -->
-          <div class="toggle-thumb-pill">
-            <svg class="thumb-moon" width="14" height="14" viewBox="0 0 24 24" fill="none">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#3B4A6B"/>
-            </svg>
-            <svg class="thumb-sun" width="14" height="14" viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="4" fill="#F4900C"/>
-              <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="#F4900C" stroke-width="2.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-        </label>
+
+      <!-- Dark / Light text toggle -->
+      <div class="theme-toggle" role="group" aria-label="Colour theme">
+        <button class="tgl-btn" id="tgl-light" onclick="setTheme(false)" aria-pressed="true">Light</button>
+        <button class="tgl-btn" id="tgl-dark"  onclick="setTheme(true)"  aria-pressed="false">Dark</button>
       </div>
-      <!-- Hamburger — own glass chip -->
-      <button class="nav-chip nav-menu-chip glass mob-btn" id="mbtn" onclick="toggleMenu()" aria-label="Toggle menu">
-        <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-        <div class="g-c nav-chip-inner" id="mbtn-icon">
-          <svg width="18" height="14" viewBox="0 0 18 14" fill="none" style="display:block;">
-            <rect y="0" width="18" height="2" rx="1" fill="currentColor"/>
-            <rect y="6" width="18" height="2" rx="1" fill="currentColor"/>
-            <rect y="12" width="18" height="2" rx="1" fill="currentColor"/>
-          </svg>
-        </div>
+
+      <!-- Hamburger -->
+      <button class="mob-btn" id="mbtn" onclick="toggleMenu()" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" id="mbtn-icon">
+          <rect y="0"  width="18" height="2" rx="1" fill="currentColor"/>
+          <rect y="6"  width="18" height="2" rx="1" fill="currentColor"/>
+          <rect y="12" width="18" height="2" rx="1" fill="currentColor"/>
+        </svg>
       </button>
     </div>
+
   </div>
 </nav>
 
 <!-- Mobile drawer -->
-<div class="mob-nav" id="mnav">
+<div class="mob-nav" id="mobileNav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
   <ul>
     <li><a href="#podcasts" onclick="closeMenu()">Podcasts</a></li>
     <li><a href="#special"  onclick="closeMenu()">Special</a></li>
@@ -2454,265 +838,182 @@ footer{
     <li><a href="#booking"  onclick="closeMenu()">Be a Guest</a></li>
   </ul>
   <a href="#booking" class="mob-cta" onclick="closeMenu()">Apply Now →</a>
-  <div class="mob-theme">
-    <span class="mob-theme-lbl">Theme</span>
-    <label class="theme-toggle-pill" aria-label="Toggle dark/light mode">
-      <input type="checkbox" class="toggle-input" id="tMob" onchange="setTheme(this.checked)">
-      <div class="toggle-track-icons">
-        <span class="tik tik-moon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" opacity="0.7"/></svg></span>
-        <span class="tik tik-sun"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" fill="currentColor" opacity="0.7"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7"/></svg></span>
+  <div class="mob-controls">
+    <span class="mob-ctrl-label">Theme</span>
+    <div class="mob-ctrl-pair">
+      <div class="theme-toggle" role="group" aria-label="Colour theme">
+        <button class="tgl-btn" id="mob-tgl-light" onclick="setTheme(false)" aria-pressed="true" style="font-size:.58rem;padding:0 .6rem">Light</button>
+        <button class="tgl-btn" id="mob-tgl-dark"  onclick="setTheme(true)"  aria-pressed="false" style="font-size:.58rem;padding:0 .6rem">Dark</button>
       </div>
-      <div class="toggle-thumb-pill">
-        <svg class="thumb-moon" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#3B4A6B"/></svg>
-        <svg class="thumb-sun" width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" fill="#F4900C"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="#F4900C" stroke-width="2.5" stroke-linecap="round"/></svg>
+    </div>
+    <span class="mob-ctrl-label">View</span>
+    <div class="mob-ctrl-pair">
+      <div class="view-switch" style="height:27px" role="group" aria-label="Display mode">
+        <button class="vsw-btn on" id="mob-vsw-lg" onclick="setView(false)" aria-pressed="true" style="font-size:.56rem;padding:0 .5rem">Liquid</button>
+        <button class="vsw-btn"    id="mob-vsw-md" onclick="setView(true)"  aria-pressed="false" style="font-size:.56rem;padding:0 .5rem">Material</button>
       </div>
-    </label>
+    </div>
   </div>
-</div><!-- ══════════ HERO ══════════ -->
-<section style="position:relative;z-index:1;">
+</div>
+
+<!-- ══════ MAIN ══════ -->
+<main>
+
+<!-- BREAKING NEWS — full container width, sits above hero grid -->
+<section id="hero-top" style="position:relative;z-index:2;padding-top:70px">
+  <div class="nb-wrap">
+    <div class="glass notice-board" id="noticeBoard" role="status" aria-live="polite">
+      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c nb-inner">
+        <span class="nb-live"><span class="nb-dot"></span>BREAKING</span>
+        <span class="nb-sep"></span>
+        <div class="nb-ticker">
+          <span class="nb-ticker-text" id="tickerText">Loading…</span>
+        </div>
+        <button class="nb-btn" onclick="cycleNotice()" aria-label="Next notice">↻</button>
+        <button class="nb-all" onclick="togglePanel()" id="nbAllBtn" aria-expanded="false">All Updates ↓</button>
+      </div>
+    </div>
+  </div>
+  <div class="nb-panel" id="nbPanel" aria-hidden="true">
+    <div class="glass nb-panel-inner">
+      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c" style="padding:1rem 1.2rem;position:relative">
+        <button class="nb-panel-close" onclick="togglePanel()" aria-label="Close">✕</button>
+        <h4>📌 All Live Updates</h4>
+        <div id="fullList"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HERO GRID -->
+<section id="hero" style="position:relative;z-index:1" aria-label="Hero">
 <div class="hero">
   <div class="hero-left">
- <!-- 🔥 FINAL MODERN NOTICE BOARD (Cascadia + Perfect Dark/Light) -->
-<div class="notice-board glass" id="noticeBoard" style="margin-bottom:1.8rem;position:relative;overflow:hidden;">
-  <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-  <div class="g-c nb-inner" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 18px;">
-
-    <!-- Pulsing LIVE -->
-    <span style="display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;color:#D63651;font-weight:700;">
-      <span id="liveDot" style="width:8px;height:8px;background:#D63651;border-radius:50%;box-shadow:0 0 12px #D63651;animation:pulse 1.8s infinite;"></span>
-      LIVE
-    </span>
-
-    <span id="noticeText" style="flex:1;font-family:'Cascadia Code',monospace;font-weight:500;font-size:0.93rem;color:var(--text-2);line-height:1.45;min-height:42px;">
-      EP 04 with BUET topper drops tomorrow 8 PM 🔥 Register now!
-    </span>
-
-    <!-- Modern Reload -->
-    <button onclick="cycleNotice()" id="reloadBtn"
-      style="background:rgba(255,255,255,0.08);border:1px solid var(--border-2);padding:9px 13px;border-radius:50%;font-size:1.25rem;transition:all .3s;">
-      ↻
-    </button>
-
-    <!-- Modern All Updates -->
-    <button onclick="toggleAllPanel()" id="allBtn"
-      style="font-family:'Cascadia Code',monospace;font-size:0.8rem;font-weight:600;padding:9px 18px;background:rgba(214,54,81,0.12);border:1px solid var(--brand);border-radius:999px;color:var(--brand);transition:all .3s;">
-      All Updates ↓
-    </button>
-  </div>
-
-  <!-- Timestamp -->
-  <div id="timestamp" style="position:absolute;bottom:6px;right:18px;font-size:0.65rem;color:var(--text-3);font-family:Cascadia Code;">just now</div>
-</div>
-
-<!-- All Updates Panel -->
-<div id="allPanel" class="glass" style="display:none;margin:12px 0;padding:18px;border-radius:16px;position:relative;">
-  <button onclick="toggleAllPanel()" style="position:absolute;top:12px;right:14px;background:none;border:none;font-size:1.4rem;color:var(--text-3);">✕</button>
-  <h4 style="color:var(--brand);margin-bottom:14px;font-family:'Cascadia Code',monospace;">📌 All Live Updates</h4>
-  <div id="fullList" style="line-height:1.85;"></div>
-</div>
-
-<!-- Real-time Toast -->
-<div id="liveToast" style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--brand);color:#fff;padding:10px 20px;border-radius:12px;box-shadow:0 10px 30px rgba(214,54,81,0.4);display:none;opacity:0;transition:all 0.4s;z-index:999;font-size:0.85rem;">
-  <span id="toastMessage"></span>
-</div>
-    <div class="slogan-wrap" id="slogan-wrap">
-
-      <!-- Bengali — slides in above, pushes English down -->
-      <div class="slogan-bn" id="hero-bn">
-        <span class="bn-line-1">বাংলাদেশ থেকে,</span>
-        <span class="bn-line-2">বাংলাদেশের জন্য</span>
-      </div>
-
-      <!-- English heading — letter-by-letter typing -->
-      <h1 class="hero-h1" id="hero-en"><!--
-        --><span class="tl tl1" id="tl1"><span class="ts" aria-hidden="true">From<br>BANGLADESH,</span><span class="to" id="to1"></span></span><!--
-        --><span class="tl tl2" id="tl2"><span class="ts" aria-hidden="true">To&nbsp;Bangladesh.</span><span class="to" id="to2"></span></span><!--
-      --></h1>
-
+    <div class="slogan-bn" id="hero-bn">
+      <span>বাংলাদেশ থেকে,</span><br><span>বাংলাদেশের জন্য</span>
     </div>
-
+    <h1 class="hero-h1" id="hero-en"><!--
+    --><span class="tl tl1" id="tl1"><span class="ts">From<br>BANGLADESH,</span><span class="to" id="to1"></span></span><!--
+    --><span class="tl tl2" id="tl2"><span class="ts">To Bangladesh.</span><span class="to" id="to2"></span></span><!--
+    --></h1>
     <div class="hero-btns">
-      <a href="https://www.youtube.com/@prepwaybangladesh?sub_confirmation=1" target="_blank" rel="noopener" class="btn-p"><img src="icons/icon-yt-white.svg" alt="" class="btn-icon"> Subscribe on YouTube</a>
-      <a href="#booking" class="btn-o"><img src="icons/icon-02.svg" alt="" class="btn-icon"> Be a Guest</a>
+      <a href="https://www.youtube.com/@prepwaybangladesh?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn-p">
+        <img src="icons/icon-yt-white.svg" alt="" class="btn-icon" aria-hidden="true"> Subscribe on YouTube
+      </a>
+      <a href="#booking" class="btn-o">
+        <img src="icons/icon-02.svg" alt="" class="btn-icon" aria-hidden="true"> Be a Guest
+      </a>
     </div>
   </div>
-
-  <!-- Hero right: logo.png on animated graph card -->
-  <div class="hero-right">
+  <div class="hero-right" aria-hidden="true">
     <div class="glass logo-card">
       <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-      <div class="g-c" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;position:relative;">
-        <div class="logo-card-grid"></div>
-        <div class="logo-card-axis"></div>
-        <div class="logo-inner">
-          <div class="ring ring-2"></div>
-          <div class="ring ring-1"></div>
-          <img src="logo.png" alt="Prepway Bangladesh" style="width:180px;height:180px;object-fit:contain;position:relative;z-index:8;">
-        </div>
-      </div>
+      <div class="logo-card-grid"></div>
+      <div class="g-c"><img src="logo.png" alt="Prepway Bangladesh" loading="eager"></div>
     </div>
   </div>
 </div>
-<div class="scroll-hint"><div class="s-arrow"></div></div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ══════════ PODCASTS ══════════ -->
-<section class="section" id="podcasts">
+<!-- PODCASTS -->
+<section class="section" id="podcasts" aria-label="Podcasts">
 <div class="container">
   <div class="rev">
-  <!-- Just SEASON 01 as requested -->
-  <div class="eyebrow">SEASON 01</div>
-  
-  <!-- Show Your Voice + powered by line -->
-  <h2 class="sh2">
-    Show Your Voice.<br>
-    <span class="powered-by">
-      powered by 
-      <span class="prepway">prepway</span> 
-      <span class="podcast">Podcast</span>
-    </span>
-  </h2>
-  <p class="sp">Unfiltered long-form conversations with Bangladeshi students and achievers — honest stories about admissions, career paths, and the journeys that shaped them.</p>
-</div>
-
+    <div class="eyebrow">Season 01</div>
+    <h2 class="sh2">Show Your Voice.<br><span class="powered-by">powered by <span class="pw">prepway</span> Podcast</span></h2>
+    <p class="sp">Unfiltered long-form conversations with Bangladeshi students — honest stories about admissions, career paths, and the journeys that shaped them.</p>
+  </div>
   <div class="eps-grid">
-
-    <!-- EP 01 — thumbnail: ep01.png (place in same folder), YouTube fallback -->
-    <div class="glass ep-card d1 rev"
-         onclick="window.open('https://youtu.be/RHRoP_KOcmk?si=Q4ZRuHHPCpoqXQYN','_blank')"
-         role="button" tabindex="0" aria-label="Watch Episode 1">
+    <article class="glass ep-card d1 rev" onclick="window.open('https://youtu.be/RHRoP_KOcmk','_blank')" role="button" tabindex="0" aria-label="Watch EP 01">
       <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
       <div class="g-c">
         <div class="ep-thumb">
-          <img src="ep01.png"
-               alt="The Reality of Medical Admission"
-               loading="lazy"
-               onerror="this.src='https://img.youtube.com/vi/RHRoP_KOcmk/maxresdefault.jpg';this.onerror=null;"/>
-          <div class="ep-ov"><div class="ep-play"><img src="icons/icon-03.svg" alt="Play" class="play-icon"></div></div>
+          <img src="ep01.png" alt="The Reality of Medical Admission" loading="lazy" onerror="this.src='https://img.youtube.com/vi/RHRoP_KOcmk/maxresdefault.jpg';this.onerror=null"/>
+          <div class="ep-ov"><div class="ep-play"><img src="icons/icon-03.svg" alt="" class="play-icon"></div></div>
         </div>
         <div class="ep-body">
           <div class="ep-row"><span class="ep-n">EP 01</span><span class="ep-d">39:33</span></div>
           <div class="ep-t">The Reality of Medical Admission | Asifur Rahman Asif</div>
-          <div class="ep-g">Asifur Rahman Asif &nbsp;·&nbsp; Merit 351, ShSMC</div>
-        
+          <div class="ep-g">Asifur Rahman Asif · Merit 351, ShSMC</div>
         </div>
       </div>
-    </div>
-
-    <!-- EP 02 — thumbnail: ep02.png -->
-    <div class="glass ep-card d2 rev"
-         onclick="window.open('https://youtu.be/K-uf_J2ZVWE?si=_4fKt5L8I1MZWvri','_blank')"
-         role="button" tabindex="0" aria-label="Watch Episode 2">
+    </article>
+    <article class="glass ep-card d2 rev" onclick="window.open('https://youtu.be/K-uf_J2ZVWE','_blank')" role="button" tabindex="0" aria-label="Watch EP 02">
       <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
       <div class="g-c">
         <div class="ep-thumb">
-          <img src="ep02.png"
-               alt="Gaming Industry of Bangladesh"
-               loading="lazy"
-               onerror="this.src='https://img.youtube.com/vi/K-uf_J2ZVWE/maxresdefault.jpg';this.onerror=null;"/>
-          <div class="ep-ov"><div class="ep-play"><img src="icons/icon-03.svg" alt="Play" class="play-icon"></div></div>
+          <img src="ep02.png" alt="Gaming Industry of Bangladesh" loading="lazy" onerror="this.src='https://img.youtube.com/vi/K-uf_J2ZVWE/maxresdefault.jpg';this.onerror=null"/>
+          <div class="ep-ov"><div class="ep-play"><img src="icons/icon-03.svg" alt="" class="play-icon"></div></div>
         </div>
         <div class="ep-body">
           <div class="ep-row"><span class="ep-n">EP 02</span><span class="ep-d">54:33</span></div>
           <div class="ep-t">Gaming Industry of Bangladesh | @afrahimahon × Zain Adian</div>
-          <div class="ep-g">Afrahim Siddiqui Ahon &nbsp;·&nbsp; Zain Adian</div>
-        
+          <div class="ep-g">Afrahim Siddiqui Ahon · Zain Adian</div>
         </div>
       </div>
-    </div>
-
-    <!-- EP 03 — thumbnail: ep03.png -->
-    <div class="glass ep-card d3 rev"
-         onclick="window.open('https://youtu.be/uTzCTNZsrMg?si=sp-M1vDUz-ZajV7Y','_blank')"
-         role="button" tabindex="0" aria-label="Watch Episode 3">
+    </article>
+    <article class="glass ep-card d3 rev" onclick="window.open('https://youtu.be/uTzCTNZsrMg','_blank')" role="button" tabindex="0" aria-label="Watch EP 03">
       <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
       <div class="g-c">
         <div class="ep-thumb">
-          <img src="ep03.png"
-               alt="Hard Work Pays Off"
-               loading="lazy"
-               onerror="this.src='https://img.youtube.com/vi/uTzCTNZsrMg/maxresdefault.jpg';this.onerror=null;"/>
-          <div class="ep-ov"><div class="ep-play"><img src="icons/icon-03.svg" alt="Play" class="play-icon"></div></div>
+          <img src="ep03.png" alt="Hard Work Pays Off" loading="lazy" onerror="this.src='https://img.youtube.com/vi/uTzCTNZsrMg/maxresdefault.jpg';this.onerror=null"/>
+          <div class="ep-ov"><div class="ep-play"><img src="icons/icon-03.svg" alt="" class="play-icon"></div></div>
         </div>
         <div class="ep-body">
           <div class="ep-row"><span class="ep-n">EP 03</span><span class="ep-d">36:35</span></div>
           <div class="ep-t">Hard Work Pays Off: Tahsin Islam Ananta's Path to ShSMC</div>
-          <div class="ep-g">Tahsin Islam Ananta &nbsp;·&nbsp; 793rd National Merit</div>
-        
+          <div class="ep-g">Tahsin Islam Ananta · 793rd National Merit</div>
         </div>
       </div>
-    </div>
-
+    </article>
   </div>
 </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ══════════ SPECIAL — অমর একুশে ══════════ -->
-<section class="section spec-bg" id="special">
+<!-- SPECIAL -->
+<section class="section spec-bg" id="special" aria-label="Special — অমর একুশে">
 <div class="container">
   <div class="spec-inner">
-
-    <!--
-      Clicking the thumbnail opens the YouTube video.
-      Thumbnail: YouTube CDN (auto). Fallback: 21.png (place in same folder).
-    -->
     <div class="rev">
-      <a href="https://youtu.be/XorkVU9qYS0?si=B3299Jg0ZTUEw77s" target="_blank" rel="noopener" class="spec-thumb-link" aria-label="Watch অমর একুশে on YouTube">
-        <img
-          src="https://img.youtube.com/vi/XorkVU9qYS0/maxresdefault.jpg"
-          alt="অমর একুশে — International Mother Language Day"
-          loading="lazy"
-          onerror="this.src='21.png';this.onerror=null;"
-        />
+      <a href="https://youtu.be/XorkVU9qYS0" target="_blank" rel="noopener noreferrer" class="spec-thumb-link" aria-label="Watch অমর একুশে on YouTube">
+        <img src="https://img.youtube.com/vi/XorkVU9qYS0/maxresdefault.jpg" alt="অমর একুশে" loading="lazy" onerror="this.src='21.png';this.onerror=null"/>
         <div class="spec-play-over">
           <div class="spec-play-badge">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
-              <path d="M23 7s-.3-1.7-1-2.4C21.1 3.6 20.1 3.6 19.6 3.5 16.4 3.3 12 3.3 12 3.3s-4.4 0-7.6.2C3.9 3.6 2.9 3.6 2 4.6 1.3 5.3 1 7 1 7S.7 9 .7 11V12.9c0 2 .3 4 .3 4s.3 1.7 1 2.4c.9 1 2.1 1 2.6 1.1C6.6 20.6 12 20.7 12 20.7s4.4 0 7.6-.3c.5-.1 1.5-.1 2.4-1.1.7-.7 1-2.4 1-2.4s.3-2 .3-4V11C23.3 9 23 7 23 7z" fill="white" opacity="0.95"/>
-              <polygon points="9.75,8.5 9.75,15.5 16.25,12" fill="#D63651"/>
-            </svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M23 7s-.3-1.7-1-2.4C21.1 3.6 20.1 3.6 19.6 3.5 16.4 3.3 12 3.3 12 3.3s-4.4 0-7.6.2C3.9 3.6 2.9 3.6 2 4.6 1.3 5.3 1 7 1 7S.7 9 .7 11V12.9c0 2 .3 4 .3 4s.3 1.7 1 2.4c.9 1 2.1 1 2.6 1.1C6.6 20.6 12 20.7 12 20.7s4.4 0 7.6-.3c.5-.1 1.5-.1 2.4-1.1.7-.7 1-2.4 1-2.4s.3-2 .3-4V11C23.3 9 23 7 23 7z" fill="white" opacity=".95"/><polygon points="9.75,8.5 9.75,15.5 16.25,12" fill="#D63651"/></svg>
             Watch on YouTube
           </div>
         </div>
       </a>
     </div>
-
     <div class="rev">
       <div class="spec-tag">Special Episode</div>
       <h2 class="bengali-title">অমর একুশে<br><em>Language, Identity &amp; Pride</em></h2>
-      <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;font-size:.96rem;color:var(--text-2);line-height:1.80;margin-bottom:.85rem;">
-        21st February 1952 is an unforgettable and glorious day for the Bengali nation and all Bangla-speaking people. On this day, the brave students and general people of then East Bengal took to the streets to protect their mother tongue, Bangla, standing firmly against injustice and conspiracy.
-      </p>
-      <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;font-size:.96rem;color:var(--text-2);line-height:1.80;margin-bottom:.85rem;">
-        Their sacrifice not only safeguards the Bangla language but also teaches the world that language is the foundation of a nation's identity, culture, and existence. Today, 21st February is not only significant for Bengalis, but also for people of all languages around the world.
-      </p>
-      <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;font-size:.96rem;color:var(--text-2);line-height:1.80;margin-bottom:0;">
-        We have created this video as a humble tribute to the Language Martyrs, expressing our deep respect and gratitude. Their sacrifice is our inspiration and our pride.
-      </p>
+      <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;color:var(--text-2);line-height:1.80;margin-bottom:.85rem">21st February 1952 is an unforgettable and glorious day. The brave students of then East Bengal took to the streets to protect their mother tongue, Bangla, standing firmly against injustice.</p>
+      <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;color:var(--text-2);line-height:1.80">We created this video as a humble tribute to the Language Martyrs — their sacrifice is our inspiration and our pride.</p>
     </div>
-
   </div>
 </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ══════════ ABOUT US ══════════ -->
-<section class="section" id="about">
+<!-- ABOUT -->
+<section class="section" id="about" aria-label="About Prepway">
 <div class="container">
-  <div class="rev" style="margin-bottom:2.5rem;">
+  <div class="rev" style="margin-bottom:2.5rem">
     <div class="eyebrow">Our Story</div>
     <h2 class="sh2">About <em>Us</em></h2>
   </div>
 
-  <!-- Story cards — expandable -->
-  <div class="story-cards rev">
+  <div class="story-cards rev" role="list">
 
-    <!-- Card 01: Prepway Bangladesh -->
-    <div class="story-card glass" onclick="toggleStoryCard(this)">
+    <div class="glass story-card" onclick="toggleCard(this)" role="listitem" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}">
       <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
       <div class="g-c sc-inner">
         <div class="sc-header">
@@ -2723,14 +1024,13 @@ footer{
         </div>
         <p class="sc-preview">Born from one urgent question — why are millions of Bangladeshi students navigating SSC, HSC, and university admissions completely alone?</p>
         <div class="sc-body">
-          <p class="story-p">The answer came after the first episode of the Prepway Podcast, where Afrahim Siddiqui Ahon hosted a discussion on studying abroad without IELTS or SAT. The response was overwhelming — students flooded in with local struggles too: admission prep, subject guidance, life after HSC.</p>
-          <p class="story-p">Ahon raised the idea with the other directors. Together, they built Prepway Bangladesh — a platform dedicated to every stage of a student's academic journey within the country. It began with podcasts, because the most powerful guidance comes from students who have already been through it. <strong>Show Your Voice</strong> became that series — unscripted, real, and built entirely for Bangladesh.</p>
+          <p class="story-p">The answer came after the first episode of the Prepway Podcast, where Afrahim Siddiqui Ahon hosted a discussion on studying abroad. Students flooded in with local struggles too: admission prep, subject guidance, life after HSC.</p>
+          <p class="story-p">Together they built Prepway Bangladesh — a platform for every stage of a student's academic journey within the country. <strong>Show Your Voice</strong> became that podcast series — unscripted, real, built entirely for Bangladesh.</p>
         </div>
       </div>
     </div>
 
-    <!-- Card 02: Prepway Abroad -->
-    <div class="story-card glass" onclick="toggleStoryCard(this)">
+    <div class="glass story-card" onclick="toggleCard(this)" role="listitem" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}">
       <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
       <div class="g-c sc-inner">
         <div class="sc-header">
@@ -2739,22 +1039,16 @@ footer{
           <span class="sc-date">Est. Jun 26, 2025</span>
           <span class="sc-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
-        <p class="sc-preview">Before Prepway Bangladesh, before Prepway Group — four people started something independently to help Bangladeshi students reach the world.</p>
+        <p class="sc-preview">Before Prepway Bangladesh, before Prepway Group — four people started independently to help Bangladeshi students reach the world.</p>
         <div class="sc-body">
-          <p class="story-p">Prepway Abroad was built as a podcast and content platform covering real student stories from the USA, UK, Canada, Australia, and beyond — scholarships, visas, university applications, IELTS, and life abroad. The founding team:</p>
-          <div class="founders-list">
-            K. M. Rubaid Ferdous Swapnil<br>
-            Zinat Hossain Any<br>
-            Afrahim Siddiqui Ahon<br>
-            Md. Emran Hasan Emon
-          </div>
-          <p class="story-p">At founding, Prepway Abroad stood alone — no group, no umbrella. Just four people with a mission. That mission resonated, grew, and ultimately sparked the idea for Prepway Bangladesh.</p>
+          <p class="story-p">Prepway Abroad covers real student stories from the USA, UK, Canada, Australia — scholarships, visas, applications, IELTS, and life abroad. Founding team:</p>
+          <div class="founders-list">K. M. Rubaid Ferdous Swapnil<br>Zinat Hossain Any<br>Afrahim Siddiqui Ahon<br>Md. Emran Hasan Emon</div>
+          <p class="story-p">Their mission resonated, grew, and ultimately sparked the idea for Prepway Bangladesh.</p>
         </div>
       </div>
     </div>
 
-    <!-- Card 03: Prepway Group -->
-    <div class="story-card glass" onclick="toggleStoryCard(this)">
+    <div class="glass story-card" onclick="toggleCard(this)" role="listitem" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}">
       <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
       <div class="g-c sc-inner">
         <div class="sc-header">
@@ -2765,23 +1059,22 @@ footer{
         </div>
         <p class="sc-preview">Two growing initiatives. One shared vision. Prepway Group was the natural result of growth — not the starting point.</p>
         <div class="sc-body">
-          <p class="story-p">Once Prepway Bangladesh launched in August 2025, it became clear both initiatives needed a shared identity and direction. <strong>Prepway Group</strong> was formed as the parent organisation — bringing Prepway Bangladesh and Prepway Abroad under one roof.</p>
-          <p class="story-p">Today the group is committed to one purpose: empowering every Bangladeshi student, whether preparing for their HSC at home or applying to universities on the other side of the world.</p>
+          <p class="story-p">Once Prepway Bangladesh launched, it became clear both initiatives needed a shared identity. <strong>Prepway Group</strong> was formed as the parent organisation — bringing Prepway Bangladesh and Prepway Abroad under one roof.</p>
+          <p class="story-p">One purpose: empowering every Bangladeshi student, whether preparing for HSC at home or applying to universities on the other side of the world.</p>
         </div>
       </div>
     </div>
+  </div>
 
-  </div><!-- /story-cards -->
-
-  <!-- Upcoming standalone glass card -->
-  <div class="glass upcoming-card rev" style="margin-top:1.2rem;border-radius:18px;">
+  <!-- Upcoming card -->
+  <div class="glass upcoming-card rev">
     <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-    <div class="g-c" style="padding:1.4rem 1.5rem;">
-      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem;">
-        <span style="font-family:'Cascadia Code',monospace;font-size:.62rem;font-weight:700;color:var(--brand);background:rgba(214,54,81,0.10);border:1px solid rgba(214,54,81,0.22);border-radius:6px;padding:.18rem .48rem;letter-spacing:.1em;">Coming Soon</span>
-        <h4 style="font-family:'Cascadia Code',monospace;font-size:.82rem;font-weight:700;color:var(--brand);margin:0;">// Upcoming from Prepway Bangladesh</h4>
+    <div class="g-c" style="padding:1.35rem 1.5rem">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.55rem">
+        <span style="font-family:'Cascadia Code',monospace;font-optical-sizing:auto;font-size:.58rem;font-weight:700;color:var(--brand);background:var(--brand-s);border:1px solid rgba(214,54,81,.22);border-radius:6px;padding:.14rem .4rem;letter-spacing:.1em">Coming Soon</span>
+        <h4 style="font-family:'Cascadia Code',monospace;font-optical-sizing:auto;font-size:.78rem;font-weight:700;color:var(--brand);margin:0">// Upcoming from Prepway Bangladesh</h4>
       </div>
-      <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;color:var(--text-2);margin-bottom:.85rem;line-height:1.6;">Building the next generation of academic content — from admission prep to university guidance.</p>
+      <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.86rem;color:var(--text-2);line-height:1.6;margin-bottom:.8rem">Building the next generation of academic content — from admission prep to university guidance.</p>
       <div class="chips">
         <div class="chip">Medical Admission Course</div>
         <div class="chip s">University Subject Courses</div>
@@ -2791,295 +1084,381 @@ footer{
     </div>
   </div>
 
-  <!-- Feature cards grid -->
-  <div class="acards-grid rev" style="margin-top:2.5rem;">
-
-    <div class="glass acard">
-      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-      <div class="g-c" style="padding:1.1rem;">
+  <!-- Feature grid -->
+  <div class="acards-grid rev" style="margin-top:2.5rem">
+    <div class="glass acard"><div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c" style="padding:1.1rem">
         <div class="acard-head"><div class="aico"><img src="icons/icon-04.svg" alt="" class="aico-img icon-mono"></div><h4>// Show Your Voice</h4></div>
         <p>Season 1 — three long-form episodes. Real students, real stories, no scripts.</p>
       </div>
     </div>
-
-    <div class="glass acard">
-      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-      <div class="g-c" style="padding:1.1rem;">
+    <div class="glass acard"><div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c" style="padding:1.1rem">
         <div class="acard-head"><div class="aico"><img src="icons/icon-05.svg" alt="" class="aico-img icon-mono"></div><h4>// Academic Guidance</h4></div>
-        <p>SSC to HSC — study strategies, subject lessons, exam hacks in Bangla.</p>
+        <p>SSC to HSC — study strategies, subject lessons, and exam hacks in Bangla.</p>
       </div>
     </div>
-
-    <div class="glass acard">
-      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-      <div class="g-c" style="padding:1.1rem;">
+    <div class="glass acard"><div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c" style="padding:1.1rem">
         <div class="acard-head"><div class="aico"><img src="icons/icon-06.svg" alt="" class="aico-img icon-mono"></div><h4>// Admission Prep</h4></div>
         <p>Medical, engineering, public university — real talk from students who made it.</p>
       </div>
     </div>
-
-    <div class="glass acard">
-      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-      <div class="g-c" style="padding:1.1rem;">
+    <div class="glass acard"><div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c" style="padding:1.1rem">
         <div class="acard-head"><div class="aico"><img src="icons/icon-07.svg" alt="" class="aico-img icon-mono"></div><h4>// Prepway Abroad</h4></div>
         <p>Scholarships, visas, applications — real journeys to USA, UK, Canada &amp; beyond.</p>
       </div>
     </div>
-
-    <div class="glass acard acard-bd" style="border:1px solid rgba(220,59,82,.28);">
-      <div class="g-f"></div>
-      <div class="g-o" style="background:rgba(220,59,82,.06)!important;"></div>
-      <div class="g-s"></div>
-      <div class="g-c" style="padding:1.1rem;">
-        <div class="acard-head"><div class="aico"><img src="icons/icon-flag-bd.svg" alt="" class="aico-img" style="width:26px;height:auto;border-radius:2px;"></div><h4>// For Bangladesh</h4></div>
+    <div class="glass acard" style="border:1px solid rgba(220,59,82,.22)">
+      <div class="g-f"></div><div class="g-o" style="background:rgba(220,59,82,.05)!important"></div><div class="g-s"></div>
+      <div class="g-c" style="padding:1.1rem">
+        <div class="acard-head"><div class="aico"><img src="icons/icon-flag-bd.svg" alt="" class="aico-img" style="width:24px;height:auto;border-radius:2px"></div><h4>// For Bangladesh</h4></div>
         <p>Every story, every student, every piece of content — rooted in pride for this country.</p>
       </div>
     </div>
-
-  </div><!-- /acards-grid -->
-
+  </div>
 </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ══════════ BOOKING ══════════ -->
-<section class="section book-bg" id="booking">
+<!-- BOOKING -->
+<section class="section" id="booking" aria-label="Be a guest">
 <div class="container">
-
-  <!-- Section header -->
-  <div class="rev" style="text-align:center;max-width:600px;margin:0 auto 2.5rem;">
-    <div class="eyebrow" style="justify-content:center;">Be a Guest</div>
-    <h2 class="sh2" style="margin-bottom:.85rem;">Want to Share<br>Your <em>Story?</em></h2>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;font-size:1rem;color:var(--text-2);line-height:1.75;">
-      Apply to join <strong>Show Your Voice by Prepway Podcast</strong> — where real students share real journeys. No scripts, just truth.
-    </p>
+  <div class="rev" style="text-align:center;max-width:600px;margin:0 auto 2.5rem">
+    <div class="eyebrow" style="justify-content:center">Be a Guest</div>
+    <h2 class="sh2" style="margin-bottom:.85rem">Want to Share<br>Your <em>Story?</em></h2>
+    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;color:var(--text-2);line-height:1.75">Apply to join <strong>Show Your Voice by Prepway Podcast</strong> — real students, real journeys. No scripts, just truth.</p>
   </div>
-
-  <!-- Highlights row -->
-  <div class="rev" style="display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-bottom:2.5rem;">
-    <div class="hl" style="flex:0 1 auto;"><span class="hl-i"><img src="icons/icon-09.svg" alt="" class="hl-icon"></span> SSC, HSC &amp; university students</div>
-    <div class="hl" style="flex:0 1 auto;"><span class="hl-i"><img src="icons/icon-02.svg" alt="" class="hl-icon"></span> Long-form podcast format</div>
-    <div class="hl" style="flex:0 1 auto;"><span class="hl-i"><img src="icons/icon-yt-red.svg" alt="" class="hl-icon" style="filter:none!important;"></span> Published on YouTube</div>
-    <div class="hl" style="flex:0 1 auto;"><span class="hl-i"><img src="icons/icon-10.svg" alt="" class="hl-icon"></span> Inspire thousands of students</div>
+  <div class="rev" style="display:flex;flex-wrap:wrap;gap:.65rem;justify-content:center;margin-bottom:2.5rem">
+    <div class="hl"><span class="hl-i"><img src="icons/icon-09.svg" alt="" class="hl-icon"></span> SSC, HSC &amp; university students</div>
+    <div class="hl"><span class="hl-i"><img src="icons/icon-02.svg" alt="" class="hl-icon"></span> Long-form podcast format</div>
+    <div class="hl"><span class="hl-i"><img src="icons/icon-yt-red.svg" alt="" class="hl-icon" style="filter:none!important"></span> Published on YouTube</div>
+    <div class="hl"><span class="hl-i"><img src="icons/icon-10.svg" alt="" class="hl-icon"></span> Inspire thousands of students</div>
   </div>
-
-  <!-- Google Forms embed -->
   <div class="rev gform-wrap">
     <div class="glass gform-glass">
       <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
       <div class="g-c gform-inner">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSd3eRlf2CkRJcPLXn7-00QHzFLTklpD1iS62eM_Yr-aA5XrtQ/viewform?embedded=true"
-          id="gformFrame"
-          width="100%"
-          height="1315"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          style="display:block;border:none;border-radius:14px;background:transparent;"
-          title="Show Your Voice — Guest Application Form"
-          loading="lazy"
-        >Loading…</iframe>
-        <!--
-          ═══════════════════════════════════════════════════════
-          HOW TO GET THE CORRECT EMBED URL (do this once):
-          1. Open https://forms.gle/ucFguboVy9GqZt729 in Chrome
-          2. Click the three-dot menu (⋮) → "Embed"  —OR—
-             In Google Forms editor: Send → < > (embed icon)
-          3. Copy the src="..." URL from the iframe code shown
-          4. Replace the src above with that URL
-          The correct URL looks like:
-          https://docs.google.com/forms/d/e/LONG_ID/viewform?embedded=true
-          ═══════════════════════════════════════════════════════
-        -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd3eRlf2CkRJcPLXn7-00QHzFLTklpD1iS62eM_Yr-aA5XrtQ/viewform?embedded=true"
+          width="100%" height="1315" frameborder="0" marginheight="0" marginwidth="0"
+          style="display:block;border:none;border-radius:14px;background:transparent"
+          title="Show Your Voice — Guest Application" loading="lazy">Loading…</iframe>
       </div>
     </div>
   </div>
-
 </div>
 </section>
 
-<!-- ══════════ FOOTER ══════════ -->
-<footer>
+</main>
+
+<!-- ══════ FOOTER — social icons live here ══════ -->
+<footer role="contentinfo">
   <div class="ft-inner">
     <div class="ft-top">
-
       <div class="ft-brand">
         <div class="ft-logo-row">
-          <span class="ft-lp">prepway</span><span class="ft-ls">&nbsp;&nbsp;Bangladesh</span>
+          <span class="ft-lp">prepway</span><span class="ft-ls">&nbsp;Bangladesh</span>
         </div>
         <p>Guiding Bangladeshi students from high school to university — through podcasts, honest stories, and real guidance. A subsidiary of Prepway Group, est. 2025.</p>
-        <div class="soc-row">
-          <a href="https://www.facebook.com/prepwaybangladesh" target="_blank" rel="noopener" class="soc-btn"><img src="icons/icon-11.svg" alt="" class="soc-icon"> Facebook</a>
-          <a href="https://www.instagram.com/prepwaybangladesh" target="_blank" rel="noopener" class="soc-btn"><img src="icons/icon-12.svg" alt="" class="soc-icon"> Instagram</a>
-          <a href="http://t.me/prepwaybangladesh" target="_blank" rel="noopener" class="soc-btn"><img src="icons/icon-13.svg" alt="" class="soc-icon"> Telegram</a>
-        </div>
+        <!-- ══ SOCIAL ICONS — FOOTER ONLY ══ -->
+        <nav class="soc-row" aria-label="Social media">
+          <a href="https://www.facebook.com/prepwaybangladesh" target="_blank" rel="noopener noreferrer" class="soc-btn" aria-label="Facebook">
+            <img src="icons/icon-11.svg" alt="" class="soc-icon" aria-hidden="true"> Facebook
+          </a>
+          <a href="https://www.instagram.com/prepwaybangladesh" target="_blank" rel="noopener noreferrer" class="soc-btn" aria-label="Instagram">
+            <img src="icons/icon-12.svg" alt="" class="soc-icon" aria-hidden="true"> Instagram
+          </a>
+          <a href="https://t.me/prepwaybangladesh" target="_blank" rel="noopener noreferrer" class="soc-btn" aria-label="Telegram">
+            <img src="icons/icon-13.svg" alt="" class="soc-icon" aria-hidden="true"> Telegram
+          </a>
+        </nav>
       </div>
-
     </div>
-
     <div class="ft-bot">
-      <p>© 2026, Prepway Group. All rights reserved.</p>
-      <p>Prepway Bangladesh is a subsidiary of Prepway Group &nbsp;·&nbsp;
-        <a href="https://youtube.com/@prepwayabroad" target="_blank" rel="noopener">Prepway Abroad ↗</a>
-      </p>
+      <p>© 2026 Prepway Group. All rights reserved.</p>
+      <p>Prepway Bangladesh · <a href="https://youtube.com/@prepwayabroad" target="_blank" rel="noopener noreferrer">Prepway Abroad ↗</a></p>
     </div>
   </div>
 </footer>
 
-<script>
-/* Theme toggle */
-const root = document.documentElement;
-const tDesk = document.getElementById('tDesk');
-const tMob = document.getElementById('tMob');
-const tLbl = document.getElementById('tLbl');
-function setTheme(isLight) {
-  root.setAttribute('data-theme', isLight ? 'light' : 'dark');
-  tLbl.textContent = isLight ? 'Light' : 'Dark';
-  tDesk.checked = isLight; tMob.checked = isLight;
-  localStorage.setItem('pw-t', isLight ? 'light' : 'dark');
-}
-const sv = localStorage.getItem('pw-t');
-if (sv === 'dark') setTheme(false); else setTheme(true);
-
-/* Mobile menu */
-const ICON_MENU = `<svg width="18" height="14" viewBox="0 0 18 14" fill="none" style="display:block;"><rect y="0" width="18" height="2" rx="1" fill="currentColor"/><rect y="6" width="18" height="2" rx="1" fill="currentColor"/><rect y="12" width="18" height="2" rx="1" fill="currentColor"/></svg>`;
-const ICON_CLOSE = `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;"><line x1="2.5" y1="2.5" x2="15.5" y2="15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="15.5" y1="2.5" x2="2.5" y2="15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`;
-const mnav = document.getElementById('mnav'); const mbtn = document.getElementById('mbtn'); let mo = false;
-function toggleMenu() { mo = !mo; mnav.style.display = mo ? 'block' : 'none'; requestAnimationFrame(() => mnav.classList.toggle('open', mo)); mbtn.innerHTML = mo ? ICON_CLOSE : ICON_MENU; }
-function closeMenu() { mo = false; mnav.classList.remove('open'); setTimeout(() => mnav.style.display = 'none', 280); mbtn.innerHTML = ICON_MENU; }
-
-/* Notice board */
-const liveNotices = [
-"Initial Beta Release of Prepway Bangladesh Website",
-"We have upgraded our website with new Notice Board style. You will be able to see all live notifications here",
-"New Lite and Rich mode added to enhance your web browsing. The website by default runs at Rich Mode where you can see all animations and effects. At Lite Mode every effects will be disabled. Lite mode uses Sun-Shaped icon and Rich Mode uses Star-shaped icon. Currently these modes are at BETA stage.",
-"We are working hard to give you an interactive experience"];
-let current = 0; let panelOpen = false;
-window.cycleNotice = function() { const textEl = document.getElementById("noticeText"); textEl.style.opacity = "0"; setTimeout(() => { current = (current + 1) % liveNotices.length; textEl.textContent = liveNotices[current]; textEl.style.opacity = "1"; document.getElementById("timestamp").textContent = "just now"; }, 300); };
-window.toggleAllPanel = function() { const panel = document.getElementById("allPanel"); panelOpen = !panelOpen; if(panelOpen){ let html=""; liveNotices.forEach((n,i)=>html+=`<div style="padding:10px 0;border-bottom:1px dashed var(--border);">• <strong>${i+1}.</strong> ${n}</div>`); document.getElementById("fullList").innerHTML=html; panel.style.display="block"; } else panel.style.display="none"; };
-setTimeout(() => document.getElementById("noticeText").textContent = liveNotices[0], 200);
-setInterval(() => window.cycleNotice(), 6800);
-
-/* STORY CARD ACCORDION (always available) */
-window.toggleStoryCard = function(card){
-  const isOpen = card.classList.contains('open');
-  document.querySelectorAll('.story-card.open').forEach(c => c.classList.remove('open'));
-  if(!isOpen){ card.classList.add('open'); setTimeout(()=>{ const top = window.scrollY + card.getBoundingClientRect().top - 80; window.scrollTo({top, behavior:'smooth'}); }, 80); }
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-  const isLite = document.documentElement.dataset.view === 'lite';
-
-  /* MATH CANVAS — only in Rich */
-  if (!isLite) {
-    (function(){
-      const canvas = document.getElementById('mathCanvas');
-      if(!canvas) return;
-      const ctx = canvas.getContext('2d');
-      let W,H,t=0,raf;
-      const CURVES = [
-        { fn:(x,t)=> H*0.35 + Math.sin(x*0.008+t)*90, col:'rgba(214,54,81,', dash:[],  lw:1.2 },
-        { fn:(x,t)=> H*0.55 + Math.cos(x*0.006+t*0.7)*60, col:'rgba(60,110,200,', dash:[6,4], lw:0.9 },
-        { fn:(x,t)=> H*0.7 - Math.pow((x-W*0.5)/220, 2)*100 + Math.sin(t*0.5)*20, col:'rgba(214,54,81,', dash:[3,6], lw:0.8 },
-        { fn:(x,t)=> H*0.25 + Math.sin(x*0.022+t*1.3)*35, col:'rgba(100,180,100,', dash:[],  lw:0.7 },
-        { fn:(x,t)=> H*0.8 + Math.sin(x*0.015+t*0.9)*Math.exp(-x*0.001)*55, col:'rgba(200,130,50,', dash:[4,4], lw:0.75 },
-      ];
-      function resize(){ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; }
-      window.addEventListener('resize',resize); resize();
-      function getOpacity(){ return document.documentElement.getAttribute('data-theme')==='light'?0.45:0.28; }
-      function draw(){
-        ctx.clearRect(0,0,W,H);
-        const op = getOpacity();
-        CURVES.forEach(c=>{ ctx.beginPath(); ctx.setLineDash(c.dash); ctx.lineWidth = c.lw; ctx.strokeStyle = c.col + op + ')'; for(let x=0;x<=W;x+=2){ const y = c.fn(x, t); x===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y); } ctx.stroke(); });
-        ctx.setLineDash([]); for(let i=0;i<8;i++){ const px = (i/7)*W*0.85 + W*0.075; const curve = CURVES[i%3]; const py = curve.fn(px, t); ctx.beginPath(); ctx.arc(px, py, 2.5, 0, Math.PI*2); ctx.fillStyle = curve.col + (op*1.8) + ')'; ctx.fill(); }
-        t += 0.003; raf = requestAnimationFrame(draw); window._mathCanvasRaf = raf;
-      }
-      draw();
-    })();
-  }
-
-  /* TYPING — only in Rich, instant in Lite */
-  if (!isLite) {
-    /* Your original typing functions + runTyping call */
-    const to1 = document.getElementById('to1'); const to2 = document.getElementById('to2'); const bnEl = document.getElementById('hero-bn');
-    function makeCursor(container){ const c = document.createElement('span'); c.className = 'tc'; container.appendChild(c); return c; }
-    function addChar(el, ch){ if(ch === '\n'){ el.appendChild(document.createElement('br')); } else { const s = document.createElement('span'); s.style.cssText = 'display:inline-block;opacity:0;animation:chFadeIn .20s ease forwards;'; s.textContent = ch === ' ' ? '\u00A0' : ch; el.appendChild(s); }}
-    function typeLine(chars, outEl, baseMs){ return new Promise(resolve => { let i = 0; function step(){ if(i >= chars.length){ resolve(); return; } const ch = chars[i++]; addChar(outEl, ch); let d = baseMs; if(ch === '\n') d = baseMs * 2.6; else if(ch === ',') d = baseMs * 2.2; else if(ch === '.') d = baseMs * 2.0; else d = baseMs * (0.80 + Math.random() * 0.40); setTimeout(step, d); } step(); }); }
-    function wait(ms){ return new Promise(r => setTimeout(r, ms)); }
-    async function runTyping(){
-      const cur1 = makeCursor(to1); const line1 = ['F','r','o','m','\n','B','A','N','G','L','A','D','E','S','H',',']; await typeLine(line1, to1, 90);
-      await wait(380); cur1.classList.add('off'); await wait(80); cur1.remove();
-      const cur2 = makeCursor(to2); await wait(80); const line2 = ['T','o',' ','B','a','n','g','l','a','d','e','s','h','.']; await typeLine(line2, to2, 86);
-      await wait(520); cur2.classList.add('off'); await wait(80); cur2.remove();
-      await wait(300); bnEl.classList.add('show');
-    }
-    setTimeout(runTyping, 800);
-  } else {
-    const to1 = document.getElementById('to1'); if(to1) to1.style.display='none';
-    const to2 = document.getElementById('to2'); if(to2) to2.style.display='none';
-    const bn = document.getElementById('hero-bn'); if(bn){ bn.style.opacity='1'; bn.classList.add('show'); }
-  }
-
-  /* PHYSICS GLASS — only in Rich */
-  if (!isLite) {
-    const isLt = () => document.documentElement.getAttribute('data-theme')==='light';
-    document.querySelectorAll('.glass,.glass-form').forEach(el=>{ /* your full original physics block here — unchanged */ });
-  }
-
-  /* Scroll observer + nav shrink + keyboard (always) */
-  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});},{threshold:.09});
-  document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
-  const nav=document.getElementById('mainNav');
-  window.addEventListener('scroll',()=>{nav.style.height=window.scrollY>60?'56px':'62px';},{passive:true});
-  document.querySelectorAll('[role="button"]').forEach(c=>{c.addEventListener('keypress',e=>{if(e.key==='Enter')c.click();});});
-});
-
-/* Lite toggle */
-function toggleLite(){ const isLite = document.documentElement.getAttribute('data-view') === 'lite'; setLiteMode(!isLite); }
-function setLiteMode(on){
-  const root = document.documentElement;
-  const btn = document.getElementById('liteBtn'); const txt = document.getElementById('liteBtnTxt'); const icon = document.getElementById('liteBtnIcon');
-  const mobTxt = document.getElementById('mobLiteTxt'); const mobIcon = document.getElementById('mobLiteBtnIcon');
-  const ICON_LITE = '<circle cx="12" cy="12" r="3" fill="currentColor"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>';
-  const ICON_RICH = '<path d="M12 2l1.5 4.5h4.5l-3.6 2.7 1.4 4.3L12 11l-3.8 2.5 1.4-4.3L6 6.5h4.5z" fill="currentColor"/>';
-
-  if(on){
-    root.setAttribute('data-view','lite');
-    if(txt) txt.textContent = 'Rich'; if(icon) icon.innerHTML = ICON_RICH;
-    if(mobTxt) mobTxt.textContent = 'Switch to Rich'; if(mobIcon) mobIcon.innerHTML = ICON_RICH;
-    localStorage.setItem('pw-view','lite');
-    if(window._mathCanvasRaf) cancelAnimationFrame(window._mathCanvasRaf);
-  } else {
-    root.removeAttribute('data-view');
-    if(txt) txt.textContent = 'Lite'; if(icon) icon.innerHTML = ICON_LITE;
-    if(mobTxt) mobTxt.textContent = 'Switch to Lite'; if(mobIcon) mobIcon.innerHTML = ICON_LITE;
-    localStorage.setItem('pw-view','rich');
-  }
-}
-/* Restore on load */
-(function(){ if(localStorage.getItem('pw-view') === 'lite') setLiteMode(true); })();
-</script>
-<!-- ══════════ FLOATING MESSENGER ══════════ -->
-<!-- Messenger FAB — fixed bottom right, visible on all pages -->
-<a href="https://m.me/prepwaybangladesh" target="_blank" rel="noopener"
-   class="fab-messenger glass" aria-label="Message us on Messenger" title="Chat on Messenger">
+<!-- Messenger FAB -->
+<a href="https://m.me/prepwaybangladesh" target="_blank" rel="noopener noreferrer" class="glass fab" aria-label="Chat on Messenger">
   <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-  <div class="g-c fab-inner">
+  <div class="g-c">
     <img src="icons/icon-14.svg" alt="Messenger" class="fab-icon">
     <span class="fab-label">Message Us</span>
   </div>
 </a>
 
-
 <!-- Lite mode indicator -->
-<div class="lite-banner" id="liteBanner">⚡ Optimized View</div>
- <!-- Vercel Analytics -->
+<div class="lite-banner" aria-hidden="true">⚡ Material UI Mode</div>
+
+<!-- ══════ JAVASCRIPT ══════ -->
+<script>
+'use strict';
+const R = document.documentElement; // <html> element
+
+/* ──────────────────────────────────────
+   THEME  (Light / Dark)
+   Text buttons: Light · Dark
+────────────────────────────────────── */
+function setTheme(dark) {
+  R.setAttribute('data-theme', dark ? 'dark' : 'light');
+  // Desktop buttons
+  document.getElementById('tgl-light').classList.toggle('on', !dark);
+  document.getElementById('tgl-dark').classList.toggle('on',  dark);
+  document.getElementById('tgl-light').setAttribute('aria-pressed', String(!dark));
+  document.getElementById('tgl-dark').setAttribute('aria-pressed',  String(dark));
+  // Mobile buttons
+  document.getElementById('mob-tgl-light').classList.toggle('on', !dark);
+  document.getElementById('mob-tgl-dark').classList.toggle('on',  dark);
+  document.getElementById('mob-tgl-light').setAttribute('aria-pressed', String(!dark));
+  document.getElementById('mob-tgl-dark').setAttribute('aria-pressed',  String(dark));
+  localStorage.setItem('pw-t', dark ? 'dark' : 'light');
+}
+// Init theme
+setTheme(localStorage.getItem('pw-t') === 'dark');
+
+/* ──────────────────────────────────────
+   VIEW MODE  (Liquid Glass / Material UI)
+────────────────────────────────────── */
+function setView(lite) {
+  if (lite) { R.setAttribute('data-view','lite'); } else { R.removeAttribute('data-view'); }
+  // All 4 buttons
+  ['vsw-lg','mob-vsw-lg'].forEach(id => {
+    const b = document.getElementById(id);
+    if (b) { b.classList.toggle('on',!lite); b.setAttribute('aria-pressed', String(!lite)); }
+  });
+  ['vsw-md','mob-vsw-md'].forEach(id => {
+    const b = document.getElementById(id);
+    if (b) { b.classList.toggle('on',lite);  b.setAttribute('aria-pressed', String(lite));  }
+  });
+  if (lite) {
+    // Stop canvas animation
+    if (window._mathRaf) { cancelAnimationFrame(window._mathRaf); window._mathRaf = null; }
+    // Instantly show hero text (no typing)
+    const t1 = document.getElementById('to1'), t2 = document.getElementById('to2');
+    if (t1) t1.style.display = 'none';
+    if (t2) t2.style.display = 'none';
+    const bn = document.getElementById('hero-bn');
+    if (bn) { bn.style.opacity='1'; bn.classList.add('show'); }
+  } else {
+    const t1 = document.getElementById('to1'), t2 = document.getElementById('to2');
+    if (t1) t1.style.display = '';
+    if (t2) t2.style.display = '';
+    startMath();
+  }
+  localStorage.setItem('pw-view', lite ? 'lite' : 'rich');
+}
+// Init view
+setView(localStorage.getItem('pw-view') === 'lite');
+
+/* ──────────────────────────────────────
+   MOBILE NAV
+────────────────────────────────────── */
+const mbtn = document.getElementById('mbtn');
+const mnav = document.getElementById('mobileNav');
+let mo = false;
+const IC_MENU  = '<rect y="0" width="18" height="2" rx="1" fill="currentColor"/><rect y="6" width="18" height="2" rx="1" fill="currentColor"/><rect y="12" width="18" height="2" rx="1" fill="currentColor"/>';
+const IC_CLOSE = '<line x1="2" y1="2" x2="16" y2="16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line x1="16" y1="2" x2="2" y2="16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>';
+function toggleMenu() {
+  mo = !mo;
+  mnav.style.display = mo ? 'block' : 'none';
+  requestAnimationFrame(() => mnav.classList.toggle('open', mo));
+  document.getElementById('mbtn-icon').innerHTML = mo ? IC_CLOSE : IC_MENU;
+  mbtn.setAttribute('aria-expanded', String(mo));
+  mnav.setAttribute('aria-hidden', String(!mo));
+}
+function closeMenu() {
+  mo = false;
+  mnav.classList.remove('open');
+  setTimeout(() => { mnav.style.display='none'; }, 280);
+  document.getElementById('mbtn-icon').innerHTML = IC_MENU;
+  mbtn.setAttribute('aria-expanded','false');
+  mnav.setAttribute('aria-hidden','true');
+}
+
+/* ──────────────────────────────────────
+   NAV SCROLL
+────────────────────────────────────── */
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+/* ──────────────────────────────────────
+   NOTICE BOARD — Breaking News Ticker
+   ══════════════════════════════════
+   TO UPDATE NOTICES: find  const NOTICES  below
+   and edit the array strings.
+   ══════════════════════════════════
+────────────────────────────────────── */
+const NOTICES = [
+  'Initial Beta Release of Prepway Bangladesh Website',
+  'New Notice Board added — see all live updates here',
+  'Liquid Glass & Material UI modes available — toggle in nav bar. Liquid Glass = full animations & effects. Material UI = fast, clean.',
+  'We are working hard to give you an interactive experience'
+];
+let nIdx = 0, panelOpen = false;
+
+function buildTicker() {
+  const el = document.getElementById('tickerText');
+  if (!el) return;
+  const t = NOTICES[nIdx];
+  // Double the text for seamless CSS scroll loop
+  el.textContent = t + '     ·     ' + t + '     ·     ';
+}
+function cycleNotice() {
+  const el = document.getElementById('tickerText');
+  if (!el) return;
+  el.style.opacity = '0';
+  setTimeout(() => {
+    nIdx = (nIdx + 1) % NOTICES.length;
+    buildTicker();
+    el.style.opacity = '1';
+  }, 280);
+}
+function togglePanel() {
+  panelOpen = !panelOpen;
+  const panel  = document.getElementById('nbPanel');
+  const allBtn = document.getElementById('nbAllBtn');
+  if (panelOpen) {
+    let h = '';
+    NOTICES.forEach((n, i) => {
+      h += `<div style="padding:8px 0;border-bottom:1px solid var(--border);font-size:.82rem">
+        <strong style="font-family:'Cascadia Code',monospace;color:var(--brand)">${i+1}.</strong> ${n}
+      </div>`;
+    });
+    document.getElementById('fullList').innerHTML = h;
+    panel.style.display = 'block';
+    panel.setAttribute('aria-hidden','false');
+    if (allBtn) { allBtn.textContent = 'Close ✕'; allBtn.setAttribute('aria-expanded','true'); }
+  } else {
+    panel.style.display = 'none';
+    panel.setAttribute('aria-hidden','true');
+    if (allBtn) { allBtn.textContent = 'All Updates ↓'; allBtn.setAttribute('aria-expanded','false'); }
+  }
+}
+// Init
+setTimeout(buildTicker, 150);
+setInterval(cycleNotice, 8000);
+
+/* ──────────────────────────────────────
+   STORY CARD ACCORDION
+────────────────────────────────────── */
+function toggleCard(card) {
+  const wasOpen = card.classList.contains('open');
+  document.querySelectorAll('.story-card.open').forEach(c => {
+    c.classList.remove('open');
+    c.setAttribute('aria-expanded','false');
+  });
+  if (!wasOpen) {
+    card.classList.add('open');
+    card.setAttribute('aria-expanded','true');
+    setTimeout(() => {
+      const top = window.scrollY + card.getBoundingClientRect().top - 80;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }, 80);
+  }
+}
+
+/* ──────────────────────────────────────
+   SCROLL REVEAL
+────────────────────────────────────── */
+const ro = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); }), { threshold: 0.09 });
+document.querySelectorAll('.rev').forEach(el => ro.observe(el));
+
+/* ──────────────────────────────────────
+   KEYBOARD — episode cards
+────────────────────────────────────── */
+document.querySelectorAll('[role="button"]').forEach(c => {
+  c.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); c.click(); } });
+});
+
+/* ──────────────────────────────────────
+   TYPING ANIMATION
+────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  if (R.getAttribute('data-view') === 'lite') return;
+  const to1 = document.getElementById('to1'), to2 = document.getElementById('to2');
+  const bn  = document.getElementById('hero-bn');
+  if (!to1 || !to2) return;
+
+  function ch(el, c) {
+    if (c==='\n') { el.appendChild(document.createElement('br')); return; }
+    const s = document.createElement('span');
+    s.style.cssText = 'display:inline-block;opacity:0;animation:chIn .18s ease forwards';
+    s.textContent = c===' ' ? '\u00A0' : c;
+    el.appendChild(s);
+  }
+  function typeLine(chars, el, ms) {
+    return new Promise(res => {
+      let i=0;
+      function step() {
+        if (i>=chars.length) { res(); return; }
+        const c = chars[i++];
+        ch(el,c);
+        let d = c==='\n'?ms*2.6:c===','?ms*2.2:c==='.'?ms*2.0:ms*(0.78+Math.random()*.44);
+        setTimeout(step,d);
+      }
+      step();
+    });
+  }
+  const wait = ms => new Promise(r=>setTimeout(r,ms));
+
+  async function run() {
+    const c1 = document.createElement('span'); c1.className='tc'; to1.appendChild(c1);
+    await typeLine(['F','r','o','m','\n','B','A','N','G','L','A','D','E','S','H',','], to1, 88);
+    await wait(360); c1.classList.add('off'); await wait(80); c1.remove();
+    const c2 = document.createElement('span'); c2.className='tc'; to2.appendChild(c2);
+    await wait(80);
+    await typeLine(['T','o',' ','B','a','n','g','l','a','d','e','s','h','.'], to2, 84);
+    await wait(500); c2.classList.add('off'); await wait(80); c2.remove();
+    await wait(280);
+    if (bn) bn.classList.add('show');
+  }
+  run();
+});
+
+/* ──────────────────────────────────────
+   MATH CANVAS
+────────────────────────────────────── */
+function startMath() {
+  const cv = document.getElementById('mathCanvas');
+  if (!cv) return;
+  const ctx = cv.getContext('2d');
+  let t=0;
+  function resize() { cv.width=innerWidth; cv.height=innerHeight; }
+  resize();
+  window.addEventListener('resize', resize, { passive:true });
+  function draw() {
+    if (R.getAttribute('data-view')==='lite') { window._mathRaf=null; return; }
+    ctx.clearRect(0,0,cv.width,cv.height);
+    const dark = R.getAttribute('data-theme')==='dark';
+    const a = dark ? .22 : .20;
+    [
+      {f:.012,p:1.0,ph:.5,amp:cv.height*.14,col:`rgba(214,54,81,${a})`,lw:1.5},
+      {f:.009,p:.7, ph:1.2,amp:cv.height*.10,col:`rgba(214,54,81,${a*.6})`,lw:1},
+      {f:.006,p:1.4,ph:.8, amp:cv.height*.18,col:`rgba(100,70,40,${a*.5})`,lw:.8},
+    ].forEach(({f,p,ph,amp,col,lw}) => {
+      ctx.beginPath(); ctx.strokeStyle=col; ctx.lineWidth=lw;
+      for (let x=0;x<=cv.width;x+=2) {
+        const y = cv.height/2 + amp*Math.sin(f*x+p*t+ph);
+        x===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+      }
+      ctx.stroke();
+    });
+    t+=.004;
+    window._mathRaf = requestAnimationFrame(draw);
+  }
+  draw();
+}
+startMath();
+</script>
+
+<!-- Vercel Analytics + Speed Insights -->
 <script defer src="/_vercel/insights/script.js"></script>
-
-<!-- Vercel Speed Insights -->
 <script defer src="/_vercel/speed-insights/script.js"></script>
-
 </body>
 </html>
