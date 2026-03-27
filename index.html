@@ -6,14 +6,14 @@
 <title>Prepway Bangladesh</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
-<meta name="description" content="Prepway Bangladesh is an educational platform guiding Bangladeshi students through SSC, HSC, and university admissions — From Bangladesh, To Bangladesh."/>
+<meta name="description" content="Prepway Bangladesh is an educational platform guiding Bangladeshi students through SSC, HSC, and university admissions — From Bangladesh, To Bangladesh. Part of Prepway Group."/>
 <meta name="keywords" content="Prepway Bangladesh, Bangladeshi student guidance, SSC preparation, HSC preparation, university admission Bangladesh, medical admission, Show Your Voice podcast, Prepway Group"/>
 <meta name="author" content="Prepway Group"/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://prepwaybd.vercel.app/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Prepway Bangladesh — From Bangladesh, To Bangladesh"/>
-<meta property="og:description" content="An educational platform guiding Bangladeshi students through SSC, HSC, and university admissions."/>
+<meta property="og:description" content="An educational platform guiding Bangladeshi students through SSC, HSC, and university admissions. Part of Prepway Group."/>
 <meta property="og:image" content="logo.png"/>
 <meta property="og:url" content="https://prepwaybd.vercel.app/"/>
 <meta property="og:site_name" content="Prepway Bangladesh"/>
@@ -22,7 +22,7 @@
 <meta name="twitter:description" content="A podcast platform guiding Bangladeshi students. Watch Show Your Voice — Season 01."/>
 <meta name="twitter:image" content="logo.png"/>
 <meta name="theme-color" content="#17171C" media="(prefers-color-scheme: dark)"/>
-<meta name="theme-color" content="#EAE7E0" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#EDEAE3" media="(prefers-color-scheme: light)"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=DM+Serif+Display:ital@0;1&family=Hind+Siliguri:wght@400;500;600;700&family=Outfit:wght@300..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -40,7 +40,7 @@
   --bg:       #13131A;
   --bg-s:     #1A1A23;
   --bg-card:  rgba(255,255,255,.048);
-  --text:     #F0EAE1;          /* warm white — crisp on dark */
+  --text:     #F0EAE1;
   --text-2:   #BEB8AE;
   --text-3:   #72706C;
   --border:   rgba(255,255,255,.08);
@@ -48,7 +48,6 @@
   --gc-bg:    rgba(255,255,255,.07);
   --nav-bg:   rgba(19,19,26,.94);
 
-  /* Glass */
   --g-blur: blur(24px) saturate(190%);
   --g-tint: rgba(255,255,255,.068);
   --g-shad: 0 8px 32px rgba(0,0,0,.32),
@@ -60,14 +59,12 @@
   --sh-md: 0 8px 28px rgba(0,0,0,.40);
   --sh-br: 0 6px 22px rgba(214,54,81,.32);
 
-  /* Material (Lite) */
   --md-s1:  #1E1E26;
   --md-s2:  #252530;
   --md-d1:  0 1px 3px rgba(0,0,0,.40),0 1px 2px rgba(0,0,0,.28);
   --md-d2:  0 3px 6px rgba(0,0,0,.32),0 3px 6px rgba(0,0,0,.24);
   --md-d4:  0 10px 20px rgba(0,0,0,.28),0 6px 6px rgba(0,0,0,.22);
 
-  /* Physics spring easing */
   --spring: cubic-bezier(.34,1.56,.64,1);
   --ease-out: cubic-bezier(.22,1,.36,1);
 }
@@ -75,7 +72,7 @@
   --bg:       #EDEAE3;
   --bg-s:     #E5E1D8;
   --bg-card:  rgba(255,255,255,.75);
-  --text:     #0F0D0B;          /* near-black — maximum crisp */
+  --text:     #0F0D0B;
   --text-2:   #3D3530;
   --text-3:   #8C867E;
   --border:   rgba(50,35,15,.10);
@@ -100,9 +97,7 @@
   --md-d4: 0 10px 20px rgba(40,25,10,.12),0 6px 6px rgba(40,25,10,.08);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   RESET
-═══════════════════════════════════════════════════════════ */
+/* ═══ RESET ═══ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;transition:background .4s var(--ease-out),color .4s var(--ease-out)}
@@ -110,9 +105,7 @@ a{text-decoration:none;color:inherit}
 button{cursor:pointer;font-family:inherit;border:none;background:none}
 img{max-width:100%;display:block}
 
-/* ═══════════════════════════════════════════════════════════
-   GLASS SYSTEM
-═══════════════════════════════════════════════════════════ */
+/* ═══ GLASS SYSTEM ═══ */
 .glass{position:relative;isolation:isolate;border-radius:inherit}
 .g-f{position:absolute;inset:0;z-index:1;border-radius:inherit;backdrop-filter:var(--g-blur);-webkit-backdrop-filter:var(--g-blur)}
 .g-o{position:absolute;inset:0;z-index:2;border-radius:inherit;background:var(--g-tint)}
@@ -120,35 +113,30 @@ img{max-width:100%;display:block}
 .g-c{position:relative;z-index:4}
 [data-theme="dark"] .icon-mono{filter:invert(1) brightness(2)}
 
-/* ═══════════════════════════════════════════════════════════
-   LAYOUT
-═══════════════════════════════════════════════════════════ */
+/* ═══ LAYOUT ═══ */
 .container{max-width:1160px;margin:0 auto;padding:0 2.5rem}
 .section{padding:5.5rem 0;position:relative;z-index:1}
 .divider{height:1px;background:linear-gradient(90deg,transparent,var(--border-2),transparent);z-index:1}
 
-/* ═══════════════════════════════════════════════════════════
-   ANIMATED CANVAS BACKGROUND  (Rich mode)
-   Physics-based: wave equations, pendulum paths, orbital traces
-═══════════════════════════════════════════════════════════ */
+/* ═══ ANIMATED CANVAS BACKGROUND ═══ */
 #bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;width:100%;height:100%}
 
 /* Fine math grid */
 .math-grid{
   position:fixed;inset:0;z-index:0;pointer-events:none;
   background-image:
-    linear-gradient(var(--grid-line,rgba(120,80,40,.08)) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line,rgba(120,80,40,.08)) 1px, transparent 1px),
-    linear-gradient(var(--grid-major,rgba(120,80,40,.16)) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-major,rgba(120,80,40,.16)) 1px, transparent 1px);
-  background-size: 24px 24px, 24px 24px, 120px 120px, 120px 120px;
+    linear-gradient(var(--grid-line,rgba(120,80,40,.08)) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid-line,rgba(120,80,40,.08)) 1px,transparent 1px),
+    linear-gradient(var(--grid-major,rgba(120,80,40,.16)) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid-major,rgba(120,80,40,.16)) 1px,transparent 1px);
+  background-size:24px 24px,24px 24px,120px 120px,120px 120px;
 }
 [data-theme="dark"] .math-grid{
   --grid-line:  rgba(255,255,255,.035);
   --grid-major: rgba(255,255,255,.075);
 }
 
-/* Floating physics labels — atmospheric decoration */
+/* Floating physics labels */
 .phys-label{
   position:fixed;z-index:0;pointer-events:none;
   font-family:"Cascadia Code",monospace;font-size:.68rem;
@@ -158,7 +146,7 @@ img{max-width:100%;display:block}
 }
 [data-theme="dark"] .phys-label{opacity:.10}
 @keyframes floatLabel{
-  0%  {transform:translate(0,0)   rotate(var(--rot,0deg))}
+  0%  {transform:translate(0,0) rotate(var(--rot,0deg))}
   50% {transform:translate(var(--dx,8px),var(--dy,-12px)) rotate(calc(var(--rot,0deg) + 2deg))}
   100%{transform:translate(var(--dx2,-6px),var(--dy2,8px)) rotate(calc(var(--rot,0deg) - 1deg))}
 }
@@ -174,17 +162,16 @@ img{max-width:100%;display:block}
 @keyframes orb1{from{transform:translate(0,0) scale(1)}to{transform:translate(-45px,35px) scale(1.09)}}
 @keyframes orb2{from{transform:translate(0,0) scale(1)}to{transform:translate(35px,-45px) scale(1.07)}}
 
-/* Section-specific ambience */
-#podcasts,#special,#about,#booking{isolation:isolate}
-#podcasts::before,#special::before,#about::before,#booking::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0}
+/* Section ambience */
+#podcasts,#special,#about,#booking,#courses{isolation:isolate}
+#podcasts::before,#special::before,#about::before,#booking::before,#courses::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0}
 #podcasts::before{background:radial-gradient(ellipse 70% 55% at 12% 50%,rgba(214,120,54,.08) 0%,transparent 65%),radial-gradient(ellipse 45% 70% at 90% 20%,rgba(214,54,81,.06) 0%,transparent 60%)}
 #special::before{background:radial-gradient(ellipse 55% 65% at 50% 50%,rgba(200,80,40,.09) 0%,transparent 75%)}
 #about::before{background:radial-gradient(ellipse 50% 45% at 80% 28%,rgba(160,120,60,.08) 0%,transparent 65%),radial-gradient(ellipse 40% 55% at 12% 70%,rgba(120,80,40,.06) 0%,transparent 60%)}
 #booking::before{background:radial-gradient(ellipse 62% 55% at 50% 40%,rgba(100,60,200,.09) 0%,rgba(214,54,81,.05) 55%,transparent 80%)}
+#courses::before{background:radial-gradient(ellipse 60% 50% at 85% 20%,rgba(214,54,81,.07) 0%,transparent 65%),radial-gradient(ellipse 40% 60% at 10% 80%,rgba(80,60,200,.06) 0%,transparent 65%)}
 
-/* ═══════════════════════════════════════════════════════════
-   TYPOGRAPHY — crisp in both themes
-═══════════════════════════════════════════════════════════ */
+/* ═══ TYPOGRAPHY ═══ */
 .eyebrow{
   display:inline-flex;align-items:center;gap:.5rem;
   font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
@@ -205,9 +192,24 @@ img{max-width:100%;display:block}
   color:var(--text-2);line-height:1.78;max-width:540px;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   NAVIGATION
-═══════════════════════════════════════════════════════════ */
+/* ═══ GROUP BANNER ═══ */
+.group-banner{
+  position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:700;
+  font-family:"Cascadia Code",monospace;font-size:.55rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-3);background:var(--nav-bg);
+  padding:.28rem 1.1rem;
+  border-radius:0 0 10px 10px;
+  border:1px solid var(--border);border-top:none;
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  transition:opacity .3s,transform .3s;
+  white-space:nowrap;
+}
+.group-banner a{color:var(--brand);transition:opacity .2s}
+.group-banner a:hover{opacity:.75}
+.group-banner.hidden{opacity:0;transform:translateX(-50%) translateY(-100%);pointer-events:none}
+
+/* ═══ NAVIGATION ═══ */
 nav#mainNav{
   position:fixed;top:0;left:0;right:0;z-index:600;height:62px;
   background:transparent;border-bottom:1px solid transparent;
@@ -225,7 +227,6 @@ nav#mainNav.scrolled{
   max-width:1160px;margin:0 auto;padding:0 2.5rem;
   height:100%;display:flex;align-items:center;justify-content:space-between;gap:.75rem;
 }
-/* Logo */
 .nav-logo{
   display:flex;align-items:center;gap:.5rem;flex-shrink:0;
   padding:.28rem .58rem;border-radius:11px;
@@ -234,13 +235,16 @@ nav#mainNav.scrolled{
 }
 .nav-logo:hover{border-color:var(--brand);background:var(--brand-s);transform:translateY(-1px)}
 .nav-logo img{height:30px;width:auto}
+.nav-logo-text{
+  font-family:"Cascadia Code",monospace;font-weight:700;font-size:.72rem;
+  color:var(--text);letter-spacing:-.01em;
+}
 .beta{
   font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
   font-size:.54rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
   color:var(--brand);background:var(--brand-s);
   border:1px solid rgba(214,54,81,.3);border-radius:5px;padding:.16rem .4rem;flex-shrink:0;
 }
-/* Nav links */
 .nav-links{display:flex;align-items:center;gap:.06rem;list-style:none}
 .nav-links a{
   font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
@@ -259,10 +263,9 @@ nav#mainNav.scrolled{
 }
 .nav-cta:hover{transform:translateY(-2px) scale(1.03)!important;box-shadow:0 10px 28px rgba(214,54,81,.40)!important}
 .nav-cta:active{transform:scale(.97)!important}
-/* Nav right */
 .nav-right{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
 
-/* ── Mode switch ── */
+/* Mode switch */
 .view-switch{
   display:flex;align-items:center;border-radius:100px;
   border:1px solid var(--border-2);overflow:hidden;height:30px;
@@ -291,7 +294,7 @@ nav#mainNav.scrolled{
 .vsw-short{display:none}
 @media(max-width:1080px){.vsw-long{display:none}.vsw-short{display:inline}}
 
-/* ── Theme toggle ── */
+/* Theme toggle */
 .theme-tog{
   display:flex;align-items:center;border-radius:100px;
   border:1px solid var(--border-2);overflow:hidden;height:30px;
@@ -313,7 +316,7 @@ nav#mainNav.scrolled{
   animation:swOn .32s var(--spring) both;
 }
 
-/* ── Hamburger ── */
+/* Hamburger */
 .mob-btn{
   display:none;width:36px;height:36px;border-radius:9px;
   background:var(--gc-bg);border:1px solid var(--border-2);
@@ -322,9 +325,7 @@ nav#mainNav.scrolled{
 }
 .mob-btn:hover{color:var(--text);transform:scale(1.08)}
 
-/* ═══════════════════════════════════════════════════════════
-   MOBILE DRAWER
-═══════════════════════════════════════════════════════════ */
+/* ═══ MOBILE DRAWER ═══ */
 .mob-nav{
   display:none;
   position:fixed;top:62px;left:0;right:0;z-index:590;
@@ -369,9 +370,7 @@ nav#mainNav.scrolled{
   color:var(--text-3);flex-shrink:0;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   NOTICE BOARD — Breaking News (full container width)
-═══════════════════════════════════════════════════════════ */
+/* ═══ NOTICE BOARD ═══ */
 .nb-wrap{max-width:1160px;margin:0 auto;padding:0 2.5rem;position:relative;z-index:2}
 .notice-board{
   display:flex;width:100%;border-radius:12px;margin-bottom:1.3rem;
@@ -379,10 +378,7 @@ nav#mainNav.scrolled{
   border-left:4px solid var(--brand);
   transition:box-shadow .35s var(--ease-out),transform .25s var(--spring);
 }
-.notice-board:hover{
-  box-shadow:0 6px 28px rgba(214,54,81,.20);
-  transform:translateY(-1px);
-}
+.notice-board:hover{box-shadow:0 6px 28px rgba(214,54,81,.20);transform:translateY(-1px)}
 .nb-inner{display:flex;align-items:center;gap:10px;padding:10px 14px;width:100%;flex-wrap:nowrap;min-width:0}
 .nb-live{
   display:inline-flex;align-items:center;gap:5px;
@@ -423,8 +419,6 @@ nav#mainNav.scrolled{
 .nb-all::before{content:'';position:absolute;inset:0;background:var(--brand);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease-out);border-radius:inherit;z-index:-1}
 .nb-all:hover{color:#fff;transform:scale(1.05);box-shadow:0 4px 14px rgba(214,54,81,.35)}
 .nb-all:hover::before{transform:scaleX(1)}
-
-/* All-updates panel */
 .nb-panel{display:none;max-width:1160px;margin:0 auto;padding:0 2.5rem;margin-bottom:1rem;position:relative;z-index:2}
 .nb-panel-box{
   border-radius:14px;padding:1rem 1.2rem;position:relative;
@@ -442,15 +436,10 @@ nav#mainNav.scrolled{
   color:var(--brand);margin-bottom:.85rem;font-size:.78rem;font-weight:700;
 }
 #fullList{line-height:1.9;font-family:"Plus Jakarta Sans",sans-serif;font-size:.83rem;color:var(--text-2)}
-#fullList .ni{
-  padding:9px 0;border-bottom:1px solid var(--border);
-  animation:fadeRow .3s var(--ease-out) both;
-}
+#fullList .ni{padding:9px 0;border-bottom:1px solid var(--border);animation:fadeRow .3s var(--ease-out) both}
 @keyframes fadeRow{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
 
-/* ═══════════════════════════════════════════════════════════
-   HERO
-═══════════════════════════════════════════════════════════ */
+/* ═══ HERO ═══ */
 .hero{
   min-height:100vh;padding-top:62px;
   display:grid;grid-template-columns:1fr 1fr;
@@ -463,7 +452,20 @@ nav#mainNav.scrolled{
 .hero-right{display:flex;justify-content:center;align-items:center;animation:heroIn .8s .14s var(--ease-out) both}
 @keyframes heroIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
 
-/* Bengali */
+/* Hero badges */
+.hero-badges{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.3rem}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:.38rem;
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.55rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-3);border:1px solid var(--border-2);border-radius:100px;
+  padding:.28rem .72rem;background:var(--gc-bg);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.hero-badge.brand{color:var(--brand);border-color:rgba(214,54,81,.28);background:var(--brand-s)}
+.hero-badge-dot{width:5px;height:5px;border-radius:50%;background:currentColor;animation:vdot 2s ease-in-out infinite}
+
+/* Bengali slogan */
 .slogan-bn{
   font-family:"Hind Siliguri",sans-serif;
   font-size:clamp(1.2rem,2.2vw,1.55rem);font-weight:700;
@@ -495,10 +497,15 @@ nav#mainNav.scrolled{
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 @keyframes chIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
 
-/* ═══════════════════════════════════════════════════════════
-   BUTTONS — immersive, physics-based interactions
-═══════════════════════════════════════════════════════════ */
-.hero-btns{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.4rem}
+/* Hero sub text */
+.hero-sub{
+  font-family:"Plus Jakarta Sans",sans-serif;
+  font-size:.96rem;color:var(--text-2);line-height:1.76;
+  margin-bottom:1.7rem;max-width:420px;
+}
+
+/* Buttons */
+.hero-btns{display:flex;flex-wrap:wrap;gap:.75rem}
 .btn{
   display:inline-flex;align-items:center;gap:.55rem;
   font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
@@ -529,6 +536,22 @@ nav#mainNav.scrolled{
 .btn-o:hover{transform:translateY(-3px) scale(1.02);box-shadow:var(--sh-md);border-color:var(--border)}
 .btn-o:active{transform:scale(.96)}
 
+/* Hero stats strip */
+.hero-stats{
+  display:flex;gap:1.8rem;margin-top:2rem;padding-top:1.6rem;
+  border-top:1px solid var(--border);
+}
+.hstat{display:flex;flex-direction:column;gap:.2rem}
+.hstat-n{
+  font-family:"Outfit",sans-serif;font-weight:900;
+  font-size:1.55rem;letter-spacing:-.04em;color:var(--text);line-height:1;
+}
+.hstat-l{
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.55rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-3);
+}
+
 /* Logo card */
 .logo-card{
   border-radius:24px;width:300px;height:300px;
@@ -545,61 +568,80 @@ nav#mainNav.scrolled{
 }
 [data-theme="light"] .lc-grid{background-image:linear-gradient(rgba(0,0,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.05) 1px,transparent 1px)}
 
-/* ═══════════════════════════════════════════════════════════
-   EPISODE CARDS
-═══════════════════════════════════════════════════════════ */
-.eps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+/* ═══ EPISODE CARDS ═══ */
+.section-header{display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.eps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 .ep-card{
-  border-radius:16px;overflow:hidden;cursor:pointer;
+  border-radius:18px;overflow:hidden;cursor:pointer;
   transition:transform .32s var(--spring),box-shadow .32s var(--ease-out);
   will-change:transform;
 }
-.ep-card:hover{transform:translateY(-6px) scale(1.015);box-shadow:0 14px 36px rgba(0,0,0,.32)}
+.ep-card:hover{transform:translateY(-6px) scale(1.015);box-shadow:0 18px 44px rgba(0,0,0,.32)}
 .ep-card:active{transform:scale(.97)}
 .ep-thumb{position:relative;aspect-ratio:16/9;overflow:hidden}
 .ep-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .45s var(--ease-out)}
 .ep-card:hover .ep-thumb img{transform:scale(1.06)}
 .ep-ov{
-  position:absolute;inset:0;background:rgba(0,0,0,.30);
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.6) 0%,rgba(0,0,0,.15) 60%,transparent 100%);
   display:flex;align-items:center;justify-content:center;
   opacity:0;transition:opacity .28s;
 }
 .ep-card:hover .ep-ov{opacity:1}
 .ep-play{
-  width:52px;height:52px;border-radius:50%;
+  width:54px;height:54px;border-radius:50%;
   background:rgba(255,255,255,.94);
   display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 20px rgba(0,0,0,.32);
+  box-shadow:0 6px 24px rgba(0,0,0,.36);
   transform:scale(.85);transition:transform .28s var(--spring);
 }
 .ep-card:hover .ep-play{transform:scale(1)}
 .play-icon{width:22px;height:22px;object-fit:contain}
-.ep-body{padding:1rem}
-.ep-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:.3rem}
+.ep-body{padding:1.1rem 1.15rem}
+.ep-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:.35rem}
 .ep-n{font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-size:.60rem;font-weight:700;color:var(--brand);letter-spacing:.1em;text-transform:uppercase}
 .ep-d{font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-size:.58rem;color:var(--text-3);font-weight:500}
-.ep-t{font-family:"Plus Jakarta Sans",sans-serif;font-size:.86rem;font-weight:700;color:var(--text);line-height:1.45;margin-bottom:.28rem}
+.ep-t{font-family:"Plus Jakarta Sans",sans-serif;font-size:.88rem;font-weight:700;color:var(--text);line-height:1.45;margin-bottom:.3rem}
 .ep-g{font-family:"Plus Jakarta Sans",sans-serif;font-size:.74rem;color:var(--text-3);font-weight:500}
+.ep-badge{
+  display:inline-flex;align-items:center;gap:.3rem;
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.52rem;font-weight:700;color:var(--brand);
+  background:var(--brand-s);border:1px solid rgba(214,54,81,.22);
+  border-radius:4px;padding:.12rem .38rem;letter-spacing:.08em;
+  text-transform:uppercase;margin-bottom:.5rem;
+}
 .pw-by{display:block;font-family:"Plus Jakarta Sans",sans-serif;font-size:.90rem;font-weight:500;color:var(--text-3);margin-top:.2rem}
 .pw-by .pw{font-weight:700;color:var(--brand)}
 
-/* ═══════════════════════════════════════════════════════════
-   SPECIAL
-═══════════════════════════════════════════════════════════ */
+/* View all link */
+.view-all{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.68rem;font-weight:700;color:var(--brand);
+  border:1px solid rgba(214,54,81,.28);border-radius:100px;
+  padding:.38rem .88rem;background:var(--brand-s);
+  transition:background .2s,transform .22s var(--spring),box-shadow .2s;
+  white-space:nowrap;flex-shrink:0;
+}
+.view-all:hover{background:var(--brand-m);transform:translateX(3px);box-shadow:0 4px 14px rgba(214,54,81,.22)}
+
+/* ═══ SPECIAL SECTION ═══ */
 .spec-inner{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
 .spec-link{
-  display:block;border-radius:16px;overflow:hidden;position:relative;
+  display:block;border-radius:18px;overflow:hidden;position:relative;
   box-shadow:var(--sh-md);cursor:pointer;
   transition:transform .32s var(--spring),box-shadow .32s;
 }
-.spec-link:hover{transform:scale(1.025);box-shadow:0 16px 42px rgba(0,0,0,.30)}
+.spec-link:hover{transform:scale(1.025);box-shadow:0 18px 48px rgba(0,0,0,.32)}
 .spec-link img{width:100%;height:auto}
 .spec-ov{
-  position:absolute;inset:0;background:rgba(0,0,0,.22);
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.50) 0%,rgba(0,0,0,.12) 50%,transparent 100%);
   display:flex;align-items:center;justify-content:center;
   transition:background .28s;
 }
-.spec-link:hover .spec-ov{background:rgba(0,0,0,.36)}
+.spec-link:hover .spec-ov{background:linear-gradient(to top,rgba(0,0,0,.62) 0%,rgba(0,0,0,.20) 55%,transparent 100%)}
 .spec-badge{
   display:inline-flex;align-items:center;gap:.5rem;
   background:rgba(0,0,0,.72);color:#fff;
@@ -612,9 +654,65 @@ nav#mainNav.scrolled{
 .bengali-title{font-family:"Hind Siliguri",sans-serif;font-size:clamp(1.7rem,4vw,2.45rem);font-weight:700;color:var(--text);line-height:1.22;margin-bottom:1rem}
 .bengali-title em{color:var(--brand);font-style:italic;font-family:"DM Serif Display",serif;font-size:.77em}
 
-/* ═══════════════════════════════════════════════════════════
-   STORY CARDS (About)
-═══════════════════════════════════════════════════════════ */
+/* ═══ COURSES SECTION ═══ */
+#courses{
+  background:linear-gradient(135deg,var(--bg-s) 0%,var(--bg) 100%);
+  position:relative;
+}
+.courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2.5rem}
+.course-card{
+  border-radius:18px;padding:1.6rem;
+  border:1px solid var(--border);
+  background:var(--gc-bg);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  transition:transform .28s var(--spring),border-color .25s,box-shadow .28s;
+  position:relative;overflow:hidden;
+}
+.course-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--brand),rgba(214,54,81,.30));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .38s var(--ease-out);
+}
+.course-card:hover{transform:translateY(-5px);border-color:var(--border-2);box-shadow:var(--sh-md)}
+.course-card:hover::before{transform:scaleX(1)}
+.course-card.available{border-color:rgba(214,54,81,.25);background:var(--brand-s)}
+.course-ico{
+  width:40px;height:40px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--brand-s);border:1px solid rgba(214,54,81,.20);
+  margin-bottom:1.1rem;
+}
+.course-ico svg{width:20px;height:20px}
+.course-status{
+  display:inline-flex;align-items:center;gap:.35rem;
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.52rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:.65rem;
+}
+.course-status.soon{color:var(--text-3)}
+.course-status.live{color:var(--brand)}
+.course-status-dot{width:5px;height:5px;border-radius:50%;background:currentColor}
+.course-status.live .course-status-dot{animation:vdot 2s ease-in-out infinite}
+.course-title{
+  font-family:"Plus Jakarta Sans",sans-serif;font-size:.92rem;font-weight:700;
+  color:var(--text);line-height:1.4;margin-bottom:.5rem;
+}
+.course-desc{
+  font-family:"Plus Jakarta Sans",sans-serif;font-size:.80rem;
+  color:var(--text-2);line-height:1.62;
+}
+.course-notify{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.62rem;font-weight:700;color:var(--brand);
+  background:none;border:1px solid rgba(214,54,81,.30);border-radius:100px;
+  padding:.3rem .75rem;margin-top:1rem;
+  transition:background .2s,border-color .2s;cursor:pointer;
+}
+.course-notify:hover{background:var(--brand-s);border-color:rgba(214,54,81,.5)}
+
+/* ═══ ABOUT / STORY ═══ */
 .story-cards{display:flex;flex-direction:column;gap:.95rem}
 .story-card{
   border-radius:18px;cursor:pointer;
@@ -623,7 +721,7 @@ nav#mainNav.scrolled{
 }
 .story-card:hover{transform:translateY(-2px);box-shadow:var(--sh-sm)}
 .story-card:active{transform:scale(.994)}
-.sc-in{padding:1.35rem 1.5rem}
+.sc-in{padding:1.4rem 1.6rem}
 .sc-hd{display:flex;align-items:center;gap:.7rem;margin-bottom:.68rem}
 .sc-num{
   font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
@@ -678,9 +776,7 @@ nav#mainNav.scrolled{
 .acard h4{font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-size:.73rem;font-weight:700;color:var(--brand)}
 .acard p{font-family:"Plus Jakarta Sans",sans-serif;font-size:.81rem;color:var(--text-2);line-height:1.6}
 
-/* ═══════════════════════════════════════════════════════════
-   BOOKING / HLS
-═══════════════════════════════════════════════════════════ */
+/* ═══ BOOKING ═══ */
 .hl{
   display:inline-flex;align-items:center;gap:.5rem;
   font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
@@ -696,21 +792,45 @@ nav#mainNav.scrolled{
 .gform-glass{border-radius:20px;width:100%;max-width:680px}
 .gform-inner{padding:.5rem}
 
-/* ═══════════════════════════════════════════════════════════
-   FOOTER — social icons ONLY here
-═══════════════════════════════════════════════════════════ */
+/* ═══ FOOTER ═══ */
 footer{
   position:relative;z-index:1;
   background:var(--bg-s);border-top:1px solid var(--border);
-  padding:3rem 0 1.5rem;
+  padding:3.5rem 0 1.5rem;
 }
 .ft-inner{max-width:1160px;margin:0 auto;padding:0 2.5rem}
-.ft-top{margin-bottom:2rem}
-.ft-brand{max-width:480px}
-.ft-name{display:flex;align-items:baseline;gap:.12rem;margin-bottom:.7rem}
+.ft-top{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:2.5rem;margin-bottom:2.5rem;padding-bottom:2.5rem;
+  border-bottom:1px solid var(--border);
+}
+.ft-brand{}
+.ft-name{display:flex;align-items:baseline;gap:.12rem;margin-bottom:.5rem}
 .ft-lp{font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-weight:700;font-size:1.28rem;color:var(--text);letter-spacing:-.02em}
 .ft-ls{font-family:"Cascadia Code",monospace;font-optical-sizing:auto;font-weight:500;font-size:.98rem;color:var(--text-2)}
-.ft-brand p{font-family:"Plus Jakarta Sans",sans-serif;font-size:.86rem;color:var(--text-3);line-height:1.72;margin-bottom:1.1rem}
+.ft-brand p{font-family:"Plus Jakarta Sans",sans-serif;font-size:.86rem;color:var(--text-3);line-height:1.72;margin-bottom:.75rem}
+.ft-group-link{
+  display:inline-flex;align-items:center;gap:.38rem;
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.60rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-3);border:1px solid var(--border-2);border-radius:100px;
+  padding:.28rem .72rem;background:var(--gc-bg);
+  transition:color .2s,border-color .2s,background .2s;
+  margin-bottom:1.1rem;
+}
+.ft-group-link:hover{color:var(--text);border-color:var(--border)}
+.ft-col-title{
+  font-family:"Cascadia Code",monospace;font-optical-sizing:auto;
+  font-size:.58rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--text-3);margin-bottom:1.1rem;
+}
+.ft-links{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.ft-links a{
+  font-family:"Plus Jakarta Sans",sans-serif;font-size:.84rem;
+  color:var(--text-2);
+  transition:color .2s,transform .2s var(--spring);display:inline-block;
+}
+.ft-links a:hover{color:var(--brand);transform:translateX(3px)}
 .soc-row{display:flex;flex-wrap:wrap;gap:.5rem}
 .soc-btn{
   display:inline-flex;align-items:center;gap:.46rem;
@@ -727,15 +847,16 @@ footer{
 .soc-icon{width:14px;height:14px;object-fit:contain}
 .ft-bot{
   display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;
-  padding-top:1.4rem;border-top:1px solid var(--border);
   font-family:"Plus Jakarta Sans",sans-serif;font-size:.78rem;color:var(--text-3);
 }
 .ft-bot a{color:var(--brand)}
 .ft-bot a:hover{text-decoration:underline}
+.ft-bot-right{display:flex;align-items:center;gap:.75rem}
+.ft-bot-right a{color:var(--text-3);transition:color .2s}
+.ft-bot-right a:hover{color:var(--text)}
+.ft-sep{color:var(--border-2)}
 
-/* ═══════════════════════════════════════════════════════════
-   MESSENGER FAB
-═══════════════════════════════════════════════════════════ */
+/* ═══ MESSENGER FAB ═══ */
 .fab{
   position:fixed;right:1.5rem;bottom:1.6rem;z-index:550;
   display:inline-flex;align-items:center;gap:.45rem;
@@ -753,17 +874,12 @@ footer{
 }
 .fab:hover .fab-label{max-width:120px;opacity:1}
 
-/* ═══════════════════════════════════════════════════════════
-   SCROLL REVEAL
-═══════════════════════════════════════════════════════════ */
+/* ═══ SCROLL REVEAL ═══ */
 .rev{opacity:0;transform:translateY(24px);transition:opacity .65s var(--ease-out),transform .65s var(--ease-out)}
 .rev.on{opacity:1;transform:none}
 .d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}
 
-/* ═══════════════════════════════════════════════════════════
-   LITE MODE — MATERIAL UI
-   Static background, flat surfaces, crisp text
-═══════════════════════════════════════════════════════════ */
+/* ═══ LITE MODE ═══ */
 [data-view="lite"] *,[data-view="lite"] *::before,[data-view="lite"] *::after{
   animation:none!important;animation-duration:0s!important;
   backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
@@ -774,39 +890,34 @@ footer{
 [data-view="lite"] .g-o{background:transparent!important}
 [data-view="lite"] .glass{background:var(--md-s1)!important;box-shadow:var(--md-d2)!important;border:none!important}
 [data-theme="light"][data-view="lite"] .glass{background:#fff!important}
-/* Hide ALL rich background elements */
 [data-view="lite"] #bgCanvas,[data-view="lite"] .math-grid,
 [data-view="lite"] .orb,[data-view="lite"] .phys-label{display:none!important}
 [data-view="lite"] #podcasts::before,[data-view="lite"] #special::before,
-[data-view="lite"] #about::before,[data-view="lite"] #booking::before{display:none!important}
-/* Static solid nav */
+[data-view="lite"] #about::before,[data-view="lite"] #booking::before,
+[data-view="lite"] #courses::before{display:none!important}
 [data-view="lite"] nav#mainNav{background:var(--md-s1)!important;backdrop-filter:none!important;border-bottom:1px solid var(--border)!important;box-shadow:var(--md-d1)!important}
 [data-theme="light"][data-view="lite"] nav#mainNav{background:#fff!important}
 [data-view="lite"] .mob-nav{background:var(--md-s1)!important;backdrop-filter:none!important}
 [data-theme="light"][data-view="lite"] .mob-nav{background:#fff!important}
-/* Cards */
 [data-view="lite"] .ep-card,[data-view="lite"] .story-card,[data-view="lite"] .acard,
-[data-view="lite"] .upcoming,[data-view="lite"] .gform-glass,
+[data-view="lite"] .course-card,[data-view="lite"] .upcoming,[data-view="lite"] .gform-glass,
 [data-view="lite"] .notice-board,[data-view="lite"] .nb-panel-box{
   background:var(--md-s1)!important;box-shadow:var(--md-d2)!important;border:none!important;border-radius:10px!important
 }
 [data-theme="light"][data-view="lite"] .ep-card,
 [data-theme="light"][data-view="lite"] .story-card,
 [data-theme="light"][data-view="lite"] .acard,
+[data-theme="light"][data-view="lite"] .course-card,
 [data-theme="light"][data-view="lite"] .upcoming,
 [data-theme="light"][data-view="lite"] .gform-glass,
 [data-theme="light"][data-view="lite"] .notice-board,
 [data-theme="light"][data-view="lite"] .nb-panel-box{background:#fff!important}
-/* Buttons — Material flat */
 [data-view="lite"] .btn-p{border-radius:8px!important}
 [data-view="lite"] .btn-o{border-radius:8px!important;background:var(--md-s1)!important;box-shadow:var(--md-d1)!important}
-/* Fab */
 [data-view="lite"] .fab{background:var(--brand)!important;box-shadow:var(--md-d4)!important;border-radius:16px!important}
 [data-view="lite"] .fab-label{color:#fff!important}
-/* Footer */
 [data-view="lite"] footer{background:var(--md-s2)!important}
 [data-theme="light"][data-view="lite"] footer{background:#f7f5f2!important}
-/* Show typing text immediately */
 [data-view="lite"] .ts{visibility:visible!important}
 [data-view="lite"] .to{display:none!important}
 [data-view="lite"] .tc{display:none!important}
@@ -814,16 +925,15 @@ footer{
 [data-view="lite"] .rev{opacity:1!important;transform:none!important}
 [data-view="lite"] .logo-card{transform:none!important}
 [data-view="lite"] .lc-grid{display:none!important}
-/* Toggle pill shape */
 [data-view="lite"] .view-switch,[data-view="lite"] .theme-tog{border-radius:8px!important}
-/* Disable hover transforms in lite */
 [data-view="lite"] .ep-card:hover,[data-view="lite"] .story-card:hover,
-[data-view="lite"] .acard:hover,[data-view="lite"] .logo-card:hover{transform:none!important}
-/* Lit mode nav bg */
+[data-view="lite"] .acard:hover,[data-view="lite"] .course-card:hover,[data-view="lite"] .logo-card:hover{transform:none!important}
 [data-view="lite"] nav#mainNav.scrolled{background:var(--md-s1)!important}
 [data-theme="light"][data-view="lite"] nav#mainNav.scrolled{background:#fff!important}
+[data-view="lite"] .group-banner{backdrop-filter:none!important;background:var(--md-s1)!important}
+[data-theme="light"][data-view="lite"] .group-banner{background:#fff!important}
+[data-view="lite"] .course-card::before{display:none!important}
 
-/* Lite banner */
 .lite-banner{
   display:none;position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);z-index:800;
   background:rgba(214,54,81,.88);color:#fff;
@@ -834,15 +944,17 @@ footer{
 }
 [data-view="lite"] .lite-banner{display:flex!important}
 
-/* ═══════════════════════════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════════════════════════ */
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:1100px){
+  .ft-top{grid-template-columns:1fr 1fr}
+}
 @media(max-width:1024px) and (min-width:769px){
   .container,.hero,.ft-inner{padding-left:2rem;padding-right:2rem}
   .nb-wrap,.nb-panel{padding-left:2rem;padding-right:2rem}
   .hero{grid-template-columns:1fr;padding-top:1.5rem;min-height:auto}
   .hero-right{display:none}
   .eps-grid{grid-template-columns:repeat(2,1fr)}
+  .courses-grid{grid-template-columns:repeat(2,1fr)}
   .spec-inner{grid-template-columns:1fr;gap:2.5rem}
   .acards{grid-template-columns:repeat(2,1fr)}
   .nav-links{display:none}
@@ -851,7 +963,7 @@ footer{
 @media(max-width:768px){
   .container,.hero,.ft-inner{padding-left:1.25rem;padding-right:1.25rem}
   .nb-wrap,.nb-panel{padding-left:1.25rem;padding-right:1.25rem}
-  .section{padding:3rem 0}
+  .section{padding:3.2rem 0}
   .nav-links,.nav-right .view-switch,.nav-right .theme-tog{display:none}
   .mob-btn{display:flex}
   .hero{grid-template-columns:1fr;padding-top:1.5rem;min-height:auto}
@@ -859,18 +971,25 @@ footer{
   .hero-h1{font-size:clamp(2.6rem,9.5vw,3.6rem)}
   .hero-btns{flex-direction:column;gap:.6rem}
   .btn{width:100%;justify-content:center;font-size:.80rem;padding:.76rem 1.3rem}
+  .hero-stats{gap:1.2rem}
   .eps-grid{grid-template-columns:1fr;gap:.9rem}
+  .courses-grid{grid-template-columns:1fr}
   .spec-inner{grid-template-columns:1fr;gap:2rem}
   .acards{grid-template-columns:repeat(2,1fr);gap:.75rem}
   .sc-dt{display:none}
   .sc-in{padding:1.1rem 1.2rem}
+  .ft-top{grid-template-columns:1fr 1fr}
   .ft-bot{flex-direction:column;align-items:flex-start;gap:.5rem}
   .sh2{font-size:clamp(1.7rem,6.5vw,2.3rem)}
   .bengali-title{font-size:clamp(1.6rem,6.5vw,2.2rem)}
   .fab{bottom:1.4rem;right:1rem}
   .nb-sep{display:none}
+  .section-header{flex-direction:column;align-items:flex-start}
 }
-@media(max-width:480px){.acards{grid-template-columns:1fr}}
+@media(max-width:480px){
+  .acards{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr}
+}
 @supports(padding:max(0px)){
   .nav-inner{padding-left:max(2.5rem,env(safe-area-inset-left));padding-right:max(2.5rem,env(safe-area-inset-right))}
   footer{padding-bottom:calc(1.5rem + env(safe-area-inset-bottom))}
@@ -885,13 +1004,13 @@ footer{
 <div class="orb orb-1" aria-hidden="true"></div>
 <div class="orb orb-2" aria-hidden="true"></div>
 <div class="orb orb-3" aria-hidden="true"></div>
-<!-- Physics/math/history floating labels -->
 <div class="phys-label" style="top:18%;left:3%;--dur:24s;--rot:-8deg;--dx:10px;--dy:-14px;--dx2:-8px;--dy2:10px">∇²ψ + (2m/ℏ²)(E−V)ψ = 0</div>
 <div class="phys-label" style="top:42%;right:4%;--dur:19s;--rot:6deg;--dx:-12px;--dy:-8px;--dx2:8px;--dy2:14px">F = ma · sin(θ)</div>
 <div class="phys-label" style="bottom:28%;left:2%;--dur:28s;--rot:3deg;--dx:14px;--dy:10px;--dx2:-10px;--dy2:-14px">∫₀^∞ e^−x² dx = √π/2</div>
 <div class="phys-label" style="top:65%;right:5%;--dur:21s;--rot:-5deg;--dx:-8px;--dy:-16px;--dx2:12px;--dy2:8px">১+১=২ · ভাষা = পরিচয়</div>
 <div class="phys-label" style="top:8%;right:18%;--dur:32s;--rot:4deg;--dx:-16px;--dy:8px;--dx2:10px;--dy2:-10px">v = v₀ + at</div>
 <div class="phys-label" style="bottom:12%;right:20%;--dur:26s;--rot:-3deg;--dx:10px;--dy:-12px;--dx2:-14px;--dy2:8px">E = mc²</div>
+
 
 <!-- ═══ NAV ═══ -->
 <nav id="mainNav" role="navigation" aria-label="Main navigation">
@@ -906,9 +1025,9 @@ footer{
 
     <ul class="nav-links" role="list">
       <li><a href="#podcasts">Podcasts</a></li>
+      <li><a href="#courses">Courses</a></li>
       <li><a href="#special">Special</a></li>
       <li><a href="#about">About Us</a></li>
-      <li><a href="#booking">Be a Guest</a></li>
       <li><a href="#booking" class="nav-cta">Apply Now</a></li>
     </ul>
 
@@ -946,6 +1065,7 @@ footer{
 <div class="mob-nav" id="mobileNav" aria-label="Navigation" aria-hidden="true">
   <ul>
     <li><a href="#podcasts" onclick="closeMenu()">Podcasts</a></li>
+    <li><a href="#courses"  onclick="closeMenu()">Courses</a></li>
     <li><a href="#special"  onclick="closeMenu()">Special</a></li>
     <li><a href="#about"    onclick="closeMenu()">About Us</a></li>
     <li><a href="#booking"  onclick="closeMenu()">Be a Guest</a></li>
@@ -965,9 +1085,11 @@ footer{
   </div>
 </div>
 
+<div class="lite-banner" aria-hidden="true">⚡ Lite Mode Active</div>
+
 <main>
 <!-- ═══ BREAKING NEWS ═══ -->
-<section style="position:relative;z-index:2;padding-top:70px">
+<section style="position:relative;z-index:2;padding-top:88px">
   <div class="nb-wrap">
     <div class="glass notice-board" id="noticeBoard" role="status" aria-live="polite">
       <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
@@ -998,6 +1120,13 @@ footer{
 <section id="hero" style="position:relative;z-index:1" aria-label="Hero">
 <div class="hero">
   <div class="hero-left">
+    <div class="hero-badges">
+      <span class="hero-badge brand">
+        <span class="hero-badge-dot"></span>
+        Season 01 Live
+      </span>
+      <span class="hero-badge">Est. Aug 9, 2025</span>
+    </div>
     <div class="slogan-bn" id="hero-bn">
       <span>বাংলাদেশ থেকে,</span><br><span>বাংলাদেশের জন্য</span>
     </div>
@@ -1005,6 +1134,7 @@ footer{
     --><span class="tl tl1" id="tl1"><span class="ts">From<br>BANGLADESH,</span><span class="to" id="to1"></span></span><!--
     --><span class="tl tl2" id="tl2"><span class="ts">To Bangladesh.</span><span class="to" id="to2"></span></span><!--
     --></h1>
+    <p class="hero-sub">Real stories, honest guidance, and educational content built entirely for Bangladeshi students — SSC to university admissions and beyond.</p>
     <div class="hero-btns">
       <a href="https://www.youtube.com/@prepwaybangladesh?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn btn-p">
         <img src="icons/icon-yt-white.svg" alt="" class="btn-icon"> Subscribe on YouTube
@@ -1012,6 +1142,20 @@ footer{
       <a href="#booking" class="btn btn-o">
         <img src="icons/icon-02.svg" alt="" class="btn-icon"> Be a Guest
       </a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat">
+        <span class="hstat-n">3</span>
+        <span class="hstat-l">Episodes Live</span>
+      </div>
+      <div class="hstat">
+        <span class="hstat-n">S01</span>
+        <span class="hstat-l">Current Season</span>
+      </div>
+      <div class="hstat">
+        <span class="hstat-n">∞</span>
+        <span class="hstat-l">Students to Reach</span>
+      </div>
     </div>
   </div>
   <div class="hero-right">
@@ -1029,54 +1173,146 @@ footer{
 <!-- ═══ PODCASTS ═══ -->
 <section class="section" id="podcasts" aria-label="Podcasts">
 <div class="container">
-  <div class="rev">
-    <div class="eyebrow">Season 01</div>
-    <h2 class="sh2">Show Your Voice.<br><span class="pw-by">powered by <span class="pw">prepway</span> Podcast</span></h2>
-    <p class="sp">Unfiltered long-form conversations with Bangladeshi students — honest stories about admissions, career paths, and the journeys that shaped them.</p>
+  <div class="section-header rev">
+    <div>
+      <div class="eyebrow">Season 01</div>
+      <h2 class="sh2">Show Your Voice.<br><span class="pw-by">powered by <span class="pw">prepway</span> Podcast</span></h2>
+      <p class="sp">Unfiltered long-form conversations with Bangladeshi students — honest stories about admissions, career paths, and the journeys that shaped them.</p>
+    </div>
+    <a href="https://www.youtube.com/@prepwaybangladesh" target="_blank" rel="noopener" class="view-all">
+      All Episodes →
+    </a>
   </div>
   <div class="eps-grid">
-    <article class="glass ep-card d1 rev" onclick="window.open('https://youtu.be/RHRoP_KOcmk','_blank')" role="button" tabindex="0" aria-label="Watch EP 01">
+    <article class="glass ep-card d1 rev" onclick="window.open('https://youtu.be/RHRoP_KOcmk','_blank')" role="button" tabindex="0" aria-label="Watch EP 01 — The Reality of Medical Admission">
       <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
       <div class="g-c">
         <div class="ep-thumb">
           <img src="ep01.png" alt="The Reality of Medical Admission" loading="lazy" onerror="this.src='https://img.youtube.com/vi/RHRoP_KOcmk/maxresdefault.jpg';this.onerror=null"/>
-          <div class="ep-ov"><div class="ep-play"><img src="icons/icon-03.svg" alt="" class="play-icon"></div></div>
+          <div class="ep-ov"><div class="ep-play"><img src="icons/icon-03.svg" alt="Play" class="play-icon"></div></div>
         </div>
         <div class="ep-body">
-          <div class="ep-row"><span class="ep-n">EP 01</span><span class="ep-d">39:33</span></div>
-          <div class="ep-t">The Reality of Medical Admission | Asifur Rahman Asif</div>
+          <div class="ep-badge">EP 01 · 39:33</div>
+          <div class="ep-t">The Reality of Medical Admission</div>
           <div class="ep-g">Asifur Rahman Asif · Merit 351, ShSMC</div>
         </div>
       </div>
     </article>
-    <article class="glass ep-card d2 rev" onclick="window.open('https://youtu.be/K-uf_J2ZVWE','_blank')" role="button" tabindex="0" aria-label="Watch EP 02">
+    <article class="glass ep-card d2 rev" onclick="window.open('https://youtu.be/K-uf_J2ZVWE','_blank')" role="button" tabindex="0" aria-label="Watch EP 02 — Gaming Industry of Bangladesh">
       <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
       <div class="g-c">
         <div class="ep-thumb">
           <img src="ep02.png" alt="Gaming Industry of Bangladesh" loading="lazy" onerror="this.src='https://img.youtube.com/vi/K-uf_J2ZVWE/maxresdefault.jpg';this.onerror=null"/>
-          <div class="ep-ov"><div class="ep-play"><img src="icons/icon-03.svg" alt="" class="play-icon"></div></div>
+          <div class="ep-ov"><div class="ep-play"><img src="icons/icon-03.svg" alt="Play" class="play-icon"></div></div>
         </div>
         <div class="ep-body">
-          <div class="ep-row"><span class="ep-n">EP 02</span><span class="ep-d">54:33</span></div>
-          <div class="ep-t">Gaming Industry of Bangladesh | @afrahimahon × Zain Adian</div>
-          <div class="ep-g">Afrahim Siddiqui Ahon · Zain Adian</div>
+          <div class="ep-badge">EP 02 · 54:33</div>
+          <div class="ep-t">Gaming Industry of Bangladesh</div>
+          <div class="ep-g">Afrahim SIddiqui Ahon × Zain Adian</div>
         </div>
       </div>
     </article>
-    <article class="glass ep-card d3 rev" onclick="window.open('https://youtu.be/uTzCTNZsrMg','_blank')" role="button" tabindex="0" aria-label="Watch EP 03">
+    <article class="glass ep-card d3 rev" onclick="window.open('https://youtu.be/uTzCTNZsrMg','_blank')" role="button" tabindex="0" aria-label="Watch EP 03 — Hard Work Pays Off">
       <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
       <div class="g-c">
         <div class="ep-thumb">
           <img src="ep03.png" alt="Hard Work Pays Off" loading="lazy" onerror="this.src='https://img.youtube.com/vi/uTzCTNZsrMg/maxresdefault.jpg';this.onerror=null"/>
-          <div class="ep-ov"><div class="ep-play"><img src="icons/icon-03.svg" alt="" class="play-icon"></div></div>
+          <div class="ep-ov"><div class="ep-play"><img src="icons/icon-03.svg" alt="Play" class="play-icon"></div></div>
         </div>
         <div class="ep-body">
-          <div class="ep-row"><span class="ep-n">EP 03</span><span class="ep-d">36:35</span></div>
-          <div class="ep-t">Hard Work Pays Off: Tahsin Islam Ananta's Path to ShSMC</div>
-          <div class="ep-g">Tahsin Islam Ananta · 793rd National Merit</div>
+          <div class="ep-badge">EP 03 · 36:35</div>
+          <div class="ep-t">Hard Work Pays Off: Tahsin Islam Ananta's Path</div>
+          <div class="ep-g">Tahsin Islam Ananta · 793rd National Merit, ShSMC</div>
         </div>
       </div>
     </article>
+  </div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ COURSES — COMING SOON ═══ -->
+<section class="section" id="courses" aria-label="Courses">
+<div class="container">
+  <div class="rev">
+    <div class="eyebrow">Academic Content</div>
+    <h2 class="sh2">Courses &<br><em>Resources</em></h2>
+    <p class="sp">We're building a full suite of academic content — from admission prep to subject-specific courses. Get notified when we launch.</p>
+  </div>
+  <div class="courses-grid">
+    <div class="glass course-card rev d1">
+      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c">
+        <div class="course-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="course-status soon"><span class="course-status-dot"></span>Coming Soon</div>
+        <div class="course-title">Medical Admission Course</div>
+        <div class="course-desc">Complete preparation for MBBS admission — Biology, Chemistry, Physics. Structured for the competitive student.</div>
+        <button class="course-notify" onclick="this.textContent='✓ Noted!'">🔔 Notify Me</button>
+      </div>
+    </div>
+    <div class="glass course-card rev d2">
+      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c">
+        <div class="course-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <div class="course-status soon"><span class="course-status-dot"></span>Coming Soon</div>
+        <div class="course-title">HSC Preparation Series</div>
+        <div class="course-desc">Full subject coverage for HSC — taught in Bangla, structured around the syllabus you're actually tested on.</div>
+        <button class="course-notify" onclick="this.textContent='✓ Noted!'">🔔 Notify Me</button>
+      </div>
+    </div>
+    <div class="glass course-card rev d3">
+      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c">
+        <div class="course-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="course-status soon"><span class="course-status-dot"></span>Coming Soon</div>
+        <div class="course-title">University Subject Courses</div>
+        <div class="course-desc">Deep-dive courses for students already in university — supplements, concept clarity, and real academic growth.</div>
+        <button class="course-notify" onclick="this.textContent='✓ Noted!'">🔔 Notify Me</button>
+      </div>
+    </div>
+    <div class="glass course-card rev">
+      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c">
+        <div class="course-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="course-status soon"><span class="course-status-dot"></span>Coming Soon</div>
+        <div class="course-title">SSC Admission Guidance</div>
+        <div class="course-desc">Navigating class 9–10, subject selection, and setting up for HSC success — from students who've done it.</div>
+        <button class="course-notify" onclick="this.textContent='✓ Noted!'">🔔 Notify Me</button>
+      </div>
+    </div>
+    <div class="glass course-card rev d1">
+      <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
+      <div class="g-c">
+        <div class="course-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="course-status live"><span class="course-status-dot"></span>Live Now</div>
+        <div class="course-title">Show Your Voice — Podcast</div>
+        <div class="course-desc">Season 01 is live. Three unscripted conversations. Real students, real journeys, no filters.</div>
+        <a href="#podcasts" class="course-notify" style="text-decoration:none">▶ Watch Now</a>
+      </div>
+    </div>
+    <div class="glass course-card rev d2" style="border:1px solid rgba(214,54,81,.20)">
+      <div class="g-f"></div><div class="g-o" style="background:rgba(214,54,81,.04)!important"></div><div class="g-s"></div>
+      <div class="g-c">
+        <div class="course-ico" style="background:var(--brand);border-color:var(--brand)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="course-status live"><span class="course-status-dot"></span>Always Open</div>
+        <div class="course-title">Be a Guest — Apply Now</div>
+        <div class="course-desc">Have a story worth sharing? Apply to join Show Your Voice and inspire thousands of students across Bangladesh.</div>
+        <a href="#booking" class="course-notify" style="text-decoration:none;background:var(--brand);color:#fff;border-color:transparent">Apply Now →</a>
+      </div>
+    </div>
   </div>
 </div>
 </section>
@@ -1091,10 +1327,6 @@ footer{
       <a href="https://youtu.be/XorkVU9qYS0" target="_blank" rel="noopener noreferrer" class="spec-link" aria-label="Watch অমর একুশে on YouTube">
         <img src="https://img.youtube.com/vi/XorkVU9qYS0/maxresdefault.jpg" alt="অমর একুশে" loading="lazy" onerror="this.src='21.png';this.onerror=null"/>
         <div class="spec-ov">
-          <div class="spec-badge">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M23 7s-.3-1.7-1-2.4C21.1 3.6 20.1 3.6 19.6 3.5 16.4 3.3 12 3.3 12 3.3s-4.4 0-7.6.2C3.9 3.6 2.9 3.6 2 4.6 1.3 5.3 1 7 1 7S.7 9 .7 11V12.9c0 2 .3 4 .3 4s.3 1.7 1 2.4c.9 1 2.1 1 2.6 1.1C6.6 20.6 12 20.7 12 20.7s4.4 0 7.6-.3c.5-.1 1.5-.1 2.4-1.1.7-.7 1-2.4 1-2.4s.3-2 .3-4V11C23.3 9 23 7 23 7z" fill="white" opacity=".95"/><polygon points="9.75,8.5 9.75,15.5 16.25,12" fill="#D63651"/></svg>
-            Watch on YouTube
-          </div>
         </div>
       </a>
     </div>
@@ -1102,7 +1334,10 @@ footer{
       <div class="spec-tag">Special Episode</div>
       <h2 class="bengali-title">অমর একুশে<br><em>Language, Identity &amp; Pride</em></h2>
       <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;color:var(--text-2);line-height:1.80;margin-bottom:.85rem">21st February 1952 is an unforgettable and glorious day for the Bengali nation. The brave students of then East Bengal took to the streets to protect their mother tongue, Bangla, standing firmly against injustice.</p>
-      <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;color:var(--text-2);line-height:1.80">We created this video as a humble tribute to the Language Martyrs — their sacrifice is our inspiration and our pride.</p>
+      <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;color:var(--text-2);line-height:1.80;margin-bottom:1.4rem">We created this video as a humble tribute to the Language Martyrs — their sacrifice is our inspiration and our pride.</p>
+      <a href="https://youtu.be/XorkVU9qYS0" target="_blank" rel="noopener" class="btn btn-p" style="display:inline-flex;width:auto">
+        <img src="icons/icon-yt-white.svg" alt="" class="btn-icon"> Watch the Tribute
+      </a>
     </div>
   </div>
 </div>
@@ -1116,6 +1351,7 @@ footer{
   <div class="rev" style="margin-bottom:2.5rem">
     <div class="eyebrow">Our Story</div>
     <h2 class="sh2">About <em>Us</em></h2>
+    <p class="sp">A founding story in three parts — built by students, for students, from the ground up.</p>
   </div>
   <div class="story-cards rev" role="list">
     <div class="glass story-card" onclick="toggleCard(this)" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard(this)}">
@@ -1163,54 +1399,39 @@ footer{
         <p class="sc-prev">Two growing initiatives. One shared vision. Prepway Group was the natural result of growth — not the starting point.</p>
         <div class="sc-body">
           <p class="story-p"><strong>Prepway Group</strong> was formed as the parent organisation — bringing Prepway Bangladesh and Prepway Abroad under one roof. One purpose: empowering every Bangladeshi student, whether preparing for HSC at home or applying to universities on the other side of the world.</p>
+          <p class="story-p">Vision of Prepway Group: <strong>Excellence in the Educational Sector.</strong></p>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="glass upcoming rev">
-    <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-    <div class="g-c" style="padding:1.35rem 1.5rem">
-      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.55rem">
-        <span style="font-family:'Cascadia Code',monospace;font-size:.58rem;font-weight:700;color:var(--brand);background:var(--brand-s);border:1px solid rgba(214,54,81,.22);border-radius:6px;padding:.14rem .4rem;letter-spacing:.1em">Coming Soon</span>
-        <h4 style="font-family:'Cascadia Code',monospace;font-optical-sizing:auto;font-size:.78rem;font-weight:700;color:var(--brand);margin:0">// Upcoming from Prepway Bangladesh</h4>
-      </div>
-      <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.86rem;color:var(--text-2);line-height:1.6;margin-bottom:.8rem">Building the next generation of academic content — from admission prep to university guidance.</p>
-      <div class="chips">
-        <div class="chip">Medical Admission Course</div>
-        <div class="chip s">University Subject Courses</div>
-        <div class="chip s">HSC Preparation Series</div>
-        <div class="chip">More</div>
       </div>
     </div>
   </div>
   <div class="acards rev" style="margin-top:2.5rem">
     <div class="glass acard"><div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-      <div class="g-c" style="padding:1.1rem">
+      <div class="g-c" style="padding:1.15rem">
         <div class="acard-hd"><div class="aico"><img src="icons/icon-04.svg" alt="" class="aico-img icon-mono"></div><h4>// Show Your Voice</h4></div>
         <p>Season 1 — three long-form episodes. Real students, real stories, no scripts.</p>
       </div>
     </div>
     <div class="glass acard"><div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-      <div class="g-c" style="padding:1.1rem">
+      <div class="g-c" style="padding:1.15rem">
         <div class="acard-hd"><div class="aico"><img src="icons/icon-05.svg" alt="" class="aico-img icon-mono"></div><h4>// Academic Guidance</h4></div>
-        <p>SSC to HSC — study strategies, subject lessons, and exam hacks in Bangla.</p>
+        <p>SSC to HSC — study strategies, subject lessons, and exam guidance in Bangla.</p>
       </div>
     </div>
     <div class="glass acard"><div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-      <div class="g-c" style="padding:1.1rem">
+      <div class="g-c" style="padding:1.15rem">
         <div class="acard-hd"><div class="aico"><img src="icons/icon-06.svg" alt="" class="aico-img icon-mono"></div><h4>// Admission Prep</h4></div>
         <p>Medical, engineering, public university — real talk from students who made it.</p>
       </div>
     </div>
     <div class="glass acard"><div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
-      <div class="g-c" style="padding:1.1rem">
+      <div class="g-c" style="padding:1.15rem">
         <div class="acard-hd"><div class="aico"><img src="icons/icon-07.svg" alt="" class="aico-img icon-mono"></div><h4>// Prepway Abroad</h4></div>
         <p>Scholarships, visas, applications — real journeys to USA, UK, Canada &amp; beyond.</p>
       </div>
     </div>
     <div class="glass acard" style="border:1px solid rgba(220,59,82,.22)">
       <div class="g-f"></div><div class="g-o" style="background:rgba(220,59,82,.05)!important"></div><div class="g-s"></div>
-      <div class="g-c" style="padding:1.1rem">
+      <div class="g-c" style="padding:1.15rem">
         <div class="acard-hd"><div class="aico"><img src="icons/icon-flag-bd.svg" alt="" class="aico-img" style="width:24px;height:auto;border-radius:2px"></div><h4>// For Bangladesh</h4></div>
         <p>Every story, every student, every piece of content — rooted in pride for this country.</p>
       </div>
@@ -1224,7 +1445,7 @@ footer{
 <!-- ═══ BOOKING ═══ -->
 <section class="section" id="booking" aria-label="Be a guest">
 <div class="container">
-  <div class="rev" style="text-align:center;max-width:600px;margin:0 auto 2.5rem">
+  <div class="rev" style="text-align:center;max-width:620px;margin:0 auto 2.5rem">
     <div class="eyebrow" style="justify-content:center">Be a Guest</div>
     <h2 class="sh2" style="margin-bottom:.85rem">Want to Share<br>Your <em>Story?</em></h2>
     <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;color:var(--text-2);line-height:1.75">Apply to join <strong>Show Your Voice by Prepway Podcast</strong> — real students, real journeys. No scripts, just truth.</p>
@@ -1248,174 +1469,178 @@ footer{
   </div>
 </div>
 </section>
+
 </main>
 
 <!-- ═══ FOOTER ═══ -->
-<footer role="contentinfo">
+<footer>
   <div class="ft-inner">
     <div class="ft-top">
       <div class="ft-brand">
         <div class="ft-name">
-          <span class="ft-lp">prepway</span><span class="ft-ls">&nbsp;Bangladesh</span>
+          <span class="ft-lp">Prepway</span>
+          <span class="ft-ls">&nbsp;Bangladesh</span>
         </div>
-        <p>Guiding Bangladeshi students from high school to university — through podcasts, honest stories, and real guidance. A subsidiary of Prepway Group, est. 2025.</p>
-        <!-- SOCIAL ICONS — FOOTER ONLY -->
-        <nav class="soc-row" aria-label="Social media links">
-          <a href="https://www.facebook.com/prepwaybangladesh" target="_blank" rel="noopener noreferrer" class="soc-btn">
-            <img src="icons/icon-11.svg" alt="" class="soc-icon" aria-hidden="true"> Facebook
-          </a>
-          <a href="https://www.instagram.com/prepwaybangladesh" target="_blank" rel="noopener noreferrer" class="soc-btn">
-            <img src="icons/icon-12.svg" alt="" class="soc-icon" aria-hidden="true"> Instagram
-          </a>
-          <a href="https://t.me/prepwaybangladesh" target="_blank" rel="noopener noreferrer" class="soc-btn">
-            <img src="icons/icon-13.svg" alt="" class="soc-icon" aria-hidden="true"> Telegram
-          </a>
-        </nav>
+        <p>Real stories, honest guidance, and educational content built entirely for Bangladeshi students — from SSC to university and beyond.</p>
+        <a href="https://prepwaygroup.vercel.app" target="_blank" rel="noopener" class="ft-group-link">↗ Part of Prepway Group</a>
+        <div class="soc-row">
+          <a href="https://www.youtube.com/@prepwaybangladesh" target="_blank" rel="noopener" class="soc-btn"><img src="icons/icon-yt-red.svg" alt="" class="soc-icon" style="filter:none!important"> YouTube</a>
+          <a href="https://www.facebook.com/prepwaybangladesh" target="_blank" rel="noopener" class="soc-btn"><img src="icons/icon-fb.svg" alt="" class="soc-icon icon-mono"> Facebook</a>
+          <a href="https://t.me/prepwaybangladesh" target="_blank" rel="noopener" class="soc-btn"><img src="icons/icon-tg.svg" alt="" class="soc-icon icon-mono"> Telegram</a>
+          <a href="https://www.instagram.com/prepwaybangladesh" target="_blank" rel="noopener" class="soc-btn"><img src="icons/icon-ig.svg" alt="" class="soc-icon icon-mono"> Instagram</a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-col-title">Platform</div>
+        <ul class="ft-links">
+          <li><a href="#podcasts">Podcasts</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#special">Special</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-col-title">Episodes</div>
+        <ul class="ft-links">
+          <li><a href="https://youtu.be/RHRoP_KOcmk" target="_blank" rel="noopener">EP 01 — Medical Admission</a></li>
+          <li><a href="https://youtu.be/K-uf_J2ZVWE" target="_blank" rel="noopener">EP 02 — Gaming Industry</a></li>
+          <li><a href="https://youtu.be/uTzCTNZsrMg" target="_blank" rel="noopener">EP 03 — Hard Work Pays Off</a></li>
+          <li><a href="https://youtu.be/XorkVU9qYS0" target="_blank" rel="noopener">Special — অমর একুশে</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-col-title">Prepway Group</div>
+        <ul class="ft-links">
+          <li><a href="https://prepwaygroup.vercel.app" target="_blank" rel="noopener">Prepway Group</a></li>
+          <li><a href="https://www.youtube.com/@prepwayabroad" target="_blank" rel="noopener">Prepway Abroad</a></li>
+          <li><a href="#booking">Be a Guest</a></li>
+          <li><a href="mailto:prepwaybangladesh@gmail.com">Contact Us</a></li>
+        </ul>
       </div>
     </div>
     <div class="ft-bot">
-      <p>© 2026 Prepway Group. All rights reserved.</p>
-      <p>Prepway Bangladesh · <a href="https://youtube.com/@prepwayabroad" target="_blank" rel="noopener noreferrer">Prepway Abroad ↗</a></p>
+      <div>© 2025 Prepway Bangladesh · <a href="https://prepwaygroup.vercel.app" target="_blank" rel="noopener">Prepway Group</a></div>
+      <div class="ft-bot-right">
+        <a href="mailto:prepwaybangladesh@gmail.com">prepwaybangladesh@gmail.com</a>
+        <span class="ft-sep">·</span>
+        <a href="https://m.me/prepwaybangladesh" target="_blank" rel="noopener">Messenger</a>
+      </div>
     </div>
   </div>
 </footer>
 
-<!-- Messenger FAB -->
-<a href="https://m.me/prepwaybangladesh" target="_blank" rel="noopener noreferrer" class="glass fab" aria-label="Chat on Messenger">
+<!-- ═══ MESSENGER FAB ═══ -->
+<a href="https://m.me/prepwaybangladesh" target="_blank" rel="noopener noreferrer" class="fab glass" aria-label="Chat on Messenger">
   <div class="g-f"></div><div class="g-o"></div><div class="g-s"></div>
   <div class="g-c">
-    <img src="icons/icon-14.svg" alt="Messenger" class="fab-icon">
-    <span class="fab-label">Message Us</span>
+    <img src="icons/icon-messenger.svg" alt="" class="fab-icon icon-mono">
+    <span class="fab-label">Messenger</span>
   </div>
 </a>
 
-<div class="lite-banner" aria-hidden="true">⚡ Material UI Active</div>
-
-<!-- ═══ JAVASCRIPT ═══ -->
 <script>
-'use strict';
 const R = document.documentElement;
 
-/* ─── THEME ─────────────────────── */
-function setTheme(dark) {
-  R.setAttribute('data-theme', dark ? 'dark' : 'light');
-  ['tbt-l','mob-tbt-l'].forEach(id => {
-    const b = document.getElementById(id);
-    if (b) { b.classList.toggle('on', !dark); b.setAttribute('aria-pressed', String(!dark)); }
-  });
-  ['tbt-d','mob-tbt-d'].forEach(id => {
-    const b = document.getElementById(id);
-    if (b) { b.classList.toggle('on', dark); b.setAttribute('aria-pressed', String(dark)); }
-  });
-  localStorage.setItem('pw-t', dark ? 'dark' : 'light');
-}
-setTheme(localStorage.getItem('pw-t') === 'dark');
-
-/* ─── VIEW MODE ──────────────────── */
-function setView(lite) {
-  if (lite) R.setAttribute('data-view', 'lite');
-  else      R.removeAttribute('data-view');
-  ['vsw-lg','mob-vsw-lg'].forEach(id => {
-    const b = document.getElementById(id);
-    if (b) { b.classList.toggle('on', !lite); b.setAttribute('aria-pressed', String(!lite)); }
-  });
-  ['vsw-md','mob-vsw-md'].forEach(id => {
-    const b = document.getElementById(id);
-    if (b) { b.classList.toggle('on', lite); b.setAttribute('aria-pressed', String(lite)); }
-  });
-  if (lite) {
-    if (window._raf) { cancelAnimationFrame(window._raf); window._raf = null; }
-    const to1 = document.getElementById('to1'), to2 = document.getElementById('to2');
-    if (to1) to1.style.display = 'none';
-    if (to2) to2.style.display = 'none';
-    const bn = document.getElementById('hero-bn');
-    if (bn) { bn.style.opacity = '1'; bn.classList.add('show'); }
-  } else {
-    const to1 = document.getElementById('to1'), to2 = document.getElementById('to2');
-    if (to1) to1.style.display = '';
-    if (to2) to2.style.display = '';
-    startBg();
-  }
-  localStorage.setItem('pw-view', lite ? 'lite' : 'rich');
-}
-setView(localStorage.getItem('pw-view') === 'lite');
-
-/* ─── MOBILE NAV ─────────────────── */
-const mbtn = document.getElementById('mbtn');
-const mnav = document.getElementById('mobileNav');
-let mo = false;
-const ICO_MENU  = '<rect y="0" width="18" height="2" rx="1" fill="currentColor"/><rect y="6" width="18" height="2" rx="1" fill="currentColor"/><rect y="12" width="18" height="2" rx="1" fill="currentColor"/>';
-const ICO_CLOSE = '<line x1="2.5" y1="2.5" x2="15.5" y2="15.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line x1="15.5" y1="2.5" x2="2.5" y2="15.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>';
-function toggleMenu() {
-  mo = !mo;
-  mnav.style.display = mo ? 'block' : 'none';
-  requestAnimationFrame(() => mnav.classList.toggle('open', mo));
-  document.getElementById('hbico').innerHTML = mo ? ICO_CLOSE : ICO_MENU;
-  mbtn.setAttribute('aria-expanded', String(mo));
-  mnav.setAttribute('aria-hidden', String(!mo));
-}
-function closeMenu() {
-  mo = false; mnav.classList.remove('open');
-  setTimeout(() => { mnav.style.display = 'none'; }, 300);
-  document.getElementById('hbico').innerHTML = ICO_MENU;
-  mbtn.setAttribute('aria-expanded', 'false');
-  mnav.setAttribute('aria-hidden', 'true');
-}
-
-/* ─── SCROLL NAV ─────────────────── */
-const mainNav = document.getElementById('mainNav');
+/* ── GROUP BANNER ─── */
+const banner = document.getElementById('groupBanner');
+let lastY = 0;
 window.addEventListener('scroll', () => {
-  mainNav.classList.toggle('scrolled', window.scrollY > 40);
+  const y = window.scrollY;
+  banner.classList.toggle('hidden', y > 80 && y > lastY);
+  lastY = y;
 }, { passive: true });
 
-/* ─── NOTICE BOARD ───────────────────────────────────────
-   TO UPDATE: edit the NOTICES array below
-   ─────────────────────────────────────────────────────── */
-const NOTICES = [
+/* ── NAV ─── */
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 30);
+}, { passive: true });
+
+/* ── THEME ─── */
+function setTheme(dark) {
+  R.setAttribute('data-theme', dark ? 'dark' : 'light');
+  ['tbt-l','mob-tbt-l'].forEach(id => { const el=document.getElementById(id); if(el){el.classList.toggle('on',!dark);el.setAttribute('aria-pressed',!dark)} });
+  ['tbt-d','mob-tbt-d'].forEach(id => { const el=document.getElementById(id); if(el){el.classList.toggle('on',dark);el.setAttribute('aria-pressed',dark)} });
+  try { localStorage.setItem('pw-theme', dark ? 'dark' : 'light'); } catch(e) {}
+  if (!dark && window._raf == null && R.getAttribute('data-view') !== 'lite') startBg();
+}
+function setView(lite) {
+  R.setAttribute('data-view', lite ? 'lite' : 'rich');
+  ['vsw-lg','mob-vsw-lg'].forEach(id => { const el=document.getElementById(id); if(el){el.classList.toggle('on',!lite);el.setAttribute('aria-pressed',!lite)} });
+  ['vsw-md','mob-vsw-md'].forEach(id => { const el=document.getElementById(id); if(el){el.classList.toggle('on',lite);el.setAttribute('aria-pressed',lite)} });
+  if (!lite && window._raf == null) startBg();
+  else if (lite && window._raf) { cancelAnimationFrame(window._raf); window._raf = null; }
+  try { localStorage.setItem('pw-view', lite ? 'lite' : 'rich'); } catch(e) {}
+}
+try {
+  const t = localStorage.getItem('pw-theme');
+  const v = localStorage.getItem('pw-view');
+  if (t === 'dark') setTheme(true);
+  if (v === 'lite') setView(true);
+} catch(e) {}
+
+/* ── MOBILE MENU ─── */
+let menuOpen = false;
+function toggleMenu() {
+  menuOpen = !menuOpen;
+  const mn = document.getElementById('mobileNav');
+  mn.style.display = menuOpen ? 'block' : 'none';
+  requestAnimationFrame(() => mn.classList.toggle('open', menuOpen));
+  document.getElementById('mbtn').setAttribute('aria-expanded', menuOpen);
+  mn.setAttribute('aria-hidden', !menuOpen);
+}
+function closeMenu() {
+  menuOpen = false;
+  const mn = document.getElementById('mobileNav');
+  mn.classList.remove('open');
+  setTimeout(() => { if (!menuOpen) mn.style.display = 'none'; }, 300);
+  document.getElementById('mbtn').setAttribute('aria-expanded', 'false');
+  mn.setAttribute('aria-hidden', 'true');
+}
+
+/* ── NOTICE BOARD ─── */
+const notices = [
   'Initial Beta Release of Prepway Bangladesh Website',
   'New Notice Board added — see all live updates here',
   'Liquid Glass & Material UI modes available — toggle in nav bar. Liquid Glass = full animations. Material UI = optimized static.',
   'We are working hard to give you an interactive experience'
 ];
-let nIdx = 0, panelOpen = false;
-
+let nIdx = 0;
 function buildTicker() {
   const el = document.getElementById('tickerTxt');
-  if (!el) return;
-  const t = NOTICES[nIdx];
-  el.textContent = t + '     ·     ' + t + '     ·     ';
+  const fl = document.getElementById('fullList');
+  if (!el || !fl) return;
+  const joined = notices.join('   ·   ') + '   ·   ' + notices.join('   ·   ');
+  el.textContent = joined;
+  fl.innerHTML = notices.map((n,i) => `<div class="ni" style="animation-delay:${i*.04}s">${n}</div>`).join('');
 }
 function cycleNotice() {
+  nIdx = (nIdx + 1) % notices.length;
   const el = document.getElementById('tickerTxt');
   if (!el) return;
   el.style.opacity = '0';
-  setTimeout(() => { nIdx = (nIdx + 1) % NOTICES.length; buildTicker(); el.style.opacity = '1'; }, 280);
+  setTimeout(() => {
+    const joined = notices.slice(nIdx).concat(notices.slice(0,nIdx)).join('   ·   ');
+    el.textContent = joined + '   ·   ' + joined;
+    el.style.opacity = '1';
+  }, 280);
 }
+let panelOpen = false;
 function togglePanel() {
   panelOpen = !panelOpen;
   const panel = document.getElementById('nbPanel');
-  const btn   = document.getElementById('nbAllBtn');
+  const btn = document.getElementById('nbAllBtn');
   if (panelOpen) {
-    let h = '';
-    NOTICES.forEach((n, i) => {
-      h += `<div class="ni" style="animation-delay:${i * 0.06}s">
-        <strong style="font-family:'Cascadia Code',monospace;color:var(--brand)">${i+1}.</strong> ${n}
-      </div>`;
-    });
-    document.getElementById('fullList').innerHTML = h;
-    panel.style.display = 'block';
-    panel.setAttribute('aria-hidden', 'false');
-    if (btn) { btn.textContent = 'Close ✕'; btn.setAttribute('aria-expanded', 'true'); }
+    panel.style.display = 'block'; panel.setAttribute('aria-hidden','false');
+    if (btn) { btn.textContent = 'Hide ↑'; btn.setAttribute('aria-expanded','true'); }
   } else {
-    panel.style.display = 'none';
-    panel.setAttribute('aria-hidden', 'true');
-    if (btn) { btn.textContent = 'All Updates ↓'; btn.setAttribute('aria-expanded', 'false'); }
+    panel.style.display = 'none'; panel.setAttribute('aria-hidden','true');
+    if (btn) { btn.textContent = 'All Updates ↓'; btn.setAttribute('aria-expanded','false'); }
   }
 }
 setTimeout(buildTicker, 150);
 setInterval(cycleNotice, 8000);
 
-/* ─── STORY CARD ACCORDION ───────── */
+/* ── ACCORDION ─── */
 function toggleCard(card) {
   const was = card.classList.contains('open');
   document.querySelectorAll('.story-card.open').forEach(c => { c.classList.remove('open'); c.setAttribute('aria-expanded','false'); });
@@ -1425,16 +1650,16 @@ function toggleCard(card) {
   }
 }
 
-/* ─── SCROLL REVEAL ─────────────── */
+/* ── SCROLL REVEAL ─── */
 const ro = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); }), { threshold: 0.08 });
 document.querySelectorAll('.rev').forEach(el => ro.observe(el));
 
-/* ─── KEYBOARD: episode cards ────── */
+/* ── KEYBOARD ─── */
 document.querySelectorAll('[role="button"]').forEach(c => {
   c.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); c.click(); } });
 });
 
-/* ─── TYPING ANIMATION ──────────── */
+/* ── TYPING ANIMATION ─── */
 document.addEventListener('DOMContentLoaded', () => {
   if (R.getAttribute('data-view') === 'lite') return;
   const to1 = document.getElementById('to1'), to2 = document.getElementById('to2');
@@ -1473,11 +1698,7 @@ document.addEventListener('DOMContentLoaded', () => {
   run();
 });
 
-/* ─── IMMERSIVE PHYSICS CANVAS ──────────────────────────────
-   Renders: damped wave equations, Lissajous figures,
-   pendulum traces, orbital ellipses, Fibonacci spirals
-   All equations are real physics/math — not decorative noise
-   ─────────────────────────────────────────────────────────── */
+/* ── PHYSICS CANVAS ─── */
 function startBg() {
   const cv = document.getElementById('bgCanvas');
   if (!cv) return;
@@ -1486,25 +1707,21 @@ function startBg() {
   function resize() { cv.width = innerWidth; cv.height = innerHeight; }
   resize();
   window.addEventListener('resize', resize, { passive: true });
-
-  // Physics parameters
   const W = () => cv.width, H = () => cv.height;
 
   function draw() {
     if (R.getAttribute('data-view') === 'lite') { window._raf = null; return; }
     ctx.clearRect(0, 0, W(), H());
+    const dark  = R.getAttribute('data-theme') === 'dark';
+    const alpha = dark ? 0.18 : 0.16;
+    const C  = (a) => `rgba(214,54,81,${a})`;
+    const C2 = (a) => dark ? `rgba(255,255,255,${a})` : `rgba(60,40,20,${a})`;
 
-    const dark   = R.getAttribute('data-theme') === 'dark';
-    const alpha  = dark ? 0.18 : 0.16;
-    const C      = (a) => `rgba(214,54,81,${a})`;   // brand
-    const C2     = (a) => dark ? `rgba(255,255,255,${a})` : `rgba(60,40,20,${a})`;
-
-    // 1. DAMPED WAVE EQUATION: y = A·e^(−γt)·cos(ωt + φ)
-    // Three superimposed waves with different damping constants
+    // Damped waves
     [
-      { A: H()*0.14, omega:0.012, gamma:0.0002, phi:0,    lw:1.5, col: C(alpha) },
-      { A: H()*0.09, omega:0.009, gamma:0.0001, phi:1.2,  lw:1.0, col: C(alpha*0.6) },
-      { A: H()*0.18, omega:0.006, gamma:0.0003, phi:0.8,  lw:0.8, col: C2(alpha*0.45) },
+      { A: H()*0.14, omega:0.012, gamma:0.0002, phi:0,   lw:1.5, col: C(alpha) },
+      { A: H()*0.09, omega:0.009, gamma:0.0001, phi:1.2, lw:1.0, col: C(alpha*0.6) },
+      { A: H()*0.18, omega:0.006, gamma:0.0003, phi:0.8, lw:0.8, col: C2(alpha*0.45) },
     ].forEach(({ A, omega, gamma, phi, lw, col }) => {
       ctx.beginPath(); ctx.strokeStyle = col; ctx.lineWidth = lw;
       ctx.setLineDash([]);
@@ -1516,12 +1733,10 @@ function startBg() {
       ctx.stroke();
     });
 
-    // 2. LISSAJOUS FIGURE: parametric x=A·sin(at+δ), y=B·sin(bt)
-    // Beautiful closed curves that appear on oscilloscopes
+    // Lissajous figure
     ctx.beginPath();
     ctx.strokeStyle = dark ? `rgba(214,54,81,${alpha*0.7})` : `rgba(214,54,81,${alpha*0.8})`;
-    ctx.lineWidth = 1.2;
-    ctx.setLineDash([3, 6]);
+    ctx.lineWidth = 1.2; ctx.setLineDash([3, 6]);
     const lx = W()*0.82, ly = H()*0.35, lr = Math.min(W(),H())*0.09;
     for (let i = 0; i <= 628; i++) {
       const u = i / 100;
@@ -1529,28 +1744,23 @@ function startBg() {
       const py = ly + lr * Math.sin(2*u);
       i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
     }
-    ctx.stroke();
-    ctx.setLineDash([]);
+    ctx.stroke(); ctx.setLineDash([]);
 
-    // 3. PENDULUM TRACE: θ(t) = θ₀·cos(√(g/L)·t)
-    // Actual pendulum motion, rendered as trailing arc
+    // Pendulum
     ctx.beginPath();
     ctx.strokeStyle = dark ? `rgba(155,100,35,${alpha*0.6})` : `rgba(130,80,25,${alpha*0.7})`;
     ctx.lineWidth = 0.9;
-    const px0 = W()*0.20, py0 = H()*0.18;
-    const pL = H()*0.12, pG = 9.8, pLen = 2.5;
-    const pOmega = Math.sqrt(pG / pLen);
+    const px0 = W()*0.20, py0 = H()*0.18, pL = H()*0.12;
+    const pOmega = Math.sqrt(9.8 / 2.5);
     ctx.moveTo(px0, py0);
     for (let step = 0; step < 80; step++) {
       const tau = t * 0.3 - step * 0.05;
       const theta = 0.35 * Math.cos(pOmega * tau) * Math.exp(-0.01 * step);
-      const bx = px0 + pL * Math.sin(theta);
-      const by = py0 + pL * Math.cos(theta);
-      ctx.lineTo(bx, by);
+      ctx.lineTo(px0 + pL * Math.sin(theta), py0 + pL * Math.cos(theta));
     }
     ctx.stroke();
 
-    // 4. FIBONACCI SPIRAL: r = φ^(θ/(π/2))  where φ = golden ratio
+    // Fibonacci spiral
     ctx.beginPath();
     ctx.strokeStyle = dark ? `rgba(100,60,200,${alpha*0.5})` : `rgba(80,50,160,${alpha*0.5})`;
     ctx.lineWidth = 0.8;
@@ -1560,9 +1770,7 @@ function startBg() {
       const r = sScale * Math.pow(phi, rad / (Math.PI/2));
       const fx = sx + r * Math.cos(rad + 0.08*t);
       const fy = sy + r * Math.sin(rad + 0.08*t);
-      if (r < Math.min(W(),H())*0.22) {
-        a === 0 ? ctx.moveTo(fx, fy) : ctx.lineTo(fx, fy);
-      }
+      if (r < Math.min(W(),H())*0.22) { a === 0 ? ctx.moveTo(fx, fy) : ctx.lineTo(fx, fy); }
     }
     ctx.stroke();
 
